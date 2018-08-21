@@ -13,7 +13,9 @@ use Faker\Generator as Faker;
 |
 */
 $factory->define(App\User::class, function (Faker $faker) {
-	$attr_city   = ['Bandung', 'Jakarta', 'Yogyakarta'];
+	$attr_city     = \App\Regency::limit(10)->get()->pluck('name', 'id')->toArray();
+	$attr_district = \App\District::limit(10)->get()->pluck('name', 'id')->toArray();
+	$attr_village  = \App\Village::limit(10)->get()->pluck('name', 'id')->toArray();
 
 	return [
 		'name'           => $faker->name,
@@ -28,10 +30,10 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'phone'          => $faker->phoneNumber,
 		'occupation'     => $faker->numberBetween(1, 2),
 		'address'        => $faker->address,
-		'province'       => $faker->lexify('?????'),
+		'province'       => $faker->state(),
 		'city'           => $faker->city,
-		'kecamatan'      => $faker->lexify('?????'),
-		'kelurahan'      => $faker->lexify('?????'),
+		'kecamatan'      => $faker->randomElement($attr_district),
+		'kelurahan'      => $faker->randomElement($attr_village),
 	];
 });
 
@@ -40,6 +42,7 @@ $factory->defineAs(App\User::class, 'admin', function (Faker $faker) use ($facto
 
 	return array_merge($data, [
 		'name'     => 'Admin ' . $faker->firstName(),
+		'email'    => 'admin' . $faker->randomDigitNotNull . '@example.org',
 		'is_admin' => true
 	]);
 });

@@ -11,8 +11,8 @@ class UsersTableSeeder extends Seeder
 	 */
 	public function run()
 	{
-		factory('App\User', 2)->create();
 		factory(App\User::class, 'admin')->create();
+		factory('App\User', 2)->create();
 
 		factory('App\Dapil', 3)->create();
 		factory('App\Pileg', 3)->create();

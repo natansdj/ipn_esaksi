@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddForeignKeysToRegenciesTable extends Migration {
+class AddForeignKeysToRegenciesTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,7 @@ class AddForeignKeysToRegenciesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('regencies', function(Blueprint $table)
-		{
+		Schema::table('regencies', function (Blueprint $table) {
 			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 		});
 	}
@@ -26,8 +26,7 @@ class AddForeignKeysToRegenciesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('regencies', function(Blueprint $table)
-		{
+		Schema::table('regencies', function (Blueprint $table) {
 			$table->dropForeign('regencies_province_id_foreign');
 		});
 	}

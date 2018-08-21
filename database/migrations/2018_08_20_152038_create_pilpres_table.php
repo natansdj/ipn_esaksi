@@ -23,6 +23,8 @@ class CreatePilpresTable extends Migration
 			$table->date('cawapres_dob')->nullable();
 			$table->string('cawapres_pob')->nullable();
 			$table->string('cawapres_partai')->nullable();
+			$table->string('type')->nullable();
+			$table->text('note')->nullable();
 			$table->timestamps();
 		});
 	}

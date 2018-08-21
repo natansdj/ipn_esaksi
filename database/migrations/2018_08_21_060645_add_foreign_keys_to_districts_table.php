@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddForeignKeysToDistrictsTable extends Migration {
+class AddForeignKeysToDistrictsTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,7 @@ class AddForeignKeysToDistrictsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('districts', function(Blueprint $table)
-		{
+		Schema::table('districts', function (Blueprint $table) {
 			$table->foreign('regency_id')->references('id')->on('regencies')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 		});
 	}
@@ -26,8 +26,7 @@ class AddForeignKeysToDistrictsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('districts', function(Blueprint $table)
-		{
+		Schema::table('districts', function (Blueprint $table) {
 			$table->dropForeign('districts_regency_id_foreign');
 		});
 	}
