@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Define Constants
+ */
+
+return [
+	//
+
+];

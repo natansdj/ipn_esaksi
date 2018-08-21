@@ -1,15 +1,23 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "arcanedev/log-viewer": "^4.4.0",
+        "doctrine/dbal": "^2.8",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "tymon/jwt-auth": "^0.5.12"
+        "tymon/jwt-auth": "^0.5.12",
+        "orangehill/iseed": "dev-master",
+        "predis/predis": "1.1.*",
+        "laravelcollective/html": "~5.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -18,7 +26,8 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0",
-        "symfony/thanks": "^1.0"
+        "rtconner/laravel-kint": "~3.0.2",
+        "xethron/migrations-generator": "^2.0"
     },
     "autoload": {
         "classmap": [
