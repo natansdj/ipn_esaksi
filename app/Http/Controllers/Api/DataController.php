@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\ApiController as Controller;
 
 class DataController extends Controller
 {
 
-	public function open()
+	public function open(Request $request)
 	{
 		$data = "This data is open and can be accessed without the client being authenticated";
 
@@ -15,7 +16,7 @@ class DataController extends Controller
 
 	}
 
-	public function closed()
+	public function closed(Request $request)
 	{
 		$data = "Only authorized users can see this";
 

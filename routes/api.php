@@ -14,19 +14,19 @@ use Illuminate\Routing\Router;
 |
 */
 
-Route::post('login', 'Api\AuthController@login');
-Route::get('open', 'Api\DataController@open');
+Route::post('login', 'AuthController@login');
+Route::get('open', 'DataController@open');
 
 Route::group([
-	'middleware' => ['api', 'jwt.verify'],
+	'middleware' => ['api'],
 ], function () {
 	Route::group([
 		'prefix' => 'auth'
 	], function () {
-		Route::post('logout', 'Api\AuthController@logout');
-		Route::post('refresh', 'Api\AuthController@refresh');
-		Route::post('me', 'Api\AuthController@me');
+		Route::post('logout', 'AuthController@logout');
+		Route::post('refresh', 'AuthController@refresh');
+		Route::post('me', 'AuthController@me');
 	});
 
-	Route::get('closed', 'Api\DataController@closed');
+	Route::get('closed', 'DataController@closed');
 });

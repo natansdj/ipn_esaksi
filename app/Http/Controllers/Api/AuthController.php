@@ -4,9 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Http\Controllers\ApiController as Controller;
 
 class AuthController extends Controller
 {
+	/**
+	 * Create a new AuthController instance.
+	 *
+	 */
+	public function __construct()
+	{
+		$this->middleware('jwt.verify', ['except' => ['login', 'refresh']]);
+	}
+
 	/**
 	 * Get a JWT via given credentials.
 	 *
@@ -17,7 +27,6 @@ class AuthController extends Controller
 		$credentials = request(['email', 'password']);
 
 		try {
-//			if ( ! $token = auth()->attempt($credentials)) {
 			if ( ! $token = JWTAuth::attempt($credentials)) {
 				return response()->json(['error' => 'invalid_credentials'], 401);
 			}
