@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use App\Http\Controllers\ApiController as Controller;
 
 class AuthController extends Controller
 {

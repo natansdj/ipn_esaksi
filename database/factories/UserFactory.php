@@ -12,7 +12,7 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Models\User::class, function (Faker $faker) {
 	$attr_city     = \App\Regency::limit(10)->get()->pluck('name', 'id')->toArray();
 	$attr_district = \App\District::limit(10)->get()->pluck('name', 'id')->toArray();
 	$attr_village  = \App\Village::limit(10)->get()->pluck('name', 'id')->toArray();
@@ -37,8 +37,8 @@ $factory->define(App\User::class, function (Faker $faker) {
 	];
 });
 
-$factory->defineAs(App\User::class, 'admin', function (Faker $faker) use ($factory) {
-	$data = $factory->raw('App\User');
+$factory->defineAs(App\Models\User::class, 'admin', function (Faker $faker) use ($factory) {
+	$data = $factory->raw('App\Models\User');
 
 	return array_merge($data, [
 		'name'     => 'Admin ' . $faker->firstName(),

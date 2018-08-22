@@ -15,8 +15,6 @@ Route::get('/welcome', function () {
 	return view('welcome');
 })->name('welcome');
 
-Auth::routes();
-
 Route::match(['get', 'post'], 'register', function () {
 	return redirect('/');
 });
