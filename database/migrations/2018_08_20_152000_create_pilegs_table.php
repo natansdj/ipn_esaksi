@@ -22,6 +22,7 @@ class CreatePilegsTable extends Migration
 			$table->string('pob')->nullable();
 			$table->string('partai')->nullable();
 			$table->string('type')->nullable();
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

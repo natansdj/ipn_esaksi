@@ -23,6 +23,7 @@ class CreateVotesTable extends Migration
 			$table->integer('voteable_id')->nullable();
 			$table->string('voteable_type')->nullable();
 			$table->string('type')->nullable();
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

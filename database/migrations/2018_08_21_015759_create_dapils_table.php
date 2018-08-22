@@ -20,6 +20,7 @@ class CreateDapilsTable extends Migration
 			$table->string('geo_location')->nullable();
 			$table->string('type')->nullable();
 			$table->text('note')->nullable();
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
