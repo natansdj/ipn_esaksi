@@ -14,7 +14,6 @@ use Illuminate\Routing\Router;
 |
 */
 
-Route::post('login', 'AuthController@login');
 Route::get('open', 'DataController@open');
 
 Route::group([
@@ -23,6 +22,7 @@ Route::group([
 	Route::group([
 		'prefix' => 'auth'
 	], function () {
+		Route::post('login', 'AuthController@login');
 		Route::post('logout', 'AuthController@logout');
 		Route::post('refresh', 'AuthController@refresh');
 		Route::post('me', 'AuthController@me');
