@@ -9,17 +9,19 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "appointer/swaggervel": "^2.3",
         "arcanedev/log-viewer": "^4.4.0",
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "~3.3",
+        "infyomlabs/adminlte-templates": "5.5.x-dev",
+        "infyomlabs/laravel-generator": "5.5.x-dev",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.5",
         "orangehill/iseed": "dev-master",
         "predis/predis": "1.1.*",
         "tymon/jwt-auth": "dev-develop",
-        "infyomlabs/laravel-generator": "5.5.x-dev",
-        "infyomlabs/adminlte-templates": "5.5.x-dev"
+        "yajra/laravel-datatables": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
