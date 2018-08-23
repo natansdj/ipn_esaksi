@@ -15,6 +15,7 @@
         "fideloper/proxy": "~3.3",
         "infyomlabs/adminlte-templates": "5.5.x-dev",
         "infyomlabs/laravel-generator": "5.5.x-dev",
+        "infyomlabs/routes-explorer": "dev-master",
         "infyomlabs/swagger-generator": "dev-master",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
