@@ -15,7 +15,7 @@ class CreatePilegsTable extends Migration
 	{
 		Schema::create('pilegs', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('dapil_id')->nullable();
+			$table->integer('dapil_id')->unsigned()->nullable();
 			$table->string('name');
 			$table->string('name2')->nullable();
 			$table->date('dob')->nullable();
@@ -24,6 +24,8 @@ class CreatePilegsTable extends Migration
 			$table->string('type')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
+
+			$table->foreign('dapil_id')->references('id')->on('dapils')->onUpdate('CASCADE')->onDelete('SET NULL');
 		});
 	}
 

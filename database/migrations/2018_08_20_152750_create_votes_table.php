@@ -15,16 +15,19 @@ class CreateVotesTable extends Migration
 	{
 		Schema::create('votes', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('tps_id')->nullable();
-			$table->integer('user_id')->nullable();
+			$table->integer('tps_id')->unsigned()->nullable();
+			$table->integer('user_id')->unsigned()->nullable();
 			$table->date('vote_date')->nullable();
 			$table->text('note')->nullable();
 			$table->bigInteger('count')->nullable();
-			$table->integer('voteable_id')->nullable();
+			$table->integer('voteable_id')->unsigned()->nullable();
 			$table->string('voteable_type')->nullable();
 			$table->string('type')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
+
+			$table->foreign('tps_id')->references('id')->on('tps')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('SET NULL');
 		});
 	}
 

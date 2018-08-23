@@ -2,8 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Pilpres::class, function (Faker $faker) {
-	$attr_city   = ['Bandung', 'Jakarta', 'Yogyakarta'];
+$factory->define(App\Models\Pilpres::class, function (Faker $faker) {
+//	$attr_city   = ['Bandung', 'Jakarta', 'Yogyakarta'];
+	$attr_city   = \App\Models\Regency::limit(10)->get()->pluck('name', 'id')->toArray();
 	$attr_partai = ['PAN'];
 
 	return [

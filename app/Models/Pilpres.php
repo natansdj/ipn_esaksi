@@ -84,7 +84,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Pilpres extends Model
 {
 	use SoftDeletes;
-
 	/**
 	 * Validation rules
 	 *
@@ -94,6 +93,7 @@ class Pilpres extends Model
 		'capres_name'   => 'required',
 		'cawapres_name' => 'required'
 	];
+	public $table = 'pilpres';
 	public $fillable = [
 		'capres_name',
 		'capres_dob',

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTpsTable extends Migration
+class CreateDapilsTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,15 +13,15 @@ class CreateTpsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('tps', function (Blueprint $table) {
+		Schema::create('dapils', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('user_id')->nullable();
-			$table->integer('dapil_id')->nullable();
 			$table->string('name');
 			$table->string('address')->nullable();
 			$table->string('geo_location')->nullable();
 			$table->string('type')->nullable();
 			$table->text('note')->nullable();
+			$table->integer('dapilable_id')->unsigned()->nullable();
+			$table->string('dapilable_type')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
 		});
@@ -34,6 +34,6 @@ class CreateTpsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('tps');
+		Schema::dropIfExists('dapils');
 	}
 }
