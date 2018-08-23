@@ -28,3 +28,5 @@ Route::group([
 Route::get('closed', 'DataController@closed');
 
 Route::resource('pilpres', 'PilpresAPIController');
+
+Route::resource('pilegs', 'PilegAPIController');
