@@ -1,10 +1,8 @@
 {!! Form::open(['route' => ['pilegs.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="{{ route('pilegs.show', $id) }}" class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-eye-open"></i>
-    </a>
-    <a href="{{ route('pilegs.edit', $id) }}" class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-edit"></i>
+        <i class="glyphicon glyphicon-eye-open"></i> </a>
+    <a href="{{ route('pilegs.edit', $id) }}" class='btn btn-default btn-xs'> <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',
@@ -12,4 +10,5 @@
         'onclick' => "return confirm('Are you sure?')"
     ]) !!}
 </div>
+
 {!! Form::close() !!}

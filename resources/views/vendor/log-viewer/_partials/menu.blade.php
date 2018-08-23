@@ -13,11 +13,9 @@
                 <a href="{{ $item['url'] }}" class="list-group-item {{ $level }}">
                     <span class="badge level-{{ $level }}">
                         {{ $item['count'] }}
-                    </span>
-                    <span class="level level-{{ $level }}">
+                    </span> <span class="level level-{{ $level }}">
                         {!! $item['icon'] !!} {{ $item['name'] }}
-                    </span>
-                </a>
+                    </span> </a>
             @endif
         @endforeach
     </ul>

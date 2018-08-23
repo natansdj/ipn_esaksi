@@ -20,18 +20,13 @@
     <div class="navbar-header">
 
         <!-- Collapsed Hamburger -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                data-target="#app-navbar-collapse">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
 
         <!-- Branding Image -->
-        <a class="navbar-brand" href="{!! url('/') !!}">
-            Routes Explorer
-        </a>
+        <a class="navbar-brand" href="{!! url('/') !!}"> Routes Explorer </a>
     </div>
 </nav>
 
@@ -90,11 +85,11 @@
 <script src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.min.js"></script>
 
 <script type="application/javascript">
-    $(function () {
-        $(document).ready(function () {
-            $('#routes-table').DataTable();
-        });
+  $(function () {
+    $(document).ready(function () {
+      $('#routes-table').DataTable();
     });
+  });
 </script>
 
 </body>

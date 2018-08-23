@@ -3,8 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Pileg
-        </h1>
+            Pileg </h1>
     </section>
     <div class="content">
         <div class="box box-primary">

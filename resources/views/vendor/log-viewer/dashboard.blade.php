@@ -37,16 +37,16 @@
 
 @section('scripts')
     <script>
-        $(function() {
-            new Chart($('canvas#stats-doughnut-chart'), {
-                type: 'doughnut',
-                data: {!! $chartData !!},
-                options: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            });
+      $(function () {
+        new Chart($('canvas#stats-doughnut-chart'), {
+          type: 'doughnut',
+          data: {!! $chartData !!},
+          options: {
+            legend: {
+              position: 'bottom'
+            }
+          }
         });
+      });
     </script>
 @endsection

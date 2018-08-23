@@ -3,8 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Pilpres
-        </h1>
+            Pilpres </h1>
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
@@ -14,7 +13,7 @@
                 <div class="row">
                     {!! Form::open(['route' => 'pilpres.store']) !!}
 
-                        @include('pilpres.fields')
+                    @include('pilpres.fields')
 
                     {!! Form::close() !!}
                 </div>
