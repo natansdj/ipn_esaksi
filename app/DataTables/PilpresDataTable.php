@@ -24,7 +24,7 @@ class PilpresDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Post $model
+     * @param \App\Models\Pilpres $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Pilpres $model)

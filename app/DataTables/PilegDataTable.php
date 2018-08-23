@@ -24,7 +24,7 @@ class PilegDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Post $model
+     * @param \App\Models\Pileg $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Pileg $model)

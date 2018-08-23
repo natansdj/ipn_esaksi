@@ -8,6 +8,17 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 class AuthController extends Controller
 {
 	/**
+	 * @SWG\Parameter(
+	 *   parameter="JWTAuth",
+	 *   name="JWTAuth",
+	 *   in="header",
+	 *   type="string",
+	 *   description="JWT Token",
+	 *   required=true,
+	 *   pattern="Bearer ..."
+	 *  )
+	 */
+	/**
 	 * Create a new AuthController instance.
 	 *
 	 */
@@ -20,6 +31,38 @@ class AuthController extends Controller
 	 * Get a JWT via given credentials.
 	 *
 	 * @return \Illuminate\Http\JsonResponse
+	 *
+	 * @SWG\Post(
+	 *      path="/auth/login",
+	 *      summary="Login",
+	 *      tags={"Auth"},
+	 *      description="Auth Login",
+	 *      produces={"application/json"},
+	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      @SWG\Parameter(
+	 *          name="body",
+	 *          in="body",
+	 *          description="Authentication",
+	 *          required=true,
+	 *          type="form-data",
+	 *          @SWG\Schema(
+	 *              type="object",
+	 *              @SWG\Property(
+	 *                  property="email",
+	 *                  type="string"
+	 *              ),
+	 *              @SWG\Property(
+	 *                  property="password",
+	 *                  type="string"
+	 *              )
+	 *          )
+	 *      ),
+	 *      @SWG\Response(
+	 *          response=200,
+	 *          description="successful operation",
+	 *          @SWG\Schema(ref="#/definitions/respondWithToken")
+	 *      )
+	 * )
 	 */
 	public function login()
 	{
@@ -42,6 +85,13 @@ class AuthController extends Controller
 	 * @param  string $token
 	 *
 	 * @return \Illuminate\Http\JsonResponse
+	 *
+	 * @SWG\Definition(
+	 *      definition="respondWithToken",
+	 * 		@SWG\Property(property="access_token", type="string", example="eyJ0eXAiOiJKV1QiLC...", description="UUID"),
+	 * 		@SWG\Property(property="token_type", type="string", example="bearer", description="bearer"),
+	 * 		@SWG\Property(property="expires_in", type="integer", example="20160"),
+	 *  ),
 	 */
 	protected function respondWithToken($token)
 	{
@@ -56,6 +106,19 @@ class AuthController extends Controller
 	 * Get the authenticated User.
 	 *
 	 * @return \Illuminate\Http\JsonResponse
+	 * @SWG\Post(
+	 *      path="/auth/me",
+	 *      summary="Get current user data",
+	 *      tags={"Auth"},
+	 *      description="Get current user",
+	 *      produces={"application/json"},
+	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      @SWG\Response(
+	 *          response=200,
+	 *          description="successful operation",
+	 *          @SWG\Schema(ref="#/definitions/User")
+	 *      )
+	 * )
 	 */
 	public function me()
 	{
@@ -66,6 +129,27 @@ class AuthController extends Controller
 	 * Log the user out (Invalidate the token).
 	 *
 	 * @return \Illuminate\Http\JsonResponse
+	 *
+	 * @SWG\Post(
+	 *      path="/auth/logout",
+	 *      summary="Logout",
+	 *      tags={"Auth"},
+	 *      description="Auth Logout",
+	 *      produces={"application/json"},
+	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      @SWG\Response(
+	 *          response=200,
+	 *          description="successful operation",
+	 *          @SWG\Schema(
+	 *              type="object",
+	 *              @SWG\Property(
+	 *                  property="message",
+	 *                  type="string",
+	 *                  example="Successfully logged out"
+	 *              ),
+	 *          )
+	 *      )
+	 * )
 	 */
 	public function logout()
 	{
@@ -78,6 +162,20 @@ class AuthController extends Controller
 	 * Refresh a token.
 	 *
 	 * @return \Illuminate\Http\JsonResponse
+	 *
+	 * @SWG\Post(
+	 *      path="/auth/refresh",
+	 *      summary="Refresh JWT token",
+	 *      tags={"Auth"},
+	 *      description="Auth refresh token",
+	 *      produces={"application/json"},
+	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      @SWG\Response(
+	 *          response=200,
+	 *          description="successful operation",
+	 *          @SWG\Schema(ref="#/definitions/respondWithToken")
+	 *      )
+	 * )
 	 */
 	public function refresh()
 	{
