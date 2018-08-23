@@ -11,16 +11,6 @@
 |
 */
 
-Route::get('/welcome', function () {
-	return view('welcome');
-})->name('welcome');
+Route::get('/', 'DashboardController@index')->name('dashboard');
 
-Route::match(['get', 'post'], 'register', function () {
-	return redirect('/');
-});
-
-Route::group([
-	'middleware' => ['auth']
-], function () {
-	Route::get('/', 'DashboardController@index')->name('dashboard');
-});
+Route::resource('pilpres', 'PilpresController');

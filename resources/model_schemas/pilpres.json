@@ -20,12 +20,14 @@
   {
     "name": "capres_dob",
     "dbType": "date",
-    "htmlType": "date"
+    "htmlType": "date",
+    "searchable": false
   },
   {
     "name": "capres_pob",
     "dbType": "string",
-    "htmlType": "text"
+    "htmlType": "text",
+    "searchable": false
   },
   {
     "name": "capres_partai",
@@ -42,12 +44,14 @@
   {
     "name": "cawapres_dob",
     "dbType": "date",
-    "htmlType": "date"
+    "htmlType": "date",
+    "searchable": false
   },
   {
     "name": "cawapres_pob",
     "dbType": "string",
-    "htmlType": "text"
+    "htmlType": "text",
+    "searchable": false
   },
   {
     "name": "cawapres_partai",
@@ -57,12 +61,18 @@
   {
     "name": "type",
     "dbType": "string",
-    "htmlType": "text"
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
   },
   {
     "name": "note",
     "dbType": "string",
-    "htmlType": "textarea"
+    "htmlType": "textarea",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
   },
   {
     "name": "created_at",
