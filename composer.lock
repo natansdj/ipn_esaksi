@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e81bd027e323f428bdf242ef2f2473bd",
+    "content-hash": "87e20b5f49301a13b014d4e11d6ac20f",
     "packages": [
         {
             "name": "appointer/swaggervel",
@@ -910,6 +910,43 @@
                 "view"
             ],
             "time": "2018-07-17T16:28:58+00:00"
+        },
+        {
+            "name": "infyomlabs/swagger-generator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InfyOmLabs/swagger-generator.git",
+                "reference": "06eaf5934215c0fec386595c2896b2114ae15eb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InfyOmLabs/swagger-generator/zipball/06eaf5934215c0fec386595c2896b2114ae15eb4",
+                "reference": "06eaf5934215c0fec386595c2896b2114ae15eb4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mitul Golakiya",
+                    "email": "me@mitul.me"
+                }
+            ],
+            "description": "Swagger Generator for InfyOm Laravel Generator",
+            "keywords": [
+                "generator",
+                "laravel",
+                "swagger",
+                "templates"
+            ],
+            "time": "2017-11-21T09:25:50+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -6459,6 +6496,7 @@
     "stability-flags": {
         "infyomlabs/adminlte-templates": 20,
         "infyomlabs/laravel-generator": 20,
+        "infyomlabs/swagger-generator": 20,
         "orangehill/iseed": 20,
         "tymon/jwt-auth": 20
     },
