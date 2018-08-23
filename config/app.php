@@ -180,6 +180,7 @@ return [
 
 		#Service Provider for development environment
 		App\Providers\LocalServiceProvider::class,
+//		App\Providers\HelperServiceProvider::class,
 
 		#Custom
 		Collective\Html\HtmlServiceProvider::class,
