@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\Pileg;
+use App\Models\User;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class PilegDataTable extends DataTable
+class UserDataTable extends DataTable
 {
 	/**
 	 * Build DataTable class.
@@ -19,19 +19,19 @@ class PilegDataTable extends DataTable
 	{
 		$dataTable = new EloquentDataTable($query);
 
-		return $dataTable->addColumn('action', 'pilegs.datatables_actions');
+		return $dataTable->addColumn('action', 'users.datatables_actions');
 	}
 
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Pileg $model
+	 * @param \App\Models\Post $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
-	public function query(Pileg $model)
+	public function query(User $model)
 	{
-		return $model->newQuery();
+		return $model->noAdmin()->newQuery();
 	}
 
 	/**
@@ -48,8 +48,8 @@ class PilegDataTable extends DataTable
 		            ->parameters([
 			            'language' => ['url' => asset('js/dataTables.indonesian.json')],
 			            'dom' => 'Bflrtip',
-			            'order'    => [[0, 'desc']],
-			            'buttons'  => [
+			            'order'   => [[0, 'desc']],
+			            'buttons' => [
 				            ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -67,12 +67,14 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'dapil_id',
 			'name',
-			'name2',
-			'dob',
-			'pob',
-			'partai'
+			'email',
+			'phone',
+			'dob' => [
+				'data'  => 'dob',
+				'title' => 'Date of Birth'
+			],
+			'is_active',
 		];
 	}
 
@@ -83,6 +85,6 @@ class PilegDataTable extends DataTable
 	 */
 	protected function filename()
 	{
-		return 'pilegsdatatable_' . time();
+		return 'usersdatatable_' . time();
 	}
 }

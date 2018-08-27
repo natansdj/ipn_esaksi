@@ -9,7 +9,7 @@ use App\Repositories\PilegRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Criteria\AppRequestCriteria;
 use Response;
 
 /**
@@ -61,7 +61,7 @@ class PilegAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->pilegRepository->pushCriteria(new RequestCriteria($request));
+        $this->pilegRepository->pushCriteria(new AppRequestCriteria($request));
         $this->pilegRepository->pushCriteria(new LimitOffsetCriteria($request));
         $pilegs = $this->pilegRepository->all();
 

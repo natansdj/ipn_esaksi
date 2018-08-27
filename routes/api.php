@@ -33,4 +33,6 @@ Route::group([
 	Route::resource('pilpres', 'PilpresAPIController');
 
 	Route::resource('pilegs', 'PilegAPIController');
+
+	Route::resource('users', 'UserAPIController');
 });

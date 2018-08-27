@@ -180,7 +180,7 @@ return [
 
 		#Service Provider for development environment
 		App\Providers\LocalServiceProvider::class,
-//		App\Providers\HelperServiceProvider::class,
+		App\Providers\HelperServiceProvider::class,
 
 		#Custom
 		Collective\Html\HtmlServiceProvider::class,
@@ -192,6 +192,7 @@ return [
 		\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
 		\InfyOm\RoutesExplorer\RoutesExplorerServiceProvider::class,
 		Yajra\DataTables\DataTablesServiceProvider::class,
+		Yajra\Datatables\HtmlServiceProvider::class,
 		Appointer\Swaggervel\SwaggervelServiceProvider::class,
 	],
 
@@ -242,6 +243,7 @@ return [
 		'Validator'    => Illuminate\Support\Facades\Validator::class,
 		'View'         => Illuminate\Support\Facades\View::class,
 
+		'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 		'Form'       => Collective\Html\FormFacade::class,
 		'Html'       => Collective\Html\HtmlFacade::class,
 		'Flash'      => Laracasts\Flash\Flash::class,

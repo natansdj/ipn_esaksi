@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
@@ -16,7 +17,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  *      @SWG\Property(
  *          property="name",
  *          description="name",
- *          type="string",
+ *          type="string"
  *      ),
  *      @SWG\Property(
  *          property="email",
@@ -41,7 +42,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  *      @SWG\Property(
  *          property="gender",
  *          description="gender",
- *          type="char"
+ *          type="string"
  *      ),
  *      @SWG\Property(
  *          property="dob",
@@ -120,7 +121,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  *      @SWG\Property(
  *          property="remember_token",
  *          description="remember_token",
- *          type="string",
+ *          type="string"
  *      ),
  *      items={"deleted_at", "created_at", "updated_at"}
  * )
@@ -131,17 +132,58 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  */
 class User extends Authenticatable implements JWTSubject
 {
-	use Notifiable;
+	use Notifiable, SoftDeletes;
 
 	/**
-	 * The attributes that are mass assignable.
+	 * Validation rules
 	 *
 	 * @var array
 	 */
-	protected $fillable = [
-		'name', 'email', 'password',
+	public static $rules = [
+		'email'    => 'required,email',
+		'password' => 'required'
 	];
-
+	public $table = 'users';
+	public $fillable = [
+		'name',
+		'email',
+		'password',
+		'nik',
+		'gender',
+		'dob',
+		'pob',
+		'status',
+		'phone',
+		'occupation',
+		'address',
+		'tps_id',
+		'is_active',
+		'is_admin'
+	];
+	protected $dates = ['deleted_at'];
+	/**
+	 * The attributes that should be casted to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'name'           => 'string',
+		'email'          => 'string',
+		'password'       => 'string',
+		'type'           => 'string',
+		'nik'            => 'string',
+		'gender'         => 'string',
+		'dob'            => 'date',
+		'pob'            => 'string',
+		'status'         => 'integer',
+		'phone'          => 'string',
+		'occupation'     => 'string',
+		'address'        => 'string',
+		'tps_id'         => 'integer',
+		'is_active'      => 'boolean',
+		'is_admin'       => 'boolean',
+		'remember_token' => 'string'
+	];
 	/**
 	 * The attributes that should be hidden for arrays.
 	 *
@@ -150,6 +192,61 @@ class User extends Authenticatable implements JWTSubject
 	protected $hidden = [
 		'password', 'remember_token',
 	];
+
+	/**
+	 * Events
+	 */
+	protected static function boot()
+	{
+		parent::boot();
+
+		static::deleting(function ($model) {
+			/** @var self $model */
+			if ($model->is_admin || $model->is_superadmin) {
+				return false;
+			}
+		});
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 **/
+	public function province()
+	{
+		return $this->belongsTo(\App\Models\Province::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 **/
+	public function regency()
+	{
+		return $this->belongsTo(\App\Models\Regency::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 **/
+	public function district()
+	{
+		return $this->belongsTo(\App\Models\District::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 **/
+	public function village()
+	{
+		return $this->belongsTo(\App\Models\Village::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 **/
+	public function tps()
+	{
+		return $this->hasOne(\App\Models\Tps::class);
+	}
 
 	public function getJWTIdentifier()
 	{
@@ -161,8 +258,22 @@ class User extends Authenticatable implements JWTSubject
 		return [];
 	}
 
-	public function tps()
+	public function scopeNoAdmin($query, $show_regular = true)
 	{
-		return $this->hasOne(Tps::class);
+		$exclude = [ROLE_ADMIN];
+
+		/** @var \Illuminate\Database\Eloquent\Builder $query */
+		if ( ! $show_regular) {
+			//admin only
+			return $query->orWhere('is_admin', true);
+		} else {
+			//regular user only
+			return $query->where('is_admin', false);
+		}
+	}
+
+	public function getIsUserAttribute($value)
+	{
+		return ( ! $this->getAttribute('is_admin') );
 	}
 }

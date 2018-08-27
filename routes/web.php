@@ -16,3 +16,5 @@ Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::resource('pilpres', 'PilpresController');
 
 Route::resource('pilegs', 'PilegController');
+
+Route::resource('users', 'UserController');

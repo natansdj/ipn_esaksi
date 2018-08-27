@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\CreatePilpresAPIRequest;
-use App\Http\Requests\Api\UpdatePilpresAPIRequest;
-use App\Models\Pilpres;
-use App\Repositories\PilpresRepository;
+use App\Criteria\UserRegularCriteria;
+use App\Http\Requests\Api\CreateUserAPIRequest;
+use App\Http\Requests\Api\UpdateUserAPIRequest;
+use App\Models\User;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
@@ -13,18 +14,18 @@ use App\Criteria\AppRequestCriteria;
 use Response;
 
 /**
- * Class PilpresController
+ * Class UserController
  * @package App\Http\Controllers\Api
  */
 
-class PilpresAPIController extends AppBaseController
+class UserAPIController extends AppBaseController
 {
-    /** @var  PilpresRepository */
-    private $pilpresRepository;
+    /** @var  UserRepository */
+    private $userRepository;
 
-    public function __construct(PilpresRepository $pilpresRepo)
+    public function __construct(UserRepository $userRepo)
     {
-        $this->pilpresRepository = $pilpresRepo;
+        $this->userRepository = $userRepo;
     }
 
     /**
@@ -32,11 +33,12 @@ class PilpresAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/pilpres",
-     *      summary="Get a listing of the Pilpres.",
-     *      tags={"Pilpres"},
-     *      description="Get all Pilpres",
+     *      path="/users",
+     *      summary="Get a listing of the Users.",
+     *      tags={"User"},
+     *      description="Get all Users",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Response(
      *          response=200,
      *          description="successful operation",
@@ -49,7 +51,7 @@ class PilpresAPIController extends AppBaseController
      *              @SWG\Property(
      *                  property="data",
      *                  type="array",
-     *                  @SWG\Items(ref="#/definitions/Pilpres")
+     *                  @SWG\Items(ref="#/definitions/User")
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -61,29 +63,31 @@ class PilpresAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->pilpresRepository->pushCriteria(new AppRequestCriteria($request));
-        $this->pilpresRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $pilpres = $this->pilpresRepository->all();
+        $this->userRepository->pushCriteria(new UserRegularCriteria($request));
+        $this->userRepository->pushCriteria(new AppRequestCriteria($request));
+        $this->userRepository->pushCriteria(new LimitOffsetCriteria($request));
+        $users = $this->userRepository->all();
 
-        return $this->sendResponse($pilpres->toArray(), 'Pilpres retrieved successfully');
+        return $this->sendResponse($users->toArray(), 'Users retrieved successfully');
     }
 
     /**
-     * @param CreatePilpresAPIRequest $request
+     * @param CreateUserAPIRequest $request
      * @return Response
      *
      * @SWG\Post(
-     *      path="/pilpres",
-     *      summary="Store a newly created Pilpres in storage",
-     *      tags={"Pilpres"},
-     *      description="Store Pilpres",
+     *      path="/users",
+     *      summary="Store a newly created User in storage",
+     *      tags={"User"},
+     *      description="Store User",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Pilpres that should be stored",
+     *          description="User that should be stored",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Pilpres")
+     *          @SWG\Schema(ref="#/definitions/User")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -96,7 +100,7 @@ class PilpresAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pilpres"
+     *                  ref="#/definitions/User"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -106,13 +110,13 @@ class PilpresAPIController extends AppBaseController
      *      )
      * )
      */
-    public function store(CreatePilpresAPIRequest $request)
+    public function store(CreateUserAPIRequest $request)
     {
         $input = $request->all();
 
-        $pilpres = $this->pilpresRepository->create($input);
+        $users = $this->userRepository->create($input);
 
-        return $this->sendResponse($pilpres->toArray(), 'Pilpres saved successfully');
+        return $this->sendResponse($users->toArray(), 'User saved successfully');
     }
 
     /**
@@ -120,14 +124,15 @@ class PilpresAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/pilpres/{id}",
-     *      summary="Display the specified Pilpres",
-     *      tags={"Pilpres"},
-     *      description="Get Pilpres",
+     *      path="/users/{id}",
+     *      summary="Display the specified User",
+     *      tags={"User"},
+     *      description="Get User",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pilpres",
+     *          description="id of User",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -143,7 +148,7 @@ class PilpresAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pilpres"
+     *                  ref="#/definitions/User"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -155,30 +160,31 @@ class PilpresAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var Pilpres $pilpres */
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+        /** @var User $user */
+        $user = $this->userRepository->findWithoutFail($id);
 
-        if (empty($pilpres)) {
-            return $this->sendError('Pilpres not found');
+        if (empty($user)) {
+            return $this->sendError('User not found');
         }
 
-        return $this->sendResponse($pilpres->toArray(), 'Pilpres retrieved successfully');
+        return $this->sendResponse($user->toArray(), 'User retrieved successfully');
     }
 
     /**
      * @param int $id
-     * @param UpdatePilpresAPIRequest $request
+     * @param UpdateUserAPIRequest $request
      * @return Response
      *
      * @SWG\Put(
-     *      path="/pilpres/{id}",
-     *      summary="Update the specified Pilpres in storage",
-     *      tags={"Pilpres"},
-     *      description="Update Pilpres",
+     *      path="/users/{id}",
+     *      summary="Update the specified User in storage",
+     *      tags={"User"},
+     *      description="Update User",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pilpres",
+     *          description="id of User",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -186,9 +192,9 @@ class PilpresAPIController extends AppBaseController
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Pilpres that should be updated",
+     *          description="User that should be updated",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/Pilpres")
+     *          @SWG\Schema(ref="#/definitions/User")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -201,7 +207,7 @@ class PilpresAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Pilpres"
+     *                  ref="#/definitions/User"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -211,20 +217,20 @@ class PilpresAPIController extends AppBaseController
      *      )
      * )
      */
-    public function update($id, UpdatePilpresAPIRequest $request)
+    public function update($id, UpdateUserAPIRequest $request)
     {
         $input = $request->all();
 
-        /** @var Pilpres $pilpres */
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+        /** @var User $user */
+        $user = $this->userRepository->findWithoutFail($id);
 
-        if (empty($pilpres)) {
-            return $this->sendError('Pilpres not found');
+        if (empty($user)) {
+            return $this->sendError('User not found');
         }
 
-        $pilpres = $this->pilpresRepository->update($input, $id);
+        $user = $this->userRepository->update($input, $id);
 
-        return $this->sendResponse($pilpres->toArray(), 'Pilpres updated successfully');
+        return $this->sendResponse($user->toArray(), 'User updated successfully');
     }
 
     /**
@@ -232,14 +238,15 @@ class PilpresAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/pilpres/{id}",
-     *      summary="Remove the specified Pilpres from storage",
-     *      tags={"Pilpres"},
-     *      description="Delete Pilpres",
+     *      path="/users/{id}",
+     *      summary="Remove the specified User from storage",
+     *      tags={"User"},
+     *      description="Delete User",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Pilpres",
+     *          description="id of User",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -267,15 +274,15 @@ class PilpresAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var Pilpres $pilpres */
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+        /** @var User $user */
+        $user = $this->userRepository->findWithoutFail($id);
 
-        if (empty($pilpres)) {
-            return $this->sendError('Pilpres not found');
+        if (empty($user)) {
+            return $this->sendError('User not found');
         }
 
-        $pilpres->delete();
+        $user->delete();
 
-        return $this->sendResponse($id, 'Pilpres deleted successfully');
+        return $this->sendResponse($id, 'User deleted successfully');
     }
 }
