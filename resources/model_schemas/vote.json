@@ -11,67 +11,56 @@
     "inIndex": false
   },
   {
-    "name": "capres_name",
-    "dbType": "string",
+    "name": "tps_id",
+    "dbType": "integer:unsigned:foreign,tps,id",
     "htmlType": "text",
-    "validations": "required",
-    "searchable": true
+    "relation": "mt1,Tps"
   },
   {
-    "name": "capres_dob",
+    "name": "user_id",
+    "dbType": "integer:unsigned:foreign,users,id",
+    "htmlType": "text",
+    "relation": "1t1,User"
+  },
+  {
+    "name": "vote_date",
     "dbType": "date",
     "htmlType": "date",
     "searchable": false
   },
   {
-    "name": "capres_pob",
+    "name": "note",
     "dbType": "string",
     "htmlType": "text",
-    "searchable": false
+    "searchable": false,
+    "inIndex": false
   },
   {
-    "name": "capres_partai",
-    "dbType": "string",
-    "htmlType": "text"
-  },
-  {
-    "name": "cawapres_name",
-    "dbType": "string",
+    "name": "count",
+    "dbType": "integer",
     "htmlType": "text",
     "validations": "required",
     "searchable": true
   },
   {
-    "name": "cawapres_dob",
-    "dbType": "date",
-    "htmlType": "date",
-    "searchable": false
+    "name": "voteable_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
   },
   {
-    "name": "cawapres_pob",
+    "name": "voteable_type",
     "dbType": "string",
     "htmlType": "text",
-    "searchable": false
-  },
-  {
-    "name": "cawapres_partai",
-    "dbType": "string",
-    "htmlType": "text"
+    "searchable": false,
+    "inIndex": false
   },
   {
     "name": "type",
     "dbType": "string",
     "htmlType": "text",
     "searchable": false,
-    "inForm": false,
-    "inIndex": false
-  },
-  {
-    "name": "note",
-    "dbType": "string",
-    "htmlType": "textarea",
-    "searchable": false,
-    "inForm": false,
     "inIndex": false
   },
   {

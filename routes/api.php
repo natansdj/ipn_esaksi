@@ -25,8 +25,12 @@ Route::group([
 	Route::post('me', 'AuthController@me');
 });
 
-Route::get('closed', 'DataController@closed');
+Route::group([
+	'middleware' => ['jwt.verify']
+], function () {
+	Route::get('closed', 'DataController@closed');
 
-Route::resource('pilpres', 'PilpresAPIController');
+	Route::resource('pilpres', 'PilpresAPIController');
 
-Route::resource('pilegs', 'PilegAPIController');
+	Route::resource('pilegs', 'PilegAPIController');
+});

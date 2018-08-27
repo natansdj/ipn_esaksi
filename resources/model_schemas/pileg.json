@@ -59,6 +59,17 @@
     "inIndex": false
   },
   {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
     "name": "created_at",
     "dbType": "timestamp",
     "htmlType": "",

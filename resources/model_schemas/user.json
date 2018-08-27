@@ -1,0 +1,204 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "name",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": true
+  },
+  {
+    "name": "email",
+    "dbType": "string:unique",
+    "htmlType": "text",
+    "validations": "required,email",
+    "searchable": true
+  },
+  {
+    "name": "password",
+    "dbType": "string",
+    "htmlType": "password",
+    "validations": "required",
+    "searchable": false,
+    "fillable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "type",
+    "dbType": "string",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "nik",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": true,
+    "inIndex": false
+  },
+  {
+    "name": "gender",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "dob",
+    "dbType": "date",
+    "htmlType": "date",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "pob",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "status",
+    "dbType": "integer",
+    "htmlType": "select,Kawin:1,Belum Kawin:2",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "phone",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "occupation",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "address",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "province_id",
+    "dbType": "string:foreign,provinces,id",
+    "htmlType": "text",
+    "type": "relation",
+    "relation": "mt1,Province",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "regency_id",
+    "dbType": "string:foreign,regencies,id",
+    "htmlType": "text",
+    "type": "relation",
+    "relation": "mt1,Regency",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "district_id",
+    "dbType": "string:foreign,districts,id",
+    "htmlType": "text",
+    "type": "relation",
+    "relation": "mt1,District",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "village_id",
+    "dbType": "string:foreign,villages,id",
+    "htmlType": "text",
+    "type": "relation",
+    "relation": "mt1,Village",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "tps_id",
+    "dbType": "integer:unsigned:foreign,tps,id",
+    "htmlType": "text",
+    "relation": "1t1,Tps,tps_id,id",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "is_active",
+    "dbType": "boolean",
+    "htmlType": "checkbox",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "is_admin",
+    "dbType": "boolean",
+    "htmlType": "checkbox",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "remember_token",
+    "dbType": "string",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

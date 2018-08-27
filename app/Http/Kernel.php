@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
 			\Illuminate\View\Middleware\ShareErrorsFromSession::class,
 			\App\Http\Middleware\VerifyCsrfToken::class,
 			\Illuminate\Routing\Middleware\SubstituteBindings::class,
+			\UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
 		],
 
 		'api' => [
@@ -59,5 +60,6 @@ class Kernel extends HttpKernel
 		'throttle'     => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 		'jwt.verify'   => \App\Http\Middleware\JwtMiddleware::class,
 		'global.admin' => \App\Http\Middleware\GlobalAdminMiddleware::class,
+		'sweetalert'   => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
 	];
 }

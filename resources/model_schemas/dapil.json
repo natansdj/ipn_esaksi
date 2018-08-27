@@ -11,65 +11,52 @@
     "inIndex": false
   },
   {
-    "name": "capres_name",
+    "name": "name",
     "dbType": "string",
     "htmlType": "text",
     "validations": "required",
     "searchable": true
   },
   {
-    "name": "capres_dob",
-    "dbType": "date",
-    "htmlType": "date",
-    "searchable": false
-  },
-  {
-    "name": "capres_pob",
+    "name": "address",
     "dbType": "string",
     "htmlType": "text",
-    "searchable": false
+    "searchable": true,
+    "inIndex": false
   },
   {
-    "name": "capres_partai",
-    "dbType": "string",
-    "htmlType": "text"
-  },
-  {
-    "name": "cawapres_name",
+    "name": "geo_location",
     "dbType": "string",
     "htmlType": "text",
-    "validations": "required",
-    "searchable": true
-  },
-  {
-    "name": "cawapres_dob",
-    "dbType": "date",
-    "htmlType": "date",
-    "searchable": false
-  },
-  {
-    "name": "cawapres_pob",
-    "dbType": "string",
-    "htmlType": "text",
-    "searchable": false
-  },
-  {
-    "name": "cawapres_partai",
-    "dbType": "string",
-    "htmlType": "text"
+    "searchable": false,
+    "inIndex": false
   },
   {
     "name": "type",
     "dbType": "string",
     "htmlType": "text",
     "searchable": false,
-    "inForm": false,
     "inIndex": false
   },
   {
     "name": "note",
     "dbType": "string",
-    "htmlType": "textarea",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "dapilable_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "dapilable_type",
+    "dbType": "string",
+    "htmlType": "text",
     "searchable": false,
     "inForm": false,
     "inIndex": false

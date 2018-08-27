@@ -8,14 +8,12 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 class AuthController extends Controller
 {
 	/**
-	 * @SWG\Parameter(
-	 *   parameter="JWTAuth",
-	 *   name="JWTAuth",
-	 *   in="header",
-	 *   type="string",
-	 *   description="JWT Token",
-	 *   required=true,
-	 *   pattern="Bearer ..."
+	 * @SWG\SecurityScheme(
+	 *      securityDefinition="JWTBearer",
+	 *      type="apiKey",
+	 *      name="Authorization",
+	 *      description="Use JWT Authentication format: 'Bearer ...'",
+	 *      in="header",
 	 *  )
 	 */
 	/**
@@ -38,24 +36,17 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      description="Auth Login",
 	 *      produces={"application/json"},
-	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
 	 *      @SWG\Parameter(
-	 *          name="body",
-	 *          in="body",
-	 *          description="Authentication",
+	 *          name="email",
+	 *          in="formData",
+	 *          type="string",
 	 *          required=true,
-	 *          type="form-data",
-	 *          @SWG\Schema(
-	 *              type="object",
-	 *              @SWG\Property(
-	 *                  property="email",
-	 *                  type="string"
-	 *              ),
-	 *              @SWG\Property(
-	 *                  property="password",
-	 *                  type="string"
-	 *              )
-	 *          )
+	 *      ),
+	 *      @SWG\Parameter(
+	 *          name="password",
+	 *          in="formData",
+	 *          type="string",
+	 *          required=true,
 	 *      ),
 	 *      @SWG\Response(
 	 *          response=200,
@@ -112,7 +103,7 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      description="Get current user",
 	 *      produces={"application/json"},
-	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Response(
 	 *          response=200,
 	 *          description="successful operation",
@@ -136,7 +127,7 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      description="Auth Logout",
 	 *      produces={"application/json"},
-	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Response(
 	 *          response=200,
 	 *          description="successful operation",
@@ -169,7 +160,7 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      description="Auth refresh token",
 	 *      produces={"application/json"},
-	 *      @SWG\Parameter(ref="#/parameters/JWTAuth"),
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Response(
 	 *          response=200,
 	 *          description="successful operation",

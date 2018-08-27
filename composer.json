@@ -23,6 +23,7 @@
         "orangehill/iseed": "dev-master",
         "predis/predis": "1.1.*",
         "tymon/jwt-auth": "dev-develop",
+        "uxweb/sweet-alert": "^2.0",
         "yajra/laravel-datatables": "^1.0"
     },
     "require-dev": {
