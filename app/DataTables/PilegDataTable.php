@@ -47,7 +47,7 @@ class PilegDataTable extends DataTable
 		            ->addAction(['printable' => false, 'width' => '120px'])
 		            ->parameters([
 			            'language' => ['url' => asset('js/dataTables.indonesian.json')],
-			            'dom' => 'Bflrtip',
+			            'dom'      => 'Bflrtip',
 			            'order'    => [[0, 'desc']],
 			            'buttons'  => [
 				            ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -67,7 +67,7 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'dapil_id',
+			'province_id',
 			'name',
 			'name2',
 			'dob',

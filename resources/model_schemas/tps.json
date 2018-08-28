@@ -11,10 +11,16 @@
     "inIndex": false
   },
   {
-    "name": "dapil_id",
-    "dbType": "integer:unsigned:foreign,dapil,id",
+    "name": "province_id",
+    "dbType": "integer:unsigned:foreign,provinces,id",
     "htmlType": "text",
-    "relation": "mt1,Dapil"
+    "relation": "mt1,Province"
+  },
+  {
+    "name": "kodepos_id",
+    "dbType": "integer:unsigned:foreign,kodepos,id",
+    "htmlType": "text",
+    "relation": "mt1,Kodepos"
   },
   {
     "name": "name",

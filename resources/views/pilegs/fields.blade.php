@@ -1,7 +1,7 @@
 <!-- Dapil Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('dapil_id', 'Dapil Id:') !!}
-    {!! Form::text('dapil_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('province_id', 'Province Id:') !!}
+    {!! Form::text('province_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Name Field -->

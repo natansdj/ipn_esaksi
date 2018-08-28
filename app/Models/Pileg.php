@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="Pileg",
  *      required={"name", "dob", "pob", "partai"},
  *      @SWG\Property(
- *          property="dapil_id",
- *          description="dapil_id",
+ *          property="province_id",
+ *          description="province_id",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -65,7 +65,7 @@ class Pileg extends Model
 	];
 	public $table = 'pilegs';
 	public $fillable = [
-		'dapil_id',
+		'province_id',
 		'name',
 		'name2',
 		'dob',
@@ -80,20 +80,20 @@ class Pileg extends Model
 	 * @var array
 	 */
 	protected $casts = [
-		'dapil_id' => 'integer',
-		'name'     => 'string',
-		'name2'    => 'string',
-		'dob'      => 'date',
-		'pob'      => 'string',
-		'partai'   => 'string',
-		'type'     => 'string'
+		'province_id' => 'integer',
+		'name'        => 'string',
+		'name2'       => 'string',
+		'dob'         => 'date',
+		'pob'         => 'string',
+		'partai'      => 'string',
+		'type'        => 'string'
 	];
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 **/
-	public function dapil()
+	public function province()
 	{
-		return $this->belongsTo(\App\Models\Dapil::class, 'dapil_id', 'id');
+		return $this->belongsTo(\App\Models\Province::class);
 	}
 }

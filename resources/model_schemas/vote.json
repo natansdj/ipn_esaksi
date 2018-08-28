@@ -20,7 +20,7 @@
     "name": "user_id",
     "dbType": "integer:unsigned:foreign,users,id",
     "htmlType": "text",
-    "relation": "1t1,User"
+    "relation": "mt1,User"
   },
   {
     "name": "vote_date",

@@ -1,7 +1,7 @@
 <!-- Dapil Id Field -->
 <div class="form-group">
-    {!! Form::label('dapil_id', 'Dapil Id:') !!}
-    <p>{!! $pileg->dapil_id !!}</p>
+    {!! Form::label('province_id', 'Province Id:') !!}
+    <p>{!! $pileg->province_id !!}</p>
 </div>
 
 <!-- Name Field -->

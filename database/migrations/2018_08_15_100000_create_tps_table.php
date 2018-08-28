@@ -15,7 +15,8 @@ class CreateTpsTable extends Migration
 	{
 		Schema::create('tps', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('dapil_id')->unsigned()->nullable();
+			$table->integer('province_id')->unsigned()->nullable();
+			$table->integer('kodepos_id')->unsigned()->nullable();
 			$table->string('name');
 			$table->string('address')->nullable();
 			$table->string('geo_location')->nullable();
@@ -24,7 +25,7 @@ class CreateTpsTable extends Migration
 			$table->softDeletes();
 			$table->timestamps();
 
-			$table->foreign('dapil_id')->references('id')->on('dapils')->onUpdate('CASCADE')->onDelete('SET NULL');
+			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('SET NULL');
 		});
 	}
 
