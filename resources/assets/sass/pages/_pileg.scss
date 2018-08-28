@@ -1,0 +1,81 @@
+// pileg pilpres
+
+.calon-box{
+	background-color: $wt;
+	margin-bottom: 30px;
+	position: relative;
+	@include box-shadow(0, 5px, 30px, 0px, rgba(0, 0, 0, 0.05));
+	@include transition(all, 0.3s, ease);
+	.pileg-img{
+		width: 115px;
+		height: 139px;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		&.c2{
+			left: 115px;
+		}
+	}
+	.calon-info{
+		overflow: hidden;
+		padding: 25px 25px 25px 140px;
+		h5.name{
+			float: left;
+			font-size: 15px;
+			font-family: $b;
+			color: $bl;
+			margin-bottom: 5px;
+			&.c2{
+				width: 100%;
+				margin-bottom: 15px;
+			}
+		}
+		h5.title{
+			float: right;
+			font-size: 14px;
+			color: $gray4;
+			margin-bottom: 0px;
+		}
+		h5.lahir{
+			float: left;
+			clear: left;
+			font-size: 14px;
+			color: $gray4;
+			margin-bottom: 5px;
+		}
+		h5.bakal{
+			float: right;
+			font-size: 18px;
+			font-family: $b;
+			color: $bl;
+			margin-bottom: 5px;
+		}
+		h5.chance{
+			float: left;
+			clear: left;
+			font-size: 14px;
+			color: $gray4;
+			margin-bottom: 20px;
+			&.c2{
+				margin-bottom: 9px;
+			}
+		}
+		.progress{
+			clear: left;
+			height: 8px;
+			.progress-bar{
+				background-color: $second;
+			}
+		}
+		&.c2{
+			padding-left: 265px;
+		}
+	}
+	&:hover{
+		@include box-shadow(0, 5px, 30px, 0px, rgba(0, 0, 0, 0.15));
+	}
+}

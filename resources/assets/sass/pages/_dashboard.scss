@@ -1,0 +1,233 @@
+// dashboard
+
+.search-bar{
+	background-color: $gray3;
+	padding: 15px 60px;	
+	border-top: 1px solid $border;
+	border-bottom: 1px solid $border;
+	overflow: hidden;
+	h3{
+		font-size: 24px;
+		font-family: $b;
+		color: $bl;
+		margin: 7px 0 0 0;
+		float: left;
+		span{
+			color: $red;
+		}
+	}
+	.form-inline{
+		float: right;
+		input{
+			background-image: url('../images/search2.png');
+			background-repeat: no-repeat;
+			background-position: left 10px center;
+			border: 1px solid $border;
+			color: $bl;
+			font-size: 14px;
+			padding: 10px 10px 10px 35px;
+			@include border-radius(25px);
+			&:hover, &:focus, &:active{
+				outline: none !important;
+				box-shadow: none !important;
+			}
+		}
+	}
+}
+
+.region-wrap{
+	padding: 20px 60px;
+	.region-box{
+		border: 1px solid $border;
+		.region-head{
+			overflow: hidden;
+			padding: 10px;
+			background-color: $ldblue;
+			h5.nregion{
+				float: left;
+				margin: 0 0 3px 0;
+				font-family: $b;
+				font-size: 16px;
+				color: $wt;
+			}
+			h5.cregion{
+				float: right;
+				margin: 0 0 3px 0;
+				font-size: 14px;
+				color: $wt;
+			}
+			h5.dregion{
+				float: left;
+				clear: left;
+				margin: 0;
+				font-size: 14px;
+				color: $wt;
+			}
+			h5.vregion{
+				float: right;
+				margin: 0;
+				font-family: $b;
+				font-size: 14px;
+				color: $wt;
+			}
+		}
+		.region-body{
+			padding: 10px 0px 0px 0px;
+			.table-overflow-y{
+				padding: 0 10px;
+			    height: 140px;
+			    overflow-y: auto;
+				.table{
+					margin: 0;
+					border-bottom: 1px solid $border;
+					thead{
+						tr{
+							th{
+								color: $gray2;
+								font-size: 11px;
+								padding: 0 0 5px 0;
+								border: none;
+							}
+						}
+					}
+					tbody{
+						tr{
+							td{
+								font-size: 13px;
+								padding: 10px 0;
+								border-color: $border;
+								.box{
+									width: 10px;
+									height: 10px;
+									margin-top: 4px;
+									margin-right: 3px;
+									background-color: $ldblue;
+									display: inline-block;
+									vertical-align: top;
+								}
+								.fa-check{
+									background-color: $ldblue;
+									color: $wt;
+									width: 15px;
+									height: 15px;
+									padding: 1px;
+									margin-left: 3px;
+									@include border-radius(50%);
+								}
+							}
+							&.active{
+								td{
+									color: $red;
+									.box{
+										background-color: $red !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.region-date{
+				font-size: 11px;
+				color: $gray2;
+				width: 100%;
+				display: block;
+				text-align: right;
+				margin: 10px 0;
+				padding: 0 10px;
+			}
+			.btn{
+				display: block;
+				width: 100%;
+				font-size: 13px;
+				padding: 10px;
+				text-align: center;
+				border: none;
+				background-color: $gray3;
+				border-top: 1px solid $border;
+				@include border-radius(0);
+				@include transition(all, 0.3, ease);
+				&:hover, &:focus, &:active{
+					background-color: darken($gray3, 10%);
+					outline: none !important;
+					box-shadow: none !important;
+				}
+			}
+		}
+		&.yellow{
+			.region-head{
+				background-color: $yellow;
+			}
+			.region-body{
+				.table-overflow-y{
+					.table{
+						tbody{
+							tr{
+								td{
+									.box{
+										background-color: $yellow;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.disabled{
+			.region-head{
+				background-color: $gray3;
+				h5.nregion{
+					color: $gray;
+				}
+				h5.cregion{
+					color: $gray;
+				}
+				h5.dregion{
+					color: $gray;
+				}
+				h5.vregion{
+					color: $gray;
+				}
+			}
+			.region-body{
+				.table-overflow-y{
+					.table{
+						thead{
+							tr{
+								th{
+									color: $gray;
+								}
+							}
+						}
+						tbody{
+							tr{
+								td{
+									color: $gray;
+									.box{
+										background-color: $gray !important;
+									}
+									.fa-check{
+										background-color: $gray;
+									}
+								}
+								&.active{
+									td{
+										color: $gray;
+									}
+								}
+							}
+						}
+					}
+				}
+				.region-date{
+					color: $gray;
+				}
+				.btn{
+					pointer-events: none;
+					color: $gray !important;
+				}
+			}
+		}
+	}
+}

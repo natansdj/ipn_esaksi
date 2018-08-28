@@ -7,6 +7,8 @@
 require('./bootstrap');
 
 try {
+  require('popper.js');
+  require('slick-carousel');
   require('sweetalert');
 } catch (e) {
   //

@@ -1,0 +1,140 @@
+/* CROSS-SITE MIXINS */
+
+
+.wrap {
+  float: left;
+  width: 100%;
+}
+
+/* CSS3 Animated Transitions */
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition:$transition-property $transition-time $method;
+    -moz-transition:$transition-property $transition-time $method;
+    -ms-transition:$transition-property $transition-time $method;
+    -o-transition:$transition-property $transition-time $method;
+    transition:$transition-property $transition-time $method;
+}
+
+// CSS 3 General Transform
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+/* CSS3 Border Radius */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	border-radius:$radius;
+}
+
+
+@mixin border-top-left-radius($radius) {
+	-webkit-border-top-left-radius:$radius;
+	-moz-border-top-left-radius:$radius;
+	border-top-left-radius:$radius;
+}
+
+@mixin border-top-right-radius($radius) {
+	-webkit-border-top-right-radius:$radius;
+	-moz-border-top-right-radius:$radius;
+	border-top-right-radius:$radius;
+}
+
+
+@mixin border-bottom-left-radius($radius) {
+	-webkit-border-bottom-left-radius:$radius;
+	-moz-border-bottom-left-radius:$radius;
+	border-bottom-left-radius:$radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+	-webkit-border-bottom-right-radius:$radius;
+	-moz-border-bottom-right-radius:$radius;
+	border-bottom-right-radius:$radius;
+}
+
+
+
+/* CSS3 Text shadow */
+
+@mixin text-shadow($color, $offset, $blur, $spread) {
+	-webkit-text-shadow:$color $offset $blur $spread;
+	-moz-text-shadow:$color $offset $blur $spread;
+	text-shadow:$color $offset $blur $spread;
+}
+
+/* CSS3 Box shadow */
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow:$x $y $blur $spread $color;
+  -moz-box-shadow:$x $y $blur $spread $color;
+  box-shadow:$x $y $blur $spread $color;
+}
+
+
+/* Set width & height */
+@mixin square-size($size) {
+  width:$size;
+  height:$size;
+}
+
+/* Create triangle */
+@mixin triangle($color: #000, $size: 50px, $point: top) {
+  $opposite: opposite-position($point);
+  height: 0;
+  width: 0;
+  border: $size solid rgba(255, 255, 255, 0);
+  border-#{$opposite}: $size solid $color;
+  border-#{$point}: 0;
+}
+
+/* border-radius-promo */ 
+@mixin border-radius-promo ($radius) {
+     -webkit-border-top-right-radius: $radius;
+        -moz-border-top-right-radius: $radius;
+         -ms-border-top-right-radius: $radius;
+             border-top-right-radius: $radius;
+  
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+
+   -webkit-border-bottom-right-radius: $radius;
+      -moz-border-bottom-right-radius: $radius;
+       -ms-border-bottom-right-radius: $radius;
+           border-bottom-right-radius: $radius;
+}
+
+/* transform */
+@mixin transform($value){
+  -ms-transform: $value; /* IE 9 */
+  -webkit-transform: $value; /* Safari */
+  transform: $value;
+}
+
+/* animation */
+@mixin animation-double($animate, $animate2){
+  -ms-animation: $animate, $animate2;
+  -webkit-animation: $animate, $animate2;
+  animation: $animate, $animate2;
+}
+
+@mixin animation($animate){
+  -ms-animation: $animate;
+  -webkit-animation: $animate;
+  animation: $animate;
+}
+
+/* animation */
+@mixin placeholder($property, $value){
+  &::-webkit-input-placeholder {$property: $value}
+  &::-moz-placeholder {$property: $value}
+  &:-ms-input-placeholder {$property: $value}
+  &:-moz-placeholder {$property: $value}
+}

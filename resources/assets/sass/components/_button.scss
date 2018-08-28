@@ -1,0 +1,50 @@
+// buttons
+
+.btn-primary{
+	background-color: $second;
+	color: $wt;
+	border: none;
+	padding: 11px 25px;
+	font-size: 13px;
+	font-family: $sb;
+	@include transition(all, 0.3s, ease);
+	&:hover, &:focus, &:active{
+		background-color: darken($second, 10%) !important;
+		outline: none;
+		box-shadow: none !important;
+	}
+}
+
+.btn-secondary{
+	background-color: $main;
+	color: $wt;
+	border: none;
+	padding: 11px 25px;
+	font-size: 13px;
+	font-family: $sb;
+	@include transition(all, 0.3s, ease);
+	&:hover, &:focus, &:active{
+		background-color: lighten($main, 10%) !important;
+		outline: none;
+		box-shadow: none !important;
+	}
+}
+
+.btn-default{
+	background-color: $gray;
+	color: $wt;
+	border: none;
+	padding: 11px 25px;
+	font-size: 13px;
+	font-family: $sb;
+	@include transition(all, 0.3s, ease);
+	&:hover, &:focus, &:active{
+		color: $wt;
+		background-color: darken($gray, 10%);
+		box-shadow: none !important;
+	}
+}
+
+.w200{
+	width: 200px;
+}
