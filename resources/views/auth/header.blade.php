@@ -9,15 +9,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
 
-    {{--<!-- Bootstrap 3.3.7 -->--}}
-    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+    <!-- iCheck -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
 
     <!-- Load Style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/jqvmap.min.css') }}" media="screen">
-
-    <!-- iCheck -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -1,19 +1,28 @@
-<li class="{{ Request::is('/') ? 'active' : '' }}">
-    <a href="{{ route('dashboard') }}"><i class="fa fa-grip-horizontal"></i><span>Dashboard</span></a>
+<li>
+    <a href="{{ route('dashboard') }}" class="{{ Request::is('/') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i1.png') }}" alt=""></span> Beranda</a>
+</li>
+<li>
+    <a href="#" class="{{ Request::is('/saksi') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Saksi</a>
+</li>
+<li>
+    <a href="#" class="{{ Request::is('/tps') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i3.png') }}" alt=""></span> TPS</a>
+</li>
+<li>
+    <a href="#" class="{{ Request::is('/pileg') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pileg</a>
+</li>
+<li>
+    <a href="#" class="{{ Request::is('/pilpres') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pilpres</a>
 </li>
 
 @if(Auth::user()->is_admin)
-    <li class="header">MASTER DATA</li>
-
-    <li class="{{ Request::is('users*') ? 'active' : '' }}">
-        <a href="{!! route('users.index') !!}"><i class="fa fa-edit"></i><span>Users</span></a>
+    <li class="dropdown-divider"></li>
+    <li>
+        <a href="{!! route('users.index') !!}" class="{{ Request::is('users*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Users</a>
     </li>
-
-    <li class="{{ Request::is('pilpres*') ? 'active' : '' }}">
-        <a href="{!! route('pilpres.index') !!}"><i class="fa fa-edit"></i><span>Pilpres</span></a>
+    <li>
+        <a href="{!! route('pilpres.index') !!}" class="{{ Request::is('pilpres*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pilpres</a>
     </li>
-
-    <li class="{{ Request::is('pilegs*') ? 'active' : '' }}">
-        <a href="{!! route('pilegs.index') !!}"><i class="fa fa-edit"></i><span>Pileg</span></a>
+    <li>
+        <a href="{!! route('pilegs.index') !!}" class="{{ Request::is('pilegs*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pileg</a>
     </li>
 @endif

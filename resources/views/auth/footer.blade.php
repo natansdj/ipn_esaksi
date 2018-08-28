@@ -6,7 +6,3 @@
 {{--<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>--}}
 <script type="text/javascript" src="{{ asset('js/main.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
-
-<script type="text/javascript" src="{{ asset('js/jquery.vmap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.vmap.indonesia.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
