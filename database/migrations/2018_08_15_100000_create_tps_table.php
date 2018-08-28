@@ -15,7 +15,7 @@ class CreateTpsTable extends Migration
 	{
 		Schema::create('tps', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('province_id')->unsigned()->nullable();
+			$table->char('province_id', 2)->nullable();
 			$table->integer('kodepos_id')->unsigned()->nullable();
 			$table->string('name');
 			$table->string('address')->nullable();

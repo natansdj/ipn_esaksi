@@ -73,11 +73,5 @@ class RouteServiceProvider extends ServiceProvider
 		Route::middleware(['web', 'auth'])
 		     ->namespace($this->namespace . '\\Web')
 		     ->group(base_path('routes/web.php'));
-//		Route::middleware(['web'])
-//		     ->group(function () {
-//			     Route::any('/{any}', function ($any) {
-//				     return redirect('/');
-//			     })->where('any', '.*');
-//		     });
 	}
 }

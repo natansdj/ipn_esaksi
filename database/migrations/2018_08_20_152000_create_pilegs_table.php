@@ -15,7 +15,7 @@ class CreatePilegsTable extends Migration
 	{
 		Schema::create('pilegs', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('province_id')->unsigned()->nullable();
+			$table->char('province_id', 2)->nullable();
 			$table->string('name');
 			$table->string('name2')->nullable();
 			$table->date('dob')->nullable();
