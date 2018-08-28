@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 @include('auth.header')
 
-<body class="hold-transition login-page">
+<body>
 
 @yield('content')
 
