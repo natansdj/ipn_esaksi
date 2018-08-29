@@ -1,4 +1,4 @@
-<!-- Dapil Id Field -->
+<!-- Province Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('province_id', 'Province Id:') !!}
     {!! Form::text('province_id', null, ['class' => 'form-control']) !!}

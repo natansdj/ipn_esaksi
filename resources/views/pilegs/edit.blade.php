@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1>
-            Pileg </h1>
-    </section>
-    <div class="content">
-        @include('adminlte-templates::common.errors')
-        <div class="box box-primary">
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::model($pileg, ['route' => ['pilegs.update', $pileg->id], 'method' => 'patch']) !!}
+    <div class="row page-title">
+        <div class="col-md-12">
+            <div class="clearfix"></div>
+            <h3 class="pull-left">Pileg</h3>
+            <h3 class="pull-right">
+                <a href="{!! route('pilegs.index') !!}" class="btn btn-default">Back</a>
+            </h3>
+        </div>
+    </div>
 
-                    @include('pilegs.fields')
+    <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix"></div>
 
-                    {!! Form::close() !!}
-                </div>
+                @include('adminlte-templates::common.errors')
+
+                <div class="clearfix"></div>
+                   {!! Form::model($pileg, ['route' => ['pilegs.update', $pileg->id], 'method' => 'patch']) !!}
+
+                        @include('pilegs.fields')
+
+                   {!! Form::close() !!}
             </div>
         </div>
     </div>
+    <div class="clearfix"></div>
 @endsection

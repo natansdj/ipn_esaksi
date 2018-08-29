@@ -1,4 +1,10 @@
-<!-- Dapil Id Field -->
+<!-- Id Field -->
+<div class="form-group">
+    {!! Form::label('id', 'Id:') !!}
+    <p>{!! $pileg->id !!}</p>
+</div>
+
+<!-- Province Id Field -->
 <div class="form-group">
     {!! Form::label('province_id', 'Province Id:') !!}
     <p>{!! $pileg->province_id !!}</p>
@@ -38,5 +44,23 @@
 <div class="form-group">
     {!! Form::label('type', 'Type:') !!}
     <p>{!! $pileg->type !!}</p>
+</div>
+
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $pileg->deleted_at !!}</p>
+</div>
+
+<!-- Created At Field -->
+<div class="form-group">
+    {!! Form::label('created_at', 'Created At:') !!}
+    <p>{!! $pileg->created_at !!}</p>
+</div>
+
+<!-- Updated At Field -->
+<div class="form-group">
+    {!! Form::label('updated_at', 'Updated At:') !!}
+    <p>{!! $pileg->updated_at !!}</p>
 </div>
 

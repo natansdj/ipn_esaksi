@@ -1,26 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <h1 class="pull-left">Pilegs</h1>
-        <h1 class="pull-right">
-            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('pilegs.create') !!}">Add New</a>
-        </h1>
-    </section>
-    <div class="content">
-        <div class="clearfix"></div>
-
-        @include('flash::message')
-
-        <div class="clearfix"></div>
-        <div class="box box-primary">
-            <div class="box-body">
-                @include('pilegs.table')
-            </div>
-        </div>
-        <div class="text-center">
-
+    <div class="row page-title">
+        <div class="col-md-12">
+            <div class="clearfix"></div>
+            <h3 class="pull-left">Pilegs</h3>
+            <h3 class="pull-right">
+                <a class="btn btn-primary pull-right" href="{!! route('pilegs.create') !!}">Add New</a>
+            </h3>
         </div>
     </div>
+
+    <div class="content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clearfix"></div>
+
+                @include('flash::message')
+
+                <div class="clearfix"></div>
+                @include('pilegs.table')
+
+                <div class="text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
 @endsection
 

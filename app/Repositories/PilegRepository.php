@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class PilegRepository
  * @package App\Repositories
- * @version August 23, 2018, 5:52 am UTC
+ * @version August 29, 2018, 6:44 am UTC
  *
  * @method Pileg findWithoutFail($id, $columns = ['*'])
  * @method Pileg find($id, $columns = ['*'])
