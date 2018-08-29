@@ -13,139 +13,145 @@ use Response;
 
 class PilpresController extends Controller
 {
-    /** @var  PilpresRepository */
-    private $pilpresRepository;
+	/** @var  PilpresRepository */
+	private $pilpresRepository;
 
-    public function __construct(PilpresRepository $pilpresRepo)
-    {
-        $this->pilpresRepository = $pilpresRepo;
-    }
+	public function __construct(PilpresRepository $pilpresRepo)
+	{
+		$this->pilpresRepository = $pilpresRepo;
+	}
 
-    /**
-     * Display a listing of the Pilpres.
-     *
-     * @param PilpresDataTable $pilpresDataTable
-     * @return Response
-     */
-    public function index(PilpresDataTable $pilpresDataTable)
-    {
-        return $pilpresDataTable->render('pilpres.index');
-    }
+	/**
+	 * Display a listing of the Pilpres.
+	 *
+	 * @param PilpresDataTable $pilpresDataTable
+	 *
+	 * @return Response
+	 */
+	public function index(PilpresDataTable $pilpresDataTable)
+	{
+		return $pilpresDataTable->render('pilpres.index');
+	}
 
-    /**
-     * Show the form for creating a new Pilpres.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('pilpres.create');
-    }
+	public function list()
+	{
+		return view('pages.pilpres_list');
+	}
 
-    /**
-     * Store a newly created Pilpres in storage.
-     *
-     * @param CreatePilpresRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreatePilpresRequest $request)
-    {
-        $input = $request->all();
+	/**
+	 * Show the form for creating a new Pilpres.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return view('pilpres.create');
+	}
 
-        $pilpres = $this->pilpresRepository->create($input);
+	/**
+	 * Store a newly created Pilpres in storage.
+	 *
+	 * @param CreatePilpresRequest $request
+	 *
+	 * @return Response
+	 */
+	public function store(CreatePilpresRequest $request)
+	{
+		$input = $request->all();
 
-        Flash::success('Pilpres saved successfully.');
+		$pilpres = $this->pilpresRepository->create($input);
 
-        return redirect(route('pilpres.index'));
-    }
+		Flash::success('Pilpres saved successfully.');
 
-    /**
-     * Display the specified Pilpres.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+		return redirect(route('pilpres.index'));
+	}
 
-        if (empty($pilpres)) {
-            Flash::error('Pilpres not found');
+	/**
+	 * Display the specified Pilpres.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$pilpres = $this->pilpresRepository->findWithoutFail($id);
 
-            return redirect(route('pilpres.index'));
-        }
+		if (empty($pilpres)) {
+			Flash::error('Pilpres not found');
 
-        return view('pilpres.show')->with('pilpres', $pilpres);
-    }
+			return redirect(route('pilpres.index'));
+		}
 
-    /**
-     * Show the form for editing the specified Pilpres.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+		return view('pilpres.show')->with('pilpres', $pilpres);
+	}
 
-        if (empty($pilpres)) {
-            Flash::error('Pilpres not found');
+	/**
+	 * Show the form for editing the specified Pilpres.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$pilpres = $this->pilpresRepository->findWithoutFail($id);
 
-            return redirect(route('pilpres.index'));
-        }
+		if (empty($pilpres)) {
+			Flash::error('Pilpres not found');
 
-        return view('pilpres.edit')->with('pilpres', $pilpres);
-    }
+			return redirect(route('pilpres.index'));
+		}
 
-    /**
-     * Update the specified Pilpres in storage.
-     *
-     * @param  int              $id
-     * @param UpdatePilpresRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdatePilpresRequest $request)
-    {
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+		return view('pilpres.edit')->with('pilpres', $pilpres);
+	}
 
-        if (empty($pilpres)) {
-            Flash::error('Pilpres not found');
+	/**
+	 * Update the specified Pilpres in storage.
+	 *
+	 * @param  int $id
+	 * @param UpdatePilpresRequest $request
+	 *
+	 * @return Response
+	 */
+	public function update($id, UpdatePilpresRequest $request)
+	{
+		$pilpres = $this->pilpresRepository->findWithoutFail($id);
 
-            return redirect(route('pilpres.index'));
-        }
+		if (empty($pilpres)) {
+			Flash::error('Pilpres not found');
 
-        $pilpres = $this->pilpresRepository->update($request->all(), $id);
+			return redirect(route('pilpres.index'));
+		}
 
-        Flash::success('Pilpres updated successfully.');
+		$pilpres = $this->pilpresRepository->update($request->all(), $id);
 
-        return redirect(route('pilpres.index'));
-    }
+		Flash::success('Pilpres updated successfully.');
 
-    /**
-     * Remove the specified Pilpres from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $pilpres = $this->pilpresRepository->findWithoutFail($id);
+		return redirect(route('pilpres.index'));
+	}
 
-        if (empty($pilpres)) {
-            Flash::error('Pilpres not found');
+	/**
+	 * Remove the specified Pilpres from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$pilpres = $this->pilpresRepository->findWithoutFail($id);
 
-            return redirect(route('pilpres.index'));
-        }
+		if (empty($pilpres)) {
+			Flash::error('Pilpres not found');
 
-        $this->pilpresRepository->delete($id);
+			return redirect(route('pilpres.index'));
+		}
 
-        Flash::success('Pilpres deleted successfully.');
+		$this->pilpresRepository->delete($id);
 
-        return redirect(route('pilpres.index'));
-    }
+		Flash::success('Pilpres deleted successfully.');
+
+		return redirect(route('pilpres.index'));
+	}
 }

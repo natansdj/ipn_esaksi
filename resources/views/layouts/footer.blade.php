@@ -11,4 +11,7 @@
 <script type="text/javascript" src="{{ asset('js/jquery.vmap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.vmap.indonesia.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/gijgo.min.js') }}"></script>
+
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>

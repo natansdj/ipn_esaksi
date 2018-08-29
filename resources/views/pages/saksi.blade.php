@@ -120,9 +120,6 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/gijgo.min.js') }}"></script>
-
     <script type="text/javascript">
       $('.toggle-sidebar').on('click', function () {
         $('.sidebar').toggleClass('small');

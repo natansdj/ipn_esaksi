@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
 
-    {{--<!-- Ionicons -->--}}
-    {{--<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">--}}
-
     <!-- Load Style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('css/jqvmap.min.css') }}" media="screen">

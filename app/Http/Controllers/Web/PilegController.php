@@ -13,139 +13,145 @@ use Response;
 
 class PilegController extends Controller
 {
-    /** @var  PilegRepository */
-    private $pilegRepository;
+	/** @var  PilegRepository */
+	private $pilegRepository;
 
-    public function __construct(PilegRepository $pilegRepo)
-    {
-        $this->pilegRepository = $pilegRepo;
-    }
+	public function __construct(PilegRepository $pilegRepo)
+	{
+		$this->pilegRepository = $pilegRepo;
+	}
 
-    /**
-     * Display a listing of the Pileg.
-     *
-     * @param PilegDataTable $pilegDataTable
-     * @return Response
-     */
-    public function index(PilegDataTable $pilegDataTable)
-    {
-        return $pilegDataTable->render('pilegs.index');
-    }
+	/**
+	 * Display a listing of the Pileg.
+	 *
+	 * @param PilegDataTable $pilegDataTable
+	 *
+	 * @return Response
+	 */
+	public function index(PilegDataTable $pilegDataTable)
+	{
+		return $pilegDataTable->render('pilegs.index');
+	}
 
-    /**
-     * Show the form for creating a new Pileg.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('pilegs.create');
-    }
+	public function list()
+	{
+		return view('pages.pilegs_list');
+	}
 
-    /**
-     * Store a newly created Pileg in storage.
-     *
-     * @param CreatePilegRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreatePilegRequest $request)
-    {
-        $input = $request->all();
+	/**
+	 * Show the form for creating a new Pileg.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return view('pilegs.create');
+	}
 
-        $pileg = $this->pilegRepository->create($input);
+	/**
+	 * Store a newly created Pileg in storage.
+	 *
+	 * @param CreatePilegRequest $request
+	 *
+	 * @return Response
+	 */
+	public function store(CreatePilegRequest $request)
+	{
+		$input = $request->all();
 
-        Flash::success('Pileg saved successfully.');
+		$pileg = $this->pilegRepository->create($input);
 
-        return redirect(route('pilegs.index'));
-    }
+		Flash::success('Pileg saved successfully.');
 
-    /**
-     * Display the specified Pileg.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $pileg = $this->pilegRepository->findWithoutFail($id);
+		return redirect(route('pilegs.index'));
+	}
 
-        if (empty($pileg)) {
-            Flash::error('Pileg not found');
+	/**
+	 * Display the specified Pileg.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$pileg = $this->pilegRepository->findWithoutFail($id);
 
-            return redirect(route('pilegs.index'));
-        }
+		if (empty($pileg)) {
+			Flash::error('Pileg not found');
 
-        return view('pilegs.show')->with('pileg', $pileg);
-    }
+			return redirect(route('pilegs.index'));
+		}
 
-    /**
-     * Show the form for editing the specified Pileg.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $pileg = $this->pilegRepository->findWithoutFail($id);
+		return view('pilegs.show')->with('pileg', $pileg);
+	}
 
-        if (empty($pileg)) {
-            Flash::error('Pileg not found');
+	/**
+	 * Show the form for editing the specified Pileg.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$pileg = $this->pilegRepository->findWithoutFail($id);
 
-            return redirect(route('pilegs.index'));
-        }
+		if (empty($pileg)) {
+			Flash::error('Pileg not found');
 
-        return view('pilegs.edit')->with('pileg', $pileg);
-    }
+			return redirect(route('pilegs.index'));
+		}
 
-    /**
-     * Update the specified Pileg in storage.
-     *
-     * @param  int              $id
-     * @param UpdatePilegRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdatePilegRequest $request)
-    {
-        $pileg = $this->pilegRepository->findWithoutFail($id);
+		return view('pilegs.edit')->with('pileg', $pileg);
+	}
 
-        if (empty($pileg)) {
-            Flash::error('Pileg not found');
+	/**
+	 * Update the specified Pileg in storage.
+	 *
+	 * @param  int $id
+	 * @param UpdatePilegRequest $request
+	 *
+	 * @return Response
+	 */
+	public function update($id, UpdatePilegRequest $request)
+	{
+		$pileg = $this->pilegRepository->findWithoutFail($id);
 
-            return redirect(route('pilegs.index'));
-        }
+		if (empty($pileg)) {
+			Flash::error('Pileg not found');
 
-        $pileg = $this->pilegRepository->update($request->all(), $id);
+			return redirect(route('pilegs.index'));
+		}
 
-        Flash::success('Pileg updated successfully.');
+		$pileg = $this->pilegRepository->update($request->all(), $id);
 
-        return redirect(route('pilegs.index'));
-    }
+		Flash::success('Pileg updated successfully.');
 
-    /**
-     * Remove the specified Pileg from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $pileg = $this->pilegRepository->findWithoutFail($id);
+		return redirect(route('pilegs.index'));
+	}
 
-        if (empty($pileg)) {
-            Flash::error('Pileg not found');
+	/**
+	 * Remove the specified Pileg from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$pileg = $this->pilegRepository->findWithoutFail($id);
 
-            return redirect(route('pilegs.index'));
-        }
+		if (empty($pileg)) {
+			Flash::error('Pileg not found');
 
-        $this->pilegRepository->delete($id);
+			return redirect(route('pilegs.index'));
+		}
 
-        Flash::success('Pileg deleted successfully.');
+		$this->pilegRepository->delete($id);
 
-        return redirect(route('pilegs.index'));
-    }
+		Flash::success('Pileg deleted successfully.');
+
+		return redirect(route('pilegs.index'));
+	}
 }

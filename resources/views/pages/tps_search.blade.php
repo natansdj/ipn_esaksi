@@ -2,141 +2,101 @@
 
 @section('content')
     <div class="page-title">
-        <h3>Saksi</h3>
+        <h3>TPS</h3>
+        <p>Tempat pemungutan suara</p>
     </div>
 
-    <div class="content-wrap">
+    <div class="filter-wrap">
         <form>
-            <div class="row">
-                <div class="col-md-12">
-                    <h5 class="section-title">Biodata</h5>
-                </div>
-                <div class="col-md-6">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-3">
                     <div class="form-group">
-                        <label class="control-label">Name Lengkap</label>
-                        <input type="text" class="form-control" placeholder="Gugi Gunawan" name="">
+                        <label class="control-label"> Masukan Kode wilayah / Kodepos </label>
+                        <input type="number" name="" value="44151" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label class="control-label">Alamat Email</label>
-                        <input type="email" class="form-control" placeholder="gugi.g@yahoo.com" name="">
+                        <label class="control-label"> Kecamatan </label>
+                        <p>Tarogong Kidul</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label class="control-label">Jenis Kelamin</label> <select class="form-control">
-                            <option>Laki-laki</option>
-                            <option>Perempuan</option>
-                        </select>
+                        <label class="control-label"> Kota/Kabupaten </label>
+                        <p>Garut Kota</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-1">
                     <div class="form-group">
-                        <label class="control-label">Tanggal Lahir</label>
-                        <input class="datetimepicker" placeholder="30 Agustus 1984" />
+                        <label class="control-label"> ID TPS </label>
+                        <p>44151</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label class="control-label">Tempat Lahir</label> <select class="form-control">
-                            <option>Bandung</option>
-                            <option>Jakarta</option>
-                        </select>
+                        <label class="control-label"> Penduduk </label>
+                        <p>260.000</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <div class="form-group">
-                        <label class="control-label">Pekerjaan</label> <select class="form-control">
-                            <option>PNS</option>
-                            <option>Karyawan</option>
-                        </select>
+                        <label class="control-label"> Suara Masuk </label>
+                        <p>260.000</p>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Status</label> <select class="form-control">
-                            <option>Sudah Kawin</option>
-                            <option>Belum Kawin</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Wilayah Anggota</label>
-                        <input type="text" class="form-control" placeholder="" name="">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <h5 class="section-title mt-4">Tempat Tinggal</h5>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label class="control-label">Alamat Lengkap</label>
-                        <textarea class="form-control" placeholder="Jalan RE Martadinata No. 35 Bandung"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Provinsi</label> <select class="form-control">
-                            <option>Jawa Barat</option>
-                            <option>Jawa Timur</option>
-                            <option>Jawa Tengah</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Kota/Kabupaten</label> <select class="form-control">
-                            <option>Bandung</option>
-                            <option>Cimahi</option>
-                            <option>Garut</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Kecamatan</label> <select class="form-control">
-                            <option>Sukajadi</option>
-                            <option>Sukasari</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Kelurahan</label> <select class="form-control">
-                            <option>Cipedes</option>
-                            <option>Antapani</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-5">
-                    <button class="btn btn-primary mr-3 w200">Submit</button>
-                    <button class="btn btn-default w200">Cancel</button>
                 </div>
             </div>
         </form>
     </div>
+
+    <div class="vmap-wrap">
+        <div id="vmap"></div>
+        <div class="overlay-map">
+            <div class="overlay-head">
+                <span class="region-name">Jawa Barat</span> <span class="capt">Jml Voter</span>
+                <span class="date">27 Juni 2018</span> <span class="voter">980K</span>
+            </div>
+            <div class="overlay-body">
+                <ol>
+                    <li class="active">
+                        <span class="pull-left">Ridwan - UU</span> <i class="fa fa-check pull-left"></i>
+                        <span class="nvoter pull-right">40%</span>
+                    </li>
+                    <li>
+                        <span class="pull-left">Tubagus - Anton</span> <span class="nvoter pull-right">10%</span>
+                    </li>
+                    <li>
+                        <span class="pull-left">Sudrajat - Ahmad</span> <span class="nvoter pull-right">25%</span>
+                    </li>
+                    <li>
+                        <span class="pull-left">Deddy - Dedi</span> <span class="nvoter pull-right">25%</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/gijgo.min.js') }}"></script>
-
     <script type="text/javascript">
-      $('.toggle-sidebar').on('click', function () {
-        $('.sidebar').toggleClass('small');
-        $('.content').toggleClass('big');
-        $('.content-head').toggleClass('big');
-        var $map = $('#vmap');
-        $map.width("100%");
+      $('#vmap').vectorMap({
+        map: 'indonesia_id',
+        backgroundColor: '#fff',
+        borderColor: '#fff',
+        borderOpacity: 0.25,
+        borderWidth: 1,
+        color: '#8a8a8a',
+        enableZoom: false,
+        hoverColor: '#00a4ee',
+        hoverOpacity: null,
+        normalizeFunction: 'linear',
+        scaleColors: ['#b6d6ff', '#005ace'],
+        selectedColor: '#00a4ee',
+        selectedRegions: null,
+        showTooltip: true,
+        onRegionClick: function (element, code, region) {
+          $('.region-name').text(region);
+        }
       });
-
-      $(document).ready(function () {
-        $('.datetimepicker').datepicker({
-          uiLibrary: 'bootstrap4',
-          format: 'dd mmmm yyyy'
-        });
-      })
     </script>
 @endsection
