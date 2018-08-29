@@ -9,7 +9,7 @@ use Response;
  * @SWG\Swagger(
  *   basePath="/api",
  *   @SWG\Info(
- *     title="Laravel Generator APIs",
+ *     title="eSaksi APIs Documentation",
  *     version="1.0.0",
  *   )
  * )
