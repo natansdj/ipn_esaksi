@@ -75,51 +75,51 @@
 <!-- Provinces Field -->
 <div class="form-group col-md-6">
     {!! Form::label('province_id', 'Provinsi') !!}
-    {!! Form::select('province_id', $provinces, null, ['class' => 'form-control', 'placeholder' => 'Pilih Provinsi']) !!}
+    {!! Form::select('province_id', $provinces, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Provinsi', 'type' => 'regencies']) !!}
 </div>
 
 <!-- Regencies Field -->
 <div class="form-group col-md-6">
     {!! Form::label('regency_id', 'Kota/Kabupaten') !!}
-    {!! Form::select('regency_id', $regencies, null, ['class' => 'form-control', 'placeholder' => 'Pilih Kota/Kabupaten']) !!}
+    {!! Form::select('regency_id', $regencies, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kota/Kabupaten', 'type' => 'districts']) !!}
 </div>
 
 <!-- District Field -->
 <div class="form-group col-md-6">
     {!! Form::label('district_id', 'Kecamatan') !!}
-    {!! Form::select('district_id', $districts, null, ['class' => 'form-control', 'placeholder' => 'Pilih Kecamatan']) !!}
+    {!! Form::select('district_id', $districts, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kecamatan', 'type' => 'villages']) !!}
 </div>
 
 <!-- Villages Field -->
 <div class="form-group col-md-6">
     {!! Form::label('village_id', 'Kelurahan') !!}
-    {!! Form::select('village_id', $villages, null, ['class' => 'form-control', 'placeholder' => 'Pilih Kelurahan']) !!}
+    {!! Form::select('village_id', $villages, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kelurahan']) !!}
 </div>
 
 <div class="col-md-12">
     <h5 class="section-title mt-4"></h5>
 </div>
 
-@if(isset($attr_can_change_password))
-<div class="col-md-12">
-    <div class="row">
-        <!-- Password Field -->
-        <div class="form-group col-md-6">
-            {!! Form::label('password', 'Password') !!}
-            {!! Form::password('password',['class'=>'form-control']) !!}
-        </div>
+@if(!isset($page_saksi))
+    <div class="col-md-12">
+        <div class="row">
+            <!-- Password Field -->
+            <div class="form-group col-md-6">
+                {!! Form::label('password', 'Password') !!}
+                {!! Form::password('password',['class'=>'form-control']) !!}
+            </div>
 
-        <!-- Konfirmasi Password Field -->
-        <div class="form-group col-md-6">
-            {!! Form::label('password_confirmation', 'Konfirmasi Password') !!}
-            {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
+            <!-- Konfirmasi Password Field -->
+            <div class="form-group col-md-6">
+                {!! Form::label('password_confirmation', 'Konfirmasi Password') !!}
+                {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
+            </div>
         </div>
     </div>
-</div>
 @endif
 
 <!-- Is Active Field -->
-@if(isset($attr_can_change_status))
+@if(!isset($page_saksi))
     <div class="col-md-6">
         <div class="row">
             <div class="form-group col-md-6">
@@ -142,6 +142,37 @@
 <div class="col-md-12 mb-5">
     <div class="form-group">
         {!! Form::submit('Submit', ['class' => 'btn btn-primary mr-3 w200']) !!}
-        <a href="{!! route('users.index') !!}" class="btn btn-default w200">Cancel</a>
+        @php
+            $url_cancel = (isset($page_saksi) && $page_saksi)? route('dashboard') : route('users.index');
+        @endphp
+        <a href="{!! $url_cancel !!}" class="btn btn-default w200">Cancel</a>
     </div>
 </div>
+
+@section('scripts')
+    <script type="text/javascript">
+      $(function () {
+        $('.select-ajax').on('change', function (e) {
+          e.preventDefault();
+          var elem = $(this),
+            type = elem.attr('type'),
+            parent_id = elem.val(),
+            next_elem = elem.parent('.form-group').next('.form-group').find('select.select-ajax');
+
+          next_elem.children('option:not(:first)').remove();
+          next_elem.val('').trigger('change');
+
+          if (typeof type !== 'undefined' && type !== '' && parent_id !== '') {
+            $.get('/ajax_data/get_' + type, {id: parent_id}, function (data) {
+              if (!data.error) {
+                $.each(data.data, function (idx, value) {
+                  next_elem.append('<option value="' + idx + '">' + value + '</option>');
+                });
+              }
+            });
+          }
+
+        });
+      });
+    </script>
+@endsection

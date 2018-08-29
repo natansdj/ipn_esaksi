@@ -143,7 +143,7 @@ class User extends Authenticatable implements JWTSubject
 		'email'    => 'required:email',
 		'password' => 'sometimes|required|different:current_password|confirmed',
 		'dob'      => 'date',
-		'phone'    => 'string:numeric',
+		'phone'    => 'numeric',
 	];
 	public $table = 'users';
 	public $fillable = [
@@ -158,6 +158,10 @@ class User extends Authenticatable implements JWTSubject
 		'phone',
 		'occupation',
 		'address',
+		'province_id',
+		'regency_id',
+		'district_id',
+		'village_id',
 		'tps_id',
 		'is_active',
 		'is_admin'

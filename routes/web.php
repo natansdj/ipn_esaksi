@@ -21,6 +21,15 @@ Route::group([
 	Route::get('/pilpres_list', 'PilpresController@list')->name('pilpres.list');
 });
 
+#ajax request
+Route::group([
+	'prefix'     => 'ajax_data',
+	'middleware' => ['ajax_only']
+], function () {
+	#filter table
+	Route::get('{type}/', 'AjaxController@ajax_method');
+});
+
 Route::resource('pilpres', 'PilpresController');
 
 Route::resource('pilegs', 'PilegController');

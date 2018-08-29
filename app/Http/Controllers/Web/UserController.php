@@ -7,6 +7,10 @@ use App\DataTables\UserDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\District;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\Village;
 use App\Repositories\UserRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
@@ -99,7 +103,12 @@ class UserController extends Controller
 			return redirect(route('users.index'));
 		}
 
-		return view('users.edit')->with('user', $user);
+		$provinces = Province::get()->pluck('name', 'id');
+		$regencies = ( $user->province_id ) ? Regency::where('province_id', $user->province_id)->get()->pluck('name', 'id') : [];
+		$districts = ( $user->regency_id ) ? District::where('regency_id', $user->regency_id)->get()->pluck('name', 'id') : [];
+		$villages  = ( $user->district_id ) ? Village::where('district_id', $user->district_id)->get()->pluck('name', 'id') : [];
+
+		return view('users.edit', compact('provinces', 'regencies', 'districts', 'villages'))->with('user', $user);
 	}
 
 	/**

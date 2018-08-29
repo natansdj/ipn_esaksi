@@ -50,10 +50,10 @@ class SaksiController extends Controller
 		}
 
 		$provinces = Province::get()->pluck('name', 'id');
-		$regencies = Regency::get()->pluck('name', 'id');
-		$districts = [];
-		$villages  = [];
+		$regencies = ( $user->province_id ) ? Regency::where('province_id', $user->province_id)->get()->pluck('name', 'id') : [];
+		$districts = ( $user->regency_id ) ? District::where('regency_id', $user->regency_id)->get()->pluck('name', 'id') : [];
+		$villages  = ( $user->district_id ) ? Village::where('district_id', $user->district_id)->get()->pluck('name', 'id') : [];
 
-		return view('pages.saksi', compact('provinces', 'regencies', 'districts', 'villages'))->with('user', $user);
+		return view('pages.saksi', compact('provinces', 'regencies', 'districts', 'villages'))->with('user', $user)->with('page_saksi', true);
 	}
 }

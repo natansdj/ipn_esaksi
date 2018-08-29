@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
 		'jwt.verify'   => \App\Http\Middleware\JwtMiddleware::class,
 		'global.admin' => \App\Http\Middleware\GlobalAdminMiddleware::class,
 		'sweetalert'   => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+		'ajax_only'   => \App\Http\Middleware\OnlyAjaxRequests::class,
 	];
 }
