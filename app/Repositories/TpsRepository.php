@@ -8,27 +8,27 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class TpsRepository
  * @package App\Repositories
- * @version August 29, 2018, 3:16 am UTC
+ * @version August 29, 2018, 6:41 am UTC
  *
- * @method Tps findWithoutFail( $id, $columns = ['*'] )
- * @method Tps find( $id, $columns = ['*'] )
- * @method Tps first( $columns = ['*'] )
- */
+ * @method Tps findWithoutFail($id, $columns = ['*'])
+ * @method Tps find($id, $columns = ['*'])
+ * @method Tps first($columns = ['*'])
+*/
 class TpsRepository extends BaseRepository
 {
-	/**
-	 * @var array
-	 */
-	protected $fieldSearchable = [
-		'name',
-		'address'
-	];
+    /**
+     * @var array
+     */
+    protected $fieldSearchable = [
+        'name',
+        'address'
+    ];
 
-	/**
-	 * Configure the Model
-	 **/
-	public function model()
-	{
-		return Tps::class;
-	}
+    /**
+     * Configure the Model
+     **/
+    public function model()
+    {
+        return Tps::class;
+    }
 }

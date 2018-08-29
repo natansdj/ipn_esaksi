@@ -1,7 +1,10 @@
 {!! Form::open(['route' => ['tps.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('tps.show', $id) }}" class='btn btn-default btn-xs'> <i class="glyphicon glyphicon-eye-open"></i>
-    </a> <a href="{{ route('tps.edit', $id) }}" class='btn btn-default btn-xs'> <i class="glyphicon glyphicon-edit"></i>
+    <a href="{{ route('tps.show', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-eye-open"></i>
+    </a>
+    <a href="{{ route('tps.edit', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-edit"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',
