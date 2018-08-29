@@ -89,22 +89,12 @@
 </div>
 
 <!-- Is Admin Field -->
+@if($user->is_admin)
 <div class="form-group">
     {!! Form::label('is_admin', 'Is Admin:') !!}
     <p>{!! $user->is_admin !!}</p>
 </div>
-
-<!-- Remember Token Field -->
-<div class="form-group">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    <p>{!! $user->remember_token !!}</p>
-</div>
-
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $user->deleted_at !!}</p>
-</div>
+@endif
 
 <!-- Created At Field -->
 <div class="form-group">
