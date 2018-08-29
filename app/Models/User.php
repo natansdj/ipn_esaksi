@@ -140,8 +140,10 @@ class User extends Authenticatable implements JWTSubject
 	 * @var array
 	 */
 	public static $rules = [
-		'email'    => 'required,email',
-		'password' => 'required'
+		'email'    => 'required:email',
+		'password' => 'sometimes|required|different:current_password|confirmed',
+		'dob'      => 'date',
+		'phone'    => 'string:numeric',
 	];
 	public $table = 'users';
 	public $fillable = [
@@ -160,7 +162,7 @@ class User extends Authenticatable implements JWTSubject
 		'is_active',
 		'is_admin'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['dob', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -173,7 +175,7 @@ class User extends Authenticatable implements JWTSubject
 		'type'           => 'string',
 		'nik'            => 'string',
 		'gender'         => 'string',
-		'dob'            => 'date',
+		'dob'            => 'date:Y-m-d',
 		'pob'            => 'string',
 		'status'         => 'integer',
 		'phone'          => 'string',

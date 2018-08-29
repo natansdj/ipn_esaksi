@@ -15,3 +15,6 @@
 <script type="text/javascript" src="{{ asset('js/gijgo.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+
+<!-- Include this after the sweet alert js file -->
+@include('vendor.sweet.alert')

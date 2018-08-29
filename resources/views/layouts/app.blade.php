@@ -19,7 +19,7 @@
                     <i class="fa fa-angle-down"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item hidden" href="#">Profile</a>
+                    <a class="dropdown-item" hidden href="#">Profile</a>
                     <a class="dropdown-item" href="{!! url('/logout') !!}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
                 </div>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

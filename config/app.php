@@ -194,6 +194,8 @@ return [
 		Yajra\DataTables\DataTablesServiceProvider::class,
 		Yajra\Datatables\HtmlServiceProvider::class,
 		Appointer\Swaggervel\SwaggervelServiceProvider::class,
+
+		UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 	],
 
 	/*
@@ -249,6 +251,8 @@ return [
 		'Flash'      => Laracasts\Flash\Flash::class,
 		'JWTAuth'    => Tymon\JWTAuth\Facades\JWTAuth::class,
 		'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+
+		'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 	],
 
 ];
