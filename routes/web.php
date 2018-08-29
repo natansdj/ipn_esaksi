@@ -24,3 +24,6 @@ Route::resource('pilegs', 'PilegController');
 Route::resource('users', 'UserController');
 
 Route::resource('tps', 'TpsController');
+
+
+Route::resource('votes', 'VoteController');

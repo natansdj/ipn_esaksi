@@ -37,4 +37,6 @@ Route::group([
 	Route::resource('users', 'UserAPIController');
 
 	Route::resource('tps', 'TpsAPIController');
+
+	Route::resource('votes', 'VoteAPIController');
 });
