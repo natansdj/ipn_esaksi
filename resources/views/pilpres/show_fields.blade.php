@@ -64,6 +64,12 @@
     <p>{!! $pilpres->note !!}</p>
 </div>
 
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $pilpres->deleted_at !!}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

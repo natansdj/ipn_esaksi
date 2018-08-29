@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class PilpresRepository
  * @package App\Repositories
- * @version August 23, 2018, 5:25 am UTC
+ * @version August 29, 2018, 6:45 am UTC
  *
  * @method Pilpres findWithoutFail($id, $columns = ['*'])
  * @method Pilpres find($id, $columns = ['*'])
