@@ -13,7 +13,7 @@ class PilpresApiTest extends TestCase
     public function testCreatePilpres()
     {
         $pilpres = $this->fakePilpresData();
-        $this->json('POST', '/api/v1/pilpres', $pilpres);
+        $this->json('POST', '/api/pilpres', $pilpres);
 
         $this->assertApiResponse($pilpres);
     }
@@ -24,7 +24,7 @@ class PilpresApiTest extends TestCase
     public function testReadPilpres()
     {
         $pilpres = $this->makePilpres();
-        $this->json('GET', '/api/v1/pilpres/'.$pilpres->id);
+        $this->json('GET', '/api/pilpres/'.$pilpres->id);
 
         $this->assertApiResponse($pilpres->toArray());
     }
@@ -37,7 +37,7 @@ class PilpresApiTest extends TestCase
         $pilpres = $this->makePilpres();
         $editedPilpres = $this->fakePilpresData();
 
-        $this->json('PUT', '/api/v1/pilpres/'.$pilpres->id, $editedPilpres);
+        $this->json('PUT', '/api/pilpres/'.$pilpres->id, $editedPilpres);
 
         $this->assertApiResponse($editedPilpres);
     }
@@ -48,10 +48,10 @@ class PilpresApiTest extends TestCase
     public function testDeletePilpres()
     {
         $pilpres = $this->makePilpres();
-        $this->json('DELETE', '/api/v1/pilpres/'.$pilpres->id);
+        $this->json('DELETE', '/api/pilpres/'.$pilpres->id);
 
         $this->assertApiSuccess();
-        $this->json('GET', '/api/v1/pilpres/'.$pilpres->id);
+        $this->json('GET', '/api/pilpres/'.$pilpres->id);
 
         $this->assertResponseStatus(404);
     }

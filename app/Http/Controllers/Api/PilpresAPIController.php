@@ -37,6 +37,14 @@ class PilpresAPIController extends AppBaseController
      *      tags={"Pilpres"},
      *      description="Get all Pilpres",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
+     *      @SWG\Parameter(ref="#/parameters/RepoSearch"),
+     *      @SWG\Parameter(ref="#/parameters/RepoSearchFields"),
+     *      @SWG\Parameter(ref="#/parameters/RepoFilter"),
+     *      @SWG\Parameter(ref="#/parameters/RepoOrderBy"),
+     *      @SWG\Parameter(ref="#/parameters/RepoSortedBy"),
+     *      @SWG\Parameter(ref="#/parameters/RepoLimit"),
+     *      @SWG\Parameter(ref="#/parameters/RepoOffset"),
      *      @SWG\Response(
      *          response=200,
      *          description="successful operation",
@@ -78,6 +86,7 @@ class PilpresAPIController extends AppBaseController
      *      tags={"Pilpres"},
      *      description="Store Pilpres",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
@@ -125,6 +134,7 @@ class PilpresAPIController extends AppBaseController
      *      tags={"Pilpres"},
      *      description="Get Pilpres",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Pilpres",
@@ -176,6 +186,7 @@ class PilpresAPIController extends AppBaseController
      *      tags={"Pilpres"},
      *      description="Update Pilpres",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Pilpres",
@@ -237,6 +248,7 @@ class PilpresAPIController extends AppBaseController
      *      tags={"Pilpres"},
      *      description="Delete Pilpres",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Pilpres",

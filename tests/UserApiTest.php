@@ -13,7 +13,7 @@ class UserApiTest extends TestCase
     public function testCreateUser()
     {
         $user = $this->fakeUserData();
-        $this->json('POST', '/api/v1/users', $user);
+        $this->json('POST', '/api/users', $user);
 
         $this->assertApiResponse($user);
     }
@@ -24,7 +24,7 @@ class UserApiTest extends TestCase
     public function testReadUser()
     {
         $user = $this->makeUser();
-        $this->json('GET', '/api/v1/users/'.$user->id);
+        $this->json('GET', '/api/users/'.$user->id);
 
         $this->assertApiResponse($user->toArray());
     }
@@ -37,7 +37,7 @@ class UserApiTest extends TestCase
         $user = $this->makeUser();
         $editedUser = $this->fakeUserData();
 
-        $this->json('PUT', '/api/v1/users/'.$user->id, $editedUser);
+        $this->json('PUT', '/api/users/'.$user->id, $editedUser);
 
         $this->assertApiResponse($editedUser);
     }
@@ -48,10 +48,10 @@ class UserApiTest extends TestCase
     public function testDeleteUser()
     {
         $user = $this->makeUser();
-        $this->json('DELETE', '/api/v1/users/'.$user->id);
+        $this->json('DELETE', '/api/users/'.$user->id);
 
         $this->assertApiSuccess();
-        $this->json('GET', '/api/v1/users/'.$user->id);
+        $this->json('GET', '/api/users/'.$user->id);
 
         $this->assertResponseStatus(404);
     }

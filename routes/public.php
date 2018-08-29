@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/welcome', function () {
-	return view('welcome');
-})->name('welcome');
-
 /**
  * Disable several Auth routes
  */

@@ -32,7 +32,7 @@ class GlobalAdminMiddleware
 				if ($request->ajax() || $request->wantsJson()) {
 					return response('Unauthorized', 401);
 				} else {
-					return redirect()->route('welcome');
+					return redirect()->route('dashboard');
 				}
 			}
 		}

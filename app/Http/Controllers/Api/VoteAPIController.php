@@ -37,6 +37,14 @@ class VoteAPIController extends AppBaseController
      *      tags={"Vote"},
      *      description="Get all Votes",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
+     *      @SWG\Parameter(ref="#/parameters/RepoSearch"),
+     *      @SWG\Parameter(ref="#/parameters/RepoSearchFields"),
+     *      @SWG\Parameter(ref="#/parameters/RepoFilter"),
+     *      @SWG\Parameter(ref="#/parameters/RepoOrderBy"),
+     *      @SWG\Parameter(ref="#/parameters/RepoSortedBy"),
+     *      @SWG\Parameter(ref="#/parameters/RepoLimit"),
+     *      @SWG\Parameter(ref="#/parameters/RepoOffset"),
      *      @SWG\Response(
      *          response=200,
      *          description="successful operation",
@@ -78,6 +86,7 @@ class VoteAPIController extends AppBaseController
      *      tags={"Vote"},
      *      description="Store Vote",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
@@ -125,6 +134,7 @@ class VoteAPIController extends AppBaseController
      *      tags={"Vote"},
      *      description="Get Vote",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Vote",
@@ -176,6 +186,7 @@ class VoteAPIController extends AppBaseController
      *      tags={"Vote"},
      *      description="Update Vote",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Vote",
@@ -237,6 +248,7 @@ class VoteAPIController extends AppBaseController
      *      tags={"Vote"},
      *      description="Delete Vote",
      *      produces={"application/json"},
+     *      security = {{"JWTBearer":{}}},
      *      @SWG\Parameter(
      *          name="id",
      *          description="id of Vote",

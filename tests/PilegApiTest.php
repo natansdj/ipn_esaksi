@@ -13,7 +13,7 @@ class PilegApiTest extends TestCase
     public function testCreatePileg()
     {
         $pileg = $this->fakePilegData();
-        $this->json('POST', '/api/v1/pilegs', $pileg);
+        $this->json('POST', '/api/pilegs', $pileg);
 
         $this->assertApiResponse($pileg);
     }
@@ -24,7 +24,7 @@ class PilegApiTest extends TestCase
     public function testReadPileg()
     {
         $pileg = $this->makePileg();
-        $this->json('GET', '/api/v1/pilegs/'.$pileg->id);
+        $this->json('GET', '/api/pilegs/'.$pileg->id);
 
         $this->assertApiResponse($pileg->toArray());
     }
@@ -37,7 +37,7 @@ class PilegApiTest extends TestCase
         $pileg = $this->makePileg();
         $editedPileg = $this->fakePilegData();
 
-        $this->json('PUT', '/api/v1/pilegs/'.$pileg->id, $editedPileg);
+        $this->json('PUT', '/api/pilegs/'.$pileg->id, $editedPileg);
 
         $this->assertApiResponse($editedPileg);
     }
@@ -48,10 +48,10 @@ class PilegApiTest extends TestCase
     public function testDeletePileg()
     {
         $pileg = $this->makePileg();
-        $this->json('DELETE', '/api/v1/pilegs/'.$pileg->id);
+        $this->json('DELETE', '/api/pilegs/'.$pileg->id);
 
         $this->assertApiSuccess();
-        $this->json('GET', '/api/v1/pilegs/'.$pileg->id);
+        $this->json('GET', '/api/pilegs/'.$pileg->id);
 
         $this->assertResponseStatus(404);
     }
