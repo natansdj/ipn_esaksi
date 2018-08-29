@@ -6,7 +6,7 @@
             <div class="clearfix"></div>
             <h3 class="pull-left">Users</h3>
             <h3 class="pull-right">
-                <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('users.create') !!}">Add New</a>
+                <a class="btn btn-primary pull-right" href="{!! route('users.create') !!}">Add New</a>
             </h3>
         </div>
     </div>

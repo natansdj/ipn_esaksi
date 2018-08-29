@@ -10,9 +10,6 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{--<!-- Bootstrap 3.3.7 -->--}}
-    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
-
     <!-- iCheck -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
