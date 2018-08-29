@@ -35,4 +35,6 @@ Route::group([
 	Route::resource('pilegs', 'PilegAPIController');
 
 	Route::resource('users', 'UserAPIController');
+
+	Route::resource('tps', 'TpsAPIController');
 });

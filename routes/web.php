@@ -20,3 +20,5 @@ Route::resource('pilpres', 'PilpresController');
 Route::resource('pilegs', 'PilegController');
 
 Route::resource('users', 'UserController');
+
+Route::resource('tps', 'TpsController');

@@ -26,6 +26,7 @@ class CreateTpsTable extends Migration
 			$table->timestamps();
 
 			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('SET NULL');
+			$table->foreign('kodepos_id')->references('id')->on('kodepos')->onUpdate('CASCADE')->onDelete('SET NULL');
 		});
 	}
 
