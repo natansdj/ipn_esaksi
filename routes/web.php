@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
+Route::get('/saksi', 'SaksiController@index')->name('saksi.edit');
+Route::get('/tps_search', 'SaksiController@index')->name('tps.search');
 
 Route::resource('pilpres', 'PilpresController');
 

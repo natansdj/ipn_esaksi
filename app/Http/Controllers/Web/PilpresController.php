@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class PilpresController extends AppBaseController
+class PilpresController extends Controller
 {
     /** @var  PilpresRepository */
     private $pilpresRepository;

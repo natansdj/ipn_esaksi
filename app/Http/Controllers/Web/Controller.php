@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller as BaseController;
 
-class Controller extends BaseController
+class Controller extends AppBaseController
 {
 	//
 }

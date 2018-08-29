@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class PilegController extends AppBaseController
+class PilegController extends Controller
 {
     /** @var  PilegRepository */
     private $pilegRepository;

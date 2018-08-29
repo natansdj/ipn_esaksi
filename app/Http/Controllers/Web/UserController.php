@@ -11,7 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-class UserController extends AppBaseController
+class UserController extends Controller
 {
     /** @var  UserRepository */
     private $userRepository;

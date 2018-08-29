@@ -11,4 +11,4 @@
 <script type="text/javascript" src="{{ asset('js/jquery.vmap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.vmap.indonesia.js') }}"></script>
 
-<sccontentript type="text/javascript" src="{{ asset('js/custom.js') }}"></sccontentript>
+<script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
