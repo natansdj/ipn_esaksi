@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Criteria\PilpresRequestCriteria;
 use App\DataTables\PilpresDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreatePilpresRequest;
@@ -9,6 +10,7 @@ use App\Http\Requests\UpdatePilpresRequest;
 use App\Repositories\PilpresRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
 use Response;
 
 class PilpresController extends Controller
@@ -33,9 +35,12 @@ class PilpresController extends Controller
 		return $pilpresDataTable->render('pilpres.index');
 	}
 
-	public function list()
+	public function list(Request $request)
 	{
-		return view('pages.pilpres_list');
+		$this->pilpresRepository->pushCriteria(new PilpresRequestCriteria($request));
+		$collection = $this->pilpresRepository->all();
+
+		return view('pages.pilpres_list', compact('collection'));
 	}
 
 	/**

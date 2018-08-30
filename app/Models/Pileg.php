@@ -97,6 +97,16 @@ class Pileg extends Model
 		return $this->belongsTo(\App\Models\Province::class);
 	}
 
+	public function getCapresPartaiAttribute($value)
+	{
+		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
+	}
+
+	public function getCawapresPartaiAttribute($value)
+	{
+		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
+	}
+
 	public function getTypeAttribute($value)
 	{
 		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);

@@ -12,7 +12,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     {!! Form::label('name', 'Cari nama Calon/Wakil Calon', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Cari nama calon/wakil calon']) !!}
+                    {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Cari nama calon/wakil calon', 'autofocus']) !!}
                 </div>
             </div>
             <div class="col-md-3">
