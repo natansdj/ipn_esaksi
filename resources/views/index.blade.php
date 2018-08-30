@@ -178,13 +178,5 @@
           $('.region-name').text(region);
         }
       });
-
-      $('.toggle-sidebar').on('click', function () {
-        $('.sidebar').toggleClass('small');
-        $('.content').toggleClass('big');
-        $('.content-head').toggleClass('big');
-        var $map = $('#vmap');
-        $map.width("100%");
-      })
     </script>
 @endsection

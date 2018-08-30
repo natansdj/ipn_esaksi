@@ -81,19 +81,19 @@
 <!-- Regencies Field -->
 <div class="form-group col-md-6">
     {!! Form::label('regency_id', 'Kota/Kabupaten') !!}
-    {!! Form::select('regency_id', $regencies, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kota/Kabupaten', 'type' => 'districts']) !!}
+    {!! Form::select('regency_id', (isset($regencies))? $regencies : [], null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kota/Kabupaten', 'type' => 'districts']) !!}
 </div>
 
 <!-- District Field -->
 <div class="form-group col-md-6">
     {!! Form::label('district_id', 'Kecamatan') !!}
-    {!! Form::select('district_id', $districts, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kecamatan', 'type' => 'villages']) !!}
+    {!! Form::select('district_id', (isset($districts))? $districts : [], null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kecamatan', 'type' => 'villages']) !!}
 </div>
 
 <!-- Villages Field -->
 <div class="form-group col-md-6">
     {!! Form::label('village_id', 'Kelurahan') !!}
-    {!! Form::select('village_id', $villages, null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kelurahan']) !!}
+    {!! Form::select('village_id', (isset($villages))? $villages : [], null, ['class' => 'form-control select-ajax', 'placeholder' => 'Pilih Kelurahan']) !!}
 </div>
 
 <div class="col-md-12">

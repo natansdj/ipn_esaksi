@@ -45,7 +45,9 @@ class UserController extends Controller
 	 */
 	public function create()
 	{
-		return view('users.create');
+		$provinces = Province::get()->pluck('name', 'id');
+
+		return view('users.create', compact('provinces'));
 	}
 
 	/**
