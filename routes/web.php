@@ -15,10 +15,11 @@ Route::group([
 	'middleware' => ['web']
 ], function () {
 	Route::get('/', 'DashboardController@index')->name('dashboard');
-	Route::get('/saksi', 'SaksiController@index')->name('saksi.edit');
-	Route::get('/tps_search', 'TpsController@search')->name('tps.search');
-	Route::get('/pilegs_list', 'PilegController@list')->name('pilegs.list');
-	Route::get('/pilpres_list', 'PilpresController@list')->name('pilpres.list');
+	Route::get('/saksi_edit', 'SaksiController@index')->name('saksi.edit');
+	Route::get('/daftar_tps', 'TpsController@search')->name('tps.search');
+	Route::get('/daftar_pileg', 'PilegController@list')->name('pilegs.list');
+//	Route::get('/search_pileg', 'PilegController@search')->name('pilegs.search');
+	Route::get('/daftar_pilpres', 'PilpresController@list')->name('pilpres.list');
 });
 
 #ajax request

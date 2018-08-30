@@ -2,9 +2,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ config('app.name', 'eSaksi') }}</title>
-    {{--<link rel="shortcut icon" href="{{ asset('images/favico.png') }}" type="image/x-icon" />--}}
 
-    <!-- Tell the browser to be responsive to screen width -->
+{{--<link rel="shortcut icon" href="{{ asset('images/favico.png') }}" type="image/x-icon" />--}}
+
+<!-- Tell the browser to be responsive to screen width -->
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">

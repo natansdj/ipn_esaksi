@@ -96,4 +96,9 @@ class Pileg extends Model
 	{
 		return $this->belongsTo(\App\Models\Province::class);
 	}
+
+	public function getTypeAttribute($value)
+	{
+		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+	}
 }

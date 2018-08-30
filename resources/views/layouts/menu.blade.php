@@ -1,17 +1,17 @@
 <li>
-    <a href="{{ route('dashboard') }}" class="{{ Request::is('/') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i1.png') }}" alt=""></span> Beranda</a>
+    <a href="{{ route('dashboard') }}" class="{{ Request::routeIs('dashboard') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i1.png') }}" alt=""></span> Beranda</a>
 </li>
 <li>
-    <a href="{{ route('saksi.edit') }}" class="{{ Request::is('saksi*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Saksi</a>
+    <a href="{{ route('saksi.edit') }}" class="{{ Request::routeIs('saksi.edit') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Saksi</a>
 </li>
 <li>
-    <a href="{{ route('tps.search') }}" class="{{ Request::is('tps_search*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i3.png') }}" alt=""></span> TPS</a>
+    <a href="{{ route('tps.search') }}" class="{{ Request::routeIs('tps.search') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i3.png') }}" alt=""></span> TPS</a>
 </li>
 <li>
-    <a href="{{ route('pilegs.list') }}" class="{{ Request::is('pilegs_list*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pileg</a>
+    <a href="{{ route('pilegs.list') }}" class="{{ Request::routeIs('pilegs.list') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pileg</a>
 </li>
 <li>
-    <a href="{{ route('pilpres.list') }}" class="{{ Request::is('pilpres_list*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pilpres</a>
+    <a href="{{ route('pilpres.list') }}" class="{{ Request::routeIs('pilpres.list') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Pilpres</a>
 </li>
 
 @if(Auth::user()->is_admin)

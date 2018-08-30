@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Criteria\AppRequestCriteria;
+use App\Criteria\PilegRequestCriteria;
 use App\DataTables\PilegDataTable;
-use App\Http\Requests;
 use App\Http\Requests\CreatePilegRequest;
 use App\Http\Requests\UpdatePilegRequest;
+use App\Models\Pileg;
 use App\Repositories\PilegRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
+use Illuminate\Http\Request;
 use Response;
 
 class PilegController extends Controller
@@ -33,9 +35,20 @@ class PilegController extends Controller
 		return $pilegDataTable->render('pilegs.index');
 	}
 
-	public function list()
+	/**
+	 * @param Request $request
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function list(Request $request)
 	{
-		return view('pages.pilegs_list');
+		$dropdown_type   = PILEG_TYPE;
+		$dropdown_partai = PARTAI;
+
+		$this->pilegRepository->pushCriteria(new PilegRequestCriteria($request));
+		$collection = $this->pilegRepository->all();
+
+		return view('pages.pilegs_list', compact('collection', 'dropdown_type', 'dropdown_partai'));
 	}
 
 	/**

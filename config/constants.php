@@ -20,6 +20,16 @@ define('U_GENDER', [
 	'l' => 'Laki-laki',
 	'p' => 'Perempuan',
 ]);
+define('PILEG_TYPE', [
+	'dprd' => 'DPRD',
+	'dpd'  => 'DPD',
+	'mpr'  => 'MPR',
+]);
+define('PARTAI', [
+	'pan' => 'PAN',
+	'pdi' => 'PDI',
+	'ppp' => 'PPP',
+]);
 
 return [
 	//
