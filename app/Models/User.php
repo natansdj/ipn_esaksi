@@ -278,6 +278,20 @@ class User extends Authenticatable implements JWTSubject
 		}
 	}
 
+	public function getStatusLabelAttribute()
+	{
+		$val = $this->getAttribute('status');
+
+		return ( array_has(U_STATUS, $val) ) ? array_get(U_STATUS, $val) : $val;
+	}
+
+	public function getOccupationLabelAttribute()
+	{
+		$val = $this->getAttribute('occupation');
+
+		return ( array_has(U_OCCUPATION, $val) ) ? array_get(U_OCCUPATION, $val) : $val;
+	}
+
 	public function getIsUserAttribute($value)
 	{
 		return ( ! $this->getAttribute('is_admin') );
