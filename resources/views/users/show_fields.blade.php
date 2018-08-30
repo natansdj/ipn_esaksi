@@ -42,20 +42,20 @@
 
 <!-- Dob Field -->
 <div class="form-group">
-    {!! Form::label('dob', 'Dob:') !!}
+    {!! Form::label('dob', 'Date of Birth:') !!}
     <p>{!! $user->dob !!}</p>
 </div>
 
 <!-- Pob Field -->
 <div class="form-group">
-    {!! Form::label('pob', 'Pob:') !!}
+    {!! Form::label('pob', 'Place of Birth:') !!}
     <p>{!! $user->pob !!}</p>
 </div>
 
 <!-- Status Field -->
 <div class="form-group">
     {!! Form::label('status', 'Status:') !!}
-    <p>{!! $user->status !!}</p>
+    <p>{!! $user->status_label !!}</p>
 </div>
 
 <!-- Phone Field -->
@@ -67,7 +67,7 @@
 <!-- Occupation Field -->
 <div class="form-group">
     {!! Form::label('occupation', 'Occupation:') !!}
-    <p>{!! $user->occupation !!}</p>
+    <p>{!! $user->occupation_label !!}</p>
 </div>
 
 <!-- Address Field -->
@@ -75,6 +75,34 @@
     {!! Form::label('address', 'Address:') !!}
     <p>{!! $user->address !!}</p>
 </div>
+
+@if(isset($user->province->name))
+    <div class="form-group">
+        {!! Form::label('province', 'Provinsi:') !!}
+        <p>{!! $user->province->name !!}</p>
+    </div>
+@endif
+
+@if(isset($user->regency->name))
+    <div class="form-group">
+        {!! Form::label('regency', 'Kota/Kabupaten:') !!}
+        <p>{!! $user->regency->name !!}</p>
+    </div>
+@endif
+
+@if(isset($user->district->name))
+    <div class="form-group">
+        {!! Form::label('district', 'Kelurahan:') !!}
+        <p>{!! $user->district->name !!}</p>
+    </div>
+@endif
+
+@if(isset($user->village->name))
+    <div class="form-group">
+        {!! Form::label('village', 'Kecamatan:') !!}
+        <p>{!! $user->village->name !!}</p>
+    </div>
+@endif
 
 <!-- Tps Id Field -->
 <div class="form-group">
@@ -90,10 +118,10 @@
 
 <!-- Is Admin Field -->
 @if($user->is_admin)
-<div class="form-group">
-    {!! Form::label('is_admin', 'Is Admin:') !!}
-    <p>{!! $user->is_admin !!}</p>
-</div>
+    <div class="form-group">
+        {!! Form::label('is_admin', 'Is Admin:') !!}
+        <p>{!! $user->is_admin !!}</p>
+    </div>
 @endif
 
 <!-- Created At Field -->

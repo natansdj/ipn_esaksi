@@ -13,7 +13,8 @@ $(document).ready(function () {
     increaseArea: '20%' // optional
   });
 
-  $('.toggle-sidebar').on('click', function () {
+  $('.toggle-sidebar').on('click', function (e) {
+    e.preventDefault();
     $('.sidebar').toggleClass('small');
     $('.content').toggleClass('big');
     $('.content-head').toggleClass('big');

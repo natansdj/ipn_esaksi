@@ -17,6 +17,7 @@
 
     <!-- Load Style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" media="screen">
+{{--    <link rel="stylesheet" href="{{ asset('css/main.css') }}" media="screen">--}}
     <link rel="stylesheet" href="{{ asset('css/jqvmap.min.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('css/gijgo.min.css') }}" media="screen">
 
