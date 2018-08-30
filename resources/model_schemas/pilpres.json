@@ -1,0 +1,110 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "capres_name",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "capres_dob",
+    "dbType": "date",
+    "htmlType": "date",
+    "searchable": false
+  },
+  {
+    "name": "capres_pob",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false
+  },
+  {
+    "name": "capres_partai",
+    "dbType": "string",
+    "htmlType": "text"
+  },
+  {
+    "name": "cawapres_name",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "cawapres_dob",
+    "dbType": "date",
+    "htmlType": "date",
+    "searchable": false
+  },
+  {
+    "name": "cawapres_pob",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false
+  },
+  {
+    "name": "cawapres_partai",
+    "dbType": "string",
+    "htmlType": "text"
+  },
+  {
+    "name": "type",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "note",
+    "dbType": "string",
+    "htmlType": "textarea",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

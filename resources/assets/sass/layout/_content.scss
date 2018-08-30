@@ -1,0 +1,92 @@
+// content
+
+.content{
+	width: 100%;
+	position: relative;
+	padding-left: 290px;
+	padding-top: 79px;
+	@include transition(all, 0.3s, ease);
+	.content-head{
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		background-color: $wt;
+		width: 100%;
+		padding: 19px 30px 19px 320px;
+		z-index: 98;
+		border-bottom: 1px solid $border;
+		@include transition(all, 0.3s, ease);
+		.toggle-sidebar{
+     		width: 40px;
+    		padding: 10px;
+			float: left;
+			.icon-bar{
+				background-color: $second;
+				wdith: 25px;
+				height: 3px;
+				display: block;
+				& + .icon-bar{
+					margin-top: 4px;
+				}
+			}
+		}
+		.dropdown{
+			float: right;
+			.btn{
+				padding: 0;
+				font-size: 14px;
+				color: $gray2;
+				border: none !important;
+				background-color: transparent;
+				@include border-radius(0);
+				.peep{
+					width: 40px;
+					height: 40px;
+					background-color: $gray;
+					background-size: cover;
+					background-position: center center;
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+					@include border-radius(50%);
+				}
+				i{
+					color: $second;
+				    margin-left: 5px;
+				    font-size: 24px;
+				    vertical-align: middle;
+				}
+				&::after{
+					display: none;
+				}
+				&:hover, &:focus, &:active{
+					outline: none !important;
+					border: none !important;
+					box-shadow: none !important;
+				}
+			}
+			.dropdown-menu{
+				width: 100%;
+     			top: 5px !important;
+     			border-color: $border;
+				@include border-radius(5px);
+				a{
+					color: $gray2;
+					font-size: 14px;
+					@include transition(all, 0.3s, ease);
+					&:hover, &:focus, &:active{
+						color: $wt;
+						background-color: $main;
+					}
+				}
+			}
+		}
+		&.big{
+			padding-left: 90px;
+		}
+	}
+	&.big{
+		padding-left: 60px;
+	}
+}

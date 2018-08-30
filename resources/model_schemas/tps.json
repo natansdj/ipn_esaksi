@@ -1,0 +1,93 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "province_id",
+    "dbType": "integer:unsigned:foreign,provinces,id",
+    "htmlType": "text",
+    "relation": "mt1,Province"
+  },
+  {
+    "name": "kodepos_id",
+    "dbType": "integer:unsigned:foreign,kodepos,id",
+    "htmlType": "text",
+    "relation": "mt1,Kodepos"
+  },
+  {
+    "name": "name",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "address",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": true,
+    "inIndex": false
+  },
+  {
+    "name": "geo_location",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "type",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "note",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

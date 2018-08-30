@@ -1,0 +1,94 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "province_id",
+    "dbType": "integer:unsigned:foreign,provinces,id",
+    "htmlType": "text",
+    "relation": "mt1,Province"
+  },
+  {
+    "name": "name",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "name2",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": true
+  },
+  {
+    "name": "dob",
+    "dbType": "date",
+    "htmlType": "date",
+    "validations": "required",
+    "searchable": false
+  },
+  {
+    "name": "pob",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": false
+  },
+  {
+    "name": "partai",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "type",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

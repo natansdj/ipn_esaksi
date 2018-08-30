@@ -1,0 +1,77 @@
+// input
+
+input[type="text"].form-control, input.form-control, input[type="email"].form-control, input[type="number"].form-control, input[type="password"].form-control, textarea.form-control, select.form-control{
+	padding: 10px 15px;
+	border: 1px solid $border;
+	font-size: 14px;
+	color: $bl;
+	height: auto;
+	background-color: $lgray3;
+	@include border-radius(5px);
+	&::-webkit-input-placeholder { color: rgba(61, 56, 55, 0.6); }
+	&:-moz-placeholder { color: rgba(61, 56, 55, 0.6); }
+	&::-moz-placeholder { color: rgba(61, 56, 55, 0.6); }
+	&:-ms-input-placeholder { color: rgba(61, 56, 55, 0.6); }
+	&:hover, &:focus, &:active{
+		outline: none;
+		box-shadow: none !important;
+		background-color: $lgray3;
+		border: 1px solid $border;
+	}
+} 
+
+.gj-datepicker{
+	.btn{
+		width: 41px !important;
+		background-color: $lgray3;
+     	border-left: 1px solid $border !important;
+		border-color: $border !important;
+		@include transition(all, 0.3s, ease);
+		&:hover, &:focus, &:active{
+			outline: none !important;
+			color: $bl !important;
+			box-shadow: none !important;
+			background-color: $lgray2 !important;
+			border-color: $border !important;
+		}
+	}
+}
+
+textarea.form-control{
+	resize: none;
+	max-width: 100%;
+	min-height: 130px;
+}
+
+select.form-control{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 25px 10px 15px;
+    background: url(../images/adown.png) no-repeat $lgray3 center right 10px;
+	&:hover, &:focus{
+		outline: none;
+		box-shadow: none;
+		border-color: $border;
+		background-color: $lgray3
+	}
+}
+
+select.form-control:not([size]):not([multiple]){
+	height: auto;
+}
+
+.form-group{
+	margin-bottom: 25px;
+	label{
+		font-family: $sb;
+		color: $bl;
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	p{
+		font-size: 14px;
+		color: $bl;
+		margin: 0;
+	}
+}

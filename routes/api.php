@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,29 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('open', 'DataController@open');
+
+Route::group([
+	'prefix' => 'auth'
+], function () {
+	Route::post('login', 'AuthController@login');
+	Route::post('logout', 'AuthController@logout');
+	Route::post('refresh', 'AuthController@refresh');
+	Route::post('me', 'AuthController@me');
+});
+
+Route::group([
+	'middleware' => ['jwt.verify']
+], function () {
+	Route::get('closed', 'DataController@closed');
+
+	Route::resource('pilpres', 'PilpresAPIController');
+
+	Route::resource('pilegs', 'PilegAPIController');
+
+	Route::resource('users', 'UserAPIController');
+
+	Route::resource('tps', 'TpsAPIController');
+
+	Route::resource('votes', 'VoteAPIController');
 });

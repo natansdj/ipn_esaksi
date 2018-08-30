@@ -1,0 +1,99 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "tps_id",
+    "dbType": "integer:unsigned:foreign,tps,id",
+    "htmlType": "text",
+    "relation": "mt1,Tps"
+  },
+  {
+    "name": "user_id",
+    "dbType": "integer:unsigned:foreign,users,id",
+    "htmlType": "text",
+    "relation": "mt1,User"
+  },
+  {
+    "name": "vote_date",
+    "dbType": "date",
+    "htmlType": "date",
+    "searchable": false
+  },
+  {
+    "name": "note",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "count",
+    "dbType": "integer",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "voteable_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "voteable_type",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "type",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "deleted_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

@@ -1,15 +1,30 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "appointer/swaggervel": "^2.3",
+        "arcanedev/log-viewer": "^4.4.0",
+        "doctrine/dbal": "^2.8",
         "fideloper/proxy": "~3.3",
+        "infyomlabs/adminlte-templates": "5.5.x-dev",
+        "infyomlabs/laravel-generator": "5.5.x-dev",
+        "infyomlabs/routes-explorer": "dev-master",
+        "infyomlabs/swagger-generator": "dev-master",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "tymon/jwt-auth": "^0.5.12"
+        "laravelcollective/html": "~5.5",
+        "orangehill/iseed": "dev-master",
+        "predis/predis": "1.1.*",
+        "tymon/jwt-auth": "dev-develop",
+        "uxweb/sweet-alert": "^2.0",
+        "yajra/laravel-datatables": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -18,7 +33,8 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0",
-        "symfony/thanks": "^1.0"
+        "rtconner/laravel-kint": "~3.0.2",
+        "xethron/migrations-generator": "^2.0"
     },
     "autoload": {
         "classmap": [

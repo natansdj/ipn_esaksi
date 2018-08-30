@@ -1,9 +1,34 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+/* VENDORS COMPONENTS */
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "variables";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~font-awesome/scss/font-awesome.scss";
+
+/* glyphicons */
+@import "bootstrap/glyphicons";
+
+/* CUSTOM SITE HELPERS */
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/* BASE STYLESHEET AND RESETTER */
+@import "base/reset";
+@import "base/typhography";
+
+/* CUSTOM SITE COMPONENTS */
+@import "components/component";
+@import "components/input";
+@import "components/button";
+
+/* MAIN SITE REGIONS */
+@import "layout/header";
+@import "layout/footer";
+@import "layout/content";
+@import "layout/sidebar";
+
+/* PAGES */
+@import "pages/dashboard";
+@import "pages/pileg";
+@import "pages/login";

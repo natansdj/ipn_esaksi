@@ -12,12 +12,46 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+$factory->define(App\Models\User::class, function (Faker $faker) {
+	$attr_city = \App\Models\Regency::limit(10)->get()->pluck('name', 'id')->toArray();
 
-$factory->define(App\User::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
-    ];
+	$province_id = App\Models\Province::pluck('id')->random();
+	$regency_id  = App\Models\Regency::where('province_id', $province_id)->pluck('id')->random();
+	$district_id = App\Models\District::where('regency_id', $regency_id)->pluck('id')->random();
+	$village_id  = App\Models\Village::where('district_id', $district_id)->pluck('id')->random();
+
+	$used_tps_id = App\Models\User::pluck('tps_id')->filter()->toArray();
+	$tps_id      = App\Models\Tps::whereNotIn('id', $used_tps_id)->pluck('id')->toArray();
+
+	return [
+		'name'           => $faker->name,
+		'email'          => $faker->unique()->safeEmail,
+		'password'       => bcrypt('123456'),
+		'remember_token' => str_random(10),
+		'nik'            => $faker->nik(),
+		'gender'         => $faker->randomElement(['male', 'female']),
+		'dob'            => $faker->date('Y-m-d', '1980-1-1'),
+		'pob'            => $faker->randomElement($attr_city),
+		'status'         => $faker->numberBetween(1, 2),
+		'phone'          => $faker->phoneNumber,
+		'occupation'     => $faker->numberBetween(1, 2),
+		'address'        => $faker->address,
+
+		'province_id' => $province_id,
+		'regency_id'  => $regency_id,
+		'district_id' => $district_id,
+		'village_id'  => $village_id,
+		'tps_id'      => ( $tps_id && ! empty($tps_id) ) ? $faker->randomElement($tps_id) : null,
+	];
+});
+
+$factory->defineAs(App\Models\User::class, 'admin', function (Faker $faker) use ($factory) {
+	$data = $factory->raw('App\Models\User');
+
+	return array_merge($data, [
+		'name'     => 'Admin ' . $faker->firstName(),
+		'email'    => 'admin@example.org',
+		'tps_id'   => null,
+		'is_admin' => true
+	]);
 });
