@@ -6,7 +6,7 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~font-awesome/scss/font-awesome.scss";
 
-/* glyphicons */
+/* bootstrap components */
 @import "bootstrap/glyphicons";
 
 /* CUSTOM SITE HELPERS */
@@ -21,6 +21,7 @@
 @import "components/component";
 @import "components/input";
 @import "components/button";
+//@import "components/table";
 
 /* MAIN SITE REGIONS */
 @import "layout/header";
