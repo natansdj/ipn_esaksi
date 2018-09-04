@@ -72,47 +72,49 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Dapil extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
-    public $table = 'dapils';
-    
+	public $table = 'dapil';
 
-    protected $dates = ['deleted_at'];
+	protected $dates = ['deleted_at'];
 
+	public $fillable = [
+		'id',
+		'nama',
+		'tingkat',
+		'jumlah_penduduk',
+		'wilayah_id',
+		'total_alokasi_kursi',
+		'id_versi',
+		'no_dapil'
+	];
 
-    public $fillable = [
-        'nama',
-        'tingkat',
-        'jumlah_penduduk',
-        'wilayah_id',
-        'total_alokasi_kursi',
-        'id_versi',
-        'no_dapil'
-    ];
+	/**
+	 * The attributes that should be casted to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'nama'                => 'string',
+		'tingkat'             => 'integer',
+		'jumlah_penduduk'     => 'integer',
+		'wilayah_id'          => 'integer',
+		'total_alokasi_kursi' => 'integer',
+		'id_versi'            => 'integer',
+		'no_dapil'            => 'integer'
+	];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'nama' => 'string',
-        'tingkat' => 'integer',
-        'jumlah_penduduk' => 'integer',
-        'wilayah_id' => 'integer',
-        'total_alokasi_kursi' => 'integer',
-        'id_versi' => 'integer',
-        'no_dapil' => 'integer'
-    ];
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public static $rules = [
+		'nama' => 'required'
+	];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'nama' => 'required'
-    ];
-
-    
+	public function wilayah()
+	{
+		return $this->belongsToMany(\App\Models\Wilayah::class);
+	}
 }

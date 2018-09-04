@@ -189,92 +189,94 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Wilayah extends Model
 {
-    use SoftDeletes;
+	use SoftDeletes;
 
-    public $table = 'wilayahs';
-    
+	public $table = 'wilayah';
 
-    protected $dates = ['deleted_at'];
+	protected $dates = ['deleted_at'];
 
+	public $fillable = [
+		'id',
+		'parent_id',
+		'nama_wilayah',
+		'tingkat_wilayah',
+		'id_pro',
+		'id_kab',
+		'id_kec',
+		'id_kel',
+		'nama_pro',
+		'nama_kab',
+		'nama_kec',
+		'nama_kel',
+		'kode_wilayah',
+		'tingkat_pemilihan',
+		'nomorsurat',
+		'tanggalsurat',
+		'provinsi',
+		'kabupaten',
+		'kecamatan',
+		'kelurahan',
+		'centroid_x',
+		'centroid_y',
+		'depth_level',
+		'urutan_lampiran',
+		'jumlah_penduduk',
+		'alokasi_kursi',
+		'bppd',
+		'jml_versi',
+		'dapil',
+		'peta'
+	];
 
-    public $fillable = [
-        'parent_id',
-        'nama_wilayah',
-        'tingkat_wilayah',
-        'id_pro',
-        'id_kab',
-        'id_kec',
-        'id_kel',
-        'nama_pro',
-        'nama_kab',
-        'nama_kec',
-        'nama_kel',
-        'kode_wilayah',
-        'tingkat_pemilihan',
-        'nomorsurat',
-        'tanggalsurat',
-        'provinsi',
-        'kabupaten',
-        'kecamatan',
-        'kelurahan',
-        'centroid_x',
-        'centroid_y',
-        'depth_level',
-        'urutan_lampiran',
-        'jumlah_penduduk',
-        'alokasi_kursi',
-        'bppd',
-        'jml_versi',
-        'dapil',
-        'peta'
-    ];
+	/**
+	 * The attributes that should be casted to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'parent_id'         => 'integer',
+		'nama_wilayah'      => 'string',
+		'tingkat_wilayah'   => 'integer',
+		'id_pro'            => 'integer',
+		'id_kab'            => 'integer',
+		'id_kec'            => 'integer',
+		'id_kel'            => 'integer',
+		'nama_pro'          => 'string',
+		'nama_kab'          => 'string',
+		'nama_kec'          => 'string',
+		'nama_kel'          => 'string',
+		'kode_wilayah'      => 'string',
+		'tingkat_pemilihan' => 'string',
+		'nomorsurat'        => 'string',
+		'tanggalsurat'      => 'string',
+		'provinsi'          => 'string',
+		'kabupaten'         => 'string',
+		'kecamatan'         => 'string',
+		'kelurahan'         => 'string',
+		'centroid_x'        => 'string',
+		'centroid_y'        => 'string',
+		'depth_level'       => 'integer',
+		'urutan_lampiran'   => 'integer',
+		'jumlah_penduduk'   => 'integer',
+		'alokasi_kursi'     => 'integer',
+		'bppd'              => 'integer',
+		'jml_versi'         => 'integer',
+		'dapil'             => 'integer',
+		'peta'              => 'string'
+	];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'parent_id' => 'integer',
-        'nama_wilayah' => 'string',
-        'tingkat_wilayah' => 'integer',
-        'id_pro' => 'integer',
-        'id_kab' => 'integer',
-        'id_kec' => 'integer',
-        'id_kel' => 'integer',
-        'nama_pro' => 'string',
-        'nama_kab' => 'string',
-        'nama_kec' => 'string',
-        'nama_kel' => 'string',
-        'kode_wilayah' => 'string',
-        'tingkat_pemilihan' => 'string',
-        'nomorsurat' => 'string',
-        'tanggalsurat' => 'string',
-        'provinsi' => 'string',
-        'kabupaten' => 'string',
-        'kecamatan' => 'string',
-        'kelurahan' => 'string',
-        'centroid_x' => 'string',
-        'centroid_y' => 'string',
-        'depth_level' => 'integer',
-        'urutan_lampiran' => 'integer',
-        'jumlah_penduduk' => 'integer',
-        'alokasi_kursi' => 'integer',
-        'bppd' => 'integer',
-        'jml_versi' => 'integer',
-        'dapil' => 'integer',
-        'peta' => 'string'
-    ];
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public static $rules = [
+		'parent_id'    => 'required',
+		'nama_wilayah' => 'required'
+	];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'parent_id' => 'required',
-        'nama_wilayah' => 'required'
-    ];
-
-    
+	public function dapil()
+	{
+		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah', 'dapil_id', 'wilayah_id');
+	}
 }

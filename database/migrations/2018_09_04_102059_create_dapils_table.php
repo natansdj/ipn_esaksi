@@ -13,7 +13,7 @@ class CreateDapilsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dapils', function (Blueprint $table) {
+        Schema::create('dapil', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->integer('tingkat')->nullable();
@@ -34,6 +34,6 @@ class CreateDapilsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dapils');
+        Schema::dropIfExists('dapil');
     }
 }

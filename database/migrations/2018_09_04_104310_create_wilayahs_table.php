@@ -13,7 +13,7 @@ class CreateWilayahsTable extends Migration
      */
     public function up()
     {
-        Schema::create('wilayahs', function (Blueprint $table) {
+        Schema::create('wilayah', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('parent_id')->nullable();
             $table->string('nama_wilayah');
@@ -56,6 +56,6 @@ class CreateWilayahsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('wilayahs');
+        Schema::drop('wilayah');
     }
 }
