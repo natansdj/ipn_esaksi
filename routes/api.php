@@ -39,4 +39,6 @@ Route::group([
 	Route::resource('tps', 'TpsAPIController');
 
 	Route::resource('votes', 'VoteAPIController');
+
+	Route::resource('dapils', 'DapilAPIController');
 });

@@ -39,3 +39,5 @@ Route::resource('users', 'UserController');
 Route::resource('tps', 'TpsController');
 
 Route::resource('votes', 'VoteController');
+
+Route::resource('dapils', 'DapilController');

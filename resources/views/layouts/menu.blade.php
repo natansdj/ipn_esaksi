@@ -31,5 +31,7 @@
     <li>
         <a href="{!! route('votes.index') !!}" class="{{ Request::is('votes*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Votes</a>
     </li>
+    <li>
+        <a href="{!! route('dapils.index') !!}" class="{{ Request::is('dapils*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Dapils</a>
+    </li>
 @endif
-
