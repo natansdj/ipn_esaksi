@@ -17,6 +17,12 @@
 Auth::routes();
 
 Route::group([
+	'prefix' => 'scraper'
+], function () {
+	Route::get('/test/{id?}', 'ScrapeController@test');
+});
+
+Route::group([
 	//
 ], function () {
 	Route::any('register', function () {

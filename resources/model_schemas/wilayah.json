@@ -1,0 +1,90 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "nama",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "tingkat",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jumlahPenduduk",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "idWilayah",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "totalAlokasiKursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "idVersi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "noDapil",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]
