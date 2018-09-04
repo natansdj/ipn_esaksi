@@ -34,4 +34,7 @@
     <li>
         <a href="{!! route('dapils.index') !!}" class="{{ Request::is('dapils*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Dapils</a>
     </li>
+    <li>
+        <a href="{!! route('wilayahs.index') !!}" class="{{ Request::is('wilayahs*') ? 'active' : '' }}"><span class="icon"><img src="{{ asset('images/i2.png') }}" alt=""></span> Wilayahs</a>
+    </li>
 @endif

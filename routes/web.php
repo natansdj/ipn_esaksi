@@ -41,3 +41,5 @@ Route::resource('tps', 'TpsController');
 Route::resource('votes', 'VoteController');
 
 Route::resource('dapils', 'DapilController');
+
+Route::resource('wilayahs', 'WilayahController');

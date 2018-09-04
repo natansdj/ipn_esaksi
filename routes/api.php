@@ -41,4 +41,6 @@ Route::group([
 	Route::resource('votes', 'VoteAPIController');
 
 	Route::resource('dapils', 'DapilAPIController');
+
+	Route::resource('wilayahs', 'WilayahAPIController');
 });

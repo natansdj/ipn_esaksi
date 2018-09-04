@@ -11,14 +11,25 @@
     "inIndex": false
   },
   {
-    "name": "nama",
+    "name": "parent_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "nama_wilayah",
     "dbType": "string",
     "htmlType": "text",
     "validations": "required",
-    "searchable": true
+    "searchable": true,
+    "inForm": true,
+    "inIndex": true
   },
   {
-    "name": "tingkat",
+    "name": "tingkat_wilayah",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -26,7 +37,7 @@
     "inIndex": false
   },
   {
-    "name": "jumlahPenduduk",
+    "name": "id_pro",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -34,36 +45,204 @@
     "inIndex": false
   },
   {
-    "name": "idWilayah",
+    "name": "id_kab",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
     "inForm": true,
-    "inIndex": true
+    "inIndex": false
   },
   {
-    "name": "totalAlokasiKursi",
+    "name": "id_kec",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
     "inForm": true,
-    "inIndex": true
+    "inIndex": false
   },
   {
-    "name": "idVersi",
+    "name": "id_kel",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
     "inForm": true,
-    "inIndex": true
+    "inIndex": false
   },
   {
-    "name": "noDapil",
+    "name": "nama_pro",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "nama_kab",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "nama_kec",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "nama_kel",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "kode_wilayah",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "tingkat_pemilihan",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "nomorsurat",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "tanggalsurat",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "provinsi",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "kabupaten",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "kecamatan",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "kelurahan",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "centroid_x",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "centroid_y",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "depth_level",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
     "inForm": true,
-    "inIndex": true
+    "inIndex": false
+  },
+  {
+    "name": "urutan_lampiran",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jumlah_penduduk",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "alokasi_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "bppd",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jml_versi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "dapil",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "peta",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
   },
   {
     "name": "created_at",
