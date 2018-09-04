@@ -16,34 +16,34 @@
     <p>{!! $dapil->tingkat !!}</p>
 </div>
 
-<!-- Jumlahpenduduk Field -->
+<!-- Jumlah Penduduk Field -->
 <div class="form-group">
-    {!! Form::label('jumlahPenduduk', 'Jumlahpenduduk:') !!}
-    <p>{!! $dapil->jumlahPenduduk !!}</p>
+    {!! Form::label('jumlah_penduduk', 'Jumlah Penduduk:') !!}
+    <p>{!! $dapil->jumlah_penduduk !!}</p>
 </div>
 
-<!-- Idwilayah Field -->
+<!-- Wilayah Id Field -->
 <div class="form-group">
-    {!! Form::label('idWilayah', 'Idwilayah:') !!}
-    <p>{!! $dapil->idWilayah !!}</p>
+    {!! Form::label('wilayah_id', 'Wilayah Id:') !!}
+    <p>{!! $dapil->wilayah_id !!}</p>
 </div>
 
-<!-- Totalalokasikursi Field -->
+<!-- Total Alokasi Kursi Field -->
 <div class="form-group">
-    {!! Form::label('totalAlokasiKursi', 'Totalalokasikursi:') !!}
-    <p>{!! $dapil->totalAlokasiKursi !!}</p>
+    {!! Form::label('total_alokasi_kursi', 'Total Alokasi Kursi:') !!}
+    <p>{!! $dapil->total_alokasi_kursi !!}</p>
 </div>
 
-<!-- Idversi Field -->
+<!-- Id Versi Field -->
 <div class="form-group">
-    {!! Form::label('idVersi', 'Idversi:') !!}
-    <p>{!! $dapil->idVersi !!}</p>
+    {!! Form::label('id_versi', 'Id Versi:') !!}
+    <p>{!! $dapil->id_versi !!}</p>
 </div>
 
-<!-- Nodapil Field -->
+<!-- No Dapil Field -->
 <div class="form-group">
-    {!! Form::label('noDapil', 'Nodapil:') !!}
-    <p>{!! $dapil->noDapil !!}</p>
+    {!! Form::label('no_dapil', 'No Dapil:') !!}
+    <p>{!! $dapil->no_dapil !!}</p>
 </div>
 
 <!-- Created At Field -->

@@ -10,34 +10,34 @@
     {!! Form::text('tingkat', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Jumlahpenduduk Field -->
+<!-- Jumlah Penduduk Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('jumlahPenduduk', 'Jumlahpenduduk:') !!}
-    {!! Form::text('jumlahPenduduk', null, ['class' => 'form-control']) !!}
+    {!! Form::label('jumlah_penduduk', 'Jumlah Penduduk:') !!}
+    {!! Form::text('jumlah_penduduk', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Idwilayah Field -->
+<!-- Wilayah Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('idWilayah', 'Idwilayah:') !!}
-    {!! Form::text('idWilayah', null, ['class' => 'form-control']) !!}
+    {!! Form::label('wilayah_id', 'Wilayah Id:') !!}
+    {!! Form::text('wilayah_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Totalalokasikursi Field -->
+<!-- Total Alokasi Kursi Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('totalAlokasiKursi', 'Totalalokasikursi:') !!}
-    {!! Form::text('totalAlokasiKursi', null, ['class' => 'form-control']) !!}
+    {!! Form::label('total_alokasi_kursi', 'Total Alokasi Kursi:') !!}
+    {!! Form::text('total_alokasi_kursi', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Idversi Field -->
+<!-- Id Versi Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('idVersi', 'Idversi:') !!}
-    {!! Form::text('idVersi', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_versi', 'Id Versi:') !!}
+    {!! Form::text('id_versi', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Nodapil Field -->
+<!-- No Dapil Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('noDapil', 'Nodapil:') !!}
-    {!! Form::text('noDapil', null, ['class' => 'form-control']) !!}
+    {!! Form::label('no_dapil', 'No Dapil:') !!}
+    {!! Form::text('no_dapil', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

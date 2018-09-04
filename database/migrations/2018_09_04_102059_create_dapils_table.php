@@ -17,11 +17,11 @@ class CreateDapilsTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->integer('tingkat')->nullable();
-            $table->integer('jumlahPenduduk')->nullable();
-            $table->integer('idWilayah')->unsigned()->nullable();
-            $table->integer('totalAlokasiKursi')->nullable();
-            $table->integer('idVersi')->nullable();
-            $table->integer('noDapil')->nullable();
+            $table->integer('jumlah_penduduk')->nullable();
+            $table->integer('wilayah_id')->unsigned()->nullable();
+            $table->integer('total_alokasi_kursi')->nullable();
+            $table->integer('id_versi')->nullable();
+            $table->integer('no_dapil')->nullable();
 	        $table->softDeletes();
 	        $table->timestamps();
         });

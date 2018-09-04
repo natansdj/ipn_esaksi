@@ -66,10 +66,10 @@ class DapilDataTable extends DataTable
     {
         return [
             'nama',
-            'idWilayah',
-            'totalAlokasiKursi',
-            'idVersi',
-            'noDapil'
+            'wilayah_id',
+            'total_alokasi_kursi',
+            'id_versi',
+            'no_dapil'
         ];
     }
 

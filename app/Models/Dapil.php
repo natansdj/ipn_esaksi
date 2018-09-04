@@ -27,32 +27,32 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="jumlahPenduduk",
- *          description="jumlahPenduduk",
+ *          property="jumlah_penduduk",
+ *          description="jumlah_penduduk",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="idWilayah",
- *          description="idWilayah",
+ *          property="wilayah_id",
+ *          description="wilayah_id",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="totalAlokasiKursi",
- *          description="totalAlokasiKursi",
+ *          property="total_alokasi_kursi",
+ *          description="total_alokasi_kursi",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="idVersi",
- *          description="idVersi",
+ *          property="id_versi",
+ *          description="id_versi",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="noDapil",
- *          description="noDapil",
+ *          property="no_dapil",
+ *          description="no_dapil",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -83,11 +83,11 @@ class Dapil extends Model
     public $fillable = [
         'nama',
         'tingkat',
-        'jumlahPenduduk',
-        'idWilayah',
-        'totalAlokasiKursi',
-        'idVersi',
-        'noDapil'
+        'jumlah_penduduk',
+        'wilayah_id',
+        'total_alokasi_kursi',
+        'id_versi',
+        'no_dapil'
     ];
 
     /**
@@ -98,11 +98,11 @@ class Dapil extends Model
     protected $casts = [
         'nama' => 'string',
         'tingkat' => 'integer',
-        'jumlahPenduduk' => 'integer',
-        'idWilayah' => 'integer',
-        'totalAlokasiKursi' => 'integer',
-        'idVersi' => 'integer',
-        'noDapil' => 'integer'
+        'jumlah_penduduk' => 'integer',
+        'wilayah_id' => 'integer',
+        'total_alokasi_kursi' => 'integer',
+        'id_versi' => 'integer',
+        'no_dapil' => 'integer'
     ];
 
     /**

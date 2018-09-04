@@ -26,7 +26,7 @@
     "inIndex": false
   },
   {
-    "name": "jumlahPenduduk",
+    "name": "jumlah_penduduk",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -34,7 +34,7 @@
     "inIndex": false
   },
   {
-    "name": "idWilayah",
+    "name": "wilayah_id",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -42,7 +42,7 @@
     "inIndex": true
   },
   {
-    "name": "totalAlokasiKursi",
+    "name": "total_alokasi_kursi",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -50,7 +50,7 @@
     "inIndex": true
   },
   {
-    "name": "idVersi",
+    "name": "id_versi",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
@@ -58,7 +58,7 @@
     "inIndex": true
   },
   {
-    "name": "noDapil",
+    "name": "no_dapil",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
