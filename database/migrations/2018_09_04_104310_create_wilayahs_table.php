@@ -14,14 +14,14 @@ class CreateWilayahsTable extends Migration
     public function up()
     {
         Schema::create('wilayah', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('parent_id')->nullable();
+            $table->unsignedInteger('id', false)->primary();
+            $table->integer('id_parent')->unsigned()->nullable();
             $table->string('nama_wilayah');
             $table->integer('tingkat_wilayah')->nullable();
-            $table->integer('id_pro')->nullable();
-            $table->integer('id_kab')->nullable();
-            $table->integer('id_kec')->nullable();
-            $table->integer('id_kel')->nullable();
+            $table->integer('id_pro')->unsigned()->nullable();
+            $table->integer('id_kab')->unsigned()->nullable();
+            $table->integer('id_kec')->unsigned()->nullable();
+            $table->integer('id_kel')->unsigned()->nullable();
             $table->string('nama_pro')->nullable();
             $table->string('nama_kab')->nullable();
             $table->string('nama_kec')->nullable();

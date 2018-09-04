@@ -12,7 +12,7 @@
 */
 
 Route::group([
-	'middleware' => ['web']
+	//
 ], function () {
 	Route::get('/', 'DashboardController@index')->name('dashboard');
 	Route::get('/saksi_edit', 'SaksiController@index')->name('saksi.edit');

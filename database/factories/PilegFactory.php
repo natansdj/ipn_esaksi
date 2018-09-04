@@ -10,8 +10,8 @@ $factory->define(App\Models\Pileg::class, function (Faker $faker) {
 		'name2'       => $faker->unique()->name,
 		'dob'         => $faker->date('Y-m-d', '1980-1-1'),
 		'pob'         => $faker->randomElement($attr_city),
-		'partai'      => $faker->randomElement(PILEG_TYPE),
-		'type'        => $faker->randomElement(PARTAI),
+		'partai'      => $faker->randomElement(PARTAI),
+		'type'        => $faker->randomElement(PILEG_TYPE),
 		'province_id' => $faker->unique()->randomElement(App\Models\Province::pluck('id')->toArray()),
 	];
 });

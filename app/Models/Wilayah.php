@@ -195,38 +195,7 @@ class Wilayah extends Model
 
 	protected $dates = ['deleted_at'];
 
-	public $fillable = [
-		'id',
-		'parent_id',
-		'nama_wilayah',
-		'tingkat_wilayah',
-		'id_pro',
-		'id_kab',
-		'id_kec',
-		'id_kel',
-		'nama_pro',
-		'nama_kab',
-		'nama_kec',
-		'nama_kel',
-		'kode_wilayah',
-		'tingkat_pemilihan',
-		'nomorsurat',
-		'tanggalsurat',
-		'provinsi',
-		'kabupaten',
-		'kecamatan',
-		'kelurahan',
-		'centroid_x',
-		'centroid_y',
-		'depth_level',
-		'urutan_lampiran',
-		'jumlah_penduduk',
-		'alokasi_kursi',
-		'bppd',
-		'jml_versi',
-		'dapil',
-		'peta'
-	];
+	protected $guarded = [];
 
 	/**
 	 * The attributes that should be casted to native types.
@@ -271,7 +240,7 @@ class Wilayah extends Model
 	 * @var array
 	 */
 	public static $rules = [
-		'parent_id'    => 'required',
+		'id_parent'    => 'required',
 		'nama_wilayah' => 'required'
 	];
 

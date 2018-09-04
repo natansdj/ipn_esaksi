@@ -17,12 +17,6 @@
 Auth::routes();
 
 Route::group([
-	'prefix' => 'scraper'
-], function () {
-	Route::get('/test/{id?}', 'ScrapeController@test');
-});
-
-Route::group([
 	//
 ], function () {
 	Route::any('register', function () {
@@ -39,4 +33,14 @@ Route::group([
 			return redirect('/');
 		});
 	});
+});
+
+
+//Sync data from KPU
+Route::group([
+	'middleware' => ['auth'],
+	'prefix'     => 'sync'
+], function () {
+	Route::get('/wilayah/fetch/{id?}', 'ScrapeController@fetchWilayah');
+	Route::get('/wilayah/pull/{id?}', 'ScrapeController@pullWilayah');
 });
