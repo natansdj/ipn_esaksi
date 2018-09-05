@@ -21,6 +21,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="parent",
+ *          description="parent",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="tingkat",
  *          description="tingkat",
  *          type="integer",
@@ -35,6 +41,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      @SWG\Property(
  *          property="wilayah_id",
  *          description="wilayah_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="alokasi_kursi",
+ *          description="alokasi_kursi",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="alokasi_sisa_kursi",
+ *          description="alokasi_sisa_kursi",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -79,11 +97,13 @@ class Dapil extends Model
 	protected $dates = ['deleted_at'];
 
 	public $fillable = [
-		'id',
 		'nama',
+		'parent',
 		'tingkat',
 		'jumlah_penduduk',
 		'wilayah_id',
+		'alokasi_kursi',
+		'alokasi_sisa_kursi',
 		'total_alokasi_kursi',
 		'id_versi',
 		'no_dapil'
@@ -96,9 +116,12 @@ class Dapil extends Model
 	 */
 	protected $casts = [
 		'nama'                => 'string',
+		'parent'              => 'integer',
 		'tingkat'             => 'integer',
 		'jumlah_penduduk'     => 'integer',
 		'wilayah_id'          => 'integer',
+		'alokasi_kursi'       => 'integer',
+		'alokasi_sisa_kursi'  => 'integer',
 		'total_alokasi_kursi' => 'integer',
 		'id_versi'            => 'integer',
 		'no_dapil'            => 'integer'

@@ -10,6 +10,12 @@
     <p>{!! $dapil->nama !!}</p>
 </div>
 
+<!-- Parent Field -->
+<div class="form-group">
+    {!! Form::label('parent', 'Parent:') !!}
+    <p>{!! $dapil->parent !!}</p>
+</div>
+
 <!-- Tingkat Field -->
 <div class="form-group">
     {!! Form::label('tingkat', 'Tingkat:') !!}
@@ -26,6 +32,18 @@
 <div class="form-group">
     {!! Form::label('wilayah_id', 'Wilayah Id:') !!}
     <p>{!! $dapil->wilayah_id !!}</p>
+</div>
+
+<!-- Alokasi Kursi Field -->
+<div class="form-group">
+    {!! Form::label('alokasi_kursi', 'Alokasi Kursi:') !!}
+    <p>{!! $dapil->alokasi_kursi !!}</p>
+</div>
+
+<!-- Alokasi Sisa Kursi Field -->
+<div class="form-group">
+    {!! Form::label('alokasi_sisa_kursi', 'Alokasi Sisa Kursi:') !!}
+    <p>{!! $dapil->alokasi_sisa_kursi !!}</p>
 </div>
 
 <!-- Total Alokasi Kursi Field -->

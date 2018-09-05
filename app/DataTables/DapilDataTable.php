@@ -67,6 +67,8 @@ class DapilDataTable extends DataTable
         return [
             'nama',
             'wilayah_id',
+            'alokasi_kursi',
+            'alokasi_sisa_kursi',
             'total_alokasi_kursi',
             'id_versi',
             'no_dapil'

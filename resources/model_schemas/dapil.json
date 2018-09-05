@@ -18,6 +18,14 @@
     "searchable": true
   },
   {
+    "name": "parent",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
     "name": "tingkat",
     "dbType": "integer",
     "htmlType": "text",
@@ -35,6 +43,22 @@
   },
   {
     "name": "wilayah_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "alokasi_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "alokasi_sisa_kursi",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,

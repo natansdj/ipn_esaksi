@@ -22,6 +22,18 @@
     {!! Form::text('wilayah_id', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Alokasi Kursi Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('alokasi_kursi', 'Alokasi Kursi:') !!}
+    {!! Form::text('alokasi_kursi', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Alokasi Sisa Kursi Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('alokasi_sisa_kursi', 'Alokasi Sisa Kursi:') !!}
+    {!! Form::text('alokasi_sisa_kursi', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Total Alokasi Kursi Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('total_alokasi_kursi', 'Total Alokasi Kursi:') !!}
