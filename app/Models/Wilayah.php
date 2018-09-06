@@ -287,6 +287,11 @@ class Wilayah extends Model
 	 */
 	public function rel_dapil_wilayah()
 	{
-		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah', 'dapil_id', 'id_wilayah');
+		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah');
+	}
+
+	public function scopeTingkat($query, $tingkat)
+	{
+		return $query->where('tingkat_wilayah', $tingkat);
 	}
 }
