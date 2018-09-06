@@ -39,8 +39,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="wilayah_id",
- *          description="wilayah_id",
+ *          property="id_wilayah",
+ *          description="id_wilayah",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -96,12 +96,15 @@ class Dapil extends Model
 
 	protected $dates = ['deleted_at'];
 
+	//	protected $guarded = [];
+
 	public $fillable = [
+		'id',
 		'nama',
 		'parent',
 		'tingkat',
 		'jumlah_penduduk',
-		'wilayah_id',
+		'id_wilayah',
 		'alokasi_kursi',
 		'alokasi_sisa_kursi',
 		'total_alokasi_kursi',
@@ -119,7 +122,7 @@ class Dapil extends Model
 		'parent'              => 'integer',
 		'tingkat'             => 'integer',
 		'jumlah_penduduk'     => 'integer',
-		'wilayah_id'          => 'integer',
+		'id_wilayah'          => 'integer',
 		'alokasi_kursi'       => 'integer',
 		'alokasi_sisa_kursi'  => 'integer',
 		'total_alokasi_kursi' => 'integer',
@@ -136,7 +139,15 @@ class Dapil extends Model
 		'nama' => 'required'
 	];
 
-	public function wilayah()
+	public function rel_parent_wilayah()
+	{
+		return $this->belongsTo(\App\Models\Wilayah::class, 'id_wilayah');
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function rel_wilayah()
 	{
 		return $this->belongsToMany(\App\Models\Wilayah::class);
 	}

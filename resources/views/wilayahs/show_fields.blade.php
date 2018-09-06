@@ -6,8 +6,8 @@
 
 <!-- Parent Id Field -->
 <div class="form-group">
-    {!! Form::label('parent_id', 'Parent Id:') !!}
-    <p>{!! $wilayah->parent_id !!}</p>
+    {!! Form::label('id_parent', 'Parent Id:') !!}
+    <p>{!! $wilayah->id_parent !!}</p>
 </div>
 
 <!-- Nama Wilayah Field -->

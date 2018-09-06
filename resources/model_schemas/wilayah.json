@@ -11,7 +11,7 @@
     "inIndex": false
   },
   {
-    "name": "parent_id",
+    "name": "id_parent",
     "dbType": "integer",
     "htmlType": "text",
     "validations": "required",

@@ -2,108 +2,121 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dapil;
 use App\Models\Wilayah;
+use App\Traits\ApiKpuTrait;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class ScrapeController extends AppBaseController
 {
-	protected $site = 'https://infopemilu.kpu.go.id';
-	protected $api_wil_cari;
-	protected $api_wil_get;
-	protected $api_dapil;
+	use ApiKpuTrait;
+
+	protected $get_dapil = false;
+	protected $return_data = [];
+
+	/**
+	 * @var Request
+	 */
+	protected $request;
+
+	/**
+	 * @var int
+	 */
+	protected $depth;
+	protected $current_depth = 0;
+
+	protected $wilayah = [];
+	protected $dapil_wilayah = [];
+	protected $dapil = [];
+	protected $wilayah_existing;
+	protected $dapil_existing;
+	protected $wilayah_dt;
 
 	public function __construct()
 	{
-		/**
-		 * https://infopemilu.kpu.go.id/pileg2019/api/wilayah/cari/0
-		 */
-		$this->api_wil_cari = $this->site . '/pileg2019/api/wilayah/cari/';
+		$this->initApiKpu();
+		$this->addReturnData('isUsingCache', $this->use_cache);
 
-		/**
-		 * https://infopemilu.kpu.go.id/pileg2019/api/wilayah/get/1/1
-		 */
-		$this->api_wil_get = $this->site . '/pileg2019/api/wilayah/get/';
-
-		/**
-		 * https://infopemilu.kpu.go.id/pileg2019/api/dapil/1/0
-		 */
-		$this->api_dapil = $this->site . '/pileg2019/api/dapil/';
-
-		/**
-		 * Note :
-		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/pengajuan-calon/1/12/calonDcs.json
-		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/1/dcs-dpr.json
-		 *
-		 */
+		$this->wilayah_existing = Wilayah::get()->pluck('id')->toArray();
+		$this->dapil_existing   = Dapil::get()->pluck('id')->toArray();
 	}
 
-	public function fetchWilayah(Request $request, $id = 0)
+	public function fetchDapilAction(Request $request, $id = 0, $tkWil = 0)
 	{
-		$returnData = [];
-		$msg        = null;
+		$this->request = $request;
+		$pull          = $request->has('pull');
+		$msg           = null;
 
 		try {
-			$output = $this->getWilayah($id);
+			$jsonArray = $this->fetchDapil($id, $tkWil);
 
-			$returnData['count']   = count($output);
-			$returnData['wilayah'] = $output;
+			if ($pull) {
+				return $this->pullDapil($id, $tkWil);
+			}
+
+			$this->addReturnData('count', count($jsonArray));
+			$this->addReturnData('dapil', $jsonArray);
 		} catch (\Exception $e) {
 			\Log::error($e);
 			$msg = $e->getMessage();
 		}
 
-		return $this->sendResponse($returnData, $msg);
+		return $this->sendResponse($this->getReturnData(), $msg);
 	}
 
-	public function pullWilayah(Request $request, $id = 0)
+	public function fetchWilayahAction(Request $request, $id = 0)
 	{
-		$returnData     = [];
-		$msg            = 'Success';
-		$newData        = [];
-		$updateOrCreate = $request->has('update');
+		$this->request   = $request;
+		$this->get_dapil = $request->has('dapil');
+		$this->depth     = $request->get('depth');
+		$pull            = $request->has('pull');
+		$msg             = null;
 
+		//FETCH
 		try {
-			$jsonArray = $this->getWilayah($id);
+			$jsonArray = $this->fetchWilayah($id);
 
-			if ($jsonArray) {
-				$existingId = Wilayah::get()->pluck('id')->toArray();
-
-				$returnData['updateOrCreate'] = (bool) $updateOrCreate;
-				$returnData['fetchedIds']     = count($jsonArray);
-				$returnData['existingIds']    = count($existingId);
-
-				Wilayah::unguard();
+			if ($jsonArray && $this->get_dapil) {
 				foreach ($jsonArray as $key => $item) {
-					$dataId = array_get($item, 'id');
-					$tkWil  = array_get($item, 'tingkatWilayah');
+					$dataId   = array_get($item, 'id');
+					$idParent = array_get($item, 'idParent');
+					$tkWil    = array_get($item, 'tingkatWilayah');
 
-					if ( ! $updateOrCreate && in_array($dataId, $existingId)) {
-						continue;
+					if ($idParent === 0) {
+						$dapil0 = $this->fetchDapil($dataId, $idParent);
+						if ($dapil0) {
+							$item = array_add($item, 'dapil0', $dapil0);
+						}
 					}
 
-					//get detail from api
-					$jsonDt = $this->getWilayahDt($dataId, $tkWil);
-
-					//map data
-					$singleData = [];
-					foreach ($jsonDt as $a => $b) {
-						$singleData[ snake_case($a) ] = $b;
+					$dapil = $this->fetchDapil($dataId, $tkWil);
+					if ($dapil) {
+						$jsonArray[ $key ] = array_add($item, 'dapil', $dapil);
 					}
-					$newData[] = $singleData;
-
-					//atribute to compare
-					$attribs = array_filter($singleData, function ($k) {
-						return in_array($k, ['id', 'nama_wilayah']);
-					}, ARRAY_FILTER_USE_KEY);
-
-					Wilayah::updateOrCreate($attribs, $singleData);
 				}
-				Wilayah::reguard();
-
-				$returnData['synced'] = count($newData);
 			}
 
+			//PULL
+			if ($pull) {
+				$this->addReturnData('isUpdate', (bool) $this->request->has('update'));
+				$this->addReturnData('fetchWilayahCount', true);
+				$this->addReturnData('fetchDapilCount', $this->get_dapil);
+				$this->addReturnData('syncedWilayah', 0);
+				if ($this->get_dapil) {
+					$this->addReturnData('syncedDapil', 0);
+				}
+
+				$this->pullWilayah($id);
+			} else {
+				$this->addReturnData('count', count($jsonArray));
+				$this->addReturnData('wilayah', array_sum(array_map('count', $this->getWilayah())));
+				$this->addReturnData('dapil', array_sum(array_map('count', $this->getDapil())));
+			}
+
+			$this->fetchDapilWilayah();
 		} catch (\Exception $e) {
 			\Log::error($e);
 			$msg = $e->getMessage();
@@ -111,41 +124,325 @@ class ScrapeController extends AppBaseController
 			return $this->sendError($msg);
 		}
 
-		return $this->sendResponse($returnData, $msg);
+		return $this->sendResponse($this->getReturnData(), $msg);
 	}
 
-	protected function getWilayah($id)
+	protected function fetchDapil($id, $tkWil)
 	{
-		//get wilayah
-		$client    = new Client();
-		$request   = $client->get($this->api_wil_cari . $id);
-		$response  = $request->getBody()->getContents();
-		$jsonArray = json_decode($response, true);
+		$dapilKey  = implode('_', func_get_args());
+		$jsonArray = $this->apiGetDapil($id, $tkWil);
+		if ($jsonArray) {
 
-		$isValidated = array_first($jsonArray, function ($val, $key) {
-			return is_array($val) && array_has($val, 'id');
-		});
+			if ( ! $this->getDapil($dapilKey)) {
+				$count = ( $this->getReturnData('fetchDapilCount') !== null )
+					? (int) $this->getReturnData('fetchDapilCount') : 0;
+				$this->addReturnData('fetchDapilCount', ( $count ) + count($jsonArray));
+			}
 
-		if ($jsonArray && $isValidated) {
-			return $jsonArray;
+			foreach ($jsonArray as $key => $item) {
+				$this->addDapil($dapilKey, $item);
+			}
 		}
 
-		return [];
+		return $jsonArray;
 	}
 
-	protected function getWilayahDt($id, $tk = 0)
+	protected function fetchWilayah($id)
 	{
+		$jsonArray = $this->apiGetWilayah($id);
+
+		if ($jsonArray) {
+			foreach ($jsonArray as $key => $item) {
+				$this->addWilayah($id, $item);
+
+				if ( ! $this->getWilayahDt($id)) {
+					$this->addWilayahCount();
+					$this->addWilayahDt($id, $item);
+				}
+			}
+		}
+
+		return $jsonArray;
+	}
+
+	protected function fetchWilayahDt($id, $tkWil = null, $loop = false)
+	{
+		$tkWil  = ( $tkWil ) ? $tkWil : 1;
+		$return = null;
+
+		try {
+			do {
+				$return = $this->apiGetWilayahDt($id, $tkWil);
+				$tkWil  += 1;
+
+				if ( ! $loop) {
+					$tkWil = 999;
+				}
+
+			} while (empty($return) && $tkWil <= 4);
+		} catch (\Exception $e) {
+
+		}
+
+		if ( ! empty($return)) {
+			if ( ! $this->getWilayahDt($id)) {
+				$this->addWilayahCount();
+				$this->addWilayahDt($id, $return);
+			}
+
+			return $return;
+		}
+	}
+
+	protected function pullWilayah($id = 0)
+	{
+		DB::beginTransaction();
+		try {
+			$jsonArray = $this->apiGetWilayah($id);
+
+			if ($jsonArray) {
+				$this->addReturnData('existingWilayah', count($this->wilayah_existing));
+
+				foreach ($jsonArray as $key => $item) {
+					$dataId   = array_get($item, 'id');
+					$idParent = array_get($item, 'idParent');
+					$tkWil    = array_get($item, 'tingkatWilayah');
+
+					//Get DAPIL
+					if ($this->get_dapil) {
+						//get dapil tingkat 0 if id_parent = 0 (DPR)
+						if ($idParent === 0) {
+							$this->pullDapil($dataId, $idParent);
+						}
+						$this->pullDapil($dataId, $tkWil);
+					}
+
+					//SAVE WILAYAH
+					$this->saveWilayah($dataId, $tkWil);
+				}
+			}
+
+		} catch (\Exception $e) {
+			DB::rollBack();
+		}
+
+		DB::commit();
+	}
+
+	protected function pullDapil($id, $tkWil)
+	{
+		$jsonArray = $this->getDapil($id . '_' . $tkWil);
+		if (is_null($jsonArray)) {
+			$jsonArray = $this->fetchDapil($id, $tkWil);
+		}
+
+		if ($jsonArray) {
+			foreach ($jsonArray as $key => $item) {
+				$dataId = array_get($item, 'id');
+
+				if ( ! $this->request->has('update') && in_array($dataId, $this->dapil_existing)) {
+					continue;
+				}
+
+				//SAVE DAPIL
+				//Map Data
+				$singleData = [];
+				foreach ($item as $a => $b) {
+					$snakeCaseKey = snake_case($a);
+					if (in_array($snakeCaseKey, ['wilayah', 'created_at', 'updated_at'])) {
+						continue;
+					}
+					$singleData[ $snakeCaseKey ] = $b;
+				}
+
+				//atribute to compare
+				$attribs = array_filter($singleData, function ($k) {
+					return in_array($k, ['id', 'tingkat']);
+				}, ARRAY_FILTER_USE_KEY);
+
+				if ($singleData) {
+					Dapil::updateOrCreate($attribs, $singleData);
+
+					$countDapil = ( $this->getReturnData('syncedDapil') !== null )
+						? $this->getReturnData('syncedDapil') : 0;
+					$this->addReturnData('syncedDapil', $countDapil + 1);
+				}
+			}
+		}
+	}
+
+	protected function fetchDapilWilayah()
+	{
+		if ( ! $this->request->has('dw')) {
+			return;
+		}
+
+		$returnData = [];
+		$dapil      = $this->getDapil();
+		if ($dapil) {
+			DB::beginTransaction();
+			try {
+				foreach ($dapil as $key => $dapils) {
+					if (empty($dapils)) {
+						continue;
+					}
+
+					$keyExpl = explode('_', $key);
+					$dataId  = $keyExpl[0];
+					$tkWil   = $keyExpl[1];
+
+					//Proses Wilayah - Dapil
+					$fetchWilayah          = $this->fetchWilayah($dataId);
+					$returnData[ $dataId ] = $fetchWilayah;
+
+					foreach ($dapils as $keyB => $dapil) {
+						$modelDapil  = Dapil::find(array_get($dapil, 'id'));
+						$wilayahs    = array_get($dapil, 'wilayah');
+						$wilayahsIds = array_column($wilayahs, 'idWilayah');
+
+						if (empty($wilayahs) || is_null($modelDapil)) {
+							continue;
+						}
+
+						foreach ($wilayahs as $keyC => $wilayah) {
+							$tkWilC    = ( $tkWil != 0 ) ? $tkWil : 1;
+							$idWilayah = array_get($wilayah, 'idWilayah');
+
+							$this->fetchWilayahDt($idWilayah, $tkWilC, true);
+
+							if ($this->request->has('pull')) {
+								$wilCache = $this->getWilayahDt($idWilayah);
+								$this->saveWilayah($idWilayah, array_get($wilCache, 'tingkatWilayah'), true);
+							}
+						}
+
+						//set dapil_wilayah
+						if ($this->request->has('pull')) {
+							$modelDapil->rel_wilayah()->syncWithoutDetaching($wilayahsIds);
+						}
+					}
+				}
+			} catch (\Exception $e) {
+				DB::rollBack();
+				throw $e;
+			}
+
+			DB::commit();
+		}
+
+		$this->addReturnData('dapil_wilayah', array_sum(array_map('count', $returnData)));
+	}
+
+	protected function saveWilayah($id, $tkWil, $returnModel = false)
+	{
+		if ( ! $this->request->has('update') && in_array($id, $this->wilayah_existing)) {
+			return ( $returnModel ) ? Wilayah::find($id) : null;
+		}
+
 		//get detail from api
-		$client     = new Client();
-		$requestDt  = $client->get($this->api_wil_get . $id . '/' . $tk);
-		$responseDt = $requestDt->getBody()->getContents();
-		$jsonDt     = json_decode($responseDt, true);
+		$jsonDt = $this->fetchWilayahDt($id, $tkWil);
 
-		//check returned detail
-		if ( ! is_array($jsonDt) || ! array_has($jsonDt, 'id')) {
-			return [];
-		} else {
-			return array_filter($jsonDt, function ($item) { return $item !== null; });
+		//map data
+		$singleData = [];
+		if ($jsonDt) {
+			foreach ($jsonDt as $a => $b) {
+				$singleData[ snake_case($a) ] = $b;
+			}
+
+			//atribute to compare
+			$attribs = array_filter($singleData, function ($k) {
+				return in_array($k, ['id', 'tingkat_wilayah']);
+			}, ARRAY_FILTER_USE_KEY);
+
+			if ($singleData) {
+				$model = Wilayah::updateOrCreate($attribs, $singleData);
+
+				$count = ( $this->getReturnData('syncedWilayah') !== null ) ? $this->getReturnData('syncedWilayah') : 0;
+				$this->addReturnData('syncedWilayah', $count + 1);
+
+				return $model;
+			}
+		}
+
+		return null;
+	}
+
+	protected function addReturnData($key, $value = null)
+	{
+		if (is_array($key)) {
+			$this->return_data = array_merge($this->return_data, $key);
+		} else if ( ! is_null($value)) {
+			$this->return_data[ $key ] = $value;
 		}
 	}
+
+	protected function addWilayahCount($count = 1)
+	{
+		$prevCount = ( $this->getReturnData('fetchWilayahCount') !== null )
+			? $this->getReturnData('fetchWilayahCount') : 0;
+		$this->addReturnData('fetchWilayahCount', $prevCount + $count);
+	}
+
+	public function getReturnData($key = null, $default = null)
+	{
+		if ( ! is_null($key) && ! empty($key)) {
+			return ( array_has($this->return_data, $key) ) ? $this->return_data[ $key ] : $default;
+		} else {
+			return $this->return_data;
+		}
+	}
+
+	public function addDapilWilayah($item)
+	{
+		$this->dapil_wilayah[] = $item;
+	}
+
+	public function getDapilWilayah()
+	{
+		return $this->dapil_wilayah;
+	}
+
+	protected function addDapil($key, $value)
+	{
+		$this->dapil[ $key ][] = $value;
+	}
+
+	public function getDapil($key = null, $default = null)
+	{
+		if ( ! is_null($key) && ! empty($key)) {
+			return ( array_has($this->dapil, $key) ) ? $this->dapil[ $key ] : $default;
+		} else {
+			return $this->dapil;
+		}
+	}
+
+	public function getWilayah($key = null, $default = null)
+	{
+		if ( ! is_null($key) && ! empty($key)) {
+			return ( array_has($this->wilayah, $key) ) ? $this->wilayah[ $key ] : $default;
+		} else {
+			return $this->wilayah;
+		}
+	}
+
+	public function addWilayah($key, $item)
+	{
+		$this->wilayah[ $key ][] = $item;
+	}
+
+
+	public function getWilayahDt($key = null, $default = null)
+	{
+		if ( ! is_null($key) && ! empty($key)) {
+			return ( array_has($this->wilayah_dt, $key) ) ? $this->wilayah_dt[ $key ] : $default;
+		} else {
+			return $this->wilayah_dt;
+		}
+	}
+
+	public function addWilayahDt($key, $item)
+	{
+		$this->wilayah_dt[ $key ] = $item;
+	}
+
 }

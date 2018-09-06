@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @SWG\Definition(
  *      definition="Wilayah",
- *      required={"parent_id", "nama_wilayah"},
+ *      required={"id_parent", "nama_wilayah"},
  *      @SWG\Property(
  *          property="id",
  *          description="id",
@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="parent_id",
- *          description="parent_id",
+ *          property="id_parent",
+ *          description="id_parent",
  *          type="integer",
  *          format="int32"
  *      ),
@@ -195,7 +195,40 @@ class Wilayah extends Model
 
 	protected $dates = ['deleted_at'];
 
-	protected $guarded = [];
+	//	protected $guarded = [];
+
+	public $fillable = [
+		'id',
+		'id_parent',
+		'nama_wilayah',
+		'tingkat_wilayah',
+		'id_pro',
+		'id_kab',
+		'id_kec',
+		'id_kel',
+		'nama_pro',
+		'nama_kab',
+		'nama_kec',
+		'nama_kel',
+		'kode_wilayah',
+		'tingkat_pemilihan',
+		'nomorsurat',
+		'tanggalsurat',
+		'provinsi',
+		'kabupaten',
+		'kecamatan',
+		'kelurahan',
+		'centroid_x',
+		'centroid_y',
+		'depth_level',
+		'urutan_lampiran',
+		'jumlah_penduduk',
+		'alokasi_kursi',
+		'bppd',
+		'jml_versi',
+		'dapil',
+		'peta'
+	];
 
 	/**
 	 * The attributes that should be casted to native types.
@@ -203,7 +236,7 @@ class Wilayah extends Model
 	 * @var array
 	 */
 	protected $casts = [
-		'parent_id'         => 'integer',
+		'id_parent'         => 'integer',
 		'nama_wilayah'      => 'string',
 		'tingkat_wilayah'   => 'integer',
 		'id_pro'            => 'integer',
@@ -244,8 +277,16 @@ class Wilayah extends Model
 		'nama_wilayah' => 'required'
 	];
 
-	public function dapil()
+	public function rel_dapil()
 	{
-		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah', 'dapil_id', 'wilayah_id');
+		return $this->hasMany(\App\Models\Dapil::class, 'id_wilayah');
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function rel_dapil_wilayah()
+	{
+		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah', 'dapil_id', 'id_wilayah');
 	}
 }
