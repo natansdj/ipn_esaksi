@@ -17,6 +17,7 @@ class CreateWilayahsTable extends Migration
 			$table->unsignedInteger('id', false)->primary();
 			$table->integer('id_parent')->unsigned()->nullable();
 			$table->string('nama_wilayah');
+			$table->integer('tingkat_wilayah')->nullable();
 			$table->integer('id_pro')->unsigned()->nullable();
 			$table->integer('id_kab')->unsigned()->nullable();
 			$table->integer('id_kec')->unsigned()->nullable();

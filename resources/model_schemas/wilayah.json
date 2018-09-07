@@ -29,6 +29,14 @@
     "inIndex": true
   },
   {
+    "name": "tingkat_wilayah",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
     "name": "id_pro",
     "dbType": "integer",
     "htmlType": "text",
