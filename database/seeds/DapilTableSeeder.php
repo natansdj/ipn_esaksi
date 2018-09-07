@@ -31,8 +31,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 70,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             1 => 
             array (
@@ -48,8 +48,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 70,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             2 => 
             array (
@@ -65,8 +65,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 71,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             3 => 
             array (
@@ -82,8 +82,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 71,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             4 => 
             array (
@@ -99,8 +99,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 71,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             5 => 
             array (
@@ -116,8 +116,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 72,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             6 => 
             array (
@@ -133,8 +133,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 72,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             7 => 
             array (
@@ -150,8 +150,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 73,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             8 => 
             array (
@@ -167,8 +167,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 73,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             9 => 
             array (
@@ -184,8 +184,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 74,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             10 => 
             array (
@@ -201,8 +201,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 75,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             11 => 
             array (
@@ -218,8 +218,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 75,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             12 => 
             array (
@@ -235,8 +235,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 76,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             13 => 
             array (
@@ -252,8 +252,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 77,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             14 => 
             array (
@@ -269,8 +269,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 77,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             15 => 
             array (
@@ -286,8 +286,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 78,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             16 => 
             array (
@@ -303,8 +303,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 79,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             17 => 
             array (
@@ -320,8 +320,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 80,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             18 => 
             array (
@@ -337,8 +337,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 80,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             19 => 
             array (
@@ -354,8 +354,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 80,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             20 => 
             array (
@@ -371,8 +371,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             21 => 
             array (
@@ -388,8 +388,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             22 => 
             array (
@@ -405,8 +405,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             23 => 
             array (
@@ -422,8 +422,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             24 => 
             array (
@@ -439,8 +439,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             25 => 
             array (
@@ -456,8 +456,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             26 => 
             array (
@@ -473,8 +473,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             27 => 
             array (
@@ -490,8 +490,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             28 => 
             array (
@@ -507,8 +507,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             29 => 
             array (
@@ -524,8 +524,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             30 => 
             array (
@@ -541,8 +541,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 81,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             31 => 
             array (
@@ -558,8 +558,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             32 => 
             array (
@@ -575,8 +575,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             33 => 
             array (
@@ -592,8 +592,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             34 => 
             array (
@@ -609,8 +609,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             35 => 
             array (
@@ -626,8 +626,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             36 => 
             array (
@@ -643,8 +643,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             37 => 
             array (
@@ -660,8 +660,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             38 => 
             array (
@@ -677,8 +677,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             39 => 
             array (
@@ -694,8 +694,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             40 => 
             array (
@@ -711,8 +711,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 82,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             41 => 
             array (
@@ -728,8 +728,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 83,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             42 => 
             array (
@@ -745,8 +745,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             43 => 
             array (
@@ -762,8 +762,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             44 => 
             array (
@@ -779,8 +779,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             45 => 
             array (
@@ -796,8 +796,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             46 => 
             array (
@@ -813,8 +813,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             47 => 
             array (
@@ -830,8 +830,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             48 => 
             array (
@@ -847,8 +847,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             49 => 
             array (
@@ -864,8 +864,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             50 => 
             array (
@@ -881,8 +881,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             51 => 
             array (
@@ -898,8 +898,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             52 => 
             array (
@@ -915,8 +915,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 84,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             53 => 
             array (
@@ -932,8 +932,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 85,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             54 => 
             array (
@@ -949,8 +949,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 85,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             55 => 
             array (
@@ -966,8 +966,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 85,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             56 => 
             array (
@@ -983,8 +983,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 86,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             57 => 
             array (
@@ -1000,8 +1000,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 87,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             58 => 
             array (
@@ -1017,8 +1017,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 87,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             59 => 
             array (
@@ -1034,8 +1034,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 88,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             60 => 
             array (
@@ -1051,8 +1051,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 88,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             61 => 
             array (
@@ -1068,8 +1068,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 89,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             62 => 
             array (
@@ -1085,8 +1085,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 89,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             63 => 
             array (
@@ -1102,8 +1102,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 90,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             64 => 
             array (
@@ -1119,8 +1119,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 91,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             65 => 
             array (
@@ -1136,8 +1136,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 91,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             66 => 
             array (
@@ -1153,8 +1153,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 92,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             67 => 
             array (
@@ -1170,8 +1170,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 93,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             68 => 
             array (
@@ -1187,8 +1187,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 94,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             69 => 
             array (
@@ -1204,8 +1204,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 95,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             70 => 
             array (
@@ -1221,8 +1221,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 95,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             71 => 
             array (
@@ -1238,8 +1238,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 95,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             72 => 
             array (
@@ -1255,8 +1255,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 96,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             73 => 
             array (
@@ -1272,8 +1272,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 97,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             74 => 
             array (
@@ -1289,8 +1289,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 98,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             75 => 
             array (
@@ -1306,8 +1306,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 99,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             76 => 
             array (
@@ -1323,8 +1323,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 100,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             77 => 
             array (
@@ -1340,8 +1340,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 101,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             78 => 
             array (
@@ -1357,8 +1357,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 102,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             79 => 
             array (
@@ -1374,8 +1374,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 103,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             80 => 
             array (
@@ -1391,8 +1391,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             81 => 
             array (
@@ -1408,8 +1408,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             82 => 
             array (
@@ -1425,8 +1425,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             83 => 
             array (
@@ -1442,8 +1442,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             84 => 
             array (
@@ -1459,8 +1459,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             85 => 
             array (
@@ -1476,8 +1476,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             86 => 
             array (
@@ -1493,8 +1493,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             87 => 
             array (
@@ -1510,8 +1510,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             88 => 
             array (
@@ -1527,8 +1527,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             89 => 
             array (
@@ -1544,8 +1544,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 123,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             90 => 
             array (
@@ -1561,8 +1561,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             91 => 
             array (
@@ -1578,8 +1578,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             92 => 
             array (
@@ -1595,8 +1595,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             93 => 
             array (
@@ -1612,8 +1612,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             94 => 
             array (
@@ -1629,8 +1629,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             95 => 
             array (
@@ -1646,8 +1646,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             96 => 
             array (
@@ -1663,8 +1663,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             97 => 
             array (
@@ -1680,8 +1680,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             98 => 
             array (
@@ -1697,8 +1697,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             99 => 
             array (
@@ -1714,8 +1714,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             100 => 
             array (
@@ -1731,8 +1731,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             101 => 
             array (
@@ -1748,8 +1748,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 124,
                 'no_dapil' => 12,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             102 => 
             array (
@@ -1765,8 +1765,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             103 => 
             array (
@@ -1782,8 +1782,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             104 => 
             array (
@@ -1799,8 +1799,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             105 => 
             array (
@@ -1816,8 +1816,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             106 => 
             array (
@@ -1833,8 +1833,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             107 => 
             array (
@@ -1850,8 +1850,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             108 => 
             array (
@@ -1867,8 +1867,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             109 => 
             array (
@@ -1884,8 +1884,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 125,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             110 => 
             array (
@@ -1901,8 +1901,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             111 => 
             array (
@@ -1918,8 +1918,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             112 => 
             array (
@@ -1935,8 +1935,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             113 => 
             array (
@@ -1952,8 +1952,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             114 => 
             array (
@@ -1969,8 +1969,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             115 => 
             array (
@@ -1986,8 +1986,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             116 => 
             array (
@@ -2003,8 +2003,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             117 => 
             array (
@@ -2020,8 +2020,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 126,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             118 => 
             array (
@@ -2037,8 +2037,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             119 => 
             array (
@@ -2054,8 +2054,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             120 => 
             array (
@@ -2071,8 +2071,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             121 => 
             array (
@@ -2088,8 +2088,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             122 => 
             array (
@@ -2105,8 +2105,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             123 => 
             array (
@@ -2122,8 +2122,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 127,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             124 => 
             array (
@@ -2139,8 +2139,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             125 => 
             array (
@@ -2156,8 +2156,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             126 => 
             array (
@@ -2173,8 +2173,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             127 => 
             array (
@@ -2190,8 +2190,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             128 => 
             array (
@@ -2207,8 +2207,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             129 => 
             array (
@@ -2224,8 +2224,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             130 => 
             array (
@@ -2241,8 +2241,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             131 => 
             array (
@@ -2258,8 +2258,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             132 => 
             array (
@@ -2275,8 +2275,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             133 => 
             array (
@@ -2292,8 +2292,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 128,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             134 => 
             array (
@@ -2309,8 +2309,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             135 => 
             array (
@@ -2326,8 +2326,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             136 => 
             array (
@@ -2343,8 +2343,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             137 => 
             array (
@@ -2360,8 +2360,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             138 => 
             array (
@@ -2377,8 +2377,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             139 => 
             array (
@@ -2394,8 +2394,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             140 => 
             array (
@@ -2411,8 +2411,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 129,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             141 => 
             array (
@@ -2428,8 +2428,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             142 => 
             array (
@@ -2445,8 +2445,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             143 => 
             array (
@@ -2462,8 +2462,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             144 => 
             array (
@@ -2479,8 +2479,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             145 => 
             array (
@@ -2496,8 +2496,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             146 => 
             array (
@@ -2513,8 +2513,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             147 => 
             array (
@@ -2530,8 +2530,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             148 => 
             array (
@@ -2547,8 +2547,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 130,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             149 => 
             array (
@@ -2564,8 +2564,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             150 => 
             array (
@@ -2581,8 +2581,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             151 => 
             array (
@@ -2598,8 +2598,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             152 => 
             array (
@@ -2615,8 +2615,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             153 => 
             array (
@@ -2632,8 +2632,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             154 => 
             array (
@@ -2649,8 +2649,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 131,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             155 => 
             array (
@@ -2666,8 +2666,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             156 => 
             array (
@@ -2683,8 +2683,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             157 => 
             array (
@@ -2700,8 +2700,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             158 => 
             array (
@@ -2717,8 +2717,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             159 => 
             array (
@@ -2734,8 +2734,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             160 => 
             array (
@@ -2751,8 +2751,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             161 => 
             array (
@@ -2768,8 +2768,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 132,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             162 => 
             array (
@@ -2785,8 +2785,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             163 => 
             array (
@@ -2802,8 +2802,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             164 => 
             array (
@@ -2819,8 +2819,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             165 => 
             array (
@@ -2836,8 +2836,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             166 => 
             array (
@@ -2853,8 +2853,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             167 => 
             array (
@@ -2870,8 +2870,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             168 => 
             array (
@@ -2887,8 +2887,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             169 => 
             array (
@@ -2904,8 +2904,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             170 => 
             array (
@@ -2921,8 +2921,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             171 => 
             array (
@@ -2938,8 +2938,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 133,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             172 => 
             array (
@@ -2955,8 +2955,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             173 => 
             array (
@@ -2972,8 +2972,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             174 => 
             array (
@@ -2989,8 +2989,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             175 => 
             array (
@@ -3006,8 +3006,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             176 => 
             array (
@@ -3023,8 +3023,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             177 => 
             array (
@@ -3040,8 +3040,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             178 => 
             array (
@@ -3057,8 +3057,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             179 => 
             array (
@@ -3074,8 +3074,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             180 => 
             array (
@@ -3091,8 +3091,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             181 => 
             array (
@@ -3108,8 +3108,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             182 => 
             array (
@@ -3125,8 +3125,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             183 => 
             array (
@@ -3142,8 +3142,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 12,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             184 => 
             array (
@@ -3159,8 +3159,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 13,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             185 => 
             array (
@@ -3176,8 +3176,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 14,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             186 => 
             array (
@@ -3193,8 +3193,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 134,
                 'no_dapil' => 15,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             187 => 
             array (
@@ -3210,8 +3210,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             188 => 
             array (
@@ -3227,8 +3227,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             189 => 
             array (
@@ -3244,8 +3244,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             190 => 
             array (
@@ -3261,8 +3261,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             191 => 
             array (
@@ -3278,8 +3278,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             192 => 
             array (
@@ -3295,8 +3295,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             193 => 
             array (
@@ -3312,8 +3312,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             194 => 
             array (
@@ -3329,8 +3329,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             195 => 
             array (
@@ -3346,8 +3346,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             196 => 
             array (
@@ -3363,8 +3363,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             197 => 
             array (
@@ -3380,8 +3380,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             198 => 
             array (
@@ -3397,8 +3397,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 12,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             199 => 
             array (
@@ -3414,8 +3414,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 135,
                 'no_dapil' => 13,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             200 => 
             array (
@@ -3431,8 +3431,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             201 => 
             array (
@@ -3448,8 +3448,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             202 => 
             array (
@@ -3465,8 +3465,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             203 => 
             array (
@@ -3482,8 +3482,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             204 => 
             array (
@@ -3499,8 +3499,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             205 => 
             array (
@@ -3516,8 +3516,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             206 => 
             array (
@@ -3533,8 +3533,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 136,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             207 => 
             array (
@@ -3550,8 +3550,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             208 => 
             array (
@@ -3567,8 +3567,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             209 => 
             array (
@@ -3584,8 +3584,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             210 => 
             array (
@@ -3601,8 +3601,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             211 => 
             array (
@@ -3618,8 +3618,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             212 => 
             array (
@@ -3635,8 +3635,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             213 => 
             array (
@@ -3652,8 +3652,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             214 => 
             array (
@@ -3669,8 +3669,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             215 => 
             array (
@@ -3686,8 +3686,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             216 => 
             array (
@@ -3703,8 +3703,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             217 => 
             array (
@@ -3720,8 +3720,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             218 => 
             array (
@@ -3737,8 +3737,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 12,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             219 => 
             array (
@@ -3754,8 +3754,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 13,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             220 => 
             array (
@@ -3771,8 +3771,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 137,
                 'no_dapil' => 14,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             221 => 
             array (
@@ -3788,8 +3788,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             222 => 
             array (
@@ -3805,8 +3805,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             223 => 
             array (
@@ -3822,8 +3822,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             224 => 
             array (
@@ -3839,8 +3839,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             225 => 
             array (
@@ -3856,8 +3856,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             226 => 
             array (
@@ -3873,8 +3873,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             227 => 
             array (
@@ -3890,8 +3890,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             228 => 
             array (
@@ -3907,8 +3907,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             229 => 
             array (
@@ -3924,8 +3924,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             230 => 
             array (
@@ -3941,8 +3941,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 138,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             231 => 
             array (
@@ -3958,8 +3958,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             232 => 
             array (
@@ -3975,8 +3975,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             233 => 
             array (
@@ -3992,8 +3992,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             234 => 
             array (
@@ -4009,8 +4009,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             235 => 
             array (
@@ -4026,8 +4026,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             236 => 
             array (
@@ -4043,8 +4043,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             237 => 
             array (
@@ -4060,8 +4060,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             238 => 
             array (
@@ -4077,8 +4077,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             239 => 
             array (
@@ -4094,8 +4094,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 139,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:52',
-                'updated_at' => '2018-09-07 02:16:52',
+                'created_at' => '2018-09-07 12:13:15',
+                'updated_at' => '2018-09-07 12:13:15',
             ),
             240 => 
             array (
@@ -4111,8 +4111,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             241 => 
             array (
@@ -4128,8 +4128,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             242 => 
             array (
@@ -4145,8 +4145,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             243 => 
             array (
@@ -4162,8 +4162,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             244 => 
             array (
@@ -4179,8 +4179,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             245 => 
             array (
@@ -4196,8 +4196,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             246 => 
             array (
@@ -4213,8 +4213,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             247 => 
             array (
@@ -4230,8 +4230,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 140,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             248 => 
             array (
@@ -4247,8 +4247,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             249 => 
             array (
@@ -4264,8 +4264,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             250 => 
             array (
@@ -4281,8 +4281,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             251 => 
             array (
@@ -4298,8 +4298,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             252 => 
             array (
@@ -4315,8 +4315,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             253 => 
             array (
@@ -4332,8 +4332,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             254 => 
             array (
@@ -4349,8 +4349,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             255 => 
             array (
@@ -4366,8 +4366,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 141,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             256 => 
             array (
@@ -4383,8 +4383,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             257 => 
             array (
@@ -4400,8 +4400,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             258 => 
             array (
@@ -4417,8 +4417,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             259 => 
             array (
@@ -4434,8 +4434,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             260 => 
             array (
@@ -4451,8 +4451,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             261 => 
             array (
@@ -4468,8 +4468,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             262 => 
             array (
@@ -4485,8 +4485,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             263 => 
             array (
@@ -4502,8 +4502,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 142,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             264 => 
             array (
@@ -4519,8 +4519,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 143,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             265 => 
             array (
@@ -4536,8 +4536,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 143,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             266 => 
             array (
@@ -4553,8 +4553,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 143,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             267 => 
             array (
@@ -4570,8 +4570,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 143,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             268 => 
             array (
@@ -4587,8 +4587,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 143,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             269 => 
             array (
@@ -4604,8 +4604,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             270 => 
             array (
@@ -4621,8 +4621,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             271 => 
             array (
@@ -4638,8 +4638,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             272 => 
             array (
@@ -4655,8 +4655,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             273 => 
             array (
@@ -4672,8 +4672,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             274 => 
             array (
@@ -4689,8 +4689,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             275 => 
             array (
@@ -4706,8 +4706,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 144,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             276 => 
             array (
@@ -4723,8 +4723,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             277 => 
             array (
@@ -4740,8 +4740,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             278 => 
             array (
@@ -4757,8 +4757,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             279 => 
             array (
@@ -4774,8 +4774,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             280 => 
             array (
@@ -4791,8 +4791,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             281 => 
             array (
@@ -4808,8 +4808,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 145,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             282 => 
             array (
@@ -4825,8 +4825,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             283 => 
             array (
@@ -4842,8 +4842,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             284 => 
             array (
@@ -4859,8 +4859,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             285 => 
             array (
@@ -4876,8 +4876,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             286 => 
             array (
@@ -4893,8 +4893,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             287 => 
             array (
@@ -4910,8 +4910,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 146,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             288 => 
             array (
@@ -4927,8 +4927,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             289 => 
             array (
@@ -4944,8 +4944,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             290 => 
             array (
@@ -4961,8 +4961,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             291 => 
             array (
@@ -4978,8 +4978,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             292 => 
             array (
@@ -4995,8 +4995,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             293 => 
             array (
@@ -5012,8 +5012,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 147,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             294 => 
             array (
@@ -5029,8 +5029,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             295 => 
             array (
@@ -5046,8 +5046,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             296 => 
             array (
@@ -5063,8 +5063,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             297 => 
             array (
@@ -5080,8 +5080,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             298 => 
             array (
@@ -5097,8 +5097,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             299 => 
             array (
@@ -5114,8 +5114,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             300 => 
             array (
@@ -5131,8 +5131,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             301 => 
             array (
@@ -5148,8 +5148,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 8,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             302 => 
             array (
@@ -5165,8 +5165,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 9,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             303 => 
             array (
@@ -5182,8 +5182,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 10,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             304 => 
             array (
@@ -5199,8 +5199,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 148,
                 'no_dapil' => 11,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             305 => 
             array (
@@ -5216,8 +5216,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             306 => 
             array (
@@ -5233,8 +5233,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             307 => 
             array (
@@ -5250,8 +5250,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             308 => 
             array (
@@ -5267,8 +5267,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             309 => 
             array (
@@ -5284,8 +5284,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             310 => 
             array (
@@ -5301,8 +5301,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 149,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:18',
+                'updated_at' => '2018-09-07 12:13:18',
             ),
             311 => 
             array (
@@ -5318,8 +5318,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             312 => 
             array (
@@ -5335,8 +5335,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             313 => 
             array (
@@ -5352,8 +5352,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             314 => 
             array (
@@ -5369,8 +5369,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             315 => 
             array (
@@ -5386,8 +5386,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             316 => 
             array (
@@ -5403,8 +5403,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 150,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:16',
+                'updated_at' => '2018-09-07 12:13:16',
             ),
             317 => 
             array (
@@ -5420,8 +5420,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             318 => 
             array (
@@ -5437,8 +5437,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             319 => 
             array (
@@ -5454,8 +5454,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             320 => 
             array (
@@ -5471,8 +5471,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             321 => 
             array (
@@ -5488,8 +5488,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             322 => 
             array (
@@ -5505,8 +5505,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             323 => 
             array (
@@ -5522,8 +5522,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 151,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             324 => 
             array (
@@ -5539,8 +5539,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             325 => 
             array (
@@ -5556,8 +5556,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             326 => 
             array (
@@ -5573,8 +5573,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             327 => 
             array (
@@ -5590,8 +5590,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             328 => 
             array (
@@ -5607,8 +5607,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             329 => 
             array (
@@ -5624,8 +5624,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             330 => 
             array (
@@ -5641,8 +5641,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 152,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             331 => 
             array (
@@ -5658,8 +5658,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 153,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             332 => 
             array (
@@ -5675,8 +5675,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 153,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             333 => 
             array (
@@ -5692,8 +5692,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 153,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             334 => 
             array (
@@ -5709,8 +5709,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 153,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             335 => 
             array (
@@ -5726,8 +5726,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 153,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             336 => 
             array (
@@ -5743,8 +5743,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             337 => 
             array (
@@ -5760,8 +5760,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             338 => 
             array (
@@ -5777,8 +5777,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             339 => 
             array (
@@ -5794,8 +5794,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             340 => 
             array (
@@ -5811,8 +5811,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             341 => 
             array (
@@ -5828,8 +5828,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 6,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             342 => 
             array (
@@ -5845,8 +5845,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 154,
                 'no_dapil' => 7,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             343 => 
             array (
@@ -5862,8 +5862,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 155,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             344 => 
             array (
@@ -5879,8 +5879,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 155,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             345 => 
             array (
@@ -5896,8 +5896,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 155,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             346 => 
             array (
@@ -5913,8 +5913,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 155,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             347 => 
             array (
@@ -5930,8 +5930,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 155,
                 'no_dapil' => 5,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:54',
-                'updated_at' => '2018-09-07 02:16:54',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             348 => 
             array (
@@ -5947,8 +5947,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 156,
                 'no_dapil' => 1,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             349 => 
             array (
@@ -5964,8 +5964,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 156,
                 'no_dapil' => 2,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             350 => 
             array (
@@ -5981,8 +5981,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 156,
                 'no_dapil' => 3,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
             351 => 
             array (
@@ -5998,8 +5998,8 @@ class DapilTableSeeder extends Seeder
                 'id_versi' => 156,
                 'no_dapil' => 4,
                 'deleted_at' => NULL,
-                'created_at' => '2018-09-07 02:16:53',
-                'updated_at' => '2018-09-07 02:16:53',
+                'created_at' => '2018-09-07 12:13:17',
+                'updated_at' => '2018-09-07 12:13:17',
             ),
         ));
         
