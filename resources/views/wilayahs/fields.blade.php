@@ -1,6 +1,6 @@
-<!-- Parent Id Field -->
+<!-- Id Parent Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_parent', 'Parent Id:') !!}
+    {!! Form::label('id_parent', 'Id Parent:') !!}
     {!! Form::text('id_parent', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -8,12 +8,6 @@
 <div class="form-group col-sm-6">
     {!! Form::label('nama_wilayah', 'Nama Wilayah:') !!}
     {!! Form::text('nama_wilayah', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Tingkat Wilayah Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('tingkat_wilayah', 'Tingkat Wilayah:') !!}
-    {!! Form::text('tingkat_wilayah', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Id Pro Field -->
@@ -86,48 +80,6 @@
 <div class="form-group col-sm-6">
     {!! Form::label('depth_level', 'Depth Level:') !!}
     {!! Form::text('depth_level', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Urutan Lampiran Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('urutan_lampiran', 'Urutan Lampiran:') !!}
-    {!! Form::text('urutan_lampiran', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Jumlah Penduduk Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('jumlah_penduduk', 'Jumlah Penduduk:') !!}
-    {!! Form::text('jumlah_penduduk', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Alokasi Kursi Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('alokasi_kursi', 'Alokasi Kursi:') !!}
-    {!! Form::text('alokasi_kursi', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Bppd Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('bppd', 'Bppd:') !!}
-    {!! Form::text('bppd', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Jml Versi Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('jml_versi', 'Jml Versi:') !!}
-    {!! Form::text('jml_versi', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Dapil Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('dapil', 'Dapil:') !!}
-    {!! Form::text('dapil', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Peta Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('peta', 'Peta:') !!}
-    {!! Form::text('peta', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

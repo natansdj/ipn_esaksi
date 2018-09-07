@@ -240,56 +240,8 @@ class UserAPIController extends AppBaseController
         return $this->sendResponse($user->toArray(), 'User updated successfully');
     }
 
-    /**
-     * @param int $id
-     * @return Response
-     *
-     * @SWG\Delete(
-     *      path="/users/{id}",
-     *      summary="Remove the specified User from storage",
-     *      tags={"User"},
-     *      description="Delete User",
-     *      produces={"application/json"},
-     *      security = {{"JWTBearer":{}}},
-     *      @SWG\Parameter(
-     *          name="id",
-     *          description="id of User",
-     *          type="integer",
-     *          required=true,
-     *          in="path"
-     *      ),
-     *      @SWG\Response(
-     *          response=200,
-     *          description="successful operation",
-     *          @SWG\Schema(
-     *              type="object",
-     *              @SWG\Property(
-     *                  property="success",
-     *                  type="boolean"
-     *              ),
-     *              @SWG\Property(
-     *                  property="data",
-     *                  type="string"
-     *              ),
-     *              @SWG\Property(
-     *                  property="message",
-     *                  type="string"
-     *              )
-     *          )
-     *      )
-     * )
-     */
     public function destroy($id)
     {
-        /** @var User $user */
-        $user = $this->userRepository->findWithoutFail($id);
-
-        if (empty($user)) {
-            return $this->sendError('User not found');
-        }
-
-        $user->delete();
-
-        return $this->sendResponse($id, 'User deleted successfully');
+	    return $this->sendError('Not found');
     }
 }

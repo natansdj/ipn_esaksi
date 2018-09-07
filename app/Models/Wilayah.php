@@ -148,8 +148,6 @@ class Wilayah extends Model
 
 	protected $dates = ['deleted_at'];
 
-	//	protected $guarded = [];
-
 	public $fillable = [
 		'id',
 		'id_parent',
@@ -172,7 +170,7 @@ class Wilayah extends Model
 		'kelurahan',
 		'centroid_x',
 		'centroid_y',
-		'depth_level',
+		'depth_level'
 	];
 
 	/**
@@ -201,7 +199,7 @@ class Wilayah extends Model
 		'kelurahan'         => 'string',
 		'centroid_x'        => 'string',
 		'centroid_y'        => 'string',
-		'depth_level'       => 'integer',
+		'depth_level'       => 'integer'
 	];
 
 	/**

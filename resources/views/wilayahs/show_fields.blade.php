@@ -4,9 +4,9 @@
     <p>{!! $wilayah->id !!}</p>
 </div>
 
-<!-- Parent Id Field -->
+<!-- Id Parent Field -->
 <div class="form-group">
-    {!! Form::label('id_parent', 'Parent Id:') !!}
+    {!! Form::label('id_parent', 'Id Parent:') !!}
     <p>{!! $wilayah->id_parent !!}</p>
 </div>
 
@@ -14,12 +14,6 @@
 <div class="form-group">
     {!! Form::label('nama_wilayah', 'Nama Wilayah:') !!}
     <p>{!! $wilayah->nama_wilayah !!}</p>
-</div>
-
-<!-- Tingkat Wilayah Field -->
-<div class="form-group">
-    {!! Form::label('tingkat_wilayah', 'Tingkat Wilayah:') !!}
-    <p>{!! $wilayah->tingkat_wilayah !!}</p>
 </div>
 
 <!-- Id Pro Field -->
@@ -134,42 +128,6 @@
 <div class="form-group">
     {!! Form::label('depth_level', 'Depth Level:') !!}
     <p>{!! $wilayah->depth_level !!}</p>
-</div>
-
-<!-- Urutan Lampiran Field -->
-<div class="form-group">
-    {!! Form::label('urutan_lampiran', 'Urutan Lampiran:') !!}
-    <p>{!! $wilayah->urutan_lampiran !!}</p>
-</div>
-
-<!-- Jumlah Penduduk Field -->
-<div class="form-group">
-    {!! Form::label('jumlah_penduduk', 'Jumlah Penduduk:') !!}
-    <p>{!! $wilayah->jumlah_penduduk !!}</p>
-</div>
-
-<!-- Alokasi Kursi Field -->
-<div class="form-group">
-    {!! Form::label('alokasi_kursi', 'Alokasi Kursi:') !!}
-    <p>{!! $wilayah->alokasi_kursi !!}</p>
-</div>
-
-<!-- Bppd Field -->
-<div class="form-group">
-    {!! Form::label('bppd', 'Bppd:') !!}
-    <p>{!! $wilayah->bppd !!}</p>
-</div>
-
-<!-- Jml Versi Field -->
-<div class="form-group">
-    {!! Form::label('jml_versi', 'Jml Versi:') !!}
-    <p>{!! $wilayah->jml_versi !!}</p>
-</div>
-
-<!-- Peta Field -->
-<div class="form-group">
-    {!! Form::label('peta', 'Peta:') !!}
-    <p>{!! $wilayah->peta !!}</p>
 </div>
 
 <!-- Created At Field -->

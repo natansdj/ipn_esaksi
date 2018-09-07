@@ -96,8 +96,6 @@ class Dapil extends Model
 
 	protected $dates = ['deleted_at'];
 
-	//	protected $guarded = [];
-
 	public $fillable = [
 		'id',
 		'nama',
