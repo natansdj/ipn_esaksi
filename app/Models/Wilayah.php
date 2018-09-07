@@ -27,12 +27,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="tingkat_wilayah",
- *          description="tingkat_wilayah",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
  *          property="id_pro",
  *          description="id_pro",
  *          type="integer",
@@ -133,47 +127,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="urutan_lampiran",
- *          description="urutan_lampiran",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="jumlah_penduduk",
- *          description="jumlah_penduduk",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="alokasi_kursi",
- *          description="alokasi_kursi",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="bppd",
- *          description="bppd",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="jml_versi",
- *          description="jml_versi",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="dapil",
- *          description="dapil",
- *          type="integer",
- *          format="int32"
- *      ),
- *      @SWG\Property(
- *          property="peta",
- *          description="peta",
- *          type="string"
- *      ),
- *      @SWG\Property(
  *          property="created_at",
  *          description="created_at",
  *          type="string",
@@ -201,7 +154,6 @@ class Wilayah extends Model
 		'id',
 		'id_parent',
 		'nama_wilayah',
-		'tingkat_wilayah',
 		'id_pro',
 		'id_kab',
 		'id_kec',
@@ -221,13 +173,6 @@ class Wilayah extends Model
 		'centroid_x',
 		'centroid_y',
 		'depth_level',
-		'urutan_lampiran',
-		'jumlah_penduduk',
-		'alokasi_kursi',
-		'bppd',
-		'jml_versi',
-		'dapil',
-		'peta'
 	];
 
 	/**
@@ -238,7 +183,6 @@ class Wilayah extends Model
 	protected $casts = [
 		'id_parent'         => 'integer',
 		'nama_wilayah'      => 'string',
-		'tingkat_wilayah'   => 'integer',
 		'id_pro'            => 'integer',
 		'id_kab'            => 'integer',
 		'id_kec'            => 'integer',
@@ -258,13 +202,6 @@ class Wilayah extends Model
 		'centroid_x'        => 'string',
 		'centroid_y'        => 'string',
 		'depth_level'       => 'integer',
-		'urutan_lampiran'   => 'integer',
-		'jumlah_penduduk'   => 'integer',
-		'alokasi_kursi'     => 'integer',
-		'bppd'              => 'integer',
-		'jml_versi'         => 'integer',
-		'dapil'             => 'integer',
-		'peta'              => 'string'
 	];
 
 	/**

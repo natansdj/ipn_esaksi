@@ -1,0 +1,92 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "tingkat_wilayah",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+
+  {
+    "name": "urutan_lampiran",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jumlah_penduduk",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "alokasi_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "bppd",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jml_versi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "peta",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

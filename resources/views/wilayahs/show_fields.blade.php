@@ -166,12 +166,6 @@
     <p>{!! $wilayah->jml_versi !!}</p>
 </div>
 
-<!-- Dapil Field -->
-<div class="form-group">
-    {!! Form::label('dapil', 'Dapil:') !!}
-    <p>{!! $wilayah->dapil !!}</p>
-</div>
-
 <!-- Peta Field -->
 <div class="form-group">
     {!! Form::label('peta', 'Peta:') !!}
