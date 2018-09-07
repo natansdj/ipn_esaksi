@@ -169,7 +169,7 @@ class ScrapeController extends AppBaseController
 
 	protected function fetchWilayahDt($id, $tkWil = null, $loop = false)
 	{
-		$tkWil  = ( $tkWil ) ? $tkWil : 1;
+		$tkWil  = ( ! is_null($tkWil) ) ? $tkWil : 1;
 		$return = null;
 
 		try {
@@ -210,6 +210,12 @@ class ScrapeController extends AppBaseController
 					$idParent = array_get($item, 'idParent');
 					$tkWil    = array_get($item, 'tingkatWilayah');
 
+					//SAVE WILAYAH
+					if ($idParent === 0) {
+						$this->saveWilayah($dataId, $idParent);
+					}
+					$this->saveWilayah($dataId, $tkWil);
+
 					//Get DAPIL
 					if ($this->get_dapil) {
 						//get dapil tingkat 0 if id_parent = 0 (DPR)
@@ -218,12 +224,6 @@ class ScrapeController extends AppBaseController
 						}
 						$this->pullDapil($dataId, $tkWil);
 					}
-
-					//SAVE WILAYAH
-					if ($idParent === 0) {
-						$this->saveWilayah($dataId, $idParent);
-					}
-					$this->saveWilayah($dataId, $tkWil);
 				}
 			}
 
