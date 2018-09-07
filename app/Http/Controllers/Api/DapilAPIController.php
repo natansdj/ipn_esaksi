@@ -37,6 +37,7 @@ class DapilAPIController extends AppBaseController
 	 *      tags={"Dapil"},
 	 *      description="Get all Dapils",
 	 *      produces={"application/json"},
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Response(
 	 *          response=200,
 	 *          description="successful operation",
@@ -84,6 +85,7 @@ class DapilAPIController extends AppBaseController
 	 *      tags={"Dapil"},
 	 *      description="Get Dapil",
 	 *      produces={"application/json"},
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Parameter(
 	 *          name="id",
 	 *          description="id of Dapil",

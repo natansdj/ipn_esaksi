@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class WilayahRepository
  * @package App\Repositories
- * @version September 7, 2018, 8:52 am UTC
+ * @version September 7, 2018, 3:16 pm UTC
  *
  * @method Wilayah findWithoutFail($id, $columns = ['*'])
  * @method Wilayah find($id, $columns = ['*'])

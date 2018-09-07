@@ -28,6 +28,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="dapil_id",
+ *          description="dapil_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="name",
  *          description="name",
  *          type="string"
@@ -76,25 +82,21 @@ class Tps extends Model
 {
 	use SoftDeletes;
 
-	/**
-	 * Validation rules
-	 *
-	 * @var array
-	 */
-	public static $rules = [
-		'name' => 'required'
-	];
 	public $table = 'tps';
+
+	protected $dates = ['deleted_at'];
+
 	public $fillable = [
 		'province_id',
 		'kodepos_id',
+		'dapil_id',
 		'name',
 		'address',
 		'geo_location',
 		'type',
 		'note'
 	];
-	protected $dates = ['deleted_at'];
+
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -103,11 +105,21 @@ class Tps extends Model
 	protected $casts = [
 		'province_id'  => 'integer',
 		'kodepos_id'   => 'integer',
+		'dapil_id'     => 'integer',
 		'name'         => 'string',
 		'address'      => 'string',
 		'geo_location' => 'string',
 		'type'         => 'string',
 		'note'         => 'string'
+	];
+
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public static $rules = [
+		'name' => 'required'
 	];
 
 	public function users()
@@ -129,5 +141,13 @@ class Tps extends Model
 	public function kodepos()
 	{
 		return $this->belongsTo(\App\Models\Kodepos::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 **/
+	public function dapil()
+	{
+		return $this->belongsTo(\App\Models\Dapil::class);
 	}
 }

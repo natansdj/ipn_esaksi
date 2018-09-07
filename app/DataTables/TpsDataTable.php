@@ -5,7 +5,6 @@ namespace App\DataTables;
 use App\Models\Tps;
 use Yajra\DataTables\CollectionDataTable;
 use Yajra\DataTables\Services\DataTable;
-use Yajra\DataTables\EloquentDataTable;
 
 class TpsDataTable extends DataTable
 {
@@ -27,7 +26,7 @@ class TpsDataTable extends DataTable
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Post $model
+	 * @param \App\Models\Tps $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */

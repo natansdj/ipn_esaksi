@@ -154,4 +154,12 @@ class Dapil extends Model
 	{
 		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
 	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function pileg()
+	{
+		return $this->belongsToMany(\App\Models\Pileg::class);
+	}
 }

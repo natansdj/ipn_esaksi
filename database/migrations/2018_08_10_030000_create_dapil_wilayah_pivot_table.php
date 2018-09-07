@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateDapilWilayahPivotTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateDapilWilayahPivotTable extends Migration
 			$table->integer('dapil_id')->unsigned()->index();
 			$table->integer('wilayah_id')->unsigned()->index();
 			$table->primary(['dapil_id', 'wilayah_id']);
-			
+
 			$table->foreign('wilayah_id')->references('id')->on('wilayah')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('dapil_id')->references('id')->on('dapil')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});

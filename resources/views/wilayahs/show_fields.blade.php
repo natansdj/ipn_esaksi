@@ -16,6 +16,12 @@
     <p>{!! $wilayah->nama_wilayah !!}</p>
 </div>
 
+<!-- Tingkat Wilayah Field -->
+<div class="form-group">
+    {!! Form::label('tingkat_wilayah', 'Tingkat Wilayah:') !!}
+    <p>{!! $wilayah->tingkat_wilayah !!}</p>
+</div>
+
 <!-- Id Pro Field -->
 <div class="form-group">
     {!! Form::label('id_pro', 'Id Pro:') !!}

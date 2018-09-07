@@ -7,8 +7,6 @@ use App\Models\Tingkatan;
 use App\Models\Wilayah;
 use App\Traits\ApiKpuTrait;
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class ScrapeController extends AppBaseController
@@ -78,7 +76,24 @@ class ScrapeController extends AppBaseController
 
 		//FETCH
 		try {
+			set_time_limit(0);
 			$jsonArray = $this->fetchWilayah($id);
+
+			if ($jsonArray && $this->depth) {
+				$depthArr = $jsonArray;
+				for ($this->current_depth = 1; $this->current_depth <= $this->depth; $this->current_depth ++) {
+					$currentArr = [];
+					foreach ($depthArr as $item) {
+						$wilayahArr = $this->fetchWilayah(array_get($item, 'id'));
+						$currentArr = array_merge($currentArr, $wilayahArr);
+					}
+					$jsonArray = array_merge($jsonArray, $currentArr);
+					$depthArr  = $currentArr;
+				}
+			}
+
+			$wilayahIds = array_column($jsonArray, 'id');
+			$wilayahIds = array_prepend($wilayahIds, 0);
 
 			if ($jsonArray && $this->get_dapil) {
 				foreach ($jsonArray as $key => $item) {
@@ -101,6 +116,8 @@ class ScrapeController extends AppBaseController
 			}
 
 			//PULL
+			$this->addReturnData('depth', $this->depth);
+			$this->addReturnData('count', count($jsonArray));
 			if ($pull) {
 				$this->addReturnData('isUpdate', (bool) $this->request->has('update'));
 				$this->addReturnData('fetchWilayahCount', true);
@@ -111,9 +128,10 @@ class ScrapeController extends AppBaseController
 					$this->addReturnData('syncedDapil', 0);
 				}
 
-				$this->pullWilayah($id);
+				foreach ($wilayahIds as $wilId) {
+					$this->pullWilayah($wilId);
+				}
 			} else {
-				$this->addReturnData('count', count($jsonArray));
 				$this->addReturnData('wilayah', array_sum(array_map('count', $this->getWilayah())));
 				$this->addReturnData('dapil', array_sum(array_map('count', $this->getDapil())));
 			}

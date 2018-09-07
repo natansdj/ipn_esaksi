@@ -10,6 +10,12 @@
     {!! Form::text('nama_wilayah', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Tingkat Wilayah Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('tingkat_wilayah', 'Tingkat Wilayah:') !!}
+    {!! Form::text('tingkat_wilayah', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Id Pro Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_pro', 'Id Pro:') !!}

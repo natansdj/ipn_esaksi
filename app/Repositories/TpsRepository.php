@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class TpsRepository
  * @package App\Repositories
- * @version August 29, 2018, 11:24 am UTC
+ * @version September 7, 2018, 3:25 pm UTC
  *
  * @method Tps findWithoutFail($id, $columns = ['*'])
  * @method Tps find($id, $columns = ['*'])

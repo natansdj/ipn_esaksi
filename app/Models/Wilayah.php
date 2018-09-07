@@ -27,6 +27,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="tingkat_wilayah",
+ *          description="tingkat_wilayah",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="id_pro",
  *          description="id_pro",
  *          type="integer",
@@ -152,6 +158,7 @@ class Wilayah extends Model
 		'id',
 		'id_parent',
 		'nama_wilayah',
+		'tingkat_wilayah',
 		'id_pro',
 		'id_kab',
 		'id_kec',
@@ -181,6 +188,7 @@ class Wilayah extends Model
 	protected $casts = [
 		'id_parent'         => 'integer',
 		'nama_wilayah'      => 'string',
+		'tingkat_wilayah'   => 'integer',
 		'id_pro'            => 'integer',
 		'id_kab'            => 'integer',
 		'id_kec'            => 'integer',

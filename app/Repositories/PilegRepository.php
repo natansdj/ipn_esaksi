@@ -2,14 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Criteria\PilegRequestCriteria;
 use App\Models\Pileg;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class PilegRepository
  * @package App\Repositories
- * @version August 29, 2018, 6:44 am UTC
+ * @version September 7, 2018, 3:18 pm UTC
  *
  * @method Pileg findWithoutFail( $id, $columns = ['*'] )
  * @method Pileg find( $id, $columns = ['*'] )

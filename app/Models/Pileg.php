@@ -10,6 +10,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      definition="Pileg",
  *      required={"name", "dob", "pob", "partai"},
  *      @SWG\Property(
+ *          property="id",
+ *          description="id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="province_id",
  *          description="province_id",
  *          type="integer",
@@ -45,6 +51,29 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          property="type",
  *          description="type",
  *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="note",
+ *          description="note",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="deleted_at",
+ *          description="deleted_at",
+ *          type="string",
+ *          format="date-time"
+ *      ),
+ *      @SWG\Property(
+ *          property="created_at",
+ *          description="created_at",
+ *          type="string",
+ *          format="date-time"
+ *      ),
+ *      @SWG\Property(
+ *          property="updated_at",
+ *          description="updated_at",
+ *          type="string",
+ *          format="date-time"
  *      )
  * )
  */
@@ -52,18 +81,8 @@ class Pileg extends Model
 {
 	use SoftDeletes;
 
-	/**
-	 * Validation rules
-	 *
-	 * @var array
-	 */
-	public static $rules = [
-		'name'   => 'required',
-		'dob'    => 'required',
-		'pob'    => 'required',
-		'partai' => 'required'
-	];
 	public $table = 'pilegs';
+
 	public $fillable = [
 		'province_id',
 		'name',
@@ -71,7 +90,8 @@ class Pileg extends Model
 		'dob',
 		'pob',
 		'partai',
-		'type'
+		'type',
+		'note'
 	];
 	protected $dates = ['deleted_at'];
 	/**
@@ -86,9 +106,24 @@ class Pileg extends Model
 		'dob'         => 'date',
 		'pob'         => 'string',
 		'partai'      => 'string',
-		'type'        => 'string'
+		'type'        => 'string',
+		'note'        => 'string'
 	];
 
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
+	public static $rules = [
+		'name'   => 'required',
+		'dob'    => 'required',
+		'pob'    => 'required',
+		'partai' => 'required'
+	];
+
+	protected $with = ['dapil'];
+	
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 **/
@@ -110,5 +145,13 @@ class Pileg extends Model
 	public function getTypeAttribute($value)
 	{
 		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 **/
+	public function dapil()
+	{
+		return $this->belongsToMany(\App\Models\Dapil::class);
 	}
 }

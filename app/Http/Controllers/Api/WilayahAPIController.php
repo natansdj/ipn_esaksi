@@ -37,6 +37,14 @@ class WilayahAPIController extends AppBaseController
 	 *      tags={"Wilayah"},
 	 *      description="Get all Wilayahs",
 	 *      produces={"application/json"},
+	 *      security = {{"JWTBearer":{}}},
+	 *      @SWG\Parameter(ref="#/parameters/RepoSearch"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoSearchFields"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoFilter"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoOrderBy"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoSortedBy"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoLimit"),
+	 *      @SWG\Parameter(ref="#/parameters/RepoOffset"),
 	 *      @SWG\Response(
 	 *          response=200,
 	 *          description="successful operation",
@@ -84,6 +92,7 @@ class WilayahAPIController extends AppBaseController
 	 *      tags={"Wilayah"},
 	 *      description="Get Wilayah",
 	 *      produces={"application/json"},
+	 *      security = {{"JWTBearer":{}}},
 	 *      @SWG\Parameter(
 	 *          name="id",
 	 *          description="id of Wilayah",
@@ -131,6 +140,7 @@ class WilayahAPIController extends AppBaseController
 
 	public function destroy($id)
 	{
-		return $this->sendError('Not found');
+		return $this->sendError('Not found
+     *      security = {{"JWTBearer":{}}},');
 	}
 }

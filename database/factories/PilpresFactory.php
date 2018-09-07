@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Pilpres::class, function (Faker $faker) {
 	$attr_city   = \App\Models\Regency::limit(10)->get()->pluck('name', 'id')->toArray();
-
+	
 	return [
 		'capres_name'     => $faker->name,
 		'capres_dob'      => $faker->date('Y-m-d', '1980-1-1'),

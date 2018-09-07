@@ -46,6 +46,12 @@
     <p>{!! $pileg->type !!}</p>
 </div>
 
+<!-- Note Field -->
+<div class="form-group">
+    {!! Form::label('note', 'Note:') !!}
+    <p>{!! $pileg->note !!}</p>
+</div>
+
 <!-- Deleted At Field -->
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
