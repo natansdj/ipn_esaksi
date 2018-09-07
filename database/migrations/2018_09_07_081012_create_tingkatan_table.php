@@ -26,6 +26,7 @@ class CreateTingkatanTable extends Migration
 			$table->softDeletes();
 			$table->timestamps();
 
+			$table->unique(['wilayah_id', 'tingkat_wilayah']);
 			$table->foreign('wilayah_id')->references('id')->on('wilayah')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}

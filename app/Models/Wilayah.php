@@ -212,9 +212,16 @@ class Wilayah extends Model
 		'nama_wilayah' => 'required'
 	];
 
+	protected $with = ['tingkatan'];
+
 	public function rel_dapil()
 	{
 		return $this->hasMany(\App\Models\Dapil::class, 'id_wilayah');
+	}
+
+	public function tingkatan()
+	{
+		return $this->hasOne(\App\Models\Tingkatan::class);
 	}
 
 	/**
@@ -225,8 +232,22 @@ class Wilayah extends Model
 		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah');
 	}
 
+	/**
+	 * @param \Illuminate\Database\Eloquent\Builder $query
+	 * @param int $tingkat
+	 *
+	 * @return mixed
+	 */
 	public function scopeTingkat($query, $tingkat)
 	{
-		return $query->where('tingkat_wilayah', $tingkat);
+		return $query->whereHas('tingkatan', function ($q) use ($tingkat) {
+			/** @var \Illuminate\Database\Eloquent\Builder $q */
+			$q->where('tingkat_wilayah', $tingkat);
+		})->with([
+			'tingkatan' => function ($q) use ($tingkat) {
+				/** @var \Illuminate\Database\Eloquent\Builder $q */
+				$q->tingkat($tingkat);
+			}
+		]);
 	}
 }

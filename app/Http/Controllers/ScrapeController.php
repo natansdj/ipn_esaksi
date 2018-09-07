@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dapil;
+use App\Models\Tingkatan;
 use App\Models\Wilayah;
 use App\Traits\ApiKpuTrait;
 use Illuminate\Http\Request;
@@ -349,13 +350,21 @@ class ScrapeController extends AppBaseController
 				$singleData[ snake_case($a) ] = $b;
 			}
 
-			//atribute to compare
-			$attribs = array_filter($singleData, function ($k) {
-				return in_array($k, ['id', 'tingkat_wilayah']);
-			}, ARRAY_FILTER_USE_KEY);
-
 			if ($singleData) {
+				//atribute to compare
+				$attribs = array_filter($singleData, function ($k) {
+					return in_array($k, ['id', 'kode_wilayah']);
+				}, ARRAY_FILTER_USE_KEY);
+
+				//attribute for Tingkatan model
+				$tingkatanAttr = array_filter($singleData, function ($k) {
+					$baseTingkat = new Tingkatan();
+
+					return in_array($k, $baseTingkat->fillable);
+				}, ARRAY_FILTER_USE_KEY);
+
 				$model = Wilayah::updateOrCreate($attribs, $singleData);
+				$modelTingkatan = Tingkatan::updateOrCreate(['id', 'wilayah_id'], $tingkatanAttr);
 
 				$count = ( $this->getReturnData('syncedWilayah') !== null ) ? $this->getReturnData('syncedWilayah') : 0;
 				$this->addReturnData('syncedWilayah', $count + 1);

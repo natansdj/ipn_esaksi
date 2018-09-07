@@ -23,4 +23,14 @@ class Tingkatan extends Model
 		'jml_versi',
 		'peta',
 	];
+
+	public function wilayah()
+	{
+		return $this->belongsTo(\App\Models\Wilayah::class);
+	}
+
+	public function scopeTingkat($query, $tingkat)
+	{
+		return $query->where('tingkat_wilayah', $tingkat);
+	}
 }
