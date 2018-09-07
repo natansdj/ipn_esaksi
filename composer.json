@@ -18,7 +18,7 @@
         "infyomlabs/laravel-generator": "5.5.x-dev",
         "infyomlabs/routes-explorer": "dev-master",
         "infyomlabs/swagger-generator": "dev-master",
-        "laravel/framework": "5.5.*",
+        "laravel/framework": "5.5.42",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.5",
         "orangehill/iseed": "dev-master",
