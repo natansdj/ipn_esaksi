@@ -4,7 +4,7 @@ namespace $NAMESPACE_DATATABLES$;
 
 use $NAMESPACE_MODEL$\$MODEL_NAME$;
 use Yajra\DataTables\Services\DataTable;
-use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\CollectionDataTable;
 
 class $MODEL_NAME$DataTable extends DataTable
 {
@@ -16,7 +16,8 @@ class $MODEL_NAME$DataTable extends DataTable
      */
     public function dataTable($query)
     {
-        $dataTable = new EloquentDataTable($query);
+		$collection = $query->get();
+		$dataTable  = new CollectionDataTable($collection);
 
         return $dataTable->addColumn('action', '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.datatables_actions');
     }

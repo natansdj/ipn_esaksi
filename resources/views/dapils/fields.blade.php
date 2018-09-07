@@ -18,8 +18,8 @@
 
 <!-- Wilayah Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('wilayah_id', 'Wilayah Id:') !!}
-    {!! Form::text('wilayah_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_wilayah', 'Wilayah Id:') !!}
+    {!! Form::text('id_wilayah', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Alokasi Kursi Field -->

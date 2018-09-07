@@ -42,7 +42,7 @@
     "inIndex": false
   },
   {
-    "name": "wilayah_id",
+    "name": "id_wilayah",
     "dbType": "integer",
     "htmlType": "text",
     "searchable": false,

@@ -151,4 +151,9 @@ class Dapil extends Model
 	{
 		return $this->belongsToMany(\App\Models\Wilayah::class);
 	}
+
+	public function getTingkatAttribute($value)
+	{
+		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
+	}
 }

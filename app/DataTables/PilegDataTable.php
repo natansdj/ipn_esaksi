@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Pileg;
+use Yajra\DataTables\CollectionDataTable;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -17,7 +18,8 @@ class PilegDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$dataTable = new EloquentDataTable($query);
+		$collection = $query->get();
+		$dataTable  = new CollectionDataTable($collection);
 
 		return $dataTable->addColumn('action', 'pilegs.datatables_actions');
 	}

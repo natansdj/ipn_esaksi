@@ -30,8 +30,8 @@
 
 <!-- Wilayah Id Field -->
 <div class="form-group">
-    {!! Form::label('wilayah_id', 'Wilayah Id:') !!}
-    <p>{!! $dapil->wilayah_id !!}</p>
+    {!! Form::label('id_wilayah', 'Wilayah Id:') !!}
+    <p>{!! $dapil->id_wilayah !!}</p>
 </div>
 
 <!-- Alokasi Kursi Field -->
