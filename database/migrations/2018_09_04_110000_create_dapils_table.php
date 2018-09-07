@@ -27,6 +27,8 @@ class CreateDapilsTable extends Migration
 			$table->integer('no_dapil')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
+
+			$table->foreign('id_wilayah')->references('id')->on('wilayah')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 

@@ -106,6 +106,7 @@ class ScrapeController extends AppBaseController
 				$this->addReturnData('fetchWilayahCount', true);
 				$this->addReturnData('fetchDapilCount', $this->get_dapil);
 				$this->addReturnData('syncedWilayah', 0);
+				$this->addReturnData('syncedTingkatanWilayah', 0);
 				if ($this->get_dapil) {
 					$this->addReturnData('syncedDapil', 0);
 				}
@@ -219,12 +220,16 @@ class ScrapeController extends AppBaseController
 					}
 
 					//SAVE WILAYAH
+					if ($idParent === 0) {
+						$this->saveWilayah($dataId, $idParent);
+					}
 					$this->saveWilayah($dataId, $tkWil);
 				}
 			}
 
 		} catch (\Exception $e) {
 			DB::rollBack();
+			throw $e;
 		}
 
 		DB::commit();
@@ -352,22 +357,21 @@ class ScrapeController extends AppBaseController
 
 			if ($singleData) {
 				//atribute to compare
-				$attribs = array_filter($singleData, function ($k) {
-					return in_array($k, ['id', 'kode_wilayah']);
-				}, ARRAY_FILTER_USE_KEY);
+				$attribs = array_only($singleData, ['id', 'kode_wilayah']);
 
 				//attribute for Tingkatan model
-				$tingkatanAttr = array_filter($singleData, function ($k) {
-					$baseTingkat = new Tingkatan();
+				$baseTingkat     = new Tingkatan();
+				$tingkatanValues = array_only($singleData, $baseTingkat->fillable);
+				$tingkatanValues = array_prepend($tingkatanValues, array_get($singleData, 'id'), 'wilayah_id');
+				$tingkatanAttr   = array_only($tingkatanValues, ['tingkat_wilayah', 'wilayah_id']);
 
-					return in_array($k, $baseTingkat->fillable);
-				}, ARRAY_FILTER_USE_KEY);
-
-				$model = Wilayah::updateOrCreate($attribs, $singleData);
-				$modelTingkatan = Tingkatan::updateOrCreate(['id', 'wilayah_id'], $tingkatanAttr);
+				$model          = Wilayah::updateOrCreate($attribs, $singleData);
+				$modelTingkatan = Tingkatan::updateOrCreate($tingkatanAttr, $tingkatanValues);
 
 				$count = ( $this->getReturnData('syncedWilayah') !== null ) ? $this->getReturnData('syncedWilayah') : 0;
 				$this->addReturnData('syncedWilayah', $count + 1);
+				$count2 = ( $this->getReturnData('syncedTingkatanWilayah') !== null ) ? $this->getReturnData('syncedTingkatanWilayah') : 0;
+				$this->addReturnData('syncedTingkatanWilayah', $count2 + 1);
 
 				return $model;
 			}
