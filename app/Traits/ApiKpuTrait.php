@@ -45,13 +45,8 @@ trait ApiKpuTrait
 	protected function apiGetWilayah($id)
 	{
 		$cache_key = 'apiGetWilayah_' . $id;
-		$cache     = Cache::get($cache_key);
-		if ($this->isUseCache() && ! is_null($cache)) {
-			if (empty($cache) && $this->update_empty_cache) {
-				//do nothing
-			} else {
-				return $cache;
-			}
+		if ( ! is_null($cache = $this->checkCache($cache_key))) {
+			return $cache;
 		}
 
 		//get wilayah
@@ -76,13 +71,8 @@ trait ApiKpuTrait
 	protected function apiGetDapil($id, $tkWil)
 	{
 		$cache_key = 'apiGetDapil_' . $id . '_' . $tkWil;
-		$cache     = Cache::get($cache_key);
-		if ($this->isUseCache() && ! is_null($cache)) {
-			if (empty($cache) && $this->update_empty_cache) {
-				//do nothing
-			} else {
-				return $cache;
-			}
+		if ( ! is_null($cache = $this->checkCache($cache_key))) {
+			return $cache;
 		}
 
 		//get wilayah
@@ -96,7 +86,9 @@ trait ApiKpuTrait
 		});
 
 		if (( $jsonArray && $isValidated ) || ! is_null($jsonArray)) {
-			$jsonArray = array_get(array_first($jsonArray), 'dapil');
+			if ( ! empty($jsonArray)) {
+				$jsonArray = array_get(array_first($jsonArray), 'dapil');
+			}
 			Cache::put($cache_key, $jsonArray, $this->expired_at);
 
 			return $jsonArray;
@@ -108,13 +100,8 @@ trait ApiKpuTrait
 	protected function apiGetWilayahDt($id, $tkWil = 0)
 	{
 		$cache_key = 'apiGetWilayahDt_' . $id . '_' . $tkWil;
-		$cache     = Cache::get($cache_key);
-		if ($this->isUseCache() && ! is_null($cache)) {
-			if (empty($cache) && $this->update_empty_cache) {
-				//do nothing
-			} else {
-				return $cache;
-			}
+		if ( ! is_null($cache = $this->checkCache($cache_key))) {
+			return $cache;
 		}
 
 		//get detail from api
@@ -135,6 +122,20 @@ trait ApiKpuTrait
 		Cache::put($cache_key, $jsonArray, $this->expired_at);
 
 		return $jsonArray;
+	}
+
+	protected function checkCache($cache_key)
+	{
+		$cache = Cache::get($cache_key);
+		if ($this->isUseCache() && ! is_null($cache)) {
+			if (empty($cache) && $this->update_empty_cache) {
+				//do nothing
+			} else {
+				return $cache;
+			}
+		}
+
+		return null;
 	}
 
 	/**

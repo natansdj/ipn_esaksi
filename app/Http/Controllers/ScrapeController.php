@@ -7,6 +7,7 @@ use App\Models\Tingkatan;
 use App\Models\Wilayah;
 use App\Traits\ApiKpuTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class ScrapeController extends AppBaseController
@@ -76,9 +77,11 @@ class ScrapeController extends AppBaseController
 		$pull            = $request->has('pull');
 		$msg             = null;
 
+		DB::disableQueryLog();
+		set_time_limit(0);
 		//FETCH
 		try {
-			set_time_limit(0);
+
 			$jsonArray = $this->fetchWilayah($id);
 
 			if ($jsonArray && $this->depth) {
@@ -146,6 +149,8 @@ class ScrapeController extends AppBaseController
 			return $this->sendError($msg);
 		}
 
+		DB::enableQueryLog();
+
 		return $this->sendResponse($this->getReturnData(), $msg);
 	}
 
@@ -193,6 +198,13 @@ class ScrapeController extends AppBaseController
 
 	protected function fetchWilayahDt($id, $tkWil = null, $loop = false)
 	{
+		$cache_key = 'fetchWilayahDt_' . $id;
+		if ( ! empty($cache = $this->checkCache($cache_key)) && $tkWil !== 0 && ! is_null($tkWil)) {
+			$this->addWilayahDt($id, $cache);
+
+			return $cache;
+		}
+
 		$tkWil  = ( ! is_null($tkWil) ) ? $tkWil : 1;
 		$return = null;
 
@@ -210,10 +222,11 @@ class ScrapeController extends AppBaseController
 
 		}
 
-		if ( ! empty($return)) {
+		if ( ! is_null($return)) {
 			if ( ! $this->getWilayahDt($id)) {
 				$this->addWilayahCount();
 				$this->addWilayahDt($id, $return);
+				Cache::put($cache_key, $return, $this->expired_at);
 			}
 
 			return $return;
@@ -222,7 +235,7 @@ class ScrapeController extends AppBaseController
 
 	protected function pullWilayah($id = 0)
 	{
-		DB::beginTransaction();
+//		DB::beginTransaction();
 		try {
 			$jsonArray = $this->apiGetWilayah($id);
 
@@ -252,11 +265,11 @@ class ScrapeController extends AppBaseController
 			}
 
 		} catch (\Exception $e) {
-			DB::rollBack();
+//			DB::rollBack();
 			throw $e;
 		}
 
-		DB::commit();
+//		DB::commit();
 	}
 
 	protected function pullDapil($id, $tkWil)
@@ -310,8 +323,9 @@ class ScrapeController extends AppBaseController
 		$returnData = [];
 		$dapil      = $this->getDapil();
 		if ($dapil) {
-			DB::beginTransaction();
+//			DB::beginTransaction();
 			try {
+				$insert_wilayah = $insert_wilayah_dapil = [];
 				foreach ($dapil as $key => $dapils) {
 					if (empty($dapils)) {
 						continue;
@@ -335,29 +349,44 @@ class ScrapeController extends AppBaseController
 						}
 
 						foreach ($wilayahs as $keyC => $wilayah) {
-							$tkWilC    = ( $tkWil != 0 ) ? $tkWil : 1;
+							$tkWilC    = ( $tkWil != 0 ) ? $tkWil + 1 : 2;
 							$idWilayah = array_get($wilayah, 'idWilayah');
 
-							$this->fetchWilayahDt($idWilayah, $tkWilC, true);
+							$this->fetchWilayahDt($idWilayah, $tkWilC);
 
-							if ($this->request->has('pull')) {
-								$wilCache = $this->getWilayahDt($idWilayah);
-								$this->saveWilayah($idWilayah, array_get($wilCache, 'tingkatWilayah'), true);
-							}
+							$wilCache         = $this->getWilayahDt($idWilayah);
+							$insert_wilayah[] = [$idWilayah, array_get($wilCache, 'tingkatWilayah')];
 						}
 
 						//set dapil_wilayah
-						if ($this->request->has('pull')) {
-							$modelDapil->rel_wilayah()->syncWithoutDetaching($wilayahsIds);
+						$insert_wilayah_dapil[] = [array_get($dapil, 'id'), $wilayahsIds];
+					}
+				}
+
+				if ($this->request->has('pull')) {
+					$chunkWil = collect($insert_wilayah)->chunk(500);
+					foreach ($chunkWil as $chunk) {
+						foreach ($chunk as $item) {
+							$this->saveWilayah($item[0], $item[1]);
+						}
+					}
+					$chunkWilDap = collect($insert_wilayah_dapil)->chunk(100);
+					foreach ($chunkWilDap as $chunk) {
+						foreach ($chunk as $item2) {
+							$modelDapil = Dapil::find($item2[0]);
+							$modelDapil->rel_wilayah()->syncWithoutDetaching($item2[1]);
 						}
 					}
 				}
+
+				$return = $insert_wilayah_dapil;
+
 			} catch (\Exception $e) {
-				DB::rollBack();
+//				DB::rollBack();
 				throw $e;
 			}
 
-			DB::commit();
+//			DB::commit();
 		}
 
 		$this->addReturnData('dapil_wilayah', array_sum(array_map('count', $returnData)));
@@ -392,10 +421,8 @@ class ScrapeController extends AppBaseController
 				$model          = Wilayah::updateOrCreate($attribs, $singleData);
 				$modelTingkatan = Tingkatan::updateOrCreate($tingkatanAttr, $tingkatanValues);
 
-				$count = ( $this->getReturnData('syncedWilayah') !== null ) ? $this->getReturnData('syncedWilayah') : 0;
-				$this->addReturnData('syncedWilayah', $count + 1);
-				$count2 = ( $this->getReturnData('syncedTingkatanWilayah') !== null ) ? $this->getReturnData('syncedTingkatanWilayah') : 0;
-				$this->addReturnData('syncedTingkatanWilayah', $count2 + 1);
+				$this->addSyncedWilayahCount();
+				$this->addSyncedTingkatanWilayahCount();
 
 				return $model;
 			}
@@ -418,6 +445,18 @@ class ScrapeController extends AppBaseController
 		$prevCount = ( $this->getReturnData('fetchWilayahCount') !== null )
 			? $this->getReturnData('fetchWilayahCount') : 0;
 		$this->addReturnData('fetchWilayahCount', $prevCount + $count);
+	}
+
+	protected function addSyncedWilayahCount($count = 1)
+	{
+		$prevCount = ( $this->getReturnData('syncedWilayah') !== null ) ? $this->getReturnData('syncedWilayah') : 0;
+		$this->addReturnData('syncedWilayah', $prevCount + $count);
+	}
+
+	protected function addSyncedTingkatanWilayahCount($count = 1)
+	{
+		$prevCount = ( $this->getReturnData('syncedTingkatanWilayah') !== null ) ? $this->getReturnData('syncedTingkatanWilayah') : 0;
+		$this->addReturnData('syncedTingkatanWilayah', $prevCount + $count);
 	}
 
 	public function getReturnData($key = null, $default = null)
