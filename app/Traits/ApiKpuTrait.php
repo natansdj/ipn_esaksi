@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Cache;
 trait ApiKpuTrait
 {
 	protected $use_cache = true;
+	protected $update_empty_cache = false;
 	protected $site = 'https://infopemilu.kpu.go.id';
 	protected $api_wil_cari;
 	protected $api_wil_get;
@@ -38,14 +39,19 @@ trait ApiKpuTrait
 		 *
 		 */
 
-		$this->expired_at = now()->addWeeks(1);
+		$this->expired_at = now()->addWeeks(2);
 	}
 
 	protected function apiGetWilayah($id)
 	{
 		$cache_key = 'apiGetWilayah_' . $id;
-		if ($this->isUseCache() && $cache = Cache::get($cache_key)) {
-			return $cache;
+		$cache     = Cache::get($cache_key);
+		if ($this->isUseCache() && ! is_null($cache)) {
+			if (empty($cache) && $this->update_empty_cache) {
+				//do nothing
+			} else {
+				return $cache;
+			}
 		}
 
 		//get wilayah
@@ -58,7 +64,7 @@ trait ApiKpuTrait
 			return is_array($val) && array_has($val, 'id');
 		});
 
-		if ($jsonArray && $isValidated) {
+		if (( $jsonArray && $isValidated ) || ! is_null($jsonArray)) {
 			Cache::put($cache_key, $jsonArray, $this->expired_at);
 
 			return $jsonArray;
@@ -70,8 +76,13 @@ trait ApiKpuTrait
 	protected function apiGetDapil($id, $tkWil)
 	{
 		$cache_key = 'apiGetDapil_' . $id . '_' . $tkWil;
-		if ($this->isUseCache() && $cache = Cache::get($cache_key)) {
-			return $cache;
+		$cache     = Cache::get($cache_key);
+		if ($this->isUseCache() && ! is_null($cache)) {
+			if (empty($cache) && $this->update_empty_cache) {
+				//do nothing
+			} else {
+				return $cache;
+			}
 		}
 
 		//get wilayah
@@ -84,7 +95,7 @@ trait ApiKpuTrait
 			return is_array($val) && array_has($val, 'dapil') && array_get($val, 'dapil');
 		});
 
-		if ($jsonArray && $isValidated) {
+		if (( $jsonArray && $isValidated ) || ! is_null($jsonArray)) {
 			$jsonArray = array_get(array_first($jsonArray), 'dapil');
 			Cache::put($cache_key, $jsonArray, $this->expired_at);
 
@@ -99,7 +110,11 @@ trait ApiKpuTrait
 		$cache_key = 'apiGetWilayahDt_' . $id . '_' . $tkWil;
 		$cache     = Cache::get($cache_key);
 		if ($this->isUseCache() && ! is_null($cache)) {
-			return $cache;
+			if (empty($cache) && $this->update_empty_cache) {
+				//do nothing
+			} else {
+				return $cache;
+			}
 		}
 
 		//get detail from api
@@ -121,7 +136,7 @@ trait ApiKpuTrait
 
 		return $jsonArray;
 	}
-	
+
 	/**
 	 * @return bool
 	 */

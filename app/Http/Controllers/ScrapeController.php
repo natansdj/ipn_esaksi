@@ -52,12 +52,14 @@ class ScrapeController extends AppBaseController
 		try {
 			$jsonArray = $this->fetchDapil($id, $tkWil);
 
-			if ($pull) {
-				return $this->pullDapil($id, $tkWil);
-			}
+			if ($jsonArray) {
+				if ($pull) {
+					return $this->pullDapil($id, $tkWil);
+				}
 
-			$this->addReturnData('count', count($jsonArray));
-			$this->addReturnData('dapil', $jsonArray);
+				$this->addReturnData('count', count($jsonArray));
+				$this->addReturnData('dapil', $jsonArray);
+			}
 		} catch (\Exception $e) {
 			\Log::error($e);
 			$msg = $e->getMessage();
@@ -149,6 +151,10 @@ class ScrapeController extends AppBaseController
 
 	protected function fetchDapil($id, $tkWil)
 	{
+		if ($tkWil > 2) {
+			return null;
+		}
+
 		$dapilKey  = implode('_', func_get_args());
 		$jsonArray = $this->apiGetDapil($id, $tkWil);
 		if ($jsonArray) {
