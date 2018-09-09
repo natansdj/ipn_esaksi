@@ -186,10 +186,9 @@ class ScrapeController extends AppBaseController
 			foreach ($jsonArray as $key => $item) {
 				$this->addWilayah($id, $item);
 
-				if ( ! $this->getWilayahDt($id)) {
-					$this->addWilayahCount();
-					$this->addWilayahDt($id, $item);
-				}
+				$wilId = array_get($item, 'id');
+				$wilTk = array_get($item, 'tingkatWilayah');
+				$this->fetchWilayahDt($wilId, $wilTk);
 			}
 		}
 
