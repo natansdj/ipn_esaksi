@@ -320,12 +320,12 @@ class ScrapeController extends AppBaseController
 		}
 
 		$returnData = [];
-		$dapil      = $this->getDapil();
-		if ($dapil) {
+		$baseDapil  = $this->getDapil();
+		if ($baseDapil) {
 //			DB::beginTransaction();
 			try {
 				$insert_wilayah = $insert_wilayah_dapil = [];
-				foreach ($dapil as $key => $dapils) {
+				foreach ($baseDapil as $key => $dapils) {
 					if (empty($dapils)) {
 						continue;
 					}
@@ -339,11 +339,10 @@ class ScrapeController extends AppBaseController
 					$returnData[ $dataId ] = $fetchWilayah;
 
 					foreach ($dapils as $keyB => $dapil) {
-						$modelDapil  = Dapil::find(array_get($dapil, 'id'));
 						$wilayahs    = array_get($dapil, 'wilayah');
 						$wilayahsIds = array_column($wilayahs, 'idWilayah');
 
-						if (empty($wilayahs) || is_null($modelDapil)) {
+						if (empty($wilayahs)) {
 							continue;
 						}
 
