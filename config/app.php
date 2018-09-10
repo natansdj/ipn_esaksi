@@ -255,4 +255,5 @@ return [
 		'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 	],
 
+	'date_format' => env('APP_DATE_FORMAT', 'Y-m-d'),
 ];

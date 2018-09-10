@@ -53,6 +53,20 @@
     "searchable": false
   },
   {
+    "name": "dob2",
+    "dbType": "date",
+    "htmlType": "date",
+    "validations": "required",
+    "searchable": false
+  },
+  {
+    "name": "pob2",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": false
+  },
+  {
     "name": "partai",
     "dbType": "string",
     "htmlType": "text",

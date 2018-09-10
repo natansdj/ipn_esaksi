@@ -28,6 +28,18 @@
     {!! Form::text('pob', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Dob2 Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('dob2', 'Dob2:') !!}
+    {!! Form::date('dob2', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Pob2 Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('pob2', 'Pob2:') !!}
+    {!! Form::text('pob2', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Partai Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('partai', 'Partai:') !!}

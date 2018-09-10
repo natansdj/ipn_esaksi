@@ -34,6 +34,18 @@
     <p>{!! $pileg->pob !!}</p>
 </div>
 
+<!-- Dob2 Field -->
+<div class="form-group">
+    {!! Form::label('dob2', 'Dob2:') !!}
+    <p>{!! $pileg->dob !!}</p>
+</div>
+
+<!-- Pob2 Field -->
+<div class="form-group">
+    {!! Form::label('pob2', 'Pob2:') !!}
+    <p>{!! $pileg->pob !!}</p>
+</div>
+
 <!-- Partai Field -->
 <div class="form-group">
     {!! Form::label('partai', 'Partai:') !!}

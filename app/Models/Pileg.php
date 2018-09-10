@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 /**
  * @SWG\Definition(
@@ -39,6 +40,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      ),
  *      @SWG\Property(
  *          property="pob",
+ *          description="pob",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="dob2",
+ *          description="dob",
+ *          type="string",
+ *          format="date"
+ *      ),
+ *      @SWG\Property(
+ *          property="pob2",
  *          description="pob",
  *          type="string"
  *      ),
@@ -93,7 +105,7 @@ class Pileg extends Model
 		'type',
 		'note'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['dob', 'dob2', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -103,8 +115,10 @@ class Pileg extends Model
 		'province_id' => 'integer',
 		'name'        => 'string',
 		'name2'       => 'string',
-		'dob'         => 'date',
+		'dob'         => 'date:Y-m-d',
 		'pob'         => 'string',
+		'dob2'        => 'date:Y-m-d',
+		'pob2'        => 'string',
 		'partai'      => 'string',
 		'type'        => 'string',
 		'note'        => 'string'
@@ -123,7 +137,36 @@ class Pileg extends Model
 	];
 
 	protected $with = ['dapil'];
-	
+
+	public function getDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+
+	public function getDob2Attribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+
+	public function getFormValue($key)
+	{
+		if ($this->hasCast($key, 'integer') && $this->hasGetMutator($key)) {
+			return $this->getOriginal($key);
+		} else if (in_array($key, $this->getDates())) {
+			return Carbon::parse($this->getAttribute($key))->format(config('app.date_format'));
+		} else {
+			return $this->getAttribute($key);
+		}
+	}
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 **/

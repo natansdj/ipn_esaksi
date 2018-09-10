@@ -10,9 +10,10 @@ $factory->define(App\Models\Pileg::class, function (Faker $faker) {
 		'name2'       => $faker->unique()->name,
 		'dob'         => $faker->date('Y-m-d', '1980-1-1'),
 		'pob'         => $faker->randomElement($attr_city),
+		'dob2'        => $faker->date('Y-m-d', '1980-1-1'),
+		'pob2'        => $faker->randomElement($attr_city),
 		'partai'      => $faker->randomElement(PARTAI),
 		'type'        => $faker->randomElement(PILEG_TYPE),
-		'dapil_id'    => $faker->unique()->randomElement(App\Models\Dapil::limit(10)->pluck('id')->toArray()),
 		'province_id' => $faker->unique()->randomElement(App\Models\Province::pluck('id')->toArray()),
 	];
 });

@@ -19,7 +19,9 @@ class CreatePilegsTable extends Migration
 			$table->string('name');
 			$table->string('name2')->nullable();
 			$table->date('dob')->nullable();
+			$table->date('dob2')->nullable();
 			$table->string('pob')->nullable();
+			$table->string('pob2')->nullable();
 			$table->string('partai')->nullable();
 			$table->string('type')->nullable();
 			$table->text('note')->nullable();

@@ -103,7 +103,7 @@ class Vote extends Model
 		'voteable_type',
 		'type'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['vote_date', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *
