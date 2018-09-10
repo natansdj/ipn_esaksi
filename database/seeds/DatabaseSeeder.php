@@ -22,8 +22,14 @@ class DatabaseSeeder extends Seeder
 
 		$this->call(KodeposTableSeeder::class);
 
-		$this->call(UsersTableSeeder::class);
+		$this->call(WilayahTableSeeder::class);
+		$this->call(DapilTableSeeder::class);
+		$this->call(DapilWilayahTableSeeder::class);
+		$this->call(TingkatanTableSeeder::class);
 
+		$this->call(UsersTableSeeder::class);
+		$this->call(FacPilegTableSeeder::class);
+		
 		// Re enable all mass assignment restrictions
 		Model::reguard();
 

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Criteria\AppRequestCriteria;
 use App\Criteria\PilegRequestCriteria;
 use App\DataTables\PilegDataTable;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreatePilegRequest;
 use App\Http\Requests\UpdatePilegRequest;
-use App\Models\Pileg;
 use App\Repositories\PilegRepository;
 use Flash;
 use Illuminate\Http\Request;
 use Response;
 
-class PilegController extends Controller
+
+class PilegController extends AppBaseController
 {
 	/** @var  PilegRepository */
 	private $pilegRepository;

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "nama",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "parent",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "tingkat",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "jumlah_penduduk",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false
+  },
+  {
+    "name": "id_wilayah",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "alokasi_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "alokasi_sisa_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "total_alokasi_kursi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "id_versi",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "no_dapil",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": true
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  }
+]

@@ -12,7 +12,7 @@
 */
 
 Route::group([
-	'middleware' => ['web']
+	//
 ], function () {
 	Route::get('/', 'DashboardController@index')->name('dashboard');
 	Route::get('/saksi_edit', 'SaksiController@index')->name('saksi.edit');
@@ -39,3 +39,7 @@ Route::resource('users', 'UserController');
 Route::resource('tps', 'TpsController');
 
 Route::resource('votes', 'VoteController');
+
+Route::resource('dapils', 'DapilController');
+
+Route::resource('wilayahs', 'WilayahController');

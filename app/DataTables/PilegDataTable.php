@@ -3,8 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\Pileg;
+use Illuminate\Database\Eloquent\Collection;
+use Yajra\DataTables\CollectionDataTable;
 use Yajra\DataTables\Services\DataTable;
-use Yajra\DataTables\EloquentDataTable;
 
 class PilegDataTable extends DataTable
 {
@@ -17,7 +18,17 @@ class PilegDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$dataTable = new EloquentDataTable($query);
+		$collection = $query->get();
+		$dataTable  = new CollectionDataTable($collection);
+		$dataTable->editColumn('dapil_id', function ($model) {
+			$dapil  = '-';
+			$dapils = $model->dapil;
+			if ( ! is_null($dapils) && $dapils && $dapils instanceof Collection) {
+				$dapil = $dapils->pluck('nama')->implode(', ');
+			}
+
+			return $dapil;
+		});
 
 		return $dataTable->addColumn('action', 'pilegs.datatables_actions');
 	}
@@ -31,7 +42,7 @@ class PilegDataTable extends DataTable
 	 */
 	public function query(Pileg $model)
 	{
-		return $model->newQuery();
+		return $model->newQuery()->with(['province', 'dapil']);
 	}
 
 	/**
@@ -67,11 +78,12 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'province_id',
+			'dapil_id'    => [
+				'data'  => 'dapil_id',
+				'title' => 'Dapil'
+			],
 			'name',
 			'name2',
-			'dob',
-			'pob',
 			'partai'
 		];
 	}

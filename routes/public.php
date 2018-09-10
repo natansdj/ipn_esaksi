@@ -34,3 +34,22 @@ Route::group([
 		});
 	});
 });
+
+
+//Sync data from KPU
+Route::group([
+	'middleware' => ['auth'],
+	'prefix'     => 'sync'
+], function () {
+	//  http://esaksi.vm/sync/wilayah/fetch/0?depth=0&dapil&dw&pull&update
+	Route::get('/wilayah/fetch/{id?}', 'ScrapeController@fetchWilayahAction');
+	Route::get('/dapil/fetch/{id?}/{tkWil?}', 'ScrapeController@fetchDapilAction');
+});
+
+//Sync data from KPU
+Route::group([
+	'middleware' => ['auth'],
+	'prefix'     => 'test'
+], function () {
+	Route::get('/', 'TestController@test');
+});

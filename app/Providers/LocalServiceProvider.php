@@ -12,7 +12,8 @@ class LocalServiceProvider extends ServiceProvider
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Conner\Kint\KintServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider'
+		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+		'Laracasts\Generators\GeneratorsServiceProvider'
 	];
 
 	protected $aliases = [

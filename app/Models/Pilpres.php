@@ -106,7 +106,7 @@ class Pilpres extends Model
 		'type',
 		'note'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['capres_dob', 'cawapres_dob', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *

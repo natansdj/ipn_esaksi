@@ -17,6 +17,15 @@
     "relation": "mt1,Province"
   },
   {
+    "name": "dapil_id",
+    "dbType": "integer:unsigned:foreign,dapil,id",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false,
+    "relation": "mt1,Dapil"
+  },
+  {
     "name": "name",
     "dbType": "string",
     "htmlType": "text",
@@ -44,6 +53,20 @@
     "searchable": false
   },
   {
+    "name": "dob2",
+    "dbType": "date",
+    "htmlType": "date",
+    "validations": "required",
+    "searchable": false
+  },
+  {
+    "name": "pob2",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required",
+    "searchable": false
+  },
+  {
     "name": "partai",
     "dbType": "string",
     "htmlType": "text",
@@ -56,6 +79,13 @@
     "htmlType": "text",
     "searchable": false,
     "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "note",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
     "inIndex": false
   },
   {

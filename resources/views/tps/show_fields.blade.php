@@ -16,6 +16,12 @@
     <p>{!! $tps->kodepos_id !!}</p>
 </div>
 
+<!-- Dapil Id Field -->
+<div class="form-group">
+    {!! Form::label('dapil_id', 'Dapil Id:') !!}
+    <p>{!! $tps->dapil_id !!}</p>
+</div>
+
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}

@@ -30,7 +30,11 @@ define('PARTAI', [
 	'pdi' => 'PDI',
 	'ppp' => 'PPP',
 ]);
-
+define('TINGKAT_DAPIL', [
+	'0' => 'DPR',
+	'1' => 'DPRD Provinsi',
+	'2' => 'DPRD Kabko',
+]);
 return [
 	//
 

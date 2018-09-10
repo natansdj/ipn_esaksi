@@ -10,6 +10,12 @@
     {!! Form::text('kodepos_id', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Dapil Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('dapil_id', 'Dapil Id:') !!}
+    {!! Form::text('dapil_id', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}

@@ -38,11 +38,11 @@ class CreateUsersTable extends Migration
 			$table->softDeletes();
 			$table->timestamps();
 
-			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('SET NULL');
-			$table->foreign('regency_id')->references('id')->on('regencies')->onUpdate('CASCADE')->onDelete('SET NULL');
-			$table->foreign('district_id')->references('id')->on('districts')->onUpdate('CASCADE')->onDelete('SET NULL');
-			$table->foreign('village_id')->references('id')->on('villages')->onUpdate('CASCADE')->onDelete('SET NULL');
-			$table->foreign('tps_id')->references('id')->on('tps')->onUpdate('CASCADE')->onDelete('SET NULL');
+			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('regency_id')->references('id')->on('regencies')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('district_id')->references('id')->on('districts')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('village_id')->references('id')->on('villages')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('tps_id')->references('id')->on('tps')->onUpdate('CASCADE')->onDelete('NO ACTION');
 		});
 	}
 

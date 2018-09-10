@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row page-title">
-        <div class="col-md-12">
+        <div class="col-md-12 nopadding">
             <h3 class="pull-left">User</h3>
             <h3 class="pull-right">
                 <a href="{!! route('users.index') !!}" class="btn btn-default">Back</a>
@@ -11,20 +11,16 @@
     </div>
 
     <div class="content-wrap">
+
+        @include('adminlte-templates::common.errors')
+
+        {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="clearfix"></div>
-
-                @include('adminlte-templates::common.errors')
-
-                <div class="clearfix"></div>
-                {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) !!}
-
-                @include('users.fields')
-
-                {!! Form::close() !!}
-            </div>
+            @include('users.fields')
         </div>
+
+        {!! Form::close() !!}
     </div>
     <div class="clearfix"></div>
 @endsection
