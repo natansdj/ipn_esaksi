@@ -30,7 +30,7 @@ class ScrapeController extends AppBaseController
 
 	protected $wilayah = [];
 	protected $dapil_wilayah = [];
-	protected $dapil = [];
+	protected $dapils = [];
 	protected $wilayah_existing;
 	protected $dapil_existing;
 	protected $wilayah_dt;
@@ -478,15 +478,15 @@ class ScrapeController extends AppBaseController
 
 	protected function addDapil($key, $value)
 	{
-		$this->dapil[ $key ][] = $value;
+		$this->dapils[ $key ][] = $value;
 	}
 
 	public function getDapil($key = null, $default = null)
 	{
 		if ( ! is_null($key) && ! empty($key)) {
-			return ( array_has($this->dapil, $key) ) ? $this->dapil[ $key ] : $default;
+			return ( array_has($this->dapils, $key) ) ? $this->dapils[ $key ] : $default;
 		} else {
-			return $this->dapil;
+			return $this->dapils;
 		}
 	}
 

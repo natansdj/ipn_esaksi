@@ -21,9 +21,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if(isset($data->pileg) && $data->pileg instanceof \Illuminate\Database\Eloquent\Collection 
-                && $data->pileg->isNotEmpty())
-                    @foreach($data->pileg as $key => $pileg)
+                @if(isset($data->pilegs) && $data->pilegs instanceof \Illuminate\Database\Eloquent\Collection 
+                && $data->pilegs->isNotEmpty())
+                    @foreach($data->pilegs as $key => $pileg)
                         <tr @if($loop->first) class="active" @endif data-id="{{ $pileg->id }}">
                             <td><span class="box"></span> {{ $pileg->name }}
                                 @if ($loop->first)

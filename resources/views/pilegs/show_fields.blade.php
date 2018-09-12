@@ -10,16 +10,46 @@
     <p>{!! $pileg->province_id !!}</p>
 </div>
 
+<!-- Silon Id Field -->
+<div class="form-group">
+    {!! Form::label('silon_id', 'Silon Id:') !!}
+    <p>{!! $pileg->silon_id !!}</p>
+</div>
+
+<!-- Dapil Id Field -->
+<div class="form-group">
+    {!! Form::label('dapil_id', 'Dapil Id:') !!}
+    <p>{!! $pileg->dapil_id !!}</p>
+</div>
+
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
     <p>{!! $pileg->name !!}</p>
 </div>
 
-<!-- Name2 Field -->
+<!-- Gelar Depan Field -->
 <div class="form-group">
-    {!! Form::label('name2', 'Name2:') !!}
-    <p>{!! $pileg->name2 !!}</p>
+    {!! Form::label('gelar_depan', 'Gelar Depan:') !!}
+    <p>{!! $pileg->gelar_depan !!}</p>
+</div>
+
+<!-- Gelar Belakang Field -->
+<div class="form-group">
+    {!! Form::label('gelar_belakang', 'Gelar Belakang:') !!}
+    <p>{!! $pileg->gelar_belakang !!}</p>
+</div>
+
+<!-- Jenis Kelamin Field -->
+<div class="form-group">
+    {!! Form::label('jenis_kelamin', 'Jenis Kelamin:') !!}
+    <p>{!! $pileg->jenis_kelamin !!}</p>
+</div>
+
+<!-- No Urut Field -->
+<div class="form-group">
+    {!! Form::label('no_urut', 'No Urut:') !!}
+    <p>{!! $pileg->no_urut !!}</p>
 </div>
 
 <!-- Dob Field -->
@@ -31,18 +61,6 @@
 <!-- Pob Field -->
 <div class="form-group">
     {!! Form::label('pob', 'Pob:') !!}
-    <p>{!! $pileg->pob !!}</p>
-</div>
-
-<!-- Dob2 Field -->
-<div class="form-group">
-    {!! Form::label('dob2', 'Dob2:') !!}
-    <p>{!! $pileg->dob !!}</p>
-</div>
-
-<!-- Pob2 Field -->
-<div class="form-group">
-    {!! Form::label('pob2', 'Pob2:') !!}
     <p>{!! $pileg->pob !!}</p>
 </div>
 

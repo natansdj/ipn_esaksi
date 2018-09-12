@@ -22,7 +22,7 @@ class PilegDataTable extends DataTable
 		$dataTable  = new CollectionDataTable($collection);
 		$dataTable->editColumn('dapil_id', function ($model) {
 			$dapil  = '-';
-			$dapils = $model->dapil;
+			$dapils = $model->dapils;
 			if ( ! is_null($dapils) && $dapils && $dapils instanceof Collection) {
 				$dapil = $dapils->pluck('nama')->implode(', ');
 			}
@@ -78,12 +78,13 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'dapil_id'    => [
+			'dapil_id' => [
 				'data'  => 'dapil_id',
 				'title' => 'Dapil'
 			],
 			'name',
-			'name2',
+			'dob',
+			'pob',
 			'partai'
 		];
 	}

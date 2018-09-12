@@ -12,7 +12,6 @@ use Flash;
 use Illuminate\Http\Request;
 use Response;
 
-
 class PilegController extends AppBaseController
 {
 	/** @var  PilegRepository */

@@ -4,16 +4,46 @@
     {!! Form::text('province_id', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Silon Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('silon_id', 'Silon Id:') !!}
+    {!! Form::text('silon_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Dapil Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('dapil_id', 'Dapil Id:') !!}
+    {!! Form::text('dapil_id', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Name2 Field -->
+<!-- Gelar Depan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name2', 'Name2:') !!}
-    {!! Form::text('name2', null, ['class' => 'form-control']) !!}
+    {!! Form::label('gelar_depan', 'Gelar Depan:') !!}
+    {!! Form::text('gelar_depan', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Gelar Belakang Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('gelar_belakang', 'Gelar Belakang:') !!}
+    {!! Form::text('gelar_belakang', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Jenis Kelamin Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('jenis_kelamin', 'Jenis Kelamin:') !!}
+    {!! Form::text('jenis_kelamin', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- No Urut Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('no_urut', 'No Urut:') !!}
+    {!! Form::text('no_urut', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Dob Field -->
@@ -26,18 +56,6 @@
 <div class="form-group col-sm-6">
     {!! Form::label('pob', 'Pob:') !!}
     {!! Form::text('pob', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Dob2 Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('dob2', 'Dob2:') !!}
-    {!! Form::date('dob2', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Pob2 Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('pob2', 'Pob2:') !!}
-    {!! Form::text('pob2', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Partai Field -->

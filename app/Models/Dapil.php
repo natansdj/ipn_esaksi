@@ -158,7 +158,7 @@ class Dapil extends Model
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
-	public function pileg()
+	public function pilegs()
 	{
 		return $this->belongsToMany(\App\Models\Pileg::class);
 	}

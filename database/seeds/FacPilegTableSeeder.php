@@ -25,7 +25,7 @@ class FacPilegTableSeeder extends Seeder
 			 * @var \App\Models\Pileg $pileg
 			 */
 			foreach ($dapilsId as $dapilId) {
-				$pileg->dapil()->attach($dapilId);
+				$pileg->dapils()->attach($dapilId);
 			}
 		});
 	}
