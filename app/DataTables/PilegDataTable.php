@@ -42,7 +42,7 @@ class PilegDataTable extends DataTable
 	 */
 	public function query(Pileg $model)
 	{
-		return $model->newQuery()->with(['province', 'dapil']);
+		return $model->newQuery()->with(['province', 'dapils']);
 	}
 
 	/**

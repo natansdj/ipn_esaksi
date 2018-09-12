@@ -105,7 +105,7 @@ class AjaxController extends AppBaseController
 				$master->dateFormat = 'd M Y - H:i T';
 				
 				//Data Collection
-				$dataModel  = Dapil::with(['pileg'])->where('id_wilayah', $dataId)->where('tingkat', $dataTingkat)->get();
+				$dataModel  = Dapil::with(['pilegs'])->where('id_wilayah', $dataId)->where('tingkat', $dataTingkat)->get();
 				$collection = $dataModel->map(function ($item, $key) {
 					$item->jml_voter = rand(1, 999) . 'K';
 

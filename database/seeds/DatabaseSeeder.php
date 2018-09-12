@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(TingkatanTableSeeder::class);
 
 		$this->call(UsersTableSeeder::class);
+		$this->call(UsersTableSeeder::class);
 		$this->call(FacPilegTableSeeder::class);
 		
 		// Re enable all mass assignment restrictions
