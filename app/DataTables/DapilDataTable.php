@@ -28,7 +28,7 @@ class DapilDataTable extends DataTable
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Post $model
+	 * @param \App\Models\Dapil $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */

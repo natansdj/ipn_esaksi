@@ -42,7 +42,7 @@ class PilegController extends AppBaseController
 	 */
 	public function list(Request $request)
 	{
-		$dropdown_type   = PILEG_TYPE;
+		$dropdown_type   = TINGKAT_DAPIL;
 		$dropdown_partai = PARTAI;
 
 		$this->pilegRepository->pushCriteria(new PilegRequestCriteria($request));

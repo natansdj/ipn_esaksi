@@ -5,7 +5,7 @@
         <h5 class="title">Bakal Calon</h5>
         <h5 class="lahir">
             {{ (isset($item->pob))? $item->pob: '' }},
-            {{ (isset($item->dob))? $item->dob->format('d M Y') : '' }}
+            {{ (isset($item->dob))? $item->dob : '' }}
         </h5>
         <h5 class="bakal">{{ (isset($item->type))? $item->type : '' }}</h5>
         <h5 class="chance">85% Peluang</h5>

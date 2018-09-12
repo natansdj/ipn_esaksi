@@ -17,9 +17,10 @@ class FacPilegTableSeeder extends Seeder
 			DB::table($table)->delete();
 		}
 
-		factory('App\Models\Pileg', 10)->create()->each(function ($pileg) {
+		factory('App\Models\Pileg', 20)->create()->each(function ($pileg) {
 
-			$dapilsId = \App\Models\Dapil::select('id')->orderByRaw("RAND()")->limit(rand(1, 2))->get()->toArray();
+//			$dapilsId = \App\Models\Dapil::select('id')->orderByRaw("RAND()")->limit(rand(1, 2))->get()->toArray();
+			$dapilsId = array_random([1, 2, 3, 4, 5], rand(1, 2));
 			/**
 			 * @var \App\Models\Pileg $pileg
 			 */

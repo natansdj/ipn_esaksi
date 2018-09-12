@@ -26,7 +26,7 @@ class VoteDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Post $model
+     * @param \App\Models\Vote $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Vote $model)

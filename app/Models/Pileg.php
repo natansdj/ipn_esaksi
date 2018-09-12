@@ -106,6 +106,7 @@ class Pileg extends Model
 		'note'
 	];
 	protected $dates = ['dob', 'dob2', 'deleted_at'];
+	
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -136,7 +137,7 @@ class Pileg extends Model
 		'partai' => 'required'
 	];
 
-	protected $with = ['dapil'];
+	protected $with = [];
 
 	public function getDobAttribute($value)
 	{
@@ -187,7 +188,7 @@ class Pileg extends Model
 
 	public function getTypeAttribute($value)
 	{
-		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+		return ( array_has(TINGKAT_DAPIL, $value) && array_get(TINGKAT_DAPIL, $value) ) ? TINGKAT_DAPIL[ $value ] : '-';
 	}
 
 	/**

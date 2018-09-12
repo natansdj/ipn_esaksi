@@ -13,6 +13,8 @@ class DashboardController extends Controller
 	 */
 	public function index(Request $request)
 	{
-		return view('index', []);
+		$dropdown_type = TINGKAT_DAPIL;
+
+		return view('index', compact('dropdown_type'));
 	}
 }

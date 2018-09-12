@@ -21,9 +21,13 @@ define('U_GENDER', [
 	'p' => 'Perempuan',
 ]);
 define('PILEG_TYPE', [
-	'dprd' => 'DPRD',
-	'dpd'  => 'DPD',
-	'mpr'  => 'MPR',
+	'dpr'        => 'DPR',
+	'dprd_prov'  => 'DPRD Provinsi',
+	'dprd_kabko' => 'DPRD Kab/Kota',
+]);
+define('PILPRES_TYPE', [
+	'no'  => 'Inactive',
+	'yes' => 'Active',
 ]);
 define('PARTAI', [
 	'pan' => 'PAN',
@@ -33,7 +37,7 @@ define('PARTAI', [
 define('TINGKAT_DAPIL', [
 	'0' => 'DPR',
 	'1' => 'DPRD Provinsi',
-	'2' => 'DPRD Kabko',
+	'2' => 'DPRD Kab/Kota',
 ]);
 return [
 	//

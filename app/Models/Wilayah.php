@@ -220,8 +220,6 @@ class Wilayah extends Model
 		'nama_wilayah' => 'required'
 	];
 
-	protected $with = ['tingkatan'];
-
 	public function rel_dapil()
 	{
 		return $this->hasMany(\App\Models\Dapil::class, 'id_wilayah');
@@ -238,6 +236,11 @@ class Wilayah extends Model
 	public function rel_dapil_wilayah()
 	{
 		return $this->belongsToMany(\App\Models\Dapil::class, 'dapil_wilayah');
+	}
+
+	public function scopeTkwilayah($query, $tingkat)
+	{
+		return ( $tingkat === 0 ) ? $this->tingkat($query, $tingkat) : $query->where('tingkat_wilayah', $tingkat);
 	}
 
 	/**
