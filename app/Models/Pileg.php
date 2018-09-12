@@ -116,6 +116,7 @@ class Pileg extends Model
 	protected $dates = ['dob', 'deleted_at'];
 
 	public $fillable = [
+		'id',
 		'province_id',
 		'silon_id',
 		'dapil_id',

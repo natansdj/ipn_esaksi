@@ -13,6 +13,7 @@ trait ApiKpuTrait
 	protected $api_wil_cari;
 	protected $api_wil_get;
 	protected $api_dapil;
+	protected $api_pileg;
 	protected $expired_at;
 
 	protected function initApiKpu()
@@ -33,8 +34,12 @@ trait ApiKpuTrait
 		$this->api_dapil = $this->site . '/pileg2019/api/dapil/';
 
 		/**
-		 * Note :
 		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/pengajuan-calon/1/12/calonDcs.json
+		 */
+		$this->api_pileg = $this->site . '/pileg2019/pencalonan/pengajuan-calon/';
+
+		/**
+		 * Note :
 		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/1/dcs-dpr.json
 		 *
 		 */
@@ -124,6 +129,36 @@ trait ApiKpuTrait
 		return $jsonArray;
 	}
 
+
+	protected function apiGetPileg($dapilId, $partaiId)
+	{
+		$cache_key = 'apiGetPileg_' . $dapilId . '_' . $partaiId;
+		if ( ! is_null($cache = $this->checkCache($cache_key))) {
+			return $cache;
+		}
+
+		//get Pileg
+		$api_url   = $this->getApiPileg($dapilId, $partaiId);
+		$client    = new Client();
+		$request   = $client->get($api_url);
+		$response  = $request->getBody()->getContents();
+		$jsonArray = json_decode($response, true);
+
+		if ($jsonArray === null) {
+			//remove non-alphanumeric char except '.,"{}[]:/ '
+			$response2 = preg_replace('@[^0-9a-z.,\'"{}\[\]:/ ]+@i', '-', $response);
+			$jsonArray = json_decode($response2, true);
+		}
+
+		if ( ! is_null($jsonArray)) {
+			Cache::put($cache_key, $jsonArray, $this->expired_at);
+
+			return $jsonArray;
+		}
+
+		return [];
+	}
+
 	protected function checkCache($cache_key)
 	{
 		$cache = Cache::get($cache_key);
@@ -152,5 +187,10 @@ trait ApiKpuTrait
 	public function setUseCache(bool $use_cache)
 	{
 		$this->use_cache = $use_cache;
+	}
+
+	public function getApiPileg($dapilId, $partaiId)
+	{
+		return $this->api_pileg . $dapilId . '/' . $partaiId . '/calonDcs.json';
 	}
 }

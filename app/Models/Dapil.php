@@ -162,4 +162,9 @@ class Dapil extends Model
 	{
 		return $this->belongsToMany(\App\Models\Pileg::class);
 	}
+
+	public function scopeTingkatWilayah($query, $tingkat)
+	{
+		return $query->where('tingkat', $tingkat);
+	}
 }

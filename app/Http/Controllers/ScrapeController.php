@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dapil;
+use App\Models\Pileg;
 use App\Models\Tingkatan;
 use App\Models\Wilayah;
 use App\Traits\ApiKpuTrait;
+use App\Traits\ApiPilegTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class ScrapeController extends AppBaseController
 {
-	use ApiKpuTrait;
+	use ApiKpuTrait, ApiPilegTrait;
 
 	protected $get_dapil = false;
 	protected $return_data = [];
@@ -33,6 +35,7 @@ class ScrapeController extends AppBaseController
 	protected $dapils = [];
 	protected $wilayah_existing;
 	protected $dapil_existing;
+	protected $pileg_existing;
 	protected $wilayah_dt;
 
 	public function __construct()
@@ -42,6 +45,33 @@ class ScrapeController extends AppBaseController
 
 		$this->wilayah_existing = Wilayah::get()->pluck('id')->toArray();
 		$this->dapil_existing   = Dapil::get()->pluck('id')->toArray();
+		$this->pileg_existing   = Pileg::get()->pluck('id')->toArray();
+	}
+
+	public function fetchPilegAction(Request $request, $id = null, $partai = 12)
+	{
+		$this->request = $request;
+		$pull          = $request->has('pull');
+
+		$jsonArray = $this->fetchPileg($id, $partai);
+
+		if ($pull) {
+			DB::disableQueryLog();
+			set_time_limit(0);
+
+			$this->addReturnData('isPull', true);
+			$this->addReturnData('isUpdate', (bool) $this->request->has('update'));
+			$this->addReturnData('syncedPileg', 0);
+
+			$this->pullPileg($id, $partai);
+			DB::enableQueryLog();
+		} else {
+			//
+		}
+
+		$this->addReturnData('pileg', $jsonArray);
+
+		return $this->sendResponse($this->getReturnData(), '');
 	}
 
 	public function fetchDapilAction(Request $request, $id = 0, $tkWil = 0)
