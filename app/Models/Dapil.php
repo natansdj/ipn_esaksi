@@ -150,11 +150,6 @@ class Dapil extends Model
 		return $this->belongsToMany(\App\Models\Wilayah::class);
 	}
 
-	public function getTingkatAttribute($value)
-	{
-		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
-	}
-
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
@@ -166,5 +161,15 @@ class Dapil extends Model
 	public function scopeTingkatWilayah($query, $tingkat)
 	{
 		return $query->where('tingkat', $tingkat);
+	}
+
+	public function getTingkatAttribute($value)
+	{
+		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
+	}
+
+	public function getJmlVoterAttribute()
+	{
+		return rand(1, 999) . 'K';
 	}
 }

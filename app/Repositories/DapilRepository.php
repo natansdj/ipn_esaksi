@@ -20,7 +20,9 @@ class DapilRepository extends BaseRepository
 	 * @var array
 	 */
 	protected $fieldSearchable = [
-		'nama'
+		'nama',
+		'tingkat',
+		'id_wilayah',
 	];
 
 	/**

@@ -42,7 +42,13 @@
                 </tbody>
             </table>
         </div>
-        <span class="region-date">Update, {{ $data->updated_at->format($master->dateFormat) }}</span>
+        @php
+            $attr_time = (isset($data->updated_at)) ? $data->updated_at : '-';
+            if(isset($data->updated_at) && $data->updated_at instanceof \Carbon\Carbon){
+                $attr_time = $data->updated_at->format($master->dateFormat);
+            }
+        @endphp
+        <span class="region-date">Update, {{ $attr_time }}</span>
         <button class="btn" hidden>Berikan Polling Anda</button>
     </div>
 </div>

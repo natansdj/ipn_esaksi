@@ -240,7 +240,7 @@ class Wilayah extends Model
 
 	public function scopeTkwilayah($query, $tingkat)
 	{
-		return ( $tingkat === 0 ) ? $this->tingkat($query, $tingkat) : $query->where('tingkat_wilayah', $tingkat);
+		return ( $tingkat == 0 ) ? $this->tingkat($tingkat) : $query->where('tingkat_wilayah', $tingkat);
 	}
 
 	/**

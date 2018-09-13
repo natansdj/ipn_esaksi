@@ -176,15 +176,6 @@ class Pileg extends Model
 		return $value;
 	}
 
-	public function getDob2Attribute($value)
-	{
-		if (isset($value) && ! empty($value)) {
-			$value = Carbon::parse($value)->format(config('app.date_format'));
-		}
-
-		return $value;
-	}
-
 	public function getFormValue($key)
 	{
 		if ($this->hasCast($key, 'integer') && $this->hasGetMutator($key)) {
@@ -204,19 +195,40 @@ class Pileg extends Model
 		return $this->belongsTo(\App\Models\Province::class);
 	}
 
-	public function getCapresPartaiAttribute($value)
+	public function getPartaiAttribute($value)
 	{
-		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
-	}
-
-	public function getCawapresPartaiAttribute($value)
-	{
-		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
+		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : $value;
 	}
 
 	public function getTypeAttribute($value)
 	{
-		return ( array_has(TINGKAT_DAPIL, $value) && array_get(TINGKAT_DAPIL, $value) ) ? TINGKAT_DAPIL[ $value ] : '-';
+		return ( empty($value) ) ? $this->getAttributeValue('tingkat') : $value;
+	}
+
+	public function getFullnameAttribute($value)
+	{
+		return implode(' ', [$this->getAttribute('gelar_depan'), $this->getAttribute('name'), $this->getAttribute('gelar_belakang')]);
+	}
+
+	public function getJenisKelaminAttribute($value)
+	{
+		return ( array_has(U_GENDER, $value) && array_get(U_GENDER, $value) ) ? U_GENDER[ $value ] : '-';
+	}
+
+	public function getTingkatAttribute($value)
+	{
+		$tingkat = '-';
+		$dapils  = $this->dapils;
+		if ( ! is_null($dapils) && $dapils && $dapils instanceof \Illuminate\Database\Eloquent\Collection) {
+			$tingkat = $dapils->pluck('tingkat')->implode(', ');
+		}
+
+		return $tingkat;
+	}
+
+	public function getDapilNamaAttribute($value)
+	{
+		return ( isset($this->dapil) && isset($this->dapil->nama) ) ? $this->dapil->nama : $this->getAttribute('dapil_id');
 	}
 
 	/**
@@ -225,5 +237,13 @@ class Pileg extends Model
 	public function dapils()
 	{
 		return $this->belongsToMany(\App\Models\Dapil::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function dapil()
+	{
+		return $this->belongsTo(\App\Models\Dapil::class);
 	}
 }

@@ -37,7 +37,7 @@
 <!-- Jenis Kelamin Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('jenis_kelamin', 'Jenis Kelamin:') !!}
-    {!! Form::text('jenis_kelamin', null, ['class' => 'form-control']) !!}
+    {!! Form::select('jenis_kelamin', U_GENDER ,null, ['class' => 'form-control', 'placeholder' => 'Pilih Jenis Kelamin']) !!}
 </div>
 
 <!-- No Urut Field -->
@@ -48,20 +48,20 @@
 
 <!-- Dob Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('dob', 'Dob:') !!}
+    {!! Form::label('dob', 'Tanggal Lahir:') !!}
     {!! Form::date('dob', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Pob Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('pob', 'Pob:') !!}
+    {!! Form::label('pob', 'Tempat Lahir:') !!}
     {!! Form::text('pob', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Partai Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('partai', 'Partai:') !!}
-    {!! Form::text('partai', null, ['class' => 'form-control']) !!}
+    {!! Form::select('partai', PARTAI ,null, ['class' => 'form-control', 'placeholder' => 'Pilih Partai']) !!}
 </div>
 
 <!-- Note Field -->

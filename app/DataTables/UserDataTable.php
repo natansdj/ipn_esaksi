@@ -3,9 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\User;
-use Yajra\DataTables\CollectionDataTable;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Services\DataTable;
 
 class UserDataTable extends DataTable
 {
@@ -18,8 +18,7 @@ class UserDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$collection = $query->get();
-		$dataTable  = new CollectionDataTable($collection);
+		$dataTable = new EloquentDataTable($query);
 
 		return $dataTable->addColumn('action', 'users.datatables_actions');
 	}
@@ -49,9 +48,9 @@ class UserDataTable extends DataTable
 		            ->addAction(['printable' => false, 'width' => '120px'])
 		            ->parameters([
 			            'language' => ['url' => asset('js/dataTables.indonesian.json')],
-			            'dom' => 'Bflrtip',
-			            'order'   => [[0, 'desc']],
-			            'buttons' => [
+			            'dom'      => 'Bflrtip',
+			            'order'    => [[0, 'desc']],
+			            'buttons'  => [
 				            ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -69,6 +68,11 @@ class UserDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'searchable' => false,
+				'visible'    => false
+			]),
 			'name',
 			'email',
 			'phone',

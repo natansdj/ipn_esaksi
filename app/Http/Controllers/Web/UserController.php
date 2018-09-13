@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use Alert;
 use App\DataTables\UserDataTable;
-use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\District;
@@ -13,7 +11,6 @@ use App\Models\Regency;
 use App\Models\Village;
 use App\Repositories\UserRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class UserController extends Controller
@@ -63,7 +60,7 @@ class UserController extends Controller
 
 		$user = $this->userRepository->create($input);
 
-        Flash::success('User saved successfully.');
+		Flash::success('User saved successfully.');
 
 		return redirect(route('users.index'));
 	}

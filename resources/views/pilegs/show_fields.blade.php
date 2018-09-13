@@ -19,7 +19,7 @@
 <!-- Dapil Id Field -->
 <div class="form-group">
     {!! Form::label('dapil_id', 'Dapil Id:') !!}
-    <p>{!! $pileg->dapil_id !!}</p>
+    <p>{!! $pileg->dapil_nama !!}</p>
 </div>
 
 <!-- Name Field -->
@@ -54,13 +54,13 @@
 
 <!-- Dob Field -->
 <div class="form-group">
-    {!! Form::label('dob', 'Dob:') !!}
+    {!! Form::label('dob', 'Tanggal Lahir :') !!}
     <p>{!! $pileg->dob !!}</p>
 </div>
 
 <!-- Pob Field -->
 <div class="form-group">
-    {!! Form::label('pob', 'Pob:') !!}
+    {!! Form::label('pob', 'Tempat Lahir :') !!}
     <p>{!! $pileg->pob !!}</p>
 </div>
 
@@ -82,12 +82,6 @@
     <p>{!! $pileg->note !!}</p>
 </div>
 
-<!-- Deleted At Field -->
-<div class="form-group">
-    {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $pileg->deleted_at !!}</p>
-</div>
-
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
@@ -100,3 +94,10 @@
     <p>{!! $pileg->updated_at !!}</p>
 </div>
 
+<!-- Deleted At Field -->
+@if(isset($pileg->deleted_at))
+    <div class="form-group">
+        {!! Form::label('deleted_at', 'Deleted At:') !!}
+        <p>{!! $pileg->deleted_at !!}</p>
+    </div>
+@endif

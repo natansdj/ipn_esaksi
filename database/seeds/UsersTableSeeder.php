@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-	protected $toTruncate = ['pilpres', 'users', 'tps'];
+	protected $toTruncate = ['users', 'tps'];
 
 	/**
 	 * Run the database seeds.

@@ -45,7 +45,9 @@ class PilegController extends AppBaseController
 		$dropdown_partai = PARTAI;
 
 		$this->pilegRepository->pushCriteria(new PilegRequestCriteria($request));
-		$collection = $this->pilegRepository->all();
+
+		/** @var \Illuminate\Pagination\LengthAwarePaginator $collection */
+		$collection = $this->pilegRepository->paginate(10, $columns = ['*']);
 
 		return view('pages.pilegs_list', compact('collection', 'dropdown_type', 'dropdown_partai'));
 	}

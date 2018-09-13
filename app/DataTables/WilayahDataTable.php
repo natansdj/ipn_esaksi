@@ -3,8 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\Wilayah;
+use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
-use Yajra\DataTables\CollectionDataTable;
 
 class WilayahDataTable extends DataTable
 {
@@ -17,8 +18,7 @@ class WilayahDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$collection = $query->get();
-		$dataTable  = new CollectionDataTable($collection);
+		$dataTable = new EloquentDataTable($query);
 
 		return $dataTable->addColumn('action', 'wilayahs.datatables_actions');
 	}
@@ -68,6 +68,11 @@ class WilayahDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'searchable' => false,
+				'visible'    => false
+			]),
 			'nama_wilayah'
 		];
 	}

@@ -78,13 +78,13 @@ class AjaxController extends AppBaseController
 				];
 				break;
 			case 'get_provinsi' :
-				$tingkat_wilayah = array_get($data, 'tingkat_wilayah', 1);
+				$tingkat_wilayah = array_get($data, 'tk', 1);
 				$collection      = Wilayah::tkwilayah($tingkat_wilayah)->get(['nama_wilayah', 'id']);
 
 				$response = $collection;
 				break;
 			case 'get_kabko' :
-				$idProvinsi = array_get($data, 'provinsi');
+				$idProvinsi = array_get($data, 'prov');
 				$search     = array_get($data, 'search');
 				$model      = Wilayah::where('id_parent', $idProvinsi);
 
@@ -97,13 +97,13 @@ class AjaxController extends AppBaseController
 				break;
 			case 'get_polling' :
 				$dataId      = array_get($data, 'id');
-				$dataTingkat = array_get($data, 'tingkat');
+				$dataTingkat = array_get($data, 'tk');
 				$master      = collect();
 
 				//Data Master
 				$master->tingkat    = TINGKAT_DAPIL[ $dataTingkat ];
 				$master->dateFormat = 'd M Y - H:i T';
-				
+
 				//Data Collection
 				$dataModel  = Dapil::with(['pilegs'])->where('id_wilayah', $dataId)->where('tingkat', $dataTingkat)->get();
 				$collection = $dataModel->map(function ($item, $key) {
