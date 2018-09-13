@@ -4,8 +4,6 @@ namespace App\Traits;
 
 use App\Models\Dapil;
 use App\Models\Pileg;
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Cache;
 
 trait ApiPilegTrait
 {
@@ -17,7 +15,8 @@ trait ApiPilegTrait
 		if ($dapilId === null) {
 			$dapils0 = Dapil::tingkatWilayah(0)->get()->pluck('id');
 			$dapils1 = Dapil::tingkatWilayah(1)->get()->pluck('id');
-			$dapils  = array_merge($dapils0->toArray(), $dapils1->toArray());
+			$dapils2 = Dapil::tingkatWilayah(2)->get()->pluck('id');
+			$dapils  = array_merge($dapils0->toArray(), $dapils1->toArray(), $dapils2->toArray());
 			$this->addReturnData('fetchDapil', count($dapils));
 
 			$pilegData  = [];
