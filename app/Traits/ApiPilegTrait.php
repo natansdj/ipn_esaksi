@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Models\Dapil;
 use App\Models\Pileg;
+use Illuminate\Support\Facades\DB;
 
 trait ApiPilegTrait
 {
@@ -65,29 +66,41 @@ trait ApiPilegTrait
 			return null;
 		}
 
-		$singleData = [];
-		foreach ($data as $a => $b) {
-			$singleData[ snake_case($a) ] = $b;
+		DB::beginTransaction();
+		try {
+			$singleData = [];
+			foreach ($data as $a => $b) {
+				$singleData[ snake_case($a) ] = $b;
+			}
+
+			$singleData['name']     = array_get($singleData, 'nama');
+			$singleData['silon_id'] = array_get($singleData, 'id');
+			$singleData['pob']      = array_get($singleData, 'nama_kab');
+			$singleData['dapil_id'] = array_get($singleData, 'id_dapil');
+			$singleData['note']     = array_get($singleData, 'file_path');
+			$singleData['note']     = array_get($singleData, 'file_path');
+
+			if (isset($this->pileg_partai) && ! empty($this->pileg_partai)) {
+				$singleData['partai'] = $this->pileg_partai;
+			}
+
+			$attribs = array_only($singleData, ['id', 'silon_id']);
+			/** @var Pileg $model */
+			$model = Pileg::updateOrCreate($attribs, $singleData);
+			$model->dapils()->syncWithoutDetaching(array_get($singleData, 'dapil_id'));
+
+			//Add Count
+			$prevCount = ( $this->getReturnData('syncedPileg') !== null ) ? $this->getReturnData('syncedPileg') : 0;
+			$this->addReturnData('syncedPileg', $prevCount + 1);
+		} catch (\Exception $e) {
+			DB::rollBack();
+			\Log::error($e);
+			$msg = $e->getMessage();
+
+			return $this->sendError($msg);
 		}
 
-		$singleData['name']     = array_get($singleData, 'nama');
-		$singleData['silon_id'] = array_get($singleData, 'id');
-		$singleData['pob']      = array_get($singleData, 'nama_kab');
-		$singleData['dapil_id'] = array_get($singleData, 'id_dapil');
-		$singleData['note']     = array_get($singleData, 'file_path');
-		$singleData['note']     = array_get($singleData, 'file_path');
-
-		if (isset($this->pileg_partai) && ! empty($this->pileg_partai)) {
-			$singleData['partai'] = $this->pileg_partai;
-		}
-
-		$attribs = array_only($singleData, ['id', 'silon_id']);
-		$model   = Pileg::updateOrCreate($attribs, $singleData);
-		$model->dapils()->syncWithoutDetaching(array_get($singleData, 'id_dapil'));
-
-		//Add Count
-		$prevCount = ( $this->getReturnData('syncedPileg') !== null ) ? $this->getReturnData('syncedPileg') : 0;
-		$this->addReturnData('syncedPileg', $prevCount + 1);
+		DB::commit();
 
 		return $model->getAttributes();
 	}

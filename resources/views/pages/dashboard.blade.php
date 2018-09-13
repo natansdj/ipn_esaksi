@@ -20,10 +20,10 @@
     <h3>Hasil polling <span>Real Count</span></h3>
     {!! Form::open(['method' => 'GET','route' => 'dashboard', 'class'=>'form dapiltingkatform form-inline']) !!}
     @if(!isset($dd_provinsi) || empty($dd_provinsi))
-        {!! Form::hidden('dd_provinsi', app('request')->input('prov')) !!}
+        {!! Form::hidden('dd_provinsi', app('request')->input('prov'), ['disabled'=>'disabled']) !!}
     @endif
     @if(!isset($dd_kabko) || empty($dd_kabko))
-        {!! Form::hidden('dd_kabko', app('request')->input('kabko')) !!}
+        {!! Form::hidden('dd_kabko', app('request')->input('kabko'), ['disabled'=>'disabled']) !!}
     @endif
     {!! Form::select('tk', $dd_type, null, ['id' => 'tingkat-select', 'class'=>'select2 form-control mr-sm-1', 'placeholder'=>'Pilih Tingkat Dapil']) !!}
     {!! Form::select('prov', (isset($dd_provinsi))? $dd_provinsi : [], null, ['id' => 'prov-select', 'class'=> $attr_prov_class, 'placeholder'=>'Pilih Propinsi', 'data-url' => '/ajax_data/get_provinsi']) !!}
@@ -42,6 +42,19 @@
     <style type="text/css">
         .dapil_box:nth-child(n + 4) {
             padding-top: 20px;
+        }
+
+        .dapiltingkatform {
+            margin: 4px 0 0;
+        }
+
+        .dapiltingkatform .select2-container {
+            position: relative;
+            z-index: 2;
+            float: left;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 0;
         }
     </style>
     <script type="text/javascript">
@@ -96,7 +109,7 @@
 
         if (isAjax) {
           $.ajax({
-            url: 'ajax_data/get_polling',
+            url: 'ajax_data/get_p4pxolling',
             type: 'GET',
             dataType: 'json',
             data: {id: dataId, tk: dataTingkat},

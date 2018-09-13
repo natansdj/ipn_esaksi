@@ -114,6 +114,7 @@ class ScrapeController extends AppBaseController
 
 			$jsonArray = $this->fetchWilayah($id);
 
+			//DEPTH
 			if ($jsonArray && $this->depth) {
 				$depthArr = $jsonArray;
 				for ($this->current_depth = 1; $this->current_depth <= $this->depth; $this->current_depth ++) {
@@ -264,7 +265,6 @@ class ScrapeController extends AppBaseController
 
 	protected function pullWilayah($id = 0)
 	{
-//		DB::beginTransaction();
 		try {
 			$jsonArray = $this->apiGetWilayah($id);
 
@@ -294,11 +294,8 @@ class ScrapeController extends AppBaseController
 			}
 
 		} catch (\Exception $e) {
-//			DB::rollBack();
 			throw $e;
 		}
-
-//		DB::commit();
 	}
 
 	protected function pullDapil($id, $tkWil)
@@ -327,18 +324,25 @@ class ScrapeController extends AppBaseController
 					$singleData[ $snakeCaseKey ] = $b;
 				}
 
-				//atribute to compare
-				$attribs = array_filter($singleData, function ($k) {
-					return in_array($k, ['id', 'tingkat']);
-				}, ARRAY_FILTER_USE_KEY);
+				DB::beginTransaction();
+				try {
+					//atribute to compare
+					$attribs = array_filter($singleData, function ($k) {
+						return in_array($k, ['id', 'tingkat']);
+					}, ARRAY_FILTER_USE_KEY);
 
-				if ($singleData) {
-					Dapil::updateOrCreate($attribs, $singleData);
+					if ($singleData) {
+						Dapil::updateOrCreate($attribs, $singleData);
 
-					$countDapil = ( $this->getReturnData('syncedDapil') !== null )
-						? $this->getReturnData('syncedDapil') : 0;
-					$this->addReturnData('syncedDapil', $countDapil + 1);
+						$countDapil = ( $this->getReturnData('syncedDapil') !== null )
+							? $this->getReturnData('syncedDapil') : 0;
+						$this->addReturnData('syncedDapil', $countDapil + 1);
+					}
+				} catch (\Exception $e) {
+					DB::rollBack();
+					throw $e;
 				}
+				DB::commit();
 			}
 		}
 	}
@@ -352,7 +356,6 @@ class ScrapeController extends AppBaseController
 		$returnData = [];
 		$baseDapil  = $this->getDapil();
 		if ($baseDapil) {
-//			DB::beginTransaction();
 			try {
 				$insert_wilayah = $insert_wilayah_dapil = [];
 				foreach ($baseDapil as $key => $dapils) {
@@ -410,11 +413,8 @@ class ScrapeController extends AppBaseController
 				$return = $insert_wilayah_dapil;
 
 			} catch (\Exception $e) {
-//				DB::rollBack();
 				throw $e;
 			}
-
-//			DB::commit();
 		}
 
 		$this->addReturnData('dapil_wilayah', array_sum(array_map('count', $returnData)));
@@ -437,20 +437,28 @@ class ScrapeController extends AppBaseController
 			}
 
 			if ($singleData) {
-				//atribute to compare
-				$attribs = array_only($singleData, ['id', 'kode_wilayah']);
+				DB::beginTransaction();
+				try {
+					//atribute to compare
+					$attribs = array_only($singleData, ['id', 'kode_wilayah']);
 
-				//attribute for Tingkatan model
-				$baseTingkat     = new Tingkatan();
-				$tingkatanValues = array_only($singleData, $baseTingkat->fillable);
-				$tingkatanValues = array_prepend($tingkatanValues, array_get($singleData, 'id'), 'wilayah_id');
-				$tingkatanAttr   = array_only($tingkatanValues, ['tingkat_wilayah', 'wilayah_id']);
+					//attribute for Tingkatan model
+					$baseTingkat     = new Tingkatan();
+					$tingkatanValues = array_only($singleData, $baseTingkat->fillable);
+					$tingkatanValues = array_prepend($tingkatanValues, array_get($singleData, 'id'), 'wilayah_id');
+					$tingkatanAttr   = array_only($tingkatanValues, ['tingkat_wilayah', 'wilayah_id']);
 
-				$model          = Wilayah::updateOrCreate($attribs, $singleData);
-				$modelTingkatan = Tingkatan::updateOrCreate($tingkatanAttr, $tingkatanValues);
+					$model          = Wilayah::updateOrCreate($attribs, $singleData);
+					$modelTingkatan = Tingkatan::updateOrCreate($tingkatanAttr, $tingkatanValues);
 
-				$this->addSyncedWilayahCount();
-				$this->addSyncedTingkatanWilayahCount();
+					$this->addSyncedWilayahCount();
+					$this->addSyncedTingkatanWilayahCount();
+
+				} catch (\Exception $e) {
+					DB::rollBack();
+					throw $e;
+				}
+				DB::commit();
 
 				return $model;
 			}
