@@ -4,7 +4,8 @@ namespace App\DataTables;
 
 use App\Models\Pileg;
 use Illuminate\Database\Eloquent\Collection;
-use Yajra\DataTables\CollectionDataTable;
+use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
 class PilegDataTable extends DataTable
@@ -18,16 +19,24 @@ class PilegDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$collection = $query->get();
-		$dataTable  = new CollectionDataTable($collection);
+		$dataTable = new EloquentDataTable($query);
 		$dataTable->editColumn('dapil_id', function ($model) {
+			/** @var \App\Models\Pileg $model */
 			$dapil  = '-';
-			$dapils = $model->dapil;
+			$dapils = $model->dapils;
 			if ( ! is_null($dapils) && $dapils && $dapils instanceof Collection) {
 				$dapil = $dapils->pluck('nama')->implode(', ');
 			}
 
 			return $dapil;
+		});
+		$dataTable->editColumn('type', function ($model) {
+			/** @var \App\Models\Pileg $model */
+			return $model->getAttributeValue('tingkat');
+		});
+		$dataTable->editColumn('name', function ($model) {
+			/** @var \App\Models\Pileg $model */
+			return $model->getAttributeValue('fullname');
 		});
 
 		return $dataTable->addColumn('action', 'pilegs.datatables_actions');
@@ -42,7 +51,7 @@ class PilegDataTable extends DataTable
 	 */
 	public function query(Pileg $model)
 	{
-		return $model->newQuery()->with(['province', 'dapil']);
+		return $model->newQuery()->with(['province', 'dapils']);
 	}
 
 	/**
@@ -78,12 +87,24 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'dapil_id'    => [
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'searchable' => false,
+				'visible'    => false
+			]),
+			'name',
+			'dapil_id' => [
 				'data'  => 'dapil_id',
 				'title' => 'Dapil'
 			],
-			'name',
-			'name2',
+			'type'     => [
+				'data'  => 'type',
+				'title' => 'Tingkat Dapil'
+			],
+			'pob'      => [
+				'data'  => 'pob',
+				'title' => 'Tempat Lahir'
+			],
 			'partai'
 		];
 	}

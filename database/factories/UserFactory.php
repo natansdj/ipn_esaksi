@@ -29,7 +29,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
 		'password'       => bcrypt('123456'),
 		'remember_token' => str_random(10),
 		'nik'            => $faker->nik(),
-		'gender'         => $faker->randomElement(['male', 'female']),
+		'gender'         => $faker->randomElement([1, 2]),
 		'dob'            => $faker->date('Y-m-d', '1980-1-1'),
 		'pob'            => $faker->randomElement($attr_city),
 		'status'         => $faker->numberBetween(1, 2),

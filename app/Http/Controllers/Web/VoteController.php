@@ -3,149 +3,149 @@
 namespace App\Http\Controllers\Web;
 
 use App\DataTables\VoteDataTable;
-use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateVoteRequest;
 use App\Http\Requests\UpdateVoteRequest;
 use App\Repositories\VoteRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class VoteController extends AppBaseController
 {
-    /** @var  VoteRepository */
-    private $voteRepository;
+	/** @var  VoteRepository */
+	private $voteRepository;
 
-    public function __construct(VoteRepository $voteRepo)
-    {
-        $this->voteRepository = $voteRepo;
-    }
+	public function __construct(VoteRepository $voteRepo)
+	{
+		$this->voteRepository = $voteRepo;
+	}
 
-    /**
-     * Display a listing of the Vote.
-     *
-     * @param VoteDataTable $voteDataTable
-     * @return Response
-     */
-    public function index(VoteDataTable $voteDataTable)
-    {
-        return $voteDataTable->render('votes.index');
-    }
+	/**
+	 * Display a listing of the Vote.
+	 *
+	 * @param VoteDataTable $voteDataTable
+	 *
+	 * @return Response
+	 */
+	public function index(VoteDataTable $voteDataTable)
+	{
+		return $voteDataTable->render('votes.index');
+	}
 
-    /**
-     * Show the form for creating a new Vote.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('votes.create');
-    }
+	/**
+	 * Show the form for creating a new Vote.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return view('votes.create');
+	}
 
-    /**
-     * Store a newly created Vote in storage.
-     *
-     * @param CreateVoteRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateVoteRequest $request)
-    {
-        $input = $request->all();
+	/**
+	 * Store a newly created Vote in storage.
+	 *
+	 * @param CreateVoteRequest $request
+	 *
+	 * @return Response
+	 */
+	public function store(CreateVoteRequest $request)
+	{
+		$input = $request->all();
 
-        $vote = $this->voteRepository->create($input);
+		$vote = $this->voteRepository->create($input);
 
-        Flash::success('Vote saved successfully.');
+		Flash::success('Vote saved successfully.');
 
-        return redirect(route('votes.index'));
-    }
+		return redirect(route('votes.index'));
+	}
 
-    /**
-     * Display the specified Vote.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $vote = $this->voteRepository->findWithoutFail($id);
+	/**
+	 * Display the specified Vote.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$vote = $this->voteRepository->findWithoutFail($id);
 
-        if (empty($vote)) {
-            Flash::error('Vote not found');
+		if (empty($vote)) {
+			Flash::error('Vote not found');
 
-            return redirect(route('votes.index'));
-        }
+			return redirect(route('votes.index'));
+		}
 
-        return view('votes.show')->with('vote', $vote);
-    }
+		return view('votes.show')->with('vote', $vote);
+	}
 
-    /**
-     * Show the form for editing the specified Vote.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $vote = $this->voteRepository->findWithoutFail($id);
+	/**
+	 * Show the form for editing the specified Vote.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$vote = $this->voteRepository->findWithoutFail($id);
 
-        if (empty($vote)) {
-            Flash::error('Vote not found');
+		if (empty($vote)) {
+			Flash::error('Vote not found');
 
-            return redirect(route('votes.index'));
-        }
+			return redirect(route('votes.index'));
+		}
 
-        return view('votes.edit')->with('vote', $vote);
-    }
+		return view('votes.edit')->with('vote', $vote);
+	}
 
-    /**
-     * Update the specified Vote in storage.
-     *
-     * @param  int              $id
-     * @param UpdateVoteRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateVoteRequest $request)
-    {
-        $vote = $this->voteRepository->findWithoutFail($id);
+	/**
+	 * Update the specified Vote in storage.
+	 *
+	 * @param  int $id
+	 * @param UpdateVoteRequest $request
+	 *
+	 * @return Response
+	 */
+	public function update($id, UpdateVoteRequest $request)
+	{
+		$vote = $this->voteRepository->findWithoutFail($id);
 
-        if (empty($vote)) {
-            Flash::error('Vote not found');
+		if (empty($vote)) {
+			Flash::error('Vote not found');
 
-            return redirect(route('votes.index'));
-        }
+			return redirect(route('votes.index'));
+		}
 
-        $vote = $this->voteRepository->update($request->all(), $id);
+		$vote = $this->voteRepository->update($request->all(), $id);
 
-        Flash::success('Vote updated successfully.');
+		Flash::success('Vote updated successfully.');
 
-        return redirect(route('votes.index'));
-    }
+		return redirect(route('votes.index'));
+	}
 
-    /**
-     * Remove the specified Vote from storage.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $vote = $this->voteRepository->findWithoutFail($id);
+	/**
+	 * Remove the specified Vote from storage.
+	 *
+	 * @param  int $id
+	 *
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		$vote = $this->voteRepository->findWithoutFail($id);
 
-        if (empty($vote)) {
-            Flash::error('Vote not found');
+		if (empty($vote)) {
+			Flash::error('Vote not found');
 
-            return redirect(route('votes.index'));
-        }
+			return redirect(route('votes.index'));
+		}
 
-        $this->voteRepository->delete($id);
+		$this->voteRepository->delete($id);
 
-        Flash::success('Vote deleted successfully.');
+		Flash::success('Vote deleted successfully.');
 
-        return redirect(route('votes.index'));
-    }
+		return redirect(route('votes.index'));
+	}
 }

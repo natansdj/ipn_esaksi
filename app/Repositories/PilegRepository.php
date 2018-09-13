@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class PilegRepository
  * @package App\Repositories
- * @version September 7, 2018, 3:18 pm UTC
+ * @version September 12, 2018, 4:58 pm WIB
  *
  * @method Pileg findWithoutFail( $id, $columns = ['*'] )
  * @method Pileg find( $id, $columns = ['*'] )
@@ -20,8 +20,7 @@ class PilegRepository extends BaseRepository
 	 * @var array
 	 */
 	protected $fieldSearchable = [
-		'name'  => 'like',
-		'name2' => 'like',
+		'name' => 'like',
 		'type',
 		'partai'
 	];

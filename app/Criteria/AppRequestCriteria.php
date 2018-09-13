@@ -2,10 +2,9 @@
 
 namespace App\Criteria;
 
-use Prettus\Repository\Criteria\RequestCriteria;
-
 use Prettus\Repository\Contracts\CriteriaInterface;
 use Prettus\Repository\Contracts\RepositoryInterface;
+use Prettus\Repository\Criteria\RequestCriteria;
 
 /**
  * Class AppRequestCriteria
@@ -69,7 +68,7 @@ class AppRequestCriteria extends RequestCriteria implements CriteriaInterface
 	/**
 	 * Apply criteria in query repository
 	 *
-	 * @param         Builder|Model $model
+	 * @param         \Illuminate\Database\Query\Builder| \Illuminate\Database\Eloquent\Model $model
 	 * @param RepositoryInterface $repository
 	 *
 	 * @return mixed

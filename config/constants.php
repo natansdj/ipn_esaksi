@@ -17,23 +17,44 @@ define('U_STATUS', [
 	'2' => 'Belum Kawin',
 ]);
 define('U_GENDER', [
-	'l' => 'Laki-laki',
-	'p' => 'Perempuan',
+	'1' => 'Laki-laki',
+	'2' => 'Perempuan',
 ]);
 define('PILEG_TYPE', [
-	'dprd' => 'DPRD',
-	'dpd'  => 'DPD',
-	'mpr'  => 'MPR',
+	'dpr'        => 'DPR',
+	'dprd_prov'  => 'DPRD Provinsi',
+	'dprd_kabko' => 'DPRD Kab/Kota',
+]);
+define('PILPRES_TYPE', [
+	'no'  => 'Inactive',
+	'yes' => 'Active',
 ]);
 define('PARTAI', [
-	'pan' => 'PAN',
-	'pdi' => 'PDI',
-	'ppp' => 'PPP',
+	1  => 'PKB',
+	2  => 'Gerindra',
+	3  => 'PDI-P',
+	4  => 'GOLKAR',
+	5  => 'NasDem',
+	6  => 'Garuda',
+	7  => 'Berkarya',
+	8  => 'PKS',
+	9  => 'Perindo',
+	10 => 'PPP',
+	11 => 'PSI',
+	12 => 'PAN',
+	13 => 'Hanura',
+	14 => 'Demokrat',
+	15 => 'Aceh',
+	16 => 'SIRA',
+	17 => 'PD ACEH',
+	18 => 'Naggroe Aceh',
+	19 => 'PBB',
+	20 => 'PKP Indonesia',
 ]);
 define('TINGKAT_DAPIL', [
 	'0' => 'DPR',
 	'1' => 'DPRD Provinsi',
-	'2' => 'DPRD Kabko',
+	'2' => 'DPRD Kab/Kota',
 ]);
 return [
 	//

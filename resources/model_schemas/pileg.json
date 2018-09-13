@@ -17,13 +17,19 @@
     "relation": "mt1,Province"
   },
   {
+    "name": "silon_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
     "name": "dapil_id",
     "dbType": "integer:unsigned:foreign,dapil,id",
     "htmlType": "text",
     "searchable": false,
-    "inForm": true,
     "inIndex": false,
-    "relation": "mt1,Dapil"
+    "relation": "mtm,Dapil"
   },
   {
     "name": "name",
@@ -33,10 +39,32 @@
     "searchable": true
   },
   {
-    "name": "name2",
+    "name": "gelar_depan",
     "dbType": "string",
     "htmlType": "text",
-    "searchable": true
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "gelar_belakang",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "jenis_kelamin",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "no_urut",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
   },
   {
     "name": "dob",
@@ -47,20 +75,6 @@
   },
   {
     "name": "pob",
-    "dbType": "string",
-    "htmlType": "text",
-    "validations": "required",
-    "searchable": false
-  },
-  {
-    "name": "dob2",
-    "dbType": "date",
-    "htmlType": "date",
-    "validations": "required",
-    "searchable": false
-  },
-  {
-    "name": "pob2",
     "dbType": "string",
     "htmlType": "text",
     "validations": "required",

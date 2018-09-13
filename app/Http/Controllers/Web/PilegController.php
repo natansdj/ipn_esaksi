@@ -12,7 +12,6 @@ use Flash;
 use Illuminate\Http\Request;
 use Response;
 
-
 class PilegController extends AppBaseController
 {
 	/** @var  PilegRepository */
@@ -42,11 +41,13 @@ class PilegController extends AppBaseController
 	 */
 	public function list(Request $request)
 	{
-		$dropdown_type   = PILEG_TYPE;
+		$dropdown_type   = TINGKAT_DAPIL;
 		$dropdown_partai = PARTAI;
 
 		$this->pilegRepository->pushCriteria(new PilegRequestCriteria($request));
-		$collection = $this->pilegRepository->all();
+
+		/** @var \Illuminate\Pagination\LengthAwarePaginator $collection */
+		$collection = $this->pilegRepository->paginate(10, $columns = ['*']);
 
 		return view('pages.pilegs_list', compact('collection', 'dropdown_type', 'dropdown_partai'));
 	}

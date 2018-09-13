@@ -7,13 +7,10 @@ $factory->define(App\Models\Pileg::class, function (Faker $faker) {
 
 	return [
 		'name'        => $faker->name,
-		'name2'       => $faker->unique()->name,
 		'dob'         => $faker->date('Y-m-d', '1980-1-1'),
 		'pob'         => $faker->randomElement($attr_city),
-		'dob2'        => $faker->date('Y-m-d', '1980-1-1'),
-		'pob2'        => $faker->randomElement($attr_city),
 		'partai'      => $faker->randomElement(PARTAI),
-		'type'        => $faker->randomElement(PILEG_TYPE),
+		'type'        => $faker->randomElement(TINGKAT_DAPIL),
 		'province_id' => $faker->unique()->randomElement(App\Models\Province::pluck('id')->toArray()),
 	];
 });

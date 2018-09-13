@@ -3,7 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Tps;
-use Yajra\DataTables\CollectionDataTable;
+use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
 class TpsDataTable extends DataTable
@@ -17,8 +18,7 @@ class TpsDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$collection = $query->get();
-		$dataTable  = new CollectionDataTable($collection);
+		$dataTable = new EloquentDataTable($query);
 
 		return $dataTable->addColumn('action', 'tps.datatables_actions');
 	}
@@ -68,6 +68,11 @@ class TpsDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'searchable' => false,
+				'visible'    => false
+			]),
 			'province_id',
 			'kodepos_id',
 			'name'

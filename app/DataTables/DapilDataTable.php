@@ -3,10 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\Dapil;
-use Yajra\DataTables\CollectionDataTable;
+use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
-use Yajra\DataTables\EloquentDataTable;
 
 class DapilDataTable extends DataTable
 {
@@ -19,16 +18,15 @@ class DapilDataTable extends DataTable
 	 */
 	public function dataTable($query)
 	{
-		$collection = $query->get();
-		$dataTable  = new CollectionDataTable($collection);
-		
+		$dataTable = new EloquentDataTable($query);
+
 		return $dataTable->addColumn('action', 'dapils.datatables_actions');
 	}
 
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Post $model
+	 * @param \App\Models\Dapil $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
@@ -70,8 +68,13 @@ class DapilDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'searchable' => false,
+				'visible'    => false
+			]),
 			'nama',
-			'tingkat' => [
+			'tingkat'    => [
 				'data'  => 'tingkat',
 				'title' => 'Tingkat Wilayah'
 			],

@@ -150,16 +150,26 @@ class Dapil extends Model
 		return $this->belongsToMany(\App\Models\Wilayah::class);
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function pilegs()
+	{
+		return $this->belongsToMany(\App\Models\Pileg::class);
+	}
+
+	public function scopeTingkatWilayah($query, $tingkat)
+	{
+		return $query->where('tingkat', $tingkat);
+	}
+
 	public function getTingkatAttribute($value)
 	{
 		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
 	}
 
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function pileg()
+	public function getJmlVoterAttribute()
 	{
-		return $this->belongsToMany(\App\Models\Pileg::class);
+		return rand(1, 999) . 'K';
 	}
 }

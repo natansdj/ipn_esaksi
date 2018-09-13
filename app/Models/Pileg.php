@@ -23,14 +23,43 @@ use Illuminate\Support\Carbon;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="silon_id",
+ *          description="silon_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="dapil_id",
+ *          description="dapil_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="name",
  *          description="name",
  *          type="string"
  *      ),
  *      @SWG\Property(
- *          property="name2",
- *          description="name2",
+ *          property="gelar_depan",
+ *          description="gelar_depan",
  *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="gelar_belakang",
+ *          description="gelar_belakang",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="jenis_kelamin",
+ *          description="jenis_kelamin",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
+ *          property="no_urut",
+ *          description="no_urut",
+ *          type="integer",
+ *          format="int32"
  *      ),
  *      @SWG\Property(
  *          property="dob",
@@ -40,17 +69,6 @@ use Illuminate\Support\Carbon;
  *      ),
  *      @SWG\Property(
  *          property="pob",
- *          description="pob",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="dob2",
- *          description="dob",
- *          type="string",
- *          format="date"
- *      ),
- *      @SWG\Property(
- *          property="pob2",
  *          description="pob",
  *          type="string"
  *      ),
@@ -95,33 +113,44 @@ class Pileg extends Model
 
 	public $table = 'pilegs';
 
+	protected $dates = ['dob', 'deleted_at'];
+
 	public $fillable = [
+		'id',
 		'province_id',
+		'silon_id',
+		'dapil_id',
 		'name',
-		'name2',
+		'gelar_depan',
+		'gelar_belakang',
+		'jenis_kelamin',
+		'no_urut',
 		'dob',
 		'pob',
 		'partai',
 		'type',
 		'note'
 	];
-	protected $dates = ['dob', 'dob2', 'deleted_at'];
+
 	/**
 	 * The attributes that should be casted to native types.
 	 *
 	 * @var array
 	 */
 	protected $casts = [
-		'province_id' => 'integer',
-		'name'        => 'string',
-		'name2'       => 'string',
-		'dob'         => 'date:Y-m-d',
-		'pob'         => 'string',
-		'dob2'        => 'date:Y-m-d',
-		'pob2'        => 'string',
-		'partai'      => 'string',
-		'type'        => 'string',
-		'note'        => 'string'
+		'province_id'    => 'integer',
+		'silon_id'       => 'integer',
+		'dapil_id'       => 'integer',
+		'name'           => 'string',
+		'gelar_depan'    => 'string',
+		'gelar_belakang' => 'string',
+		'jenis_kelamin'  => 'integer',
+		'no_urut'        => 'integer',
+		'dob'            => 'date:Y-m-d',
+		'pob'            => 'string',
+		'partai'         => 'string',
+		'type'           => 'string',
+		'note'           => 'string'
 	];
 
 	/**
@@ -136,18 +165,9 @@ class Pileg extends Model
 		'partai' => 'required'
 	];
 
-	protected $with = ['dapil'];
+	protected $with = [];
 
 	public function getDobAttribute($value)
-	{
-		if (isset($value) && ! empty($value)) {
-			$value = Carbon::parse($value)->format(config('app.date_format'));
-		}
-
-		return $value;
-	}
-
-	public function getDob2Attribute($value)
 	{
 		if (isset($value) && ! empty($value)) {
 			$value = Carbon::parse($value)->format(config('app.date_format'));
@@ -175,26 +195,55 @@ class Pileg extends Model
 		return $this->belongsTo(\App\Models\Province::class);
 	}
 
-	public function getCapresPartaiAttribute($value)
+	public function getPartaiAttribute($value)
 	{
-		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
-	}
-
-	public function getCawapresPartaiAttribute($value)
-	{
-		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
+		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : $value;
 	}
 
 	public function getTypeAttribute($value)
 	{
-		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+		return ( empty($value) ) ? $this->getAttributeValue('tingkat') : $value;
+	}
+
+	public function getFullnameAttribute($value)
+	{
+		return implode(' ', [$this->getAttribute('gelar_depan'), $this->getAttribute('name'), $this->getAttribute('gelar_belakang')]);
+	}
+
+	public function getJenisKelaminAttribute($value)
+	{
+		return ( array_has(U_GENDER, $value) && array_get(U_GENDER, $value) ) ? U_GENDER[ $value ] : '-';
+	}
+
+	public function getTingkatAttribute($value)
+	{
+		$tingkat = '-';
+		$dapils  = $this->dapils;
+		if ( ! is_null($dapils) && $dapils && $dapils instanceof \Illuminate\Database\Eloquent\Collection) {
+			$tingkat = $dapils->pluck('tingkat')->implode(', ');
+		}
+
+		return $tingkat;
+	}
+
+	public function getDapilNamaAttribute($value)
+	{
+		return ( isset($this->dapil) && isset($this->dapil->nama) ) ? $this->dapil->nama : $this->getAttribute('dapil_id');
 	}
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 **/
-	public function dapil()
+	public function dapils()
 	{
 		return $this->belongsToMany(\App\Models\Dapil::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function dapil()
+	{
+		return $this->belongsTo(\App\Models\Dapil::class);
 	}
 }

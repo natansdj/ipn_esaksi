@@ -132,6 +132,6 @@ class Pilpres extends Model
 
 	public function getTypeAttribute($value)
 	{
-		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+		return ( array_has(PILPRES_TYPE, $value) && array_get(PILPRES_TYPE, $value) ) ? PILPRES_TYPE[ $value ] : '-';
 	}
 }
