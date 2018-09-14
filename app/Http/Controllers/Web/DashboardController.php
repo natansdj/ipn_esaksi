@@ -34,7 +34,8 @@ class DashboardController extends Controller
 		}
 
 		//Initialize data
-		$master = $collection = collect();
+		$master     = new \StdClass();
+		$collection = collect();
 
 		//Data Collection
 		if ($provinsi !== null || $tingkatWilayah !== null) {
