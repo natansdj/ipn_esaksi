@@ -8,14 +8,6 @@
     }
 @endphp
 
-<div class="vmap-wrap">
-    <div id="vmap"></div>
-    <div class="overlay-map">
-        @component('components.overlay_map')
-        @endcomponent
-    </div>
-</div>
-
 <div class="search-bar">
     <h3>Hasil polling <span>Real Count</span></h3>
     {!! Form::open(['method' => 'GET','route' => 'dashboard', 'class'=>'form dapiltingkatform form-inline']) !!}
@@ -38,7 +30,8 @@
     </div>
 </div>
 
-@section('scripts')
+@push('scripts')
+    <!--dashboard scripts-->
     <style type="text/css">
         .dapil_box:nth-child(n + 4) {
             padding-top: 20px;
@@ -59,33 +52,6 @@
     </style>
     <script type="text/javascript">
       var dapilForm = $('form.dapiltingkatform');
-
-      $('#vmap').vectorMap({
-        map: 'indonesia_id',
-        backgroundColor: '#fff',
-        borderColor: '#fff',
-        borderOpacity: 0.25,
-        borderWidth: 1,
-        color: '#8a8a8a',
-        enableZoom: false,
-        hoverColor: '#00a4ee',
-        hoverOpacity: null,
-        normalizeFunction: 'linear',
-        scaleColors: ['#b6d6ff', '#005ace'],
-        selectedColor: '#00a4ee',
-        selectedRegions: null,
-        showTooltip: true,
-        onRegionClick: function (element, code, region) {
-          console.log(element);
-          console.log(code);
-          console.log(region);
-          // var message = 'You clicked "'
-          //     + region
-          //     + '" which has the code: '
-          //     + code.toUpperCase();
-          $('.region-name').text(region);
-        }
-      });
 
       function getAjaxDropdown(elem, data = {}) {
         elem.children('option:not(:first)').remove().trigger('change');
@@ -112,7 +78,7 @@
 
         if (isAjax) {
           $.ajax({
-            url: 'ajax_data/get_p4pxolling',
+            url: 'ajax_data/get_polling',
             type: 'GET',
             dataType: 'json',
             data: {id: dataId, tk: dataTingkat},
@@ -208,4 +174,4 @@
         });
       });
     </script>
-@endsection
+@endpush

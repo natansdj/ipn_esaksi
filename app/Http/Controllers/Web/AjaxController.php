@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Dapil;
 use App\Models\District;
+use App\Models\Jqvmap;
 use App\Models\Regency;
 use App\Models\Village;
 use App\Models\Wilayah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class AjaxController extends AppBaseController
 {
@@ -98,7 +100,7 @@ class AjaxController extends AppBaseController
 			case 'get_polling' :
 				$dataId      = array_get($data, 'id');
 				$dataTingkat = array_get($data, 'tk');
-				$master      = collect();
+				$master      = new \StdClass();
 
 				//Data Master
 				$master->tingkat    = TINGKAT_DAPIL[ $dataTingkat ];
@@ -115,6 +117,62 @@ class AjaxController extends AppBaseController
 				$vars     = compact('dataId', 'dataTingkat', 'master', 'collection');
 				$html     = view('dapils.dash_index', $vars)->render();
 				$response = array_merge($vars, compact('html'));
+				break;
+			case 'get_map_data' :
+				$path            = array_get($data, 'path');
+				$request_type    = array_get($data, 'type', 'data');
+				$tingkatDapil    = 0;
+				$master          = new \StdClass();
+				$master->tingkat = TINGKAT_DAPIL[ $tingkatDapil ];
+
+				if (empty($path)) {
+					return response()->json([], 200);
+				}
+
+				$cache_key    = 'get_map_data_' . implode('_', [$path, $request_type, $tingkatDapil]);
+				$jsonResponse = Cache::remember($cache_key, 60, function () use ($path, $request_type, $tingkatDapil, $master) {
+					//Data
+					$model = Jqvmap::where('path', $path)->dapilTingkat($tingkatDapil)->get();
+					if ($model && $model->isNotEmpty()) {
+						/** @var Jqvmap $model */
+						$model = $model->first();
+
+						if (isset($model->dapil)
+						    && $model->dapil instanceof \Illuminate\Database\Eloquent\Collection
+						    && $model->dapil->isNotEmpty()
+						) {
+							$total_kursi = $model->dapil->sum('total_alokasi_kursi');
+							$model->setAttribute('total_alokasi_kursi', $total_kursi);
+
+							$model->dapil->each(function ($item) {
+								$rel_wilayah = $item->rel_wilayah;
+								$wilayah_str = title_case($rel_wilayah->implode('nama_wilayah', ', '));
+
+								$item->attr_wilayah_str = $wilayah_str;
+								$item->attr_wilayah     = $rel_wilayah->pluck('nama_wilayah', 'id');
+
+								return $item;
+							});
+						}
+					}
+
+					//Data Collection
+					$vars = compact('path', 'model', 'master');
+
+					switch ($request_type) {
+						case 'detail' :
+							$html = view('components.map_box', $vars)->render();
+							break;
+						default:
+							$html = view('components.map_label', $vars)->render();
+							break;
+					}
+					$jsonResponse = array_merge($vars, compact('html'));
+
+					return $jsonResponse;
+				});
+
+				$response = $jsonResponse;
 				break;
 			default:
 				$response = [

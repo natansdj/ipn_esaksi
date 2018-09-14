@@ -15,7 +15,7 @@ class TestController extends AppBaseController
 
 //		$return['dapil']     = Dapil::with(['rel_parent_wilayah', 'rel_wilayah'])->select()->limit(1)->get();
 //		$return['tingkatan'] = Tingkatan::with(['wilayah'])->select()->limit(1)->get();
-		$return['jqvmap']    = Jqvmap::with(['wilayah'])->select()->get();
+		$return['jqvmap']    = Jqvmap::with(['wilayah'])->dapilTingkat(0)->select()->limit(1)->get();
 
 		return $this->sendResponse($return, '');
 	}
