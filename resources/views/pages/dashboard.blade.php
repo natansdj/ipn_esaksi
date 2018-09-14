@@ -76,6 +76,9 @@
         selectedRegions: null,
         showTooltip: true,
         onRegionClick: function (element, code, region) {
+          console.log(element);
+          console.log(code);
+          console.log(region);
           // var message = 'You clicked "'
           //     + region
           //     + '" which has the code: '
