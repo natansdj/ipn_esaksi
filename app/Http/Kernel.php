@@ -52,15 +52,17 @@ class Kernel extends HttpKernel
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth'         => \Illuminate\Auth\Middleware\Authenticate::class,
-		'auth.basic'   => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-		'bindings'     => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-		'can'          => \Illuminate\Auth\Middleware\Authorize::class,
-		'guest'        => \App\Http\Middleware\RedirectIfAuthenticated::class,
-		'throttle'     => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-		'jwt.verify'   => \App\Http\Middleware\JwtMiddleware::class,
-		'global.admin' => \App\Http\Middleware\GlobalAdminMiddleware::class,
-		'sweetalert'   => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
-		'ajax_only'   => \App\Http\Middleware\OnlyAjaxRequests::class,
+		'auth'               => \Illuminate\Auth\Middleware\Authenticate::class,
+		'auth.basic'         => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+		'bindings'           => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+		'can'                => \Illuminate\Auth\Middleware\Authorize::class,
+		'guest'              => \App\Http\Middleware\RedirectIfAuthenticated::class,
+		'throttle'           => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+		'jwt.verify'         => \App\Http\Middleware\JwtMiddleware::class,
+		'global.admin'       => \App\Http\Middleware\GlobalAdminMiddleware::class,
+		'sweetalert'         => \UxWeb\SweetAlert\ConvertMessagesIntoSweetAlert::class,
+		'ajax_only'          => \App\Http\Middleware\OnlyAjaxRequests::class,
+		'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+		'cacheResponse'      => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
 	];
 }

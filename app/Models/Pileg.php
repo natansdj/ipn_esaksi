@@ -231,6 +231,19 @@ class Pileg extends Model
 		return ( isset($this->dapil) && isset($this->dapil->nama) ) ? $this->dapil->nama : $this->getAttribute('dapil_id');
 	}
 
+	public function getDapilsNameAttribute($value)
+	{
+		$attr_dapils_name = '-';
+		if (isset($this->dapils)) {
+			$attr_dapils = $this->dapils->pluck('nama', 'id');
+			if ( ! empty($attr_dapils) && $attr_dapils instanceof \Illuminate\Support\Collection && $attr_dapils->isNotEmpty()) {
+				$attr_dapils_name = $attr_dapils->implode(',');
+			}
+		}
+
+		return $attr_dapils_name;
+	}
+
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 **/

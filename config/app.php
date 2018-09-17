@@ -196,6 +196,7 @@ return [
 		Appointer\Swaggervel\SwaggervelServiceProvider::class,
 
 		UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+		Spatie\ResponseCache\ResponseCacheServiceProvider::class,
 	],
 
 	/*
@@ -252,7 +253,8 @@ return [
 		'JWTAuth'    => Tymon\JWTAuth\Facades\JWTAuth::class,
 		'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
-		'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+		'Alert'         => UxWeb\SweetAlert\SweetAlert::class,
+		'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
 	],
 
 	'date_format' => env('APP_DATE_FORMAT', 'Y-m-d'),

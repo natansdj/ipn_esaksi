@@ -9,9 +9,7 @@
   "type": "project",
   "require": {
     "php": ">=7.0.0",
-    "laravel/framework": "5.5.42",
     "appointer/swaggervel": "^2.3",
-    "prettus/l5-repository": "~2.6",
     "arcanedev/log-viewer": "^4.4.0",
     "doctrine/dbal": "^2.8",
     "fideloper/proxy": "~3.3",
@@ -20,10 +18,13 @@
     "infyomlabs/laravel-generator": "5.5.x-dev",
     "infyomlabs/routes-explorer": "dev-master",
     "infyomlabs/swagger-generator": "dev-master",
+    "laravel/framework": "5.5.42",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "~5.5",
     "orangehill/iseed": "dev-master",
     "predis/predis": "1.1.*",
+    "prettus/l5-repository": "~2.6",
+    "spatie/laravel-responsecache": "^4.4",
     "tymon/jwt-auth": "dev-develop",
     "uxweb/sweet-alert": "^2.0",
     "yajra/laravel-datatables": "^1.0"

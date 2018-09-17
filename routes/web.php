@@ -17,7 +17,7 @@ Route::group([
 	Route::get('/', 'DashboardController@index')->name('dashboard');
 	Route::get('/saksi_edit', 'SaksiController@index')->name('saksi.edit');
 	Route::get('/daftar_tps', 'TpsController@search')->name('tps.search');
-	Route::get('/daftar_pileg', 'PilegController@list')->name('pilegs.list');
+	Route::get('/daftar_pileg', 'PilegController@list')->name('pilegs.list')->middleware('cacheResponse');
 	Route::get('/daftar_pilpres', 'PilpresController@list')->name('pilpres.list');
 });
 
@@ -27,6 +27,7 @@ Route::group([
 	'middleware' => ['ajax_only']
 ], function () {
 	#filter table
+	Route::get('get_map_data/', 'AjaxController@get_map_data')->name('ajax_get_map_data')->middleware(['cacheResponse']);
 	Route::get('{type}/', 'AjaxController@ajax_method');
 });
 
