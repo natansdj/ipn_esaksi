@@ -32,6 +32,7 @@ class CreatePilegsTable extends Migration
 			$table->timestamps();
 
 			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('dapil_id')->references('id')->on('dapil')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 

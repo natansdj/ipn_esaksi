@@ -118,62 +118,6 @@ class AjaxController extends AppBaseController
 				$html     = view('dapils.dash_index', $vars)->render();
 				$response = array_merge($vars, compact('html'));
 				break;
-			case 'get_map_data' :
-				$path            = array_get($data, 'path');
-				$request_type    = array_get($data, 'type', 'data');
-				$tingkatDapil    = 0;
-				$master          = new \StdClass();
-				$master->tingkat = TINGKAT_DAPIL[ $tingkatDapil ];
-
-				if (empty($path)) {
-					return response()->json([], 200);
-				}
-
-				$cache_key    = 'get_map_data_' . implode('_', [$path, $request_type, $tingkatDapil]);
-				$jsonResponse = Cache::remember($cache_key, 60, function () use ($path, $request_type, $tingkatDapil, $master) {
-					//Data
-					$model = Jqvmap::where('path', $path)->dapilTingkat($tingkatDapil)->get();
-					if ($model && $model->isNotEmpty()) {
-						/** @var Jqvmap $model */
-						$model = $model->first();
-
-						if (isset($model->dapil)
-						    && $model->dapil instanceof \Illuminate\Database\Eloquent\Collection
-						    && $model->dapil->isNotEmpty()
-						) {
-							$total_kursi = $model->dapil->sum('total_alokasi_kursi');
-							$model->setAttribute('total_alokasi_kursi', $total_kursi);
-
-							$model->dapil->each(function ($item) {
-								$rel_wilayah = $item->rel_wilayah;
-								$wilayah_str = title_case($rel_wilayah->implode('nama_wilayah', ', '));
-
-								$item->attr_wilayah_str = $wilayah_str;
-								$item->attr_wilayah     = $rel_wilayah->pluck('nama_wilayah', 'id');
-
-								return $item;
-							});
-						}
-					}
-
-					//Data Collection
-					$vars = compact('path', 'model', 'master');
-
-					switch ($request_type) {
-						case 'detail' :
-							$html = view('components.map_box', $vars)->render();
-							break;
-						default:
-							$html = view('components.map_label', $vars)->render();
-							break;
-					}
-					$jsonResponse = array_merge($vars, compact('html'));
-
-					return $jsonResponse;
-				});
-
-				$response = $jsonResponse;
-				break;
 			default:
 				$response = [
 					'error'   => true,
@@ -181,6 +125,76 @@ class AjaxController extends AppBaseController
 				];
 				break;
 		}
+
+		return response()->json($response, 200);
+	}
+
+	public function get_map_data(Request $request)
+	{
+		#get data
+		$data = $request->all();
+
+		//START
+		$path            = array_get($data, 'path');
+		$request_type    = array_get($data, 'type', 'data');
+		$tingkatDapil    = 0;
+		$master          = new \StdClass();
+		$master->tingkat = TINGKAT_DAPIL[ $tingkatDapil ];
+		$response        = [
+			'error'   => true,
+			'message' => 'Please try again'
+		];
+
+		if (empty($path)) {
+			return response()->json([], 200);
+		}
+
+		$cache_key    = 'get_map_data_' . implode('_', [$path, $request_type, $tingkatDapil]);
+		$jsonResponse = Cache::remember($cache_key, 60, function () use ($path, $request_type, $tingkatDapil, $master) {
+			//Data
+			$model = Jqvmap::where('path', $path)->dapilTingkat($tingkatDapil)->get();
+			if ($model && $model->isNotEmpty()) {
+				/** @var Jqvmap $model */
+				$model = $model->first();
+
+				if (isset($model->dapil)
+				    && $model->dapil instanceof \Illuminate\Database\Eloquent\Collection
+				    && $model->dapil->isNotEmpty()
+				) {
+					$total_kursi = $model->dapil->sum('total_alokasi_kursi');
+					$model->setAttribute('total_alokasi_kursi', $total_kursi);
+
+					$model->dapil->each(function ($item) {
+						$rel_wilayah = $item->rel_wilayah;
+						$wilayah_str = title_case($rel_wilayah->implode('nama_wilayah', ', '));
+
+						$item->attr_wilayah_str = $wilayah_str;
+						$item->attr_wilayah     = $rel_wilayah->pluck('nama_wilayah', 'id');
+
+						return $item;
+					});
+				}
+			}
+
+			//Data Collection
+			$vars = compact('path', 'model', 'master');
+
+			switch ($request_type) {
+				case 'detail' :
+					$html = view('components.map_box', $vars)->render();
+					break;
+				default:
+					$html = view('components.map_label', $vars)->render();
+					break;
+			}
+			$jsonResponse = array_merge($vars, compact('html'));
+
+			return $jsonResponse;
+		});
+
+		$response = $jsonResponse;
+
+		//END
 
 		return response()->json($response, 200);
 	}
