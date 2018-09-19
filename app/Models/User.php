@@ -134,6 +134,9 @@ class User extends Authenticatable implements JWTSubject
 {
 	use Notifiable, SoftDeletes;
 
+	const STATUS_ACTIVE = 1;
+	const STATUS_INACTIVE = 0;
+
 	/**
 	 * Validation rules
 	 *
@@ -141,9 +144,8 @@ class User extends Authenticatable implements JWTSubject
 	 */
 	public static $rules = [
 		'email'    => 'required:email',
-		'password' => 'sometimes|required|different:current_password|confirmed',
+		'password' => 'sometimes|required|same:current_password|confirmed',
 		'dob'      => 'date',
-		'phone'    => 'numeric',
 	];
 	public $table = 'users';
 	public $fillable = [
@@ -166,7 +168,9 @@ class User extends Authenticatable implements JWTSubject
 		'is_active',
 		'is_admin'
 	];
+	
 	protected $dates = ['dob', 'deleted_at'];
+	
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -186,8 +190,8 @@ class User extends Authenticatable implements JWTSubject
 		'occupation'     => 'string',
 		'address'        => 'string',
 		'tps_id'         => 'integer',
-		'is_active'      => 'boolean',
-		'is_admin'       => 'boolean',
+		'is_active'      => 'integer',
+		'is_admin'       => 'integer',
 		'remember_token' => 'string'
 	];
 	/**
@@ -200,6 +204,15 @@ class User extends Authenticatable implements JWTSubject
 	];
 
 	/**
+	 * The model's attributes.
+	 *
+	 * @var array
+	 */
+	protected $attributes = array(
+		'is_admin' => self::STATUS_INACTIVE
+	);
+
+	/**
 	 * Events
 	 */
 	protected static function boot()
@@ -208,7 +221,7 @@ class User extends Authenticatable implements JWTSubject
 
 		static::deleting(function ($model) {
 			/** @var self $model */
-			if ($model->is_admin || $model->is_superadmin) {
+			if ($model->is_admin) {
 				return false;
 			}
 		});
@@ -251,7 +264,7 @@ class User extends Authenticatable implements JWTSubject
 	 **/
 	public function tps()
 	{
-		return $this->hasOne(\App\Models\Tps::class);
+		return $this->hasOne(\App\Models\Tps::class, 'id', 'tps_id');
 	}
 
 	public function getJWTIdentifier()
@@ -278,6 +291,28 @@ class User extends Authenticatable implements JWTSubject
 		}
 	}
 
+	/**
+	 * @param \Illuminate\Database\Eloquent\Builder $query
+	 *
+	 * @return mixed
+	 */
+	public function scopeSameTps($query)
+	{
+		return $query->whereIn('tps_id', function ($q) {
+			/** @var \Illuminate\Database\Query\Builder $q */
+			$q->select('tps_id')->from('users')->groupBy('tps_id')->having(\DB::raw('count(*)'), '>', 1);
+		});
+	}
+
+	public function getDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+	
 	public function getStatusLabelAttribute()
 	{
 		$val = $this->getAttribute('status');
@@ -290,6 +325,13 @@ class User extends Authenticatable implements JWTSubject
 		$val = $this->getAttribute('occupation');
 
 		return ( array_has(U_OCCUPATION, $val) ) ? array_get(U_OCCUPATION, $val) : $val;
+	}
+
+	public function getGenderLabelAttribute()
+	{
+		$val = $this->getAttribute('gender');
+
+		return ( array_has(U_GENDER, $val) ) ? array_get(U_GENDER, $val) : $val;
 	}
 
 	public function getIsUserAttribute($value)

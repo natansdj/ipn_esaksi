@@ -124,14 +124,14 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="checkbox-inline">
-                    {!! Form::hidden('is_active', false) !!}
+                    {!! Form::hidden('is_active', 1) !!}
                     {!! Form::checkbox('is_active', '1', null, ['class' => 'icheck']) !!} Is Active</label>
             </div>
 
             <!-- Is Admin Field -->
             <div class="form-group col-md-6">
                 <label class="checkbox-inline">
-                    {!! Form::hidden('is_admin', false) !!}
+                    {!! Form::hidden('is_admin', 0) !!}
                     {!! Form::checkbox('is_admin', '1', null, ['class' => 'icheck']) !!} Is Admin </label>
             </div>
         </div>
