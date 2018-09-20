@@ -1,6 +1,17 @@
 let mix = require('laravel-mix');
 // let path = require('path');
 
+mix.webpackConfig({
+  module: {
+    rules: [
+      {
+        test: /\.(handlebars|hbs)$/,
+        loader: 'handlebars-loader'
+      }
+    ]
+  }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -19,3 +30,5 @@ mix.sass('resources/assets/sass/custom.scss', 'public/css');
 mix.sass('resources/assets/sass/custom.vmap.scss', 'public/css');
 
 mix.js('resources/assets/js/custom.js', 'public/js');
+
+mix.js('resources/assets/js/datatables.js', 'public/js');

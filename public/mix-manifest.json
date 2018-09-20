@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/custom.css": "/css/custom.css",
     "/css/custom.vmap.css": "/css/custom.vmap.css",
+    "/js/datatables.js": "/js/datatables.js",
     "/js/custom.js": "/js/custom.js"
 }
