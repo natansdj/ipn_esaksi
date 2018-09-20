@@ -19,7 +19,7 @@
           }
 
           var row = window.LaravelDataTables["dataTableBuilder"].row(tr);
-          var tableId = 'wilayah_detail-' + row.data().id;
+          var tableId = 'wilayah_row_detail-' + row.data().id;
 
           if (row.child.isShown()) {
             // This row is already open - close it

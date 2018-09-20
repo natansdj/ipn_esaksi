@@ -33,7 +33,7 @@ class DapilController extends AppBaseController
 		return $dapilDataTable->render('dapils.index');
 	}
 
-	public function getWilayahDetail($id)
+	public function getDapilRowDetail($id)
 	{
 		$posts = Dapil::find($id)->rel_wilayah();
 

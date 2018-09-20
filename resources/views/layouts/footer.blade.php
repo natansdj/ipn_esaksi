@@ -4,10 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/i18n/id.js"></script>
 
-<script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/gijgo.min.js') }}"></script>
-
+<script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 
-<!-- Include this after the sweet alert js file -->
 @include('vendor.sweet.alert')

@@ -29,9 +29,6 @@
           } else {
             // Open this row
             row.child(window.dtTemplate.dtPilpresDetailTmp(row.data()), 'child').show();
-            if (typeof initTbl_WilayahDetail !== 'undefined' && $.isFunction('initTbl_WilayahDetail')) {
-              initTbl_WilayahDetail(tableId, row.data());
-            }
             tr.addClass('shown');
             tr.next().find('td').addClass('no-padding bg-gray');
           }

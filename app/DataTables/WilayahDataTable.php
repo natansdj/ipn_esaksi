@@ -22,7 +22,7 @@ class WilayahDataTable extends DataTable
 
 		$dataTable->addColumn('action', 'wilayahs.datatables_actions');
 		$dataTable->addColumn('details_url', function ($wilayah) {
-			return url()->route('wilayah_dapil_detail', ['id' => $wilayah->id]);
+			return url()->route('wilayah_row_detail', ['id' => $wilayah->id]);
 		});
 
 		return $dataTable;

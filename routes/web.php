@@ -30,8 +30,8 @@ Route::group([
 	Route::get('get_map_data/', 'AjaxController@get_map_data')->name('ajax_get_map_data');
 	Route::get('{type}/', 'AjaxController@ajax_method');
 
-	Route::get('dapils/wilayah-detail/{id}', 'DapilController@getWilayahDetail')->name('dapil_wilayah_detail');
-	Route::get('wilayahs/dapil-detail/{id}', 'WilayahController@getDapilDetail')->name('wilayah_dapil_detail');
+	Route::get('dapils/wilayah-detail/{id}', 'DapilController@getDapilRowDetail')->name('dapil_row_detail');
+	Route::get('wilayahs/dapil-detail/{id}', 'WilayahController@getWilayahRowDetail')->name('wilayah_row_detail');
 });
 
 

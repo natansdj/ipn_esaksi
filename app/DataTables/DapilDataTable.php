@@ -22,7 +22,7 @@ class DapilDataTable extends DataTable
 
 		$dataTable->addColumn('action', 'dapils.datatables_actions');
 		$dataTable->addColumn('details_url', function ($dapil) {
-			return url()->route('dapil_wilayah_detail', ['id' => $dapil->id]);
+			return url()->route('dapil_row_detail', ['id' => $dapil->id]);
 		});
 
 		return $dataTable;
