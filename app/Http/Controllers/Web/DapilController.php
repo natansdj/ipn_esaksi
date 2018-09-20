@@ -6,6 +6,7 @@ use App\DataTables\DapilDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateDapilRequest;
 use App\Http\Requests\UpdateDapilRequest;
+use App\Models\Dapil;
 use App\Repositories\DapilRepository;
 use Flash;
 use Response;
@@ -30,6 +31,13 @@ class DapilController extends AppBaseController
 	public function index(DapilDataTable $dapilDataTable)
 	{
 		return $dapilDataTable->render('dapils.index');
+	}
+
+	public function getWilayahDetail($id)
+	{
+		$posts = Dapil::find($id)->rel_wilayah();
+
+		return \DataTables::of($posts)->make(true);
 	}
 
 	/**

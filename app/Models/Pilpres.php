@@ -125,6 +125,24 @@ class Pilpres extends Model
 		'note'            => 'string'
 	];
 
+	public function getCapresDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+	
+	public function getCawapresDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+	
 	public function getPartaiAttribute($value)
 	{
 		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);

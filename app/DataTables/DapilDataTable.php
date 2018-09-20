@@ -20,7 +20,12 @@ class DapilDataTable extends DataTable
 	{
 		$dataTable = new EloquentDataTable($query);
 
-		return $dataTable->addColumn('action', 'dapils.datatables_actions');
+		$dataTable->addColumn('action', 'dapils.datatables_actions');
+		$dataTable->addColumn('details_url', function ($dapil) {
+			return url()->route('dapil_wilayah_detail', ['id' => $dapil->id]);
+		});
+
+		return $dataTable;
 	}
 
 	/**
@@ -69,15 +74,18 @@ class DapilDataTable extends DataTable
 	{
 		return [
 			new Column([
-				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'name'           => 'details-control', 'data' => null, 'title' => '',
+				'className'      => 'details-control',
+				'defaultContent' => '',
+				'orderable'      => false,
+				'searchable'     => false,
+			]),
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
 				'searchable' => false,
-				'visible'    => false
 			]),
 			'nama',
-			'tingkat'    => [
-				'data'  => 'tingkat',
-				'title' => 'Tingkat Wilayah'
-			],
+			'tingkat'    => ['data' => 'tingkat', 'title' => 'Tingkat Dapil'],
 			'id_wilayah' => [
 				'data'  => 'rel_parent_wilayah.nama_wilayah',
 				'title' => 'Wilayah'
@@ -86,7 +94,10 @@ class DapilDataTable extends DataTable
 				'name'       => 'total_alokasi_kursi', 'data' => 'total_alokasi_kursi', 'title' => 'Alokasi Kursi',
 				'searchable' => false
 			]),
-			'no_dapil'
+			new Column([
+				'name'       => 'no_dapil', 'data' => 'no_dapil', 'title' => 'No Dapil',
+				'searchable' => false, 'visible' => false,
+			]),
 		];
 	}
 

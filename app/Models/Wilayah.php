@@ -261,4 +261,9 @@ class Wilayah extends Model
 			}
 		]);
 	}
+
+	public function getTingkatWilayahAttribute($value)
+	{
+		return ( array_has(TINGKAT_WILAYAH, $value) ) ? array_get(TINGKAT_WILAYAH, $value) : $value;
+	}
 }

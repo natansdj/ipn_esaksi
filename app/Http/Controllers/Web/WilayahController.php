@@ -6,6 +6,7 @@ use App\DataTables\WilayahDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateWilayahRequest;
 use App\Http\Requests\UpdateWilayahRequest;
+use App\Models\Wilayah;
 use App\Repositories\WilayahRepository;
 use Flash;
 use Response;
@@ -32,6 +33,13 @@ class WilayahController extends AppBaseController
 		return $wilayahDataTable->render('wilayahs.index');
 	}
 
+	public function getDapilDetail($id)
+	{
+		$posts = Wilayah::find($id)->rel_dapil();
+
+		return \DataTables::of($posts)->make(true);
+	}
+	
 	/**
 	 * Show the form for creating a new Wilayah.
 	 *
