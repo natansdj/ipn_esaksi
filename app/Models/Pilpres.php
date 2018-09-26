@@ -133,7 +133,7 @@ class Pilpres extends Model
 
 		return $value;
 	}
-	
+
 	public function getCawapresDobAttribute($value)
 	{
 		if (isset($value) && ! empty($value)) {
@@ -142,7 +142,7 @@ class Pilpres extends Model
 
 		return $value;
 	}
-	
+
 	public function getPartaiAttribute($value)
 	{
 		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
@@ -151,5 +151,10 @@ class Pilpres extends Model
 	public function getTypeAttribute($value)
 	{
 		return ( array_has(PILPRES_TYPE, $value) && array_get(PILPRES_TYPE, $value) ) ? PILPRES_TYPE[ $value ] : '-';
+	}
+
+	public function votes()
+	{
+		return $this->morphMany(\App\Models\Vote::class, 'voteable');
 	}
 }

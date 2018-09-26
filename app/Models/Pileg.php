@@ -259,4 +259,9 @@ class Pileg extends Model
 	{
 		return $this->belongsTo(\App\Models\Dapil::class);
 	}
+
+	public function votes()
+	{
+		return $this->morphMany(\App\Models\Vote::class, 'voteable');
+	}
 }

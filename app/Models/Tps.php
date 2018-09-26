@@ -150,4 +150,9 @@ class Tps extends Model
 	{
 		return $this->belongsTo(\App\Models\Dapil::class);
 	}
+
+	public function votes()
+	{
+		return $this->hasMany(\App\Models\Vote::class);
+	}
 }

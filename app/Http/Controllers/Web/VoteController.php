@@ -6,6 +6,7 @@ use App\DataTables\VoteDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateVoteRequest;
 use App\Http\Requests\UpdateVoteRequest;
+use App\Models\Tps;
 use App\Repositories\VoteRepository;
 use Flash;
 use Response;
@@ -39,7 +40,9 @@ class VoteController extends AppBaseController
 	 */
 	public function create()
 	{
-		return view('votes.create');
+		$tps = Tps::get()->pluck('name', 'id');
+
+		return view('votes.create', compact('tps'));
 	}
 
 	/**

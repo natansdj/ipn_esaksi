@@ -36,6 +36,8 @@ class DatabaseSeeder extends Seeder
 		$this->call(PilpresTableSeeder::class);
 
 		$this->call(JqvmapTableSeeder::class);
+
+		$this->call(VoteTableSeeder::class);
 		
 		// Re enable all mass assignment restrictions
 		Model::reguard();
