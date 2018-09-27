@@ -19,9 +19,8 @@ class TestController extends AppBaseController
 
 //		$return['user_same_tpsId'] = \App\Models\User::sameTps()->get(['id', 'tps_id'])->toArray();
 
-//		\Artisan::call('db:seed', ['--class' => 'VoteTableSeeder']);
-		
-		$return['tps'] = \App\Models\Tps::with(['votes', 'votes.voteable'])->whereHas('votes')->get();
+//		$return['tps'] = \App\Models\Tps::with(['votes', 'votes.voteable'])->whereHas('votes')->get();
+		$return['pileg'] = \App\Models\Pileg::with(['votes'])->whereHas('votes')->get();
 
 		return $this->sendResponse($return, '');
 	}

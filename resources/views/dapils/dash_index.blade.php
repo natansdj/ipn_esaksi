@@ -12,7 +12,7 @@
       @endcomponent
     </div>
 --}}
-<div class="row" data-id="{{ (isset($dataId))? $dataId : 0 }}" data-tingkat="{{ (isset($dataTingkat))? $dataTingkat : 0 }}">
+<div class="row">
     @foreach($collection as $key => $item)
         <div class="col-md-4 dapil_box">
             @component('components.dapil_box', ['data' => $item, 'master' => $master])

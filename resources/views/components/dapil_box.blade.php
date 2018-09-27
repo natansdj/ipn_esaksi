@@ -4,19 +4,19 @@
         $attr_class = $class; 
     }
 @endphp
-<div class="region-box {{ $attr_class }}">
+<div class="region-box {{ $attr_class }}" data-dapil_id="{{ ($data->id) ?? '' }}">
     <div class="region-head">
-        <h5 class="nregion">{{ (isset($data->nama))? $data->nama : '-' }}</h5>
+        <h5 class="nregion">{{ ($data->nama) ?? '-' }}</h5>
         <h5 class="cregion">Jml. Voter</h5>
         <h5 class="dregion">{{ (isset($data->total_alokasi_kursi))? 'Total Alokasi Kursi : ' . $data->total_alokasi_kursi : '' }}</h5>
-        <h5 class="vregion">{{ (isset($data->jml_voter))? $data->jml_voter : '-' }}</h5>
+        <h5 class="vregion">{{ ($data->jml_voter) ?? '-' }}</h5>
     </div>
     <div class="region-body">
         <div class="table-overflow-y">
             <table class="table">
                 <thead>
                 <tr>
-                    <th>{{ (isset($data->tingkat))? $data->tingkat: '' }}</th>
+                    <th>{{ ($data->tingkat) ?? '' }}</th>
                     <th class="text-right">persentase</th>
                 </tr>
                 </thead>

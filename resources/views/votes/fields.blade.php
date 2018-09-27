@@ -42,8 +42,8 @@
 
 <!-- Type Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('type', 'Type:') !!}
-    {!! Form::select('type', TINGKAT_DAPIL, null, ['class' => 'form-control', 'placeholder' => 'Pilih Type']) !!}
+    {!! Form::label('type', 'Tingkat/Tipe:') !!}
+    {!! Form::select('type', TINGKAT_DAPIL, null, ['class' => 'form-control', 'placeholder' => 'Pilih Tingkat/Tipe']) !!}
 </div>
 
 <!-- Submit Field -->
