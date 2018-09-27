@@ -67,6 +67,13 @@
     "inIndex": false
   },
   {
+    "name": "total_vote",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
     "name": "deleted_at",
     "dbType": "timestamp",
     "htmlType": "",

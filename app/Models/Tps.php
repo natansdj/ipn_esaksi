@@ -59,6 +59,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="total_vote",
+ *          description="total_vote",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="deleted_at",
  *          description="deleted_at",
  *          type="string",
@@ -84,7 +90,9 @@ class Tps extends Model
 
 	public $table = 'tps';
 
+
 	protected $dates = ['deleted_at'];
+
 
 	public $fillable = [
 		'province_id',
@@ -94,7 +102,8 @@ class Tps extends Model
 		'address',
 		'geo_location',
 		'type',
-		'note'
+		'note',
+		'total_vote'
 	];
 
 	/**
@@ -110,7 +119,8 @@ class Tps extends Model
 		'address'      => 'string',
 		'geo_location' => 'string',
 		'type'         => 'string',
-		'note'         => 'string'
+		'note'         => 'string',
+		'total_vote'   => 'integer'
 	];
 
 	/**
