@@ -27,7 +27,7 @@ class VoteDataTable extends DataTable
 			if ( ! is_null($relation) && $relation) {
 				$data = $relation->name;
 				if (isset($relation->dapil->nama)) {
-					$data .= ' - ' . $relation->dapil->nama;
+					$data .= '/' . $relation->dapil->nama;
 				}
 			}
 
@@ -51,7 +51,7 @@ class VoteDataTable extends DataTable
 			/** @var \App\Models\Pileg|\App\Models\Pilpres $relation */
 			$relation = $model->voteable;
 			if ( ! is_null($relation) && $relation) {
-				$data = $relation->id . ' - ' . $relation->name;
+				$data = $relation->id . ' - ' . $relation->fullname;
 			}
 
 			return $data;
@@ -112,7 +112,7 @@ class VoteDataTable extends DataTable
 			]),
 			'tps_id'      => [
 				'data'  => 'tps_id',
-				'title' => 'TPS'
+				'title' => 'TPS/Dapil'
 			],
 			'user_id'     => [
 				'data'  => 'user_id',

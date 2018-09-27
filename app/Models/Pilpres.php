@@ -153,6 +153,11 @@ class Pilpres extends Model
 		return ( array_has(PILPRES_TYPE, $value) && array_get(PILPRES_TYPE, $value) ) ? PILPRES_TYPE[ $value ] : '-';
 	}
 
+	public function getFullnameAttribute()
+	{
+		return implode(' ', [$this->getOriginal('capres_name')]);
+	}
+	
 	public function votes()
 	{
 		return $this->morphMany(\App\Models\Vote::class, 'voteable');

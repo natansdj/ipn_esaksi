@@ -122,9 +122,9 @@ class Tps extends Model
 		'name' => 'required'
 	];
 
-	public function users()
+	public function user()
 	{
-		return $this->hasOne(User::class, 'id', 'tps_id');
+		return $this->hasOne(User::class, 'tps_id', 'id');
 	}
 
 	/**

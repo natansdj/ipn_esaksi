@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Collective\Html\Eloquent\FormAccessible;
 use \Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -82,7 +83,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Vote extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, FormAccessible {
+		getFormValue as protected traitGetFormValue;
+	}
 
 	/**
 	 * Validation rules
@@ -90,7 +93,11 @@ class Vote extends Model
 	 * @var array
 	 */
 	public static $rules = [
-		'count' => 'required'
+		'tps_id'        => 'required',
+		'user_id'       => 'required',
+		'voteable_id'   => 'required',
+		'voteable_type' => 'required',
+		'count'         => 'required'
 	];
 	public $table = 'votes';
 	public $fillable = [
@@ -157,9 +164,14 @@ class Vote extends Model
 
 		return $value;
 	}
-	
+
 	public function getTypeAttribute($value)
 	{
 		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
+	}
+
+	public function formTypeAttribute($value)
+	{
+		return $value;
 	}
 }

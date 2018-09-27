@@ -1,13 +1,13 @@
 <!-- Tps Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tps_id', 'Tps Id:') !!}
-    {!! Form::text('tps_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('tps_id', 'TPS:') !!}
+    {!! Form::select('tps_id', ($dropdown_tps) ?? [], null, ['class' => 'form-control', 'placeholder' => 'Pilih TPS'], ($dropdown_tps_opt) ?? []) !!}
 </div>
 
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::text('user_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('user_id', 'User:') !!}
+    {!! Form::select('user_id', ($dropdown_user) ?? [], null, ['class' => 'form-control', 'placeholder' => 'Pilih User']) !!}
 </div>
 
 <!-- Vote Date Field -->
@@ -28,22 +28,22 @@
     {!! Form::text('count', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Voteable Type Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('voteable_type', 'Tipe Vote:') !!}
+    {!! Form::select('voteable_type', RELATION_MAP, null, ['class' => 'form-control', 'placeholder' => 'Pilih Tipe Vote']) !!}
+</div>
+
 <!-- Voteable Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('voteable_id', 'Voteable Id:') !!}
     {!! Form::text('voteable_id', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Voteable Type Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('voteable_type', 'Voteable Type:') !!}
-    {!! Form::text('voteable_type', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Type Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('type', 'Type:') !!}
-    {!! Form::text('type', null, ['class' => 'form-control']) !!}
+    {!! Form::select('type', TINGKAT_DAPIL, null, ['class' => 'form-control', 'placeholder' => 'Pilih Type']) !!}
 </div>
 
 <!-- Submit Field -->

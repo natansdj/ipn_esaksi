@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Collective\Html\Eloquent\FormAccessible;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
@@ -109,7 +110,9 @@ use Illuminate\Support\Carbon;
  */
 class Pileg extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, FormAccessible {
+		getFormValue as protected traitGetFormValue;
+	}
 
 	public $table = 'pilegs';
 
@@ -165,6 +168,10 @@ class Pileg extends Model
 		'partai' => 'required'
 	];
 
+	public static $formOriginal = [
+		'partai'
+	];
+
 	protected $with = [];
 
 	public function getDobAttribute($value)
@@ -178,12 +185,12 @@ class Pileg extends Model
 
 	public function getFormValue($key)
 	{
-		if ($this->hasCast($key, 'integer') && $this->hasGetMutator($key)) {
+		if (in_array($key, self::$formOriginal) || ( $this->hasCast($key, 'integer') && $this->hasGetMutator($key) )) {
 			return $this->getOriginal($key);
 		} else if (in_array($key, $this->getDates())) {
 			return Carbon::parse($this->getAttribute($key))->format(config('app.date_format'));
 		} else {
-			return $this->getAttribute($key);
+			return $this->traitGetFormValue($key);
 		}
 	}
 
@@ -205,7 +212,7 @@ class Pileg extends Model
 		return ( empty($value) ) ? $this->getAttributeValue('tingkat') : $value;
 	}
 
-	public function getFullnameAttribute($value)
+	public function getFullnameAttribute()
 	{
 		return implode(' ', [$this->getAttribute('gelar_depan'), $this->getAttribute('name'), $this->getAttribute('gelar_belakang')]);
 	}

@@ -35,9 +35,9 @@ class WilayahController extends AppBaseController
 
 	public function getWilayahRowDetail($id)
 	{
-		$posts = Wilayah::find($id)->rel_dapil();
+		$dapils = Wilayah::find($id)->rel_dapil();
 
-		return \DataTables::of($posts)->make(true);
+		return \DataTables::of($dapils)->make(true);
 	}
 	
 	/**

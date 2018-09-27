@@ -70,6 +70,11 @@ define('TINGKAT_WILAYAH', [
 	4 => 'Kelurahan',
 ]);
 
+define('RELATION_MAP', [
+	'pileg'   => 'App\Models\Pileg',
+	'pilpres' => 'App\Models\Pilpres',
+]);
+
 return [
 	//
 ];

@@ -22,10 +22,7 @@ class AppServiceProvider extends ServiceProvider
 		Paginator::defaultView('pagination::bootstrap-4');
 		Paginator::defaultSimpleView('pagination::simple-bootstrap-4');
 
-		Relation::morphMap([
-			'pileg'   => 'App\Models\Pileg',
-			'pilpres' => 'App\Models\Pilpres',
-		]);
+		Relation::morphMap(RELATION_MAP);
 	}
 
 	/**
