@@ -20,7 +20,12 @@ class TestController extends AppBaseController
 //		$return['user_same_tpsId'] = \App\Models\User::sameTps()->get(['id', 'tps_id'])->toArray();
 
 //		$return['tps'] = \App\Models\Tps::with(['votes', 'votes.voteable'])->whereHas('votes')->get();
-		$return['pileg'] = \App\Models\Pileg::with(['votes'])->whereHas('votes')->get();
+
+		$pileg      = \App\Models\Pileg::with(['votesCount'])->whereHas('votes')->first();
+		$pilegCount = $pileg->votesCount;
+
+		$return['pileg']       = $pileg;
+		$return['$pilegCount'] = $pilegCount;
 
 		return $this->sendResponse($return, '');
 	}

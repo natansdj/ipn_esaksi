@@ -22,9 +22,9 @@ class CreateTpsTable extends Migration
 			$table->string('address')->nullable();
 			$table->string('geo_location')->nullable();
 			$table->string('type')->nullable();
-			$table->integer('total_vote')->nullable();
-			$table->integer('valid_vote')->nullable();
-			$table->integer('invalid_vote')->nullable();
+			$table->bigInteger('total_vote')->nullable();
+			$table->bigInteger('valid_vote')->nullable();
+			$table->bigInteger('invalid_vote')->nullable();
 			$table->text('note')->nullable();
 			$table->softDeletes();
 			$table->timestamps();

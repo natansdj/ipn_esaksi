@@ -27,16 +27,17 @@ class DatabaseSeeder extends Seeder
 		$this->call(DapilWilayahTableSeeder::class);
 		$this->call(TingkatanTableSeeder::class);
 
-		//data TPS & User
-		$this->call(UsersTableSeeder::class);
+		$this->call(JqvmapTableSeeder::class);
 
 		//data from infopemilu
 		$this->call(PilegsTableSeeder::class);
 		$this->call(DapilPilegTableSeeder::class);
 		$this->call(PilpresTableSeeder::class);
-
-		$this->call(JqvmapTableSeeder::class);
-
+		
+		//FACTORY
+		
+		//data TPS & User
+		$this->call(UsersTableSeeder::class);
 		$this->call(VoteTableSeeder::class);
 		
 		// Re enable all mass assignment restrictions

@@ -267,8 +267,35 @@ class Pileg extends Model
 		return $this->belongsTo(\App\Models\Dapil::class);
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+	 */
 	public function votes()
 	{
 		return $this->morphMany(\App\Models\Vote::class, 'voteable');
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany|\Illuminate\Database\Query\Builder
+	 */
+	public function votesCount()
+	{
+		return $this->hasOne(\App\Models\Vote::class, 'voteable_id')
+		            ->where('voteable_type', 'pileg')
+		            ->selectRaw('voteable_id, sum(count) as aggregate')
+		            ->groupBy('voteable_id');
+	}
+
+	public function getVotesCountAttribute()
+	{
+		// if relation is not loaded already, let's do it first
+		if ( ! $this->relationLoaded('votesCount')) {
+			$this->load('votesCount');
+		}
+
+		$related = $this->getRelation('votesCount');
+
+		// then return the count directly
+		return ( $related ) ? (int) $related->aggregate : 0;
 	}
 }

@@ -18,7 +18,7 @@ $factory->define(App\Models\Tps::class, function (Faker $faker) use ($autoIncrem
 	return [
 		'name'        => 'TPS ' . $autoIncrement->current(),
 		'address'     => $faker->address,
-		'dapil_id'    => ( $dapils_id && ! empty($dapils_id) ) ? $faker->unique()->randomElement($dapils_id) : null,
+		'dapil_id'    => ( $dapils_id && ! empty($dapils_id) ) ? $faker->randomElement($dapils_id) : null,
 		'province_id' => $faker->randomElement($province_id),
 		'kodepos_id'  => $faker->randomElement($kodepos_id),
 	];
