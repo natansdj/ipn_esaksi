@@ -14,29 +14,38 @@ class VoteTableSeeder extends Seeder
 		DB::disableQueryLog();
 		DB::table('votes')->truncate();
 
-		factory('App\Models\Vote', 5)->create()->each(function ($votes, $key) {
+		$count = 100;
+		$users = \App\Models\User::noAdmin()->limit($count)->get();
 
-			$user = \App\Models\User::find($votes->user_id);
+		foreach ($users as $user) {
+			$userId       = $user->id;
+			$tps_id       = $user->tps()->value('id');
+			$pilegs       = $user->tps->dapil->pilegs;
+			$pilegs_count = $user->tps->dapil->pilegs()->count();
 
-			/**
-			 * @var \App\Models\Pileg $pileg
-			 */
-			$pilegs    = $user->tps->dapil->pilegs;
-			$usedPileg = \App\Models\Vote::where('tps_id', $votes->tps_id)
-			                             ->where('voteable_type', 'pileg')
-			                             ->get()
-			                             ->pluck('voteable_id')->toArray();
+			factory('App\Models\Vote', $pilegs_count)
+				->states('pileg')
+				->make([
+					'tps_id'  => $tps_id,
+					'user_id' => $userId,
+					'type'    => $user->tps->dapil->getOriginal('tingkat')
+				])
+				->each(function ($votes, $key) use ($user, $pilegs) {
 
-			$pileg = $pilegs->whereNotIn('id', $usedPileg)->random();
+					/**
+					 * @var \Illuminate\Database\Eloquent\Collection $pilegs
+					 * @var \App\Models\Pileg $pileg
+					 * @var \App\Models\Vote $votes
+					 */
+					$pileg = $pilegs->get($key);
 
-			/**
-			 * @var \App\Models\Vote $votes
-			 */
-			$votes->type = $user->tps->dapil->getOriginal('tingkat');
-			$votes->voteable()->associate($pileg);
+					if ($pileg) {
+						$votes->voteable()->associate($pileg);
+					}
 
-			$votes->save();
-		});
+					$votes->save();
+				});
+		}
 
 		DB::enableQueryLog();
 	}

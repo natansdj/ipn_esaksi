@@ -21,12 +21,16 @@ class TestController extends AppBaseController
 
 //		$return['tps'] = \App\Models\Tps::with(['votes', 'votes.voteable'])->whereHas('votes')->get();
 
-		$pileg      = \App\Models\Pileg::with(['votesCount'])->whereHas('votes')->first();
-		$pilegCount = $pileg->votesCount;
+		\Artisan::call('db:seed', ['--class' => 'VoteTableSeeder']);
 
-		$return['pileg']       = $pileg;
-		$return['$pilegCount'] = $pilegCount;
+//		$pileg      = \App\Models\Pileg::with('votesCount')->whereHas('votes')->first()->setAppends(['votes_total']);
+		$pileg = \App\Models\Pileg::with('votesCount')->whereHas('votes')->get();
+//		$pileg      = \App\Models\Pileg::with('votesCount')->whereHas('votes')->first();
+//		$pilegCount = $pileg->votesTotal;
 
-		return $this->sendResponse($return, '');
+		$return['pileg'] = $pileg;
+
+//		return $this->sendResponse($return, '');
+		return view('layouts.debug', compact('return'));
 	}
 }

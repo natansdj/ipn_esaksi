@@ -173,6 +173,7 @@ class Pileg extends Model
 	];
 
 	protected $with = [];
+	protected $appends = [];
 
 	public function getDobAttribute($value)
 	{
@@ -205,11 +206,6 @@ class Pileg extends Model
 	public function getPartaiAttribute($value)
 	{
 		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : $value;
-	}
-
-	public function getTypeAttribute($value)
-	{
-		return ( empty($value) ) ? $this->getAttributeValue('tingkat') : $value;
 	}
 
 	public function getFullnameAttribute()
@@ -281,12 +277,17 @@ class Pileg extends Model
 	public function votesCount()
 	{
 		return $this->hasOne(\App\Models\Vote::class, 'voteable_id')
-		            ->where('voteable_type', 'pileg')
+		            ->where('voteable_type', $this->getMorphClass())
 		            ->selectRaw('voteable_id, sum(count) as aggregate')
 		            ->groupBy('voteable_id');
 	}
 
-	public function getVotesCountAttribute()
+	/**
+	 * votes_total
+	 * 
+	 * @return int
+	 */
+	public function getVotesTotalAttribute()
 	{
 		// if relation is not loaded already, let's do it first
 		if ( ! $this->relationLoaded('votesCount')) {
