@@ -37,7 +37,7 @@
 <!-- Gender Field -->
 <div class="form-group">
     {!! Form::label('gender', 'Gender:') !!}
-    <p>{!! $user->gender !!}</p>
+    <p>{!! $user->gender_label !!}</p>
 </div>
 
 <!-- Dob Field -->
@@ -106,8 +106,10 @@
 
 <!-- Tps Id Field -->
 <div class="form-group">
-    {!! Form::label('tps_id', 'Tps Id:') !!}
-    <p>{!! $user->tps_id !!}</p>
+    {!! Form::label('tps_id', 'ID/TPS/DAPIL :') !!}
+    @if(isset($user->tps_id) && !empty($user->tps_id))
+        <p data-id="{!! $user->tps_id !!}">{!! implode(' - ', [$user->tps_id, $user->tps->name, $user->tps->dapil->nama]) !!}</p>
+    @endif
 </div>
 
 <!-- Is Active Field -->

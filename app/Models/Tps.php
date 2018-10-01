@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Tymon\JWTAuth\Providers\Auth\Illuminate;
 
 /**
  * @SWG\Definition(
@@ -59,6 +60,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="total_vote",
+ *          description="total_vote",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="deleted_at",
  *          description="deleted_at",
  *          type="string",
@@ -84,7 +91,9 @@ class Tps extends Model
 
 	public $table = 'tps';
 
+
 	protected $dates = ['deleted_at'];
+
 
 	public $fillable = [
 		'province_id',
@@ -94,7 +103,8 @@ class Tps extends Model
 		'address',
 		'geo_location',
 		'type',
-		'note'
+		'note',
+		'total_vote'
 	];
 
 	/**
@@ -110,7 +120,8 @@ class Tps extends Model
 		'address'      => 'string',
 		'geo_location' => 'string',
 		'type'         => 'string',
-		'note'         => 'string'
+		'note'         => 'string',
+		'total_vote'   => 'integer'
 	];
 
 	/**
@@ -122,9 +133,9 @@ class Tps extends Model
 		'name' => 'required'
 	];
 
-	public function users()
+	public function user()
 	{
-		return $this->hasOne(User::class, 'id', 'tps_id');
+		return $this->hasOne(User::class, 'tps_id', 'id');
 	}
 
 	/**
@@ -149,5 +160,36 @@ class Tps extends Model
 	public function dapil()
 	{
 		return $this->belongsTo(\App\Models\Dapil::class);
+	}
+
+	public function votes()
+	{
+		return $this->hasMany(\App\Models\Vote::class);
+	}
+
+	public function votesCount()
+	{
+		return $this->hasOne(\App\Models\Vote::class, 'tps_id')
+		            ->where('voteable_type', 'pileg')
+		            ->selectRaw('tps_id, sum(count) as aggregate')
+		            ->groupBy('tps_id');
+	}
+
+	/**
+	 * votes_total
+	 *
+	 * @return int
+	 */
+	public function getVotesTotalAttribute()
+	{
+		// if relation is not loaded already, let's do it first
+		if ( ! $this->relationLoaded('votesCount')) {
+			$this->load('votesCount');
+		}
+
+		$related = $this->getRelation('votesCount');
+
+		// then return the count directly
+		return ( $related ) ? (int) $related->aggregate : 0;
 	}
 }

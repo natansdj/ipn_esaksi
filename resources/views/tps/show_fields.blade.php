@@ -52,6 +52,12 @@
     <p>{!! $tps->note !!}</p>
 </div>
 
+<!-- Total Vote Field -->
+<div class="form-group">
+    {!! Form::label('total_vote', 'Total Vote:') !!}
+    <p>{!! $tps->total_vote !!}</p>
+</div>
+
 <!-- Deleted At Field -->
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}

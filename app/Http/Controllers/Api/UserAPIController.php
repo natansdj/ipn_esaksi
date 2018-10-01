@@ -70,7 +70,7 @@ class UserAPIController extends AppBaseController
 	 */
 	public function index(Request $request)
 	{
-		$this->userRepository->pushCriteria(new UserRegularCriteria($request));
+		$this->userRepository->pushCriteria(new UserRegularCriteria());
 		$this->userRepository->pushCriteria(new AppRequestCriteria($request));
 		$this->userRepository->pushCriteria(new LimitOffsetCriteria($request));
 		$users = $this->userRepository->all();

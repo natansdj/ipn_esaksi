@@ -20,6 +20,11 @@ class VoteRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'tps_id',
+        'user_id',
+        'voteable_id',
+        'voteable_type',
+        'type',
         'count'
     ];
 

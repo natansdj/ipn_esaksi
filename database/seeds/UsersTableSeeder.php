@@ -17,9 +17,9 @@ class UsersTableSeeder extends Seeder
 			DB::table($table)->delete();
 		}
 
-		factory('App\Models\Tps', 5)->create();
-
+		factory('App\Models\Tps', 200)->create();
+		
 		factory(App\Models\User::class, 'admin')->create();
-		factory('App\Models\User', 4)->create();
+		factory('App\Models\User', 100)->create();
 	}
 }

@@ -32,7 +32,7 @@ class TpsDataTable extends DataTable
 	 */
 	public function query(Tps $model)
 	{
-		return $model->newQuery();
+		return $model->newQuery()->with(['dapil']);
 	}
 
 	/**
@@ -69,13 +69,14 @@ class TpsDataTable extends DataTable
 	{
 		return [
 			new Column([
-				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
 				'searchable' => false,
-				'visible'    => false
 			]),
-			'province_id',
-			'kodepos_id',
-			'name'
+			'name'    => ['data' => 'name', 'title' => 'Nama'],
+			new Column([
+				'name' => 'dapil_id', 'data' => 'dapil.nama', 'title' => 'Dapil',
+			]),
+			'address' => ['data' => 'address', 'title' => 'Alamat'],
 		];
 	}
 

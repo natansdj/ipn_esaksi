@@ -2,22 +2,33 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Criteria\UserRegularCriteria;
 use App\DataTables\VoteDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateVoteRequest;
 use App\Http\Requests\UpdateVoteRequest;
+use App\Models\Tps;
+use App\Repositories\TpsRepository;
+use App\Repositories\UserRepository;
 use App\Repositories\VoteRepository;
 use Flash;
 use Response;
 
 class VoteController extends AppBaseController
 {
+	/** @var UserRepository */
+	private $userRepository;
+	/** @var TpsRepository */
+	private $tpsRepository;
 	/** @var  VoteRepository */
 	private $voteRepository;
 
-	public function __construct(VoteRepository $voteRepo)
+	public function __construct(VoteRepository $voteRepo, TpsRepository $tpsRepo, UserRepository $userRepo)
 	{
 		$this->voteRepository = $voteRepo;
+		$this->tpsRepository  = $tpsRepo;
+		$this->userRepository = $userRepo;
+		$this->userRepository->pushCriteria(new UserRegularCriteria());
 	}
 
 	/**
@@ -39,7 +50,9 @@ class VoteController extends AppBaseController
 	 */
 	public function create()
 	{
-		return view('votes.create');
+		$dropdown = $this->getDropdownOptions();
+
+		return view('votes.create', $dropdown);
 	}
 
 	/**
@@ -97,7 +110,9 @@ class VoteController extends AppBaseController
 			return redirect(route('votes.index'));
 		}
 
-		return view('votes.edit')->with('vote', $vote);
+		$dropdown = $this->getDropdownOptions();
+
+		return view('votes.edit', $dropdown)->with('vote', $vote);
 	}
 
 	/**
@@ -147,5 +162,28 @@ class VoteController extends AppBaseController
 		Flash::success('Vote deleted successfully.');
 
 		return redirect(route('votes.index'));
+	}
+
+	protected function getDropdownOptions()
+	{
+		$dropdown_tps = $this->tpsRepository->get()->mapWithKeys(function ($item) {
+			return [$item->id => $item->id . ' - ' . $item->name];
+		});
+
+		$dropdown_tps_opt = $this->tpsRepository->with(['user'])->get()->mapWithKeys(function ($item) {
+			$options = [];
+			if (isset($item->user)) {
+				$options = array_add($options, 'data-user_id', $item->user->id);
+			}
+			$options = array_add($options, 'data-dapil_id', $item->dapil_id);
+
+			return [$item->id => $options];
+		})->toArray();
+
+		$dropdown_user = $this->userRepository->get()->mapWithKeys(function ($item) {
+			return [$item->id => $item->id . ' - ' . $item->name];
+		});
+
+		return compact('dropdown_tps', 'dropdown_tps_opt', 'dropdown_user');
 	}
 }

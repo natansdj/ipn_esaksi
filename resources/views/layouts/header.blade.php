@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
 
     <!-- Load Style -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/gijgo.min.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" media="screen">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

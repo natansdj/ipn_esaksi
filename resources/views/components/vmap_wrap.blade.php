@@ -1,8 +1,5 @@
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/jqvmap.min.css') }}" media="screen">
-
-    <!-- Custom -->
-    <link rel="stylesheet" href="{{ asset('css/custom.vmap.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/vmap.css') }}" media="screen">
 @endpush
 
 <div class="vmap-wrap">
@@ -11,8 +8,7 @@
 
 @push('scripts')
     <!--vmap scripts-->
-    <script type="text/javascript" src="{{ asset('js/jquery.vmap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.vmap.indonesia.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.vmap.js') }}"></script>
 
     <script type="text/javascript">
       //Init vectorMap

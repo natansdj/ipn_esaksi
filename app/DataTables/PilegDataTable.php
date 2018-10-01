@@ -88,9 +88,8 @@ class PilegDataTable extends DataTable
 	{
 		return [
 			new Column([
-				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
 				'searchable' => false,
-				'visible'    => false
 			]),
 			'name',
 			'dapil_id' => [

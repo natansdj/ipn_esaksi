@@ -27,8 +27,19 @@ Route::group([
 	'middleware' => ['ajax_only']
 ], function () {
 	#filter table
-	Route::get('get_map_data/', 'AjaxController@get_map_data')->name('ajax_get_map_data')->middleware(['cacheResponse']);
+	Route::get('get_map_data/', 'AjaxController@get_map_data')->name('ajax_get_map_data');
 	Route::get('{type}/', 'AjaxController@ajax_method');
+
+	Route::get('dapils/wilayah-detail/{id}', 'DapilController@getDapilRowDetail')->name('dapil_row_detail');
+	Route::get('wilayahs/dapil-detail/{id}', 'WilayahController@getWilayahRowDetail')->name('wilayah_row_detail');
+});
+
+
+#ajax request
+Route::group([
+	'middleware' => ['cacheResponse']
+], function () {
+	//
 });
 
 Route::resource('pilpres', 'PilpresController');

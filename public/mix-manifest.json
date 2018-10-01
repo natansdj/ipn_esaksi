@@ -2,6 +2,12 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/custom.css": "/css/custom.css",
-    "/css/custom.vmap.css": "/css/custom.vmap.css",
-    "/js/custom.js": "/js/custom.js"
+    "/css/tmp/custom.vmap.css": "/css/tmp/custom.vmap.css",
+    "/js/tmp/hbs_template.js": "/js/tmp/hbs_template.js",
+    "/js/custom.js": "/js/custom.js",
+    "/css/main.css": "/css/main.css",
+    "/css/vmap.css": "/css/vmap.css",
+    "/js/vendor.js": "/js/vendor.js",
+    "/js/jquery.vmap.js": "/js/jquery.vmap.js",
+    "/js/custom_datatables.js": "/js/custom_datatables.js"
 }

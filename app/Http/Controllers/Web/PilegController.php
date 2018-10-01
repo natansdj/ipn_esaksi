@@ -35,6 +35,7 @@ class PilegController extends AppBaseController
 	}
 
 	/**
+	 * daftar_pileg
 	 * @param Request $request
 	 *
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Pilpres;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
 class PilpresDataTable extends DataTable
@@ -19,7 +20,10 @@ class PilpresDataTable extends DataTable
 	{
 		$dataTable = new EloquentDataTable($query);
 
-		return $dataTable->addColumn('action', 'pilpres.datatables_actions');
+		$dataTable->addColumn('action', 'pilpres.datatables_actions');
+		$dataTable->addColumn('details_url', '');
+
+		return $dataTable;
 	}
 
 	/**
@@ -67,16 +71,20 @@ class PilpresDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'capres_name',
-			'capres_dob',
-			'capres_pob',
-			'cawapres_name',
-			'cawapres_dob',
-			'cawapres_pob',
-			'capres_partai' => [
-				'data'  => 'capres_partai',
-				'title' => 'Partai Pengusung'
-			]
+			new Column([
+				'name'           => 'details-control', 'data' => null, 'title' => '',
+				'className'      => 'details-control',
+				'defaultContent' => '',
+				'orderable'      => false,
+				'searchable'     => false,
+			]),
+			'capres_name'   => ['data' => 'capres_name', 'title' => 'Nama Capres'],
+			'capres_dob'    => ['data' => 'capres_dob', 'title' => 'Tgl Lahir'],
+			'capres_pob'    => ['data' => 'capres_pob', 'title' => 'Tempat Lahir'],
+			'cawapres_name' => ['data' => 'cawapres_name', 'title' => 'Nama Cawapres'],
+			'cawapres_dob'  => ['data' => 'cawapres_dob', 'title' => 'Tgl Lahir'],
+			'cawapres_pob'  => ['data' => 'cawapres_pob', 'title' => 'Tempat Lahir'],
+			'capres_partai' => ['data' => 'capres_partai', 'title' => 'Partai Pengusung', 'visible' => false]
 		];
 	}
 

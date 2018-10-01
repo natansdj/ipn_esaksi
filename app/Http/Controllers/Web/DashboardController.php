@@ -43,7 +43,11 @@ class DashboardController extends Controller
 			$master->dateFormat = 'd M Y - H:i T';
 
 			$this->dapilRepository->pushCriteria(new DapilTingkatCriteria($request));
-			$dataModel  = $this->dapilRepository->with(['pilegs']);
+			$dataModel  = $this->dapilRepository->with([
+				'pilegs' => function ($query) {
+					return $query->includeVotesTotal();
+				}
+			]);
 			$collection = $dataModel->paginate(9);
 		}
 
@@ -52,7 +56,7 @@ class DashboardController extends Controller
 		$dd_provinsi = ( ! is_null($provinsi) ) ? Wilayah::tkwilayah(1)->get()->pluck('nama_wilayah', 'id') : [];
 		$dd_kabko    = ( ! is_null($kabko) && ! is_null($provinsi) ) ? Wilayah::tkwilayah($tingkatWilayah)->where('id_parent', $provinsi)->get()->pluck('nama_wilayah', 'id') : [];
 
-		$vars = compact('dd_type', 'dataId', 'dataTingkat', 'master', 'collection', 'dd_provinsi', 'dd_kabko');
+		$vars = compact('dd_type', 'master', 'collection', 'dd_provinsi', 'dd_kabko');
 
 		return view('index', $vars);
 	}

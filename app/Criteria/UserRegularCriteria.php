@@ -20,14 +20,8 @@ class UserRegularCriteria implements CriteriaInterface
 	 */
 	protected $only_regular;
 
-	/**
-	 * @var \Illuminate\Http\Request
-	 */
-	protected $request;
-
-	public function __construct(Request $request, $onlyRegular = true)
+	public function __construct($onlyRegular = true)
 	{
-		$this->request      = $request;
 		$this->only_regular = $onlyRegular;
 	}
 

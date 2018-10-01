@@ -32,7 +32,7 @@ class UserDataTable extends DataTable
 	 */
 	public function query(User $model)
 	{
-		return $model->noAdmin()->newQuery();
+		return $model->noAdmin()->newQuery()->with(['tps']);
 	}
 
 	/**
@@ -45,7 +45,7 @@ class UserDataTable extends DataTable
 		return $this->builder()
 		            ->columns($this->getColumns())
 		            ->minifiedAjax()
-		            ->addAction(['printable' => false, 'width' => '120px'])
+		            ->addAction(['printable' => false, 'width' => '100px'])
 		            ->parameters([
 			            'language' => ['url' => asset('js/dataTables.indonesian.json')],
 			            'dom'      => 'Bflrtip',
@@ -69,18 +69,17 @@ class UserDataTable extends DataTable
 	{
 		return [
 			new Column([
-				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
-				'searchable' => false,
-				'visible'    => false
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
+				'searchable' => false
 			]),
-			'name',
+			'name'  => ['data' => 'name', 'title' => 'Nama'],
 			'email',
-			'phone',
-			'dob' => [
-				'data'  => 'dob',
-				'title' => 'Date of Birth'
-			],
-			'is_active',
+			'phone' => ['data' => 'phone', 'title' => 'Telp'],
+			'dob'   => ['data' => 'dob', 'title' => 'Tgl Lahir'],
+			new Column([
+				'name'       => 'tps_id', 'data' => 'tps.name', 'title' => 'TPS',
+				'searchable' => true
+			]),
 		];
 	}
 

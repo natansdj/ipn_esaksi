@@ -32,6 +32,10 @@ class TpsController extends AppBaseController
 		return $tpsDataTable->render('tps.index');
 	}
 
+	/**
+	 * daftar_tps
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
 	public function search()
 	{
 		return view('pages.tps_search');

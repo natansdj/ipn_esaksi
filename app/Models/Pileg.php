@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Collective\Html\Eloquent\FormAccessible;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
@@ -109,7 +110,9 @@ use Illuminate\Support\Carbon;
  */
 class Pileg extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, FormAccessible {
+		getFormValue as protected traitGetFormValue;
+	}
 
 	public $table = 'pilegs';
 
@@ -150,7 +153,8 @@ class Pileg extends Model
 		'pob'            => 'string',
 		'partai'         => 'string',
 		'type'           => 'string',
-		'note'           => 'string'
+		'note'           => 'string',
+		'votes_totals'   => 'integer',
 	];
 
 	/**
@@ -165,7 +169,12 @@ class Pileg extends Model
 		'partai' => 'required'
 	];
 
+	public static $formOriginal = [
+		'partai'
+	];
+
 	protected $with = [];
+	protected $appends = [];
 
 	public function getDobAttribute($value)
 	{
@@ -178,12 +187,13 @@ class Pileg extends Model
 
 	public function getFormValue($key)
 	{
-		if ($this->hasCast($key, 'integer') && $this->hasGetMutator($key)) {
+		if (in_array($key, self::$formOriginal) || ( $this->hasCast($key, 'integer') && $this->hasGetMutator($key) )) {
 			return $this->getOriginal($key);
 		} else if (in_array($key, $this->getDates())) {
 			return Carbon::parse($this->getAttribute($key))->format(config('app.date_format'));
 		} else {
-			return $this->getAttribute($key);
+			//workaround to call parent::getFormValue()
+			return $this->traitGetFormValue($key);
 		}
 	}
 
@@ -200,12 +210,7 @@ class Pileg extends Model
 		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : $value;
 	}
 
-	public function getTypeAttribute($value)
-	{
-		return ( empty($value) ) ? $this->getAttributeValue('tingkat') : $value;
-	}
-
-	public function getFullnameAttribute($value)
+	public function getFullnameAttribute()
 	{
 		return implode(' ', [$this->getAttribute('gelar_depan'), $this->getAttribute('name'), $this->getAttribute('gelar_belakang')]);
 	}
@@ -259,4 +264,55 @@ class Pileg extends Model
 	{
 		return $this->belongsTo(\App\Models\Dapil::class);
 	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+	 */
+	public function votes()
+	{
+		return $this->morphMany(\App\Models\Vote::class, 'voteable');
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany|\Illuminate\Database\Query\Builder
+	 */
+	public function votesCount()
+	{
+		return $this->hasOne(\App\Models\Vote::class, 'voteable_id')
+		            ->where('voteable_type', $this->getMorphClass())
+		            ->selectRaw('voteable_id, sum(count) as aggregate')
+		            ->groupBy('voteable_id');
+	}
+
+	/**
+	 * votes_total
+	 *
+	 * @return int
+	 */
+	public function getVotesTotalAttribute()
+	{
+		// if relation is not loaded already, let's do it first
+		if ( ! $this->relationLoaded('votesCount')) {
+			$this->load('votesCount');
+		}
+
+		$related = $this->getRelation('votesCount');
+
+		// then return the count directly
+		return ( $related ) ? (int) $related->aggregate : 0;
+	}
+
+	public function scopeIncludeVotesTotal($query)
+	{
+		/** @var \Illuminate\Database\Query\Builder $query */
+		$query->select('*')
+		      ->leftJoin(\DB::raw('(' . Vote::select(['voteable_id', 'voteable_type'])->selectRaw('sum(count) as votes_totals')->groupBy('voteable_id', 'voteable_type')->toSql() . ') as votes')
+			      , function ($join) {
+				      /** @var \Illuminate\Database\Query\JoinClause $join */
+				      $join->on('votes.voteable_id', 'id')
+				           ->where('votes.voteable_type', $this->getMorphClass());
+			      })
+		      ->orderBy('votes_totals', 'DESC');
+	}
+
 }

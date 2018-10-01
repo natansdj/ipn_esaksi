@@ -20,7 +20,12 @@ class WilayahDataTable extends DataTable
 	{
 		$dataTable = new EloquentDataTable($query);
 
-		return $dataTable->addColumn('action', 'wilayahs.datatables_actions');
+		$dataTable->addColumn('action', 'wilayahs.datatables_actions');
+		$dataTable->addColumn('details_url', function ($wilayah) {
+			return url()->route('wilayah_row_detail', ['id' => $wilayah->id]);
+		});
+
+		return $dataTable;
 	}
 
 	/**
@@ -69,11 +74,18 @@ class WilayahDataTable extends DataTable
 	{
 		return [
 			new Column([
-				'name'       => 'id', 'data' => 'id', 'title' => 'No.',
-				'searchable' => false,
-				'visible'    => false
+				'name'           => 'details-control', 'data' => null, 'title' => '',
+				'className'      => 'details-control',
+				'defaultContent' => '',
+				'orderable'      => false,
+				'searchable'     => false,
 			]),
-			'nama_wilayah'
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
+				'searchable' => false, 'visible' => true
+			]),
+			'nama_wilayah',
+			'tingkat_wilayah' => ['data' => 'tingkat_wilayah', 'title' => 'Tingkat Wilayah'],
 		];
 	}
 

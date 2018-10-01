@@ -20,6 +20,43 @@ class VoteDataTable extends DataTable
 	{
 		$dataTable = new EloquentDataTable($query);
 
+		$dataTable->editColumn('tps_id', function ($model) {
+			/** @var \App\Models\Vote $model */
+			$data     = '-';
+			$relation = $model->tps;
+			if ( ! is_null($relation) && $relation) {
+				$data = $relation->name;
+				if (isset($relation->dapil->nama)) {
+					$data .= '/' . $relation->dapil->nama;
+				}
+			}
+
+			return $data;
+		});
+
+		$dataTable->editColumn('user_id', function ($model) {
+			/** @var \App\Models\Vote $model */
+			$data     = '-';
+			$relation = $model->user;
+			if ( ! is_null($relation) && $relation) {
+				$data = $relation->id . ' - ' . $relation->name;
+			}
+
+			return $data;
+		});
+
+		$dataTable->editColumn('voteable_id', function ($model) {
+			/** @var \App\Models\Vote $model */
+			$data = '-';
+			/** @var \App\Models\Pileg|\App\Models\Pilpres $relation */
+			$relation = $model->voteable;
+			if ( ! is_null($relation) && $relation) {
+				$data = $relation->id . ' - ' . $relation->fullname;
+			}
+
+			return $data;
+		});
+
 		return $dataTable->addColumn('action', 'votes.datatables_actions');
 	}
 
@@ -73,10 +110,27 @@ class VoteDataTable extends DataTable
 				'searchable' => false,
 				'visible'    => false
 			]),
-			'tps_id',
-			'user_id',
+			'tps_id'      => [
+				'data'  => 'tps_id',
+				'title' => 'TPS/Dapil'
+			],
+			'user_id'     => [
+				'data'  => 'user_id',
+				'title' => 'Saksi'
+			],
 			'vote_date',
-			'count'
+			'type'        => [
+				'data'  => 'type',
+				'title' => 'Tingkat'
+			],
+			'voteable_id' => [
+				'data'  => 'voteable_id',
+				'title' => 'Calon'
+			],
+			'count'       => [
+				'data'  => 'count',
+				'title' => 'Jumlah Vote'
+			],
 		];
 	}
 
