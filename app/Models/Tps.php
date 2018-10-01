@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Tymon\JWTAuth\Providers\Auth\Illuminate;
 
 /**
  * @SWG\Definition(
@@ -164,5 +165,31 @@ class Tps extends Model
 	public function votes()
 	{
 		return $this->hasMany(\App\Models\Vote::class);
+	}
+
+	public function votesCount()
+	{
+		return $this->hasOne(\App\Models\Vote::class, 'tps_id')
+		            ->where('voteable_type', 'pileg')
+		            ->selectRaw('tps_id, sum(count) as aggregate')
+		            ->groupBy('tps_id');
+	}
+
+	/**
+	 * votes_total
+	 *
+	 * @return int
+	 */
+	public function getVotesTotalAttribute()
+	{
+		// if relation is not loaded already, let's do it first
+		if ( ! $this->relationLoaded('votesCount')) {
+			$this->load('votesCount');
+		}
+
+		$related = $this->getRelation('votesCount');
+
+		// then return the count directly
+		return ( $related ) ? (int) $related->aggregate : 0;
 	}
 }

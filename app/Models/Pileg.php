@@ -153,7 +153,8 @@ class Pileg extends Model
 		'pob'            => 'string',
 		'partai'         => 'string',
 		'type'           => 'string',
-		'note'           => 'string'
+		'note'           => 'string',
+		'votes_totals'   => 'integer',
 	];
 
 	/**
@@ -191,6 +192,7 @@ class Pileg extends Model
 		} else if (in_array($key, $this->getDates())) {
 			return Carbon::parse($this->getAttribute($key))->format(config('app.date_format'));
 		} else {
+			//workaround to call parent::getFormValue()
 			return $this->traitGetFormValue($key);
 		}
 	}
@@ -284,7 +286,7 @@ class Pileg extends Model
 
 	/**
 	 * votes_total
-	 * 
+	 *
 	 * @return int
 	 */
 	public function getVotesTotalAttribute()
@@ -299,4 +301,18 @@ class Pileg extends Model
 		// then return the count directly
 		return ( $related ) ? (int) $related->aggregate : 0;
 	}
+
+	public function scopeIncludeVotesTotal($query)
+	{
+		/** @var \Illuminate\Database\Query\Builder $query */
+		$query->select('*')
+		      ->leftJoin(\DB::raw('(' . Vote::select(['voteable_id', 'voteable_type'])->selectRaw('sum(count) as votes_totals')->groupBy('voteable_id', 'voteable_type')->toSql() . ') as votes')
+			      , function ($join) {
+				      /** @var \Illuminate\Database\Query\JoinClause $join */
+				      $join->on('votes.voteable_id', 'id')
+				           ->where('votes.voteable_type', $this->getMorphClass());
+			      })
+		      ->orderBy('votes_totals', 'DESC');
+	}
+
 }

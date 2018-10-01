@@ -158,6 +158,14 @@ class Dapil extends Model
 		return $this->belongsToMany(\App\Models\Pileg::class);
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function tps()
+	{
+		return $this->hasMany(\App\Models\Tps::class);
+	}
+
 	public function scopeTingkatWilayah($query, $tingkat)
 	{
 		return $query->where('tingkat', $tingkat);
@@ -166,6 +174,29 @@ class Dapil extends Model
 	public function getTingkatAttribute($value)
 	{
 		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
+	}
+
+	public function votesCount()
+	{
+		return $this->tps()->with('votesCount');
+	}
+
+	/**
+	 * votes_total
+	 *
+	 * @return int
+	 */
+	public function getVotesTotalAttribute()
+	{
+		// if relation is not loaded already, let's do it first
+		if ( ! $this->relationLoaded('votesCount')) {
+			$this->load('votesCount');
+		}
+
+		$related = $this->getRelation('votesCount');
+
+		// then return the count directly
+		return ( $related ) ? (int) $related->sum('votes_total') : 0;
 	}
 
 	public function getJmlVoterAttribute()

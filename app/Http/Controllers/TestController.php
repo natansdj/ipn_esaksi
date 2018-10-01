@@ -19,18 +19,47 @@ class TestController extends AppBaseController
 
 //		$return['user_same_tpsId'] = \App\Models\User::sameTps()->get(['id', 'tps_id'])->toArray();
 
-//		$return['tps'] = \App\Models\Tps::with(['votes', 'votes.voteable'])->whereHas('votes')->get();
+//		\Artisan::call('db:seed', ['--class' => 'VoteTableSeeder']);
 
-		\Artisan::call('db:seed', ['--class' => 'VoteTableSeeder']);
-
+		/**
+		 * PILEG
+		 */
 //		$pileg      = \App\Models\Pileg::with('votesCount')->whereHas('votes')->first()->setAppends(['votes_total']);
-		$pileg = \App\Models\Pileg::with('votesCount')->whereHas('votes')->get();
-//		$pileg      = \App\Models\Pileg::with('votesCount')->whereHas('votes')->first();
-//		$pilegCount = $pileg->votesTotal;
+//		$pileg = \App\Models\Pileg::with('votesCount')->whereHas('votes')->get();
+//		$return['pileg'] = $pileg;
+		$return['pileg'] = \App\Models\Pileg::whereHas('dapils', function ($q) {
+			$q->where('id', 1);
+		})
+		                                    ->includeVotesTotal()
+		                                    ->limit(2)
+		                                    ->whereHas('votes')
+		                                    ->orderBy('votes_totals', 'DESC')
+		                                    ->get();
 
-		$return['pileg'] = $pileg;
+		/**
+		 * DAPIL
+		 */
+//		$dapil           = Dapil::select()
+//		                        ->with(['votesCount', 'tps'])
+//		                        ->limit(1)
+//		                        ->get();
+//		$data            = $dapil->map(function ($item, $key) {
+//			$item->votes_total = $item->append('votes_total');
+//
+//			return $item;
+//		});
+//		$return['dapil'] = $data;
 
-//		return $this->sendResponse($return, '');
-		return view('layouts.debug', compact('return'));
+		/**
+		 * TPS
+		 */
+		$return['tps'] = \App\Models\Tps::with('votesCount')
+		                                ->limit(2)
+		                                ->whereHas('votes')
+//		                                ->orderBy('votes_total', 'DESC')
+                                        ->get();
+
+		return $this->sendResponse($return, '');
+//		return view('layouts.debug', compact('return'));
 	}
 }

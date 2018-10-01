@@ -27,7 +27,7 @@ class CreateVotesTable extends Migration
 			$table->timestamps();
 
 			$table->foreign('tps_id')->references('id')->on('tps')->onUpdate('CASCADE')->onDelete('CASCADE');
-			$table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->unique(['user_id', 'voteable_id', 'voteable_type']);
 		});
 	}

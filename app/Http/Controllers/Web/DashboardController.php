@@ -43,7 +43,11 @@ class DashboardController extends Controller
 			$master->dateFormat = 'd M Y - H:i T';
 
 			$this->dapilRepository->pushCriteria(new DapilTingkatCriteria($request));
-			$dataModel  = $this->dapilRepository->with(['pilegs']);
+			$dataModel  = $this->dapilRepository->with([
+				'pilegs' => function ($query) {
+					return $query->includeVotesTotal();
+				}
+			]);
 			$collection = $dataModel->paginate(9);
 		}
 
