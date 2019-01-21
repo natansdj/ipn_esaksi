@@ -66,8 +66,8 @@ trait ApiPilegTrait
 			return null;
 		}
 
-		DB::beginTransaction();
 		try {
+			DB::beginTransaction();
 			$singleData = [];
 			foreach ($data as $a => $b) {
 				$singleData[ snake_case($a) ] = $b;

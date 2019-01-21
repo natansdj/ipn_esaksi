@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": ">=7.0.0",
+    "php": ">=7.1.0",
     "appointer/swaggervel": "^2.3",
     "arcanedev/log-viewer": "^4.4.0",
     "doctrine/dbal": "^2.8",
