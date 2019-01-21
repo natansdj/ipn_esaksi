@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 trait ApiKpuTrait
 {
-	protected $use_cache = true;
+	protected $use_cache;
 	protected $update_empty_cache = false;
 	protected $site = 'https://infopemilu.kpu.go.id';
 	protected $api_wil_cari;
@@ -15,6 +15,7 @@ trait ApiKpuTrait
 	protected $api_dapil;
 	protected $api_pileg;
 	protected $expired_at;
+	protected $cacert;
 
 	protected function initApiKpu()
 	{
@@ -34,7 +35,7 @@ trait ApiKpuTrait
 		$this->api_dapil = $this->site . '/pileg2019/api/dapil/';
 
 		/**
-		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/pengajuan-calon/1/12/calonDcs.json
+		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/pengajuan-calon/1/12/dcs
 		 */
 		$this->api_pileg = $this->site . '/pileg2019/pencalonan/pengajuan-calon/';
 
@@ -42,9 +43,18 @@ trait ApiKpuTrait
 		 * Note :
 		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/1/dcs-dpr.json
 		 *
+		 * Sample : Daftar Calon Tetap by DapilId
+		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/pengajuan-calon/1/calonDct.json
+		 *
+		 * Sample : Detail DCT by ID
+		 * https://infopemilu.kpu.go.id/pileg2019/pencalonan/calon/28917
+		 *
 		 */
 
 		$this->expired_at = now()->addWeeks(2);
+
+		$this->cacert    = env('API_CACERT_PATH', false);
+		$this->use_cache = env('API_CACHE', true);
 	}
 
 	protected function apiGetWilayah($id)
@@ -55,7 +65,9 @@ trait ApiKpuTrait
 		}
 
 		//get wilayah
-		$client    = new Client();
+		$client    = new Client([
+			\GuzzleHttp\RequestOptions::VERIFY => $this->cacert
+		]);
 		$request   = $client->get($this->api_wil_cari . $id);
 		$response  = $request->getBody()->getContents();
 		$jsonArray = json_decode($response, true);
@@ -81,7 +93,9 @@ trait ApiKpuTrait
 		}
 
 		//get wilayah
-		$client    = new Client();
+		$client    = new Client([
+			\GuzzleHttp\RequestOptions::VERIFY => $this->cacert
+		]);
 		$request   = $client->get($this->api_dapil . $id . '/' . $tkWil);
 		$response  = $request->getBody()->getContents();
 		$jsonArray = json_decode($response, true);
@@ -110,7 +124,9 @@ trait ApiKpuTrait
 		}
 
 		//get detail from api
-		$client     = new Client();
+		$client     = new Client([
+			\GuzzleHttp\RequestOptions::VERIFY => $this->cacert
+		]);
 		$requestDt  = $client->get($this->api_wil_get . $id . '/' . $tkWil);
 		$responseDt = $requestDt->getBody()->getContents();
 		$jsonDt     = json_decode($responseDt, true);
@@ -139,7 +155,9 @@ trait ApiKpuTrait
 
 		//get Pileg
 		$api_url   = $this->getApiPileg($dapilId, $partaiId);
-		$client    = new Client();
+		$client    = new Client([
+			\GuzzleHttp\RequestOptions::VERIFY => $this->cacert
+		]);
 		$request   = $client->get($api_url);
 		$response  = $request->getBody()->getContents();
 		$jsonArray = json_decode($response, true);
@@ -191,6 +209,6 @@ trait ApiKpuTrait
 
 	public function getApiPileg($dapilId, $partaiId)
 	{
-		return $this->api_pileg . $dapilId . '/' . $partaiId . '/calonDcs.json';
+		return $this->api_pileg . $dapilId . '/' . $partaiId . '/dcs';
 	}
 }

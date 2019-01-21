@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c69044326228945002f9c806018b18e",
+    "content-hash": "e953d28abeeac4936463cd60c90ed6ea",
     "packages": [
         {
             "name": "appointer/swaggervel",
@@ -6139,6 +6139,7 @@
                 "laravel",
                 "laravel5"
             ],
+            "abandoned": "rtconner/laravel-kint",
             "time": "2017-08-29T03:49:51+00:00"
         },
         {
@@ -6966,7 +6967,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0.0"
+        "php": ">=7.1.0"
     },
     "platform-dev": []
 }

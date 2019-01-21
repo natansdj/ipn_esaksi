@@ -48,25 +48,24 @@ class ScrapeController extends AppBaseController
 		$this->pileg_existing   = Pileg::get()->pluck('id')->toArray();
 	}
 
-	public function fetchPilegAction(Request $request, $id = null, $partai = 12)
+	public function fetchPilegAction(Request $request, $dapilId = null, $partaiId = 12)
 	{
 		$this->request = $request;
 		$pull          = $request->has('pull');
 
-		$jsonArray = $this->fetchPileg($id, $partai);
+        $jsonArray = $this->fetchPileg($dapilId, $partaiId);
 
 		if ($pull) {
 			DB::disableQueryLog();
 			set_time_limit(0);
 
 			$this->addReturnData('isPull', true);
-			$this->addReturnData('isUpdate', (bool) $this->request->has('update'));
 			$this->addReturnData('syncedPileg', 0);
 
-			$this->pullPileg($id, $partai);
+			$dataPileg = $this->pullPileg($dapilId, $partaiId);
 			DB::enableQueryLog();
 		} else {
-			//
+			$this->addReturnData('isUpdate', (bool) $this->request->has('update'));
 		}
 
 		$this->addReturnData('pileg', $jsonArray);
@@ -324,9 +323,9 @@ class ScrapeController extends AppBaseController
 					$singleData[ $snakeCaseKey ] = $b;
 				}
 
-				DB::beginTransaction();
-				try {
-					//atribute to compare
+                try {
+                    DB::beginTransaction();
+                    //atribute to compare
 					$attribs = array_filter($singleData, function ($k) {
 						return in_array($k, ['id', 'tingkat']);
 					}, ARRAY_FILTER_USE_KEY);
@@ -437,9 +436,9 @@ class ScrapeController extends AppBaseController
 			}
 
 			if ($singleData) {
-				DB::beginTransaction();
-				try {
-					//atribute to compare
+                try {
+                    DB::beginTransaction();
+                    //atribute to compare
 					$attribs = array_only($singleData, ['id', 'kode_wilayah']);
 
 					//attribute for Tingkatan model
