@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-	protected $toTruncate = ['pilpres', 'pilegs', 'users', 'tps'];
+	protected $toTruncate = ['users', 'tps'];
 
 	/**
 	 * Run the database seeds.
@@ -17,12 +17,9 @@ class UsersTableSeeder extends Seeder
 			DB::table($table)->delete();
 		}
 
-		factory('App\Models\Tps', 5)->create();
-
+		factory('App\Models\Tps', 200)->create();
+		
 		factory(App\Models\User::class, 'admin')->create();
-		factory('App\Models\User', 2)->create();
-
-		factory('App\Models\Pileg', 3)->create();
-		factory('App\Models\Pilpres', 3)->create();
+		factory('App\Models\User', 100)->create();
 	}
 }

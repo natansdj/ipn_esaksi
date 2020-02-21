@@ -2,14 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Criteria\PilegRequestCriteria;
 use App\Models\Pileg;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class PilegRepository
  * @package App\Repositories
- * @version August 29, 2018, 6:44 am UTC
+ * @version September 12, 2018, 4:58 pm WIB
  *
  * @method Pileg findWithoutFail( $id, $columns = ['*'] )
  * @method Pileg find( $id, $columns = ['*'] )
@@ -21,8 +20,7 @@ class PilegRepository extends BaseRepository
 	 * @var array
 	 */
 	protected $fieldSearchable = [
-		'name'  => 'like',
-		'name2' => 'like',
+		'name' => 'like',
 		'type',
 		'partai'
 	];

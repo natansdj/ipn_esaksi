@@ -17,16 +17,21 @@ class CreateTpsTable extends Migration
 			$table->increments('id');
 			$table->char('province_id', 2)->nullable();
 			$table->integer('kodepos_id')->unsigned()->nullable();
+			$table->integer('dapil_id')->unsigned()->nullable();
 			$table->string('name');
 			$table->string('address')->nullable();
 			$table->string('geo_location')->nullable();
 			$table->string('type')->nullable();
+			$table->bigInteger('total_vote')->nullable();
+			$table->bigInteger('valid_vote')->nullable();
+			$table->bigInteger('invalid_vote')->nullable();
 			$table->text('note')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
 
-			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('SET NULL');
-			$table->foreign('kodepos_id')->references('id')->on('kodepos')->onUpdate('CASCADE')->onDelete('SET NULL');
+			$table->foreign('province_id')->references('id')->on('provinces')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('kodepos_id')->references('id')->on('kodepos')->onUpdate('CASCADE')->onDelete('NO ACTION');
+			$table->foreign('dapil_id')->references('id')->on('dapil')->onUpdate('CASCADE')->onDelete('NO ACTION');
 		});
 	}
 

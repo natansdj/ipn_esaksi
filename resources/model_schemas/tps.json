@@ -23,6 +23,15 @@
     "relation": "mt1,Kodepos"
   },
   {
+    "name": "dapil_id",
+    "dbType": "integer:unsigned:foreign,dapil,id",
+    "htmlType": "text",
+    "searchable": false,
+    "inForm": true,
+    "inIndex": false,
+    "relation": "mt1,Dapil"
+  },
+  {
     "name": "name",
     "dbType": "string",
     "htmlType": "text",
@@ -53,6 +62,13 @@
   {
     "name": "note",
     "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "total_vote",
+    "dbType": "integer",
     "htmlType": "text",
     "searchable": false,
     "inIndex": false

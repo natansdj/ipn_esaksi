@@ -138,3 +138,23 @@ body{
 	font-family: $b;
 	margin-bottom: 25px;
 }
+
+.pagination{
+	.page-item{
+		.page-link{
+			color: $ldblue;
+		}
+		&.disabled{
+			.page-link{
+				color: $gray4;	
+			}
+		}
+		&.active{
+			.page-link{
+				background-color: $ldblue;
+				color: $wt;
+				border-color: $ldblue;
+			}
+		}
+	}
+}

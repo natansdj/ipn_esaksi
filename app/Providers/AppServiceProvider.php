@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +17,12 @@ class AppServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		Schema::defaultStringLength(191);
+		setlocale(LC_TIME, config('app.locale'));
+		\Carbon\Carbon::setLocale(config('app.locale'));
+		Paginator::defaultView('pagination::bootstrap-4');
+		Paginator::defaultSimpleView('pagination::simple-bootstrap-4');
+
+		Relation::morphMap(RELATION_MAP);
 	}
 
 	/**

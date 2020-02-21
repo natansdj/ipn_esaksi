@@ -3,8 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\User;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Services\DataTable;
 
 class UserDataTable extends DataTable
 {
@@ -25,13 +26,13 @@ class UserDataTable extends DataTable
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Post $model
+	 * @param \App\Models\User $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	public function query(User $model)
 	{
-		return $model->noAdmin()->newQuery();
+		return $model->noAdmin()->newQuery()->with(['tps']);
 	}
 
 	/**
@@ -44,12 +45,12 @@ class UserDataTable extends DataTable
 		return $this->builder()
 		            ->columns($this->getColumns())
 		            ->minifiedAjax()
-		            ->addAction(['printable' => false, 'width' => '120px'])
+		            ->addAction(['printable' => false, 'width' => '100px'])
 		            ->parameters([
 			            'language' => ['url' => asset('js/dataTables.indonesian.json')],
-			            'dom' => 'Bflrtip',
-			            'order'   => [[0, 'desc']],
-			            'buttons' => [
+			            'dom'      => 'Bflrtip',
+			            'order'    => [[0, 'desc']],
+			            'buttons'  => [
 				            ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
 				            ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -67,14 +68,18 @@ class UserDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'name',
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
+				'searchable' => false
+			]),
+			'name'  => ['data' => 'name', 'title' => 'Nama'],
 			'email',
-			'phone',
-			'dob' => [
-				'data'  => 'dob',
-				'title' => 'Date of Birth'
-			],
-			'is_active',
+			'phone' => ['data' => 'phone', 'title' => 'Telp'],
+			'dob'   => ['data' => 'dob', 'title' => 'Tgl Lahir'],
+			new Column([
+				'name'       => 'tps_id', 'data' => 'tps.name', 'title' => 'TPS',
+				'searchable' => true
+			]),
 		];
 	}
 

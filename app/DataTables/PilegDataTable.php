@@ -3,8 +3,10 @@
 namespace App\DataTables;
 
 use App\Models\Pileg;
-use Yajra\DataTables\Services\DataTable;
+use Illuminate\Database\Eloquent\Collection;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Services\DataTable;
 
 class PilegDataTable extends DataTable
 {
@@ -18,6 +20,24 @@ class PilegDataTable extends DataTable
 	public function dataTable($query)
 	{
 		$dataTable = new EloquentDataTable($query);
+		$dataTable->editColumn('dapil_id', function ($model) {
+			/** @var \App\Models\Pileg $model */
+			$dapil  = '-';
+			$dapils = $model->dapils;
+			if ( ! is_null($dapils) && $dapils && $dapils instanceof Collection) {
+				$dapil = $dapils->pluck('nama')->implode(', ');
+			}
+
+			return $dapil;
+		});
+		$dataTable->editColumn('type', function ($model) {
+			/** @var \App\Models\Pileg $model */
+			return $model->getAttributeValue('tingkat');
+		});
+		$dataTable->editColumn('name', function ($model) {
+			/** @var \App\Models\Pileg $model */
+			return $model->getAttributeValue('fullname');
+		});
 
 		return $dataTable->addColumn('action', 'pilegs.datatables_actions');
 	}
@@ -31,7 +51,7 @@ class PilegDataTable extends DataTable
 	 */
 	public function query(Pileg $model)
 	{
-		return $model->newQuery();
+		return $model->newQuery()->with(['province', 'dapils']);
 	}
 
 	/**
@@ -67,11 +87,23 @@ class PilegDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'province_id',
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
+				'searchable' => false,
+			]),
 			'name',
-			'name2',
-			'dob',
-			'pob',
+			'dapil_id' => [
+				'data'  => 'dapil_id',
+				'title' => 'Dapil'
+			],
+			'type'     => [
+				'data'  => 'type',
+				'title' => 'Tingkat Dapil'
+			],
+			'pob'      => [
+				'data'  => 'pob',
+				'title' => 'Tempat Lahir'
+			],
 			'partai'
 		];
 	}

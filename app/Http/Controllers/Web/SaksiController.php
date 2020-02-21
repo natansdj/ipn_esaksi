@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Models\District;
 use App\Models\Province;
 use App\Models\Regency;
-use App\Models\User;
 use App\Models\Village;
 use App\Repositories\UserRepository;
 use Auth;

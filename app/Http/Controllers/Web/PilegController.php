@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Criteria\AppRequestCriteria;
 use App\Criteria\PilegRequestCriteria;
 use App\DataTables\PilegDataTable;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreatePilegRequest;
 use App\Http\Requests\UpdatePilegRequest;
-use App\Models\Pileg;
 use App\Repositories\PilegRepository;
 use Flash;
 use Illuminate\Http\Request;
 use Response;
 
-class PilegController extends Controller
+class PilegController extends AppBaseController
 {
 	/** @var  PilegRepository */
 	private $pilegRepository;
@@ -36,17 +35,20 @@ class PilegController extends Controller
 	}
 
 	/**
+	 * daftar_pileg
 	 * @param Request $request
 	 *
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function list(Request $request)
 	{
-		$dropdown_type   = PILEG_TYPE;
+		$dropdown_type   = TINGKAT_DAPIL;
 		$dropdown_partai = PARTAI;
 
 		$this->pilegRepository->pushCriteria(new PilegRequestCriteria($request));
-		$collection = $this->pilegRepository->all();
+
+		/** @var \Illuminate\Pagination\LengthAwarePaginator $collection */
+		$collection = $this->pilegRepository->paginate(10, $columns = ['*']);
 
 		return view('pages.pilegs_list', compact('collection', 'dropdown_type', 'dropdown_partai'));
 	}

@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+use Collective\Html\Eloquent\FormAccessible;
+use \Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -82,7 +83,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Vote extends Model
 {
-	use SoftDeletes;
+	use SoftDeletes, FormAccessible {
+		getFormValue as protected traitGetFormValue;
+	}
 
 	/**
 	 * Validation rules
@@ -90,7 +93,11 @@ class Vote extends Model
 	 * @var array
 	 */
 	public static $rules = [
-		'count' => 'required'
+		'tps_id'        => 'required',
+		'user_id'       => 'required',
+		'voteable_id'   => 'required',
+		'voteable_type' => 'required',
+		'count'         => 'required'
 	];
 	public $table = 'votes';
 	public $fillable = [
@@ -103,7 +110,7 @@ class Vote extends Model
 		'voteable_type',
 		'type'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['vote_date', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -112,7 +119,7 @@ class Vote extends Model
 	protected $casts = [
 		'tps_id'        => 'integer',
 		'user_id'       => 'integer',
-		'vote_date'     => 'date',
+		'vote_date'     => 'date:Y-m-d',
 		'note'          => 'string',
 		'count'         => 'integer',
 		'voteable_id'   => 'integer',
@@ -134,5 +141,37 @@ class Vote extends Model
 	public function user()
 	{
 		return $this->belongsTo(\App\Models\User::class);
+	}
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+	 */
+	public function voteable()
+	{
+		return $this->morphTo();
+	}
+
+	public function scopeJenisVote($query, $jenis)
+	{
+		return $query->where('voteable_type', $jenis);
+	}
+
+	public function getVoteDateAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+
+	public function getTypeAttribute($value)
+	{
+		return ( array_has(TINGKAT_DAPIL, $value) ) ? array_get(TINGKAT_DAPIL, $value) : $value;
+	}
+
+	public function formTypeAttribute($value)
+	{
+		return $value;
 	}
 }

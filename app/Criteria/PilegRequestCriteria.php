@@ -23,15 +23,22 @@ class PilegRequestCriteria extends RequestCriteria implements CriteriaInterface
 	 */
 	public function apply($model, RepositoryInterface $repository)
 	{
-		$reqParams = ['name', 'type', 'partai'];
+		$reqParams = ['name', 'partai'];
 		$request   = $this->request->only($reqParams);
 
 		$qString = array_get($request, 'search');
 
 		foreach ($reqParams as $param) {
-			if (array_get($request, $param)) {
+			if (array_has($request, $param) && array_get($request, $param) !== null) {
 				$qString .= $param . ':' . array_get($request, $param);
 			}
+		}
+		
+		$type = $this->request->get('type');
+		if ( ! is_null($type)) {
+			$model = $model->whereHas('dapil', function ($q) use ($type) {
+				return $q->where('tingkat', $type);
+			});
 		}
 
 		$this->request->request->set('search', $qString);

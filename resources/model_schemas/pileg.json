@@ -17,6 +17,21 @@
     "relation": "mt1,Province"
   },
   {
+    "name": "silon_id",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "dapil_id",
+    "dbType": "integer:unsigned:foreign,dapil,id",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false,
+    "relation": "mtm,Dapil"
+  },
+  {
     "name": "name",
     "dbType": "string",
     "htmlType": "text",
@@ -24,10 +39,32 @@
     "searchable": true
   },
   {
-    "name": "name2",
+    "name": "gelar_depan",
     "dbType": "string",
     "htmlType": "text",
-    "searchable": true
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "gelar_belakang",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "jenis_kelamin",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
+  },
+  {
+    "name": "no_urut",
+    "dbType": "integer",
+    "htmlType": "text",
+    "searchable": false,
+    "inIndex": false
   },
   {
     "name": "dob",
@@ -56,6 +93,13 @@
     "htmlType": "text",
     "searchable": false,
     "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "note",
+    "dbType": "string",
+    "htmlType": "text",
+    "searchable": false,
     "inIndex": false
   },
   {

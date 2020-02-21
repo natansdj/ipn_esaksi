@@ -106,7 +106,7 @@ class Pilpres extends Model
 		'type',
 		'note'
 	];
-	protected $dates = ['deleted_at'];
+	protected $dates = ['capres_dob', 'cawapres_dob', 'deleted_at'];
 	/**
 	 * The attributes that should be casted to native types.
 	 *
@@ -125,6 +125,24 @@ class Pilpres extends Model
 		'note'            => 'string'
 	];
 
+	public function getCapresDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+
+	public function getCawapresDobAttribute($value)
+	{
+		if (isset($value) && ! empty($value)) {
+			$value = \Carbon\Carbon::parse($value)->format(config('app.date_format'));
+		}
+
+		return $value;
+	}
+
 	public function getPartaiAttribute($value)
 	{
 		return ( array_has(PARTAI, $value) && array_get(PARTAI, $value) ) ? PARTAI[ $value ] : mb_strtoupper($value);
@@ -132,6 +150,16 @@ class Pilpres extends Model
 
 	public function getTypeAttribute($value)
 	{
-		return ( array_has(PILEG_TYPE, $value) && array_get(PILEG_TYPE, $value) ) ? PILEG_TYPE[ $value ] : mb_strtoupper($value);
+		return ( array_has(PILPRES_TYPE, $value) && array_get(PILPRES_TYPE, $value) ) ? PILPRES_TYPE[ $value ] : '-';
+	}
+
+	public function getFullnameAttribute()
+	{
+		return implode(' ', [$this->getOriginal('capres_name')]);
+	}
+	
+	public function votes()
+	{
+		return $this->morphMany(\App\Models\Vote::class, 'voteable');
 	}
 }

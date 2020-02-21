@@ -16,6 +16,12 @@
     <p>{!! $tps->kodepos_id !!}</p>
 </div>
 
+<!-- Dapil Id Field -->
+<div class="form-group">
+    {!! Form::label('dapil_id', 'Dapil Id:') !!}
+    <p>{!! $tps->dapil_id !!}</p>
+</div>
+
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
@@ -44,6 +50,12 @@
 <div class="form-group">
     {!! Form::label('note', 'Note:') !!}
     <p>{!! $tps->note !!}</p>
+</div>
+
+<!-- Total Vote Field -->
+<div class="form-group">
+    {!! Form::label('total_vote', 'Total Vote:') !!}
+    <p>{!! $tps->total_vote !!}</p>
 </div>
 
 <!-- Deleted At Field -->

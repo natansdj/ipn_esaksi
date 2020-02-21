@@ -16,7 +16,7 @@ class $MODEL_NAME$DataTable extends DataTable
      */
     public function dataTable($query)
     {
-        $dataTable = new EloquentDataTable($query);
+		$dataTable  = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.datatables_actions');
     }
@@ -24,7 +24,7 @@ class $MODEL_NAME$DataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Post $model
+     * @param \App\Models\$MODEL_NAME$ $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query($MODEL_NAME$ $model)

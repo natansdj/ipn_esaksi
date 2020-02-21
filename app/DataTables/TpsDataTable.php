@@ -3,8 +3,9 @@
 namespace App\DataTables;
 
 use App\Models\Tps;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Services\DataTable;
 
 class TpsDataTable extends DataTable
 {
@@ -25,13 +26,13 @@ class TpsDataTable extends DataTable
 	/**
 	 * Get query source of dataTable.
 	 *
-	 * @param \App\Models\Post $model
+	 * @param \App\Models\Tps $model
 	 *
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	public function query(Tps $model)
 	{
-		return $model->newQuery();
+		return $model->newQuery()->with(['dapil']);
 	}
 
 	/**
@@ -67,9 +68,15 @@ class TpsDataTable extends DataTable
 	protected function getColumns()
 	{
 		return [
-			'province_id',
-			'kodepos_id',
-			'name'
+			new Column([
+				'name'       => 'id', 'data' => 'id', 'title' => 'ID',
+				'searchable' => false,
+			]),
+			'name'    => ['data' => 'name', 'title' => 'Nama'],
+			new Column([
+				'name' => 'dapil_id', 'data' => 'dapil.nama', 'title' => 'Dapil',
+			]),
+			'address' => ['data' => 'address', 'title' => 'Alamat'],
 		];
 	}
 

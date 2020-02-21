@@ -45,5 +45,6 @@
                 </div>
             @endforeach
         </div>
+        {{ $collection->links() }}
     </div>
 @endsection

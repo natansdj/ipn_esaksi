@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Web;
 
 use App\DataTables\TpsDataTable;
-use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateTpsRequest;
 use App\Http\Requests\UpdateTpsRequest;
 use App\Repositories\TpsRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class TpsController extends AppBaseController
@@ -33,6 +32,10 @@ class TpsController extends AppBaseController
 		return $tpsDataTable->render('tps.index');
 	}
 
+	/**
+	 * daftar_tps
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
 	public function search()
 	{
 		return view('pages.tps_search');
